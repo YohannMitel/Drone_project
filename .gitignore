@@ -1,0 +1,54 @@
+# Ignorer les fichiers de construction générés automatiquement
+build-*/
+*.o
+*.obj
+*.so
+*.dll
+*.dylib
+*.exe
+*.a
+*.lib
+*.app
+
+# Fichiers de sortie intermédiaires
+*.moc
+*.qrc
+*.cxx
+*.cpp~
+*.h~
+
+# Fichiers liés à Qt Creator
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+*.pro.shared
+*.creator.user
+*.creator
+*.creator.*
+
+# Fichiers de configuration des éditeurs/IDE
+.vscode/
+.idea/
+*.iml
+
+# Fichiers générés par CMake (si utilisé)
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+
+# Fichiers de journaux et de débogage
+*.log
+*.debug
+*.stackdump
+
+# Fichiers de base de données pour la complétion
+*.ccls-cache/
+*.clangd
+
+# Fichiers spécifiques au système d'exploitation
+.DS_Store
+Thumbs.db
