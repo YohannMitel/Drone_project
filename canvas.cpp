@@ -336,7 +336,7 @@ void Canvas::processVoronoi(Vector2D &P){
             L.removeOne(T);
 
         }else{
-            qDebug() << "Issue";
+            qDebug() << "Closed";
             isClosed = false;
 
         }
