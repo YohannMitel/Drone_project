@@ -1,4 +1,5 @@
 # Ignorer les fichiers de construction générés automatiquement
+build/
 build-*/
 *.o
 *.obj
