@@ -338,14 +338,18 @@ void Canvas::processVoronoi(Vector2D &P){
         }else{
             isClosed = false;
             const Vector2D circumCircle = (T)->getCircleCenter();
-
+            qDebug() << "circumCircle : " << circumCircle;
+            qDebug() << "EDGE  : " << *edge;
+            qDebug() << "P  : " << P;
             const Vector2D proj =  Vector2D::projection(edge,P, circumCircle);
+            qDebug() << "POINT M : " << proj;
 
-            qDebug() << (width()-10)/scale+origin.x() << "YOOOOOOOO" << (height()+10)/scale+origin.y();
-            const Vector2D inter =   Vector2D::extendPerpendicularLineToCanvas(circumCircle, proj, (width()-10)/scale+origin.x(), (height()+10)/scale+origin.y());
-            qDebug() << proj;
+            qDebug() << "With : " << (width()-10)/scale+origin.x() << "Height : " << (height()+10)/scale+origin.y();
+            const Vector2D inter =   Vector2D::extendLineToCanvas(circumCircle, proj, (width()-10)/scale+origin.x(), (height()+10)/scale+origin.y());
 
-            qDebug() << "IIIIIIIIIIIIIIIi" <<  inter;
+
+
+            qDebug() << "FINAL POINT : " <<  inter;
 
             qDebug() << "Closed";
 

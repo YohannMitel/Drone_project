@@ -63,45 +63,45 @@ public:
         // Point H = A + t * AB
         return A + AB * t;
     }
-    // Fonction pour étendre la droite MD et trouver l'intersection avec les bords du canvas
-    static Vector2D extendPerpendicularLineToCanvas(const Vector2D& circumcenter, const Vector2D& direction, float canvasWidth, float canvasHeight) {
-        // Calculate the perpendicular vector to the direction
-        Vector2D perpendicularDirection = direction.orthoNormed();  // Perpendicular vector normalized
+    // Fonction pour étendre la droite MP jusqu'à la limite du canvas
+    static Vector2D extendLineToCanvas(const Vector2D& M, const Vector2D& P, float canvasWidth, float canvasHeight) {
+        // Direction de la droite MP
+        Vector2D MP = P - M;
 
-        // Extend the line using circumcenter and the perpendicular direction
-        // We'll extend the line in both directions, positive and negative t (infinite extension).
+        // Calcul du paramètre t pour trouver l'intersection avec les bords du canvas
 
-        // Parametric line equation: P(t) = circumcenter + t * perpendicularDirection
-        // For simplicity, we'll calculate intersections with the canvas edges
+        // Si la direction est nulle, retourner le point M
+        if (MP.x == 0 && MP.y == 0) {
+            return M;
+        }
 
-        // Parametric equation of the line for x = 0, x = canvasWidth, y = 0, y = canvasHeight
-        float tX0 = -circumcenter.x / perpendicularDirection.x; // intersection with x = 0
-        float tX1 = (canvasWidth - circumcenter.x) / perpendicularDirection.x; // intersection with x = canvasWidth
-        float tY0 = -circumcenter.y / perpendicularDirection.y; // intersection with y = 0
-        float tY1 = (canvasHeight - circumcenter.y) / perpendicularDirection.y; // intersection with y = canvasHeight
+        // Paramètres pour les intersections avec x = 0, x = canvasWidth, y = 0, y = canvasHeight
+        float tX0 = -M.x / MP.x;
+        float tX1 = (canvasWidth - M.x) / MP.x;
+        float tY0 = -M.y / MP.y;
+        float tY1 = (canvasHeight - M.y) / MP.y;
 
-        // Calculate the points of intersection
-        Vector2D pX0 = circumcenter + perpendicularDirection * tX0;
-        Vector2D pX1 = circumcenter + perpendicularDirection * tX1;
-        Vector2D pY0 = circumcenter + perpendicularDirection * tY0;
-        Vector2D pY1 = circumcenter + perpendicularDirection * tY1;
+        // Trouver les points d'intersection en fonction des t
+        Vector2D pX0 = M + MP * tX0;
+        Vector2D pX1 = M + MP * tX1;
+        Vector2D pY0 = M + MP * tY0;
+        Vector2D pY1 = M + MP * tY1;
 
-        // Check which intersection points lie within the canvas
+        // Vérifier quels points sont valides (dans les limites du canvas)
         Vector2D intersection;
         if (tX0 >= 0 && pX0.y >= 0 && pX0.y <= canvasHeight) {
-            intersection = pX0;  // Intersection with x = 0
+            intersection = pX0; // Intersection avec x = 0
         }
         else if (tX1 >= 0 && pX1.y >= 0 && pX1.y <= canvasHeight) {
-            intersection = pX1;  // Intersection with x = canvasWidth
+            intersection = pX1; // Intersection avec x = canvasWidth
         }
         else if (tY0 >= 0 && pY0.x >= 0 && pY0.x <= canvasWidth) {
-            intersection = pY0;  // Intersection with y = 0
+            intersection = pY0; // Intersection avec y = 0
         }
         else if (tY1 >= 0 && pY1.x >= 0 && pY1.x <= canvasWidth) {
-            intersection = pY1;  // Intersection with y = canvasHeight
+            intersection = pY1; // Intersection avec y = canvasHeight
         }
 
-        // Return the intersection point
         return intersection;
     }
 
