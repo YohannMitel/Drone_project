@@ -88,3 +88,10 @@ void MainWindow::on_actionProcess_polygons_triggered()
     ui->canvas->processPoly();
 }
 
+
+void MainWindow::on_actionVoronoi_transparency_triggered(bool checked)
+{
+    ui->canvas->voronoiTransparency=checked;
+    update();
+}
+

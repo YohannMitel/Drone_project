@@ -29,6 +29,8 @@ private slots:
 
     void on_actionProcess_polygons_triggered();
 
+    void on_actionVoronoi_transparency_triggered(bool checked);
+
 private:
     Ui::MainWindow *ui;
 };

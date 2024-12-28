@@ -46,7 +46,7 @@ private:
     float scale=0.5;
     QPoint origin=QPoint(10,10);
 public:
-    bool showTriangles=true,showCenters=false,showCircles=false;
+    bool showTriangles=true,showCenters=false,showCircles=false, voronoiTransparency = false;
 };
 
 #endif // CANVAS_H

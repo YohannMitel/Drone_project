@@ -30,7 +30,7 @@ public:
 
     Vector2D *getVertices(int &n) { n=N; return tabPts; };
     void addVertex(const Vector2D &P);
-    void draw(QPainter &painter);
+    void draw(QPainter &painter, bool transparency);
     void setColor(const QColor c) { currentColor=c; }
 
 

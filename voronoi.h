@@ -17,7 +17,7 @@ public:
         tabPolygon.push_back(p);
     }
 
-    void draw(QPainter &painter);
+    void draw(QPainter &painter, bool transparency);
 
 
 };

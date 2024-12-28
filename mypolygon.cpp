@@ -11,7 +11,7 @@ void MyPolygon::addVertex(const Vector2D &P) {
     tabPts[N].y=tabPts[0].y;
 }
 
-void MyPolygon::draw(QPainter &painter) {
+void MyPolygon::draw(QPainter &painter, bool transparency) {
     QPen pen(Qt::black);
     pen.setWidth(3);
 
@@ -22,7 +22,12 @@ void MyPolygon::draw(QPainter &painter) {
         points[i].setY(tabPts[i].y);
     }
 
-    painter.setBrush(Qt::yellow);
+    if(transparency){
+        painter.setBrush(QColor (255,255,0,128));
+    }else{
+        painter.setBrush(Qt::yellow);
+    }
+
     painter.setPen(pen);
     painter.drawPolygon(points,N,Qt::OddEvenFill);
 

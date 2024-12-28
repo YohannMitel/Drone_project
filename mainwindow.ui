@@ -45,6 +45,7 @@
     <addaction name="actionCircles"/>
     <addaction name="actionCenter"/>
     <addaction name="actionTriangles"/>
+    <addaction name="actionVoronoi_transparency"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
     <property name="title">
@@ -162,6 +163,14 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionVoronoi_transparency">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Voronoi transparency</string>
    </property>
   </action>
  </widget>

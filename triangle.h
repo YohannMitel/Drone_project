@@ -77,7 +77,7 @@ public:
         return flippable;
     }
 
-     Vector2D getCircleCenter() const{
+    inline Vector2D getCircleCenter(){
         return circumCenter;
     }
     inline void setDelaunay(bool v, bool f) {

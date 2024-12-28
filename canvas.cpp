@@ -90,7 +90,7 @@ void Canvas::paintEvent(QPaintEvent *) {
         }
     }    // Draw voronoi polygons
 
-        voronoiObj->draw(painter);
+    voronoiObj->draw(painter, voronoiTransparency);
     painter.restore();
 
     // draw the text in basic coordinate system
@@ -303,7 +303,7 @@ void Canvas::processVoronoi(Vector2D &P){
     }
     // POUR CETTE PARTIE DEMANDER A COPAIN POUR BIEN COMPRENDRE
     // is L closed ?
-    QVector<const Triangle*> Lordered;
+    QVector<Vector2D> Lordered;
     // to do later : search the left Triangle
     assert(!L.isEmpty());
 
@@ -317,9 +317,9 @@ void Canvas::processVoronoi(Vector2D &P){
         qDebug() << *(T->getVertexPtr(1));
         qDebug() << *(T->getVertexPtr(2));*/
         edge = T->getEdgeFrom(P);
-        //qDebug() << "Coordonnée recherché" << *edge;
+        qDebug() << "Coordonnée recherché" << *edge;
 
-        // search trigle Tright wich is on the right of P
+        // search triangle Tright wich is on the right of P
 
         auto it=L.begin();
 
@@ -331,21 +331,35 @@ void Canvas::processVoronoi(Vector2D &P){
         }
         qDebug() << L.size();
         if(it!=L.end()){
-            Lordered.push_back(*it);
+            Lordered.push_back((*it)->getCircleCenter());
             T = *it;
             L.removeOne(T);
 
         }else{
-            qDebug() << "Closed";
             isClosed = false;
+            const Vector2D circumCircle = (T)->getCircleCenter();
+
+            const Vector2D proj =  Vector2D::projection(edge,P, circumCircle);
+
+            qDebug() << (width()-10)/scale+origin.x() << "YOOOOOOOO" << (height()+10)/scale+origin.y();
+            const Vector2D inter =   Vector2D::findPerpendicularIntersection(circumCircle, proj, (width()-10)/scale+origin.x(), (height()+10)/scale+origin.y());
+            qDebug() << proj;
+
+            qDebug() << "IIIIIIIIIIIIIIIi" <<  inter;
+
+            qDebug() << "Closed";
+
+
+
 
         }
     }
     // Debug output of the reordered triangles
     qDebug();
     MyPolygon *poly = new MyPolygon(Lordered.size());
-    for (auto &t : Lordered) {
-        poly->addVertex(t->getCircleCenter());
+    qDebug() << "Nombre de points trouvé : " << QString::number(Lordered.size());
+    for (const Vector2D &t : Lordered) {
+        poly->addVertex(t);
     };
 
     // À la fin, on sait si le polygone est fermé
@@ -365,4 +379,5 @@ void Canvas::processPoly(){
     for(auto &p: vertices){
         processVoronoi(p);
     }
+    processVoronoi(vertices[7]);
 }
