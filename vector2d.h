@@ -104,7 +104,31 @@ public:
 
         return intersection;
     }
+    static QString whichSide(const Vector2D &P, float canvasWidth, float canvasHeight){
+        if (P.x <= 0) {
+            qDebug() << "Point is to the left of the canvas.";
+            return "left";
+        } else if (P.x  >= canvasWidth) {
+            qDebug() << "Point is to the right of the canvas.";
+            return "right";
+        } else if (P.y  >= 0) {
+            qDebug() << "Point is above the canvas.";
+            return "above";
+        } else if (P.y   <= canvasHeight) {
+            qDebug() << "Point is below the canvas.";
+            return "bottom";
+            /*} else if (Lordered.back().x  >= 0 && Lordered.back().x <= canvasWidth && Lordered.back().y >= 0 && Lordered.back().y <= canvasHeight) {
+                        qDebug() << "Point is inside the canvas.";*/
+        } else {
 
+            qDebug() << "Unknown point position.";
+            return "none";
+        }
+        qDebug() << "INTER PUSSSSSSSSSSSSSH DERNIER POINT IIIIIIIIIIICIIII";
+
+
+
+    }
 
 
 

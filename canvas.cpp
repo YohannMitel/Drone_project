@@ -284,12 +284,31 @@ void Canvas::flippAll(){
     }
 }
 
+Vector2D getBorderPointSide(QString sideP1, QString sideP2, const float &canvasWidth, const float &canvasHeight){
+    const QString result = sideP1 +  " " +sideP2;
+
+    if(result == ("left above" ) || result == "above left"){
+        return new Vector2D(0, canvasHeight);
+    }else if(result == ("right above" ) || result == "above right"){
+        return new Vector2D(canvasWidth, canvasHeight);
+    }else if(result == ("right bottom" ) || result == "bottom right"){
+        return new Vector2D(canvasWidth, 0);
+    }else if(result == ("left bottom" ) || result == "bottom left"){
+        return new Vector2D(0, 0);
+    }else{
+        return new Vector2D(0,0);
+    }
+}
+
 void Canvas::processVoronoi(Vector2D &P){
     qDebug() << "Processing polygons";
     bool isClosed = true; // Initialement, on suppose que la cellule est fermée
 
     Vector2D *edge = nullptr;
     QVector <Triangle *> L;
+
+    const float canvasWidth = (width()-10)/scale+origin.x();
+    const float canvasHeight = (height()+10)/scale+origin.y();
 
     //poly = new MyPolygon()
     for(auto &tri:triangles){
@@ -364,19 +383,40 @@ void Canvas::processVoronoi(Vector2D &P){
                 qDebug() << "circumCircle : " << circumCircle;
                 qDebug() << "EDGE  : " << *edge;
                 qDebug() << "P  : " << P;
-                const Vector2D proj =  Vector2D::projection(edge,P, circumCircle);
-                qDebug() << "POINT M : " << proj;
 
-                qDebug() << "With : " << (width()-10)/scale+origin.x() << "Height : " << (height()+10)/scale+origin.y();
-                const Vector2D inter =   Vector2D::extendLineToCanvas(circumCircle, proj, (width()-10)/scale+origin.x(), (height()+10)/scale+origin.y());
-                qDebug() << "INTER PUSSSSSSSSSSSSSH";
                 if( circumCircle.x  < 0 ||  circumCircle.x > (width()-10)/scale+origin.x() ||
                     circumCircle.y < 0 ||  circumCircle.y > (height()+10)/scale+origin.y()){
+                    qDebug() << "TRAVAIL SUR CE POINT : " << Lordered.back();
+                    const QString side1 = Vector2D::whichSide(Lordered.back(), canvasWidth, canvasHeight);
+                    const QString side2 = Vector2D::whichSide(circumCircle, canvasWidth, canvasHeight);
+
+                    qDebug() << "INTER PUSSSSSSSSSSSSSH DERNIER POINT IIIIIIIIIIICIIII";
+                    if(side1 != side2){
+                                            //Lordered.push_back(getBorderPointSide(side1,side2,canvasWidth,canvasHeight));
+                    }
+
+                    Lordered.push_back(circumCircle);
                     qDebug() << "DEHOOOOOORS";
                 }else{
-                    Lordered.push_back(inter);
-                }
+                    const Vector2D proj =  Vector2D::projection(edge,P, circumCircle);
+                    qDebug() << "POINT M : " << proj;
 
+                    qDebug() << "With : " << (width()-10)/scale+origin.x() << "Height : " << (height()+10)/scale+origin.y();
+                    const Vector2D inter =   Vector2D::extendLineToCanvas(circumCircle, proj, (width()-10)/scale+origin.x(), (height()+10)/scale+origin.y());
+
+
+                    qDebug() << "TRAVAIL SUR CE POINT : " << Lordered.back();
+                    const QString side1 = Vector2D::whichSide(Lordered.back(), canvasWidth, canvasHeight);
+                    const QString side2 = Vector2D::whichSide(inter, canvasWidth, canvasHeight);
+                    qDebug() << "INTER PUSSSSSSSSSSSSSH DERNIER POINT IIIIIIIIIIICIIII";
+                    if(side1 != side2){
+                        //Lordered.push_back(getBorderPointSide(side1,side2,canvasWidth,canvasHeight));
+                    }
+
+                    Lordered.push_back(inter);
+
+
+                }
 
             }
 
@@ -387,24 +427,27 @@ void Canvas::processVoronoi(Vector2D &P){
             qDebug() << "circumCircle : " << circumCircle;
             qDebug() << "EDGE  : " << *edge;
             qDebug() << "P  : " << P;
-            const Vector2D proj =  Vector2D::projection(edge,P, circumCircle);
-            qDebug() << "POINT M : " << proj;
 
-            qDebug() << "With : " << (width()-10)/scale+origin.x() << "Height : " << (height()+10)/scale+origin.y();
-            const Vector2D inter =   Vector2D::extendLineToCanvas(circumCircle, proj, (width()-10)/scale+origin.x(), (height()+10)/scale+origin.y());
-
-
-
-            qDebug() << "FINAL POINT : " <<  inter;
 
 
             qDebug() << "Closed";
-            Lordered.push_front(circumCircle);
+
             qDebug() << "INTER PUSSSSSSSSSSSSSH";
             if( circumCircle.x  < 0 ||  circumCircle.x > (width()-10)/scale+origin.x() ||
                 circumCircle.y < 0 ||  circumCircle.y > (height()+10)/scale+origin.y()){
+                Lordered.push_back(circumCircle);
+
                 qDebug() << "DEHOOOOOORS";
             }else{
+                Lordered.push_front(circumCircle);
+
+                const Vector2D proj =  Vector2D::projection(edge,P, circumCircle);
+                qDebug() << "POINT M : " << proj;
+
+                qDebug() << "With : " << (width()-10)/scale+origin.x() << "Height : " << (height()+10)/scale+origin.y();
+                const Vector2D inter =   Vector2D::extendLineToCanvas(circumCircle, proj, (width()-10)/scale+origin.x(), (height()+10)/scale+origin.y());
+
+                qDebug() << "FINAL POINT : " <<  inter;
                 Lordered.push_back(inter);
             }
 
@@ -419,19 +462,21 @@ void Canvas::processVoronoi(Vector2D &P){
                 qDebug() << "circumCircle : " << circumCircle;
                 qDebug() << "EDGE  : " << *edge;
                 qDebug() << "P  : " << P;
-                const Vector2D proj =  Vector2D::projection(edge,P, circumCircle);
-                qDebug() << "POINT M : " << proj;
 
-                qDebug() << "With : " << (width()-10)/scale+origin.x() << "Height : " << (height()+10)/scale+origin.y();
-                const Vector2D inter =   Vector2D::extendLineToCanvas(circumCircle, proj, (width()-10)/scale+origin.x(), (height()+10)/scale+origin.y());
-                qDebug() << "INTER PUSSSSSSSSSSSSSH";
                 if( circumCircle.x  < 0 ||  circumCircle.x > (width()-10)/scale+origin.x() ||
                     circumCircle.y < 0 ||  circumCircle.y > (height()+10)/scale+origin.y()){
+                    Lordered.push_back(circumCircle);
                     qDebug() << "DEHOOOOOORS";
                 }else{
+                    const Vector2D proj =  Vector2D::projection(edge,P, circumCircle);
+                    qDebug() << "POINT M : " << proj;
+
+                    qDebug() << "With : " << (width()-10)/scale+origin.x() << "Height : " << (height()+10)/scale+origin.y();
+                    const Vector2D inter =   Vector2D::extendLineToCanvas(circumCircle, proj, (width()-10)/scale+origin.x(), (height()+10)/scale+origin.y());
+                    qDebug() << "INTER PUSSSSSSSSSSSSSH";
                     Lordered.push_back(inter);
                 }
-                Lordered.push_back(circumCircle);
+                //Lordered.push_back(circumCircle);
 
             }
 
@@ -463,8 +508,8 @@ void Canvas::processVoronoi(Vector2D &P){
 }
 
 void Canvas::processPoly(){
-    for(auto &p: vertices){
+    /*for(auto &p: vertices){
         processVoronoi(p);
-    }
-    //processVoronoi(vertices[10]);
+    }*/
+    //processVoronoi(vertices[4]);
 }
