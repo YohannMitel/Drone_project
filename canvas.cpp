@@ -309,14 +309,19 @@ void Canvas::processVoronoi(Vector2D &P){
 
 
     auto T = L.back();
-    while(!L.isEmpty() && isClosed){
+    while(!L.isEmpty() ){
 
         // search edge of T from P
-        /*qDebug() << "Triangle de départ";
+        qDebug() << "Triangle de départ";
         qDebug() << *(T->getVertexPtr(0));
         qDebug() << *(T->getVertexPtr(1));
-        qDebug() << *(T->getVertexPtr(2));*/
-        edge = T->getEdgeFrom(P);
+        qDebug() << *(T->getVertexPtr(2));
+        if(isClosed){
+            edge = T->getEdgeFrom(P);
+        }else{
+            edge = T->getEdgeTo(P);
+        }
+
         qDebug() << "Coordonnée recherché" << *edge;
 
         // search triangle Tright wich is on the right of P
@@ -324,16 +329,57 @@ void Canvas::processVoronoi(Vector2D &P){
         auto it=L.begin();
 
 
-        while(it!=L.end() && !(*(*it)->getEdgeTo(P) == *edge)){
+        if(isClosed){
+            qDebug () << "Recherche vers la droite";
+            while(it!=L.end() && !(*(*it)->getEdgeTo(P) == *edge)){
 
-            it++;
+                it++;
 
+            }
+        }else{
+            qDebug () << "Recherche vers la gauche";
+            while(it!=L.end() && !(*(*it)->getEdgeFrom(P) == *edge)){
+
+                it++;
+
+            }
         }
+
         qDebug() << L.size();
         if(it!=L.end()){
-            Lordered.push_back((*it)->getCircleCenter());
+            qDebug() << "Voisin trouvé !!";
+            if(isClosed){
+                Lordered.push_back((*it)->getCircleCenter());
+            }else{
+                Lordered.push_front((*it)->getCircleCenter());
+            }
+
             T = *it;
             L.removeOne(T);
+            qDebug() << "SIZE AVANT INTERPUSH PREMIERE BOUCLE : " <<  QString::number(L.size() ) << isClosed;
+            if(L.isEmpty() && !isClosed){
+                edge = T->getEdgeTo(P);
+
+                const Vector2D circumCircle = (T)->getCircleCenter();
+                qDebug() << "circumCircle : " << circumCircle;
+                qDebug() << "EDGE  : " << *edge;
+                qDebug() << "P  : " << P;
+                const Vector2D proj =  Vector2D::projection(edge,P, circumCircle);
+                qDebug() << "POINT M : " << proj;
+
+                qDebug() << "With : " << (width()-10)/scale+origin.x() << "Height : " << (height()+10)/scale+origin.y();
+                const Vector2D inter =   Vector2D::extendLineToCanvas(circumCircle, proj, (width()-10)/scale+origin.x(), (height()+10)/scale+origin.y());
+                qDebug() << "INTER PUSSSSSSSSSSSSSH";
+                if( circumCircle.x  < 0 ||  circumCircle.x > (width()-10)/scale+origin.x() ||
+                    circumCircle.y < 0 ||  circumCircle.y > (height()+10)/scale+origin.y()){
+                    qDebug() << "DEHOOOOOORS";
+                }else{
+                    Lordered.push_back(inter);
+                }
+
+
+            }
+
 
         }else{
             isClosed = false;
@@ -351,10 +397,47 @@ void Canvas::processVoronoi(Vector2D &P){
 
             qDebug() << "FINAL POINT : " <<  inter;
 
+
             qDebug() << "Closed";
+            Lordered.push_front(circumCircle);
+            qDebug() << "INTER PUSSSSSSSSSSSSSH";
+            if( circumCircle.x  < 0 ||  circumCircle.x > (width()-10)/scale+origin.x() ||
+                circumCircle.y < 0 ||  circumCircle.y > (height()+10)/scale+origin.y()){
+                qDebug() << "DEHOOOOOORS";
+            }else{
+                Lordered.push_back(inter);
+            }
+
+            L.removeOne(T);
 
 
 
+            if(L.isEmpty() ){
+                edge = T->getEdgeTo(P);
+
+                const Vector2D circumCircle = (T)->getCircleCenter();
+                qDebug() << "circumCircle : " << circumCircle;
+                qDebug() << "EDGE  : " << *edge;
+                qDebug() << "P  : " << P;
+                const Vector2D proj =  Vector2D::projection(edge,P, circumCircle);
+                qDebug() << "POINT M : " << proj;
+
+                qDebug() << "With : " << (width()-10)/scale+origin.x() << "Height : " << (height()+10)/scale+origin.y();
+                const Vector2D inter =   Vector2D::extendLineToCanvas(circumCircle, proj, (width()-10)/scale+origin.x(), (height()+10)/scale+origin.y());
+                qDebug() << "INTER PUSSSSSSSSSSSSSH";
+                if( circumCircle.x  < 0 ||  circumCircle.x > (width()-10)/scale+origin.x() ||
+                    circumCircle.y < 0 ||  circumCircle.y > (height()+10)/scale+origin.y()){
+                    qDebug() << "DEHOOOOOORS";
+                }else{
+                    Lordered.push_back(inter);
+                }
+                Lordered.push_back(circumCircle);
+
+            }
+
+
+
+            qDebug() << QString::number(L.size());
 
         }
     }
@@ -383,5 +466,5 @@ void Canvas::processPoly(){
     for(auto &p: vertices){
         processVoronoi(p);
     }
-    processVoronoi(vertices[7]);
+    //processVoronoi(vertices[10]);
 }
