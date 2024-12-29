@@ -311,6 +311,7 @@ void Canvas::processVoronoi(Vector2D &P){
     const float canvasHeight = (height()+10)/scale+origin.y();
 
     //poly = new MyPolygon()
+    // Récupère tous les triangles autour du point
     for(auto &tri:triangles){
         if(tri->contains(P)){
             qDebug() << "Points triangle : ";
@@ -322,6 +323,7 @@ void Canvas::processVoronoi(Vector2D &P){
     }
     // POUR CETTE PARTIE DEMANDER A COPAIN POUR BIEN COMPRENDRE
     // is L closed ?
+    // Liste des circumcircle autour du triangle trié
     QVector<Vector2D> Lordered;
     // to do later : search the left Triangle
     assert(!L.isEmpty());
@@ -335,6 +337,11 @@ void Canvas::processVoronoi(Vector2D &P){
         qDebug() << *(T->getVertexPtr(0));
         qDebug() << *(T->getVertexPtr(1));
         qDebug() << *(T->getVertexPtr(2));
+
+        /* Si l'on sait que le triangle est fermé alors on cherche le prochain triangle a droite
+            sinon ont fait demi-tour pour chercher les triangles a gauche
+
+        */
         if(isClosed){
             edge = T->getEdgeFrom(P);
         }else{
@@ -365,6 +372,7 @@ void Canvas::processVoronoi(Vector2D &P){
         }
 
         qDebug() << L.size();
+        // Un triangle voisin a été trouvé !
         if(it!=L.end()){
             qDebug() << "Voisin trouvé !!";
             if(isClosed){
@@ -375,7 +383,10 @@ void Canvas::processVoronoi(Vector2D &P){
 
             T = *it;
             L.removeOne(T);
-            qDebug() << "SIZE AVANT INTERPUSH PREMIERE BOUCLE : " <<  QString::number(L.size() ) << isClosed;
+
+            /* La liste des triangles a parcourir est vide et le triangle est ouvert alors
+                ont cherche le point qui se trouve à la limite du canvas
+            */
             if(L.isEmpty() && !isClosed){
                 edge = T->getEdgeTo(P);
 
@@ -384,6 +395,9 @@ void Canvas::processVoronoi(Vector2D &P){
                 qDebug() << "EDGE  : " << *edge;
                 qDebug() << "P  : " << P;
 
+                /* Vérifie si le circumcircle est en dehors du canvas si c'est le cas
+                    on n'a pas besoin de chercher le point qui se trouve à la limite du canvas
+                */
                 if( circumCircle.x  < 0 ||  circumCircle.x > (width()-10)/scale+origin.x() ||
                     circumCircle.y < 0 ||  circumCircle.y > (height()+10)/scale+origin.y()){
                     qDebug() << "TRAVAIL SUR CE POINT : " << Lordered.back();
@@ -421,7 +435,9 @@ void Canvas::processVoronoi(Vector2D &P){
 
             }
 
-
+        /* Aucun triangle voisin n'a été trouvé le polygon est donc ouvert c'est pourquoi
+            il nous le point qui se trouve à la limite de l'écran pour avoir un polygon fermé sur notre affichage
+        */
         }else{
             isClosed = false;
             const Vector2D circumCircle = (T)->getCircleCenter();
@@ -433,7 +449,9 @@ void Canvas::processVoronoi(Vector2D &P){
 
             qDebug() << "Closed";
 
-            qDebug() << "INTER PUSSSSSSSSSSSSSH";
+            /* Vérifie si le circumcircle est en dehors du canvas si c'est le cas
+                    on n'a pas besoin de chercher le point qui se trouve à la limite du canvas
+                */
             if( circumCircle.x  < 0 ||  circumCircle.x > (width()-10)/scale+origin.x() ||
                 circumCircle.y < 0 ||  circumCircle.y > (height()+10)/scale+origin.y()){
                 Lordered.push_back(circumCircle);
