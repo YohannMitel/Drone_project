@@ -391,8 +391,9 @@ void Canvas::processVoronoi(Vector2D &P){
                     const QString side2 = Vector2D::whichSide(circumCircle, canvasWidth, canvasHeight);
 
                     qDebug() << "INTER PUSSSSSSSSSSSSSH DERNIER POINT IIIIIIIIIIICIIII";
+
                     if(side1 != side2){
-                                            //Lordered.push_back(getBorderPointSide(side1,side2,canvasWidth,canvasHeight));
+                                           Lordered.push_back(getBorderPointSide(side1,side2,canvasWidth,canvasHeight));
                     }
 
                     Lordered.push_back(circumCircle);
@@ -410,7 +411,7 @@ void Canvas::processVoronoi(Vector2D &P){
                     const QString side2 = Vector2D::whichSide(inter, canvasWidth, canvasHeight);
                     qDebug() << "INTER PUSSSSSSSSSSSSSH DERNIER POINT IIIIIIIIIIICIIII";
                     if(side1 != side2){
-                        //Lordered.push_back(getBorderPointSide(side1,side2,canvasWidth,canvasHeight));
+                        Lordered.push_back(getBorderPointSide(side1,side2,canvasWidth,canvasHeight));
                     }
 
                     Lordered.push_back(inter);
@@ -508,8 +509,8 @@ void Canvas::processVoronoi(Vector2D &P){
 }
 
 void Canvas::processPoly(){
-    /*for(auto &p: vertices){
+    for(auto &p: vertices){
         processVoronoi(p);
-    }*/
-    //processVoronoi(vertices[4]);
+    }
+    //processVoronoi(vertices[7]);
 }
