@@ -44,7 +44,7 @@ void Canvas::addTriangle(int id0, int id1, int id2,const QColor &color) {
 }
 
 void Canvas::paintEvent(QPaintEvent *) {
-    qDebug() << "PAINT UPDATE";
+    qDebug() << "PAINT";
     QPainter painter(this);
     QBrush whiteBrush(Qt::SolidPattern);
     whiteBrush.setColor(Qt::white);
@@ -133,6 +133,7 @@ QPair<Vector2D,Vector2D> Canvas::getBox() {
         if (pts.x>supRight.x) supRight.x=pts.x;
         if (pts.y>supRight.y) supRight.y=pts.y;
         index++;
+        qDebug() << "FF";
     }
     return QPair<Vector2D,Vector2D>(infLeft,supRight);
 }
@@ -143,9 +144,12 @@ void Canvas::resizeEvent(QResizeEvent *event) {
 }
 
 void Canvas::reScale() {
+    qDebug() << "RESCALE";
     int newWidth = width()-20;
     int newHeight = height()-20;
+
     auto box=getBox();
+    qDebug() << "ICII";
     float dataWidth=box.second.x-box.first.x;
     float dataHeight=box.second.y-box.first.y;
     scale=qMin(float(newWidth)/float(dataWidth),float(newHeight)/float(dataHeight)  );
@@ -187,16 +191,20 @@ void Canvas::mousePressEvent(QMouseEvent * event){
 
 void Canvas::loadMesh(const QString &title) {
     QFile file(title);
+
     if (file.open(QIODevice::ReadOnly|QIODevice::Text)) {
+            qDebug() << "ça sent l'roussi";
         clear();
         QString JSON=file.readAll();
         file.close();
 
         QJsonDocument doc = QJsonDocument::fromJson(JSON.toUtf8());
         QJsonArray JSONvertices = doc["servers"].toArray();
-        vertices.resize(JSONvertices.size());
+
+
         qDebug() << "Vertices:" << JSONvertices.size();
-        int index = 0;
+
+
         for (auto &&v:JSONvertices) {
 
             QJsonObject vector=v.toObject();
@@ -205,13 +213,15 @@ void Canvas::loadMesh(const QString &title) {
             Vector2D pt(strPosition[0].toFloat(),strPosition[1].toFloat());
             auto servName = vector["name"].toString();
             vertices.append(qMakePair(servName,pt));
-            index++;
+
         }
 
-
+        qDebug() << "FF";
     }
     reScale();
+    qDebug() << "FF1";
     update();
+    qDebug() << "FF2";
 }
 
 QVector<const Vector2D*> Canvas::findOppositePointOfTrianglesWithEdgeCommon(const Triangle &tri){
