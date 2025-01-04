@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->actionCircles->setChecked(ui->canvas->showCircles);
     ui->actionTriangles->setChecked(ui->canvas->showTriangles);
     ui->actionCenter->setChecked(ui->canvas->showCenters);
-    ui->canvas->loadMesh("C:/Users/MITEL Yohann/Desktop/QT/QtCircumcircle_voronoi/QtCircumcircle/models/mesh2.json");
+    ui->canvas->loadMesh("C:/Users/MITEL Yohann/Desktop/QT/QtCircumcircle_voronoi/QtCircumcircle/models/config1.json");
     QObject::connect(ui->canvas, SIGNAL(updateSB(QString)), ui->statusBar, SLOT(showMessage(QString)));
 }
 
@@ -23,11 +23,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_actionNew_triggered() {
     ui->canvas->clear();
-    QVector<Vector2D> tab={ {100,100},{600,30},{200,400},{800,800},{1500,500}};
+   /* QVector<Vector2D> tab={ {100,100},{600,30},{200,400},{800,800},{1500,500}};
     ui->canvas->addPoints(tab);
     ui->canvas->addTriangle(0,1,2);
     ui->canvas->addTriangle(2,1,3);
-    ui->canvas->addTriangle(1,4,3);
+    ui->canvas->addTriangle(1,4,3);*/
     ui->statusBar->showMessage("Stats: |V|="+QString::number(ui->canvas->getSizeofV())+
                                "  |T|="+QString::number(ui->canvas->getSizeofT()));
 }

@@ -19,7 +19,7 @@ public:
     void mousePressEvent(QMouseEvent*) override;
     void mouseMoveEvent(QMouseEvent*) override;
 
-    void addPoints(const QVector<Vector2D> &tab);
+    void addPoints(QString &name ,const QVector<Vector2D> &tab);
     void addTriangle(int id0,int id1,int id2);
     void addTriangle(int id0,int id1,int id2,const QColor &color);
     void clear();
@@ -41,7 +41,7 @@ private:
     QPair<Vector2D,Vector2D> getBox();
 
     QVector<Triangle*> triangles;
-    QVector<Vector2D> vertices;
+    QVector<QPair<QString,Vector2D>> vertices;
     Voronoi *voronoiObj = new Voronoi();
     float scale=0.5;
     QPoint origin=QPoint(10,10);

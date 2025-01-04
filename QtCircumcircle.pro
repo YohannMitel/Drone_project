@@ -38,4 +38,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     models/mesh1.json \
-    models/mesh2.json
+    models/mesh2.json \
+    models/config1.json \
+    models/config2.json

@@ -26,24 +26,25 @@ void Canvas::clear() {
     vertices.clear();
 }
 
-void Canvas::addPoints(const QVector<Vector2D> &tab) {
+void Canvas::addPoints(QString &name ,const QVector<Vector2D> &tab) {
     for (auto &pt:tab) {
         // duplicate the point to get a local permanent version
-        vertices.push_back(Vector2D(pt));
+        vertices.append(qMakePair(name ,Vector2D(pt)));
     }
     reScale();
     update();
 }
 
-void Canvas::addTriangle(int id0, int id1, int id2) {
-    triangles.push_back(new Triangle(&vertices[id0],&vertices[id1],&vertices[id2]));
+void Canvas::addTriangle( int id0, int id1, int id2) {
+    triangles.push_back(new Triangle(&vertices[id0].second,&vertices[id1].second,&vertices[id2].second));
 }
 
 void Canvas::addTriangle(int id0, int id1, int id2,const QColor &color) {
-    triangles.push_back(new Triangle(&vertices[id0],&vertices[id1],&vertices[id2],color));
+    triangles.push_back(new Triangle(&vertices[id0].second,&vertices[id1].second,&vertices[id2].second,color));
 }
 
 void Canvas::paintEvent(QPaintEvent *) {
+    qDebug() << "PAINT UPDATE";
     QPainter painter(this);
     QBrush whiteBrush(Qt::SolidPattern);
     whiteBrush.setColor(Qt::white);
@@ -101,9 +102,14 @@ void Canvas::paintEvent(QPaintEvent *) {
     const QRect rect(-3*s,-2.5*s,3*s,2.5*s);
     int i=0;
     for (auto &v:vertices) {
+        Vector2D pts = v.second ;
+        qDebug() << "HELLO OOOooOooo" << pts ;
         painter.save();
-        float x = (v.x-origin.x())*scale+10+1.5*s;
-        float y = -(v.y-origin.y())*scale+height()-10+1.25*s;
+        float x = (pts.x - origin.x())*scale+10+1.5*s;
+        float y = -(pts.y - origin.y())*scale+height()-10+1.25*s;
+
+
+
         painter.translate(x,y);
         painter.fillRect(rect,QBrush(QColor(255,255,255,192)));
         painter.drawText(rect,Qt::AlignCenter|Qt::AlignVCenter,QString::number(i++));
@@ -116,14 +122,17 @@ QPair<Vector2D,Vector2D> Canvas::getBox() {
     if (vertices.empty()) {Vector2D infLeft,supRight;
         return QPair<Vector2D,Vector2D>(Vector2D(0,0),Vector2D(200,200));
     }
-    auto pts=vertices.begin();
-    Vector2D infLeft(pts->x,pts->y),supRight(pts->x,pts->y);
-    while (pts!=vertices.end()) {
-        if (pts->x<infLeft.x) infLeft.x=pts->x;
-        if (pts->y<infLeft.y) infLeft.y=pts->y;
-        if (pts->x>supRight.x) supRight.x=pts->x;
-        if (pts->y>supRight.y) supRight.y=pts->y;
-        pts++;
+    auto index=vertices.begin();
+    auto pts = index->second;
+    auto indexEnd= vertices.end();
+    auto ptsEnd = indexEnd->second;
+    Vector2D infLeft(pts.x,pts.y),supRight(pts.x,pts.y);
+    while ( !(pts == ptsEnd) ) {
+        if (pts.x<infLeft.x) infLeft.x=pts.x;
+        if (pts.y<infLeft.y) infLeft.y=pts.y;
+        if (pts.x>supRight.x) supRight.x=pts.x;
+        if (pts.y>supRight.y) supRight.y=pts.y;
+        index++;
     }
     return QPair<Vector2D,Vector2D>(infLeft,supRight);
 }
@@ -184,29 +193,22 @@ void Canvas::loadMesh(const QString &title) {
         file.close();
 
         QJsonDocument doc = QJsonDocument::fromJson(JSON.toUtf8());
-        QJsonArray JSONvertices = doc["vertices"].toArray();
+        QJsonArray JSONvertices = doc["servers"].toArray();
         vertices.resize(JSONvertices.size());
         qDebug() << "Vertices:" << JSONvertices.size();
+        int index = 0;
         for (auto &&v:JSONvertices) {
+
             QJsonObject vector=v.toObject();
-            qDebug() << vector["position"].toString() << "," << vector["id"].toInt();
+            qDebug() << vector["position"].toString() << "," << vector["name"].toString();
             auto strPosition = vector["position"].toString().split(',');
             Vector2D pt(strPosition[0].toFloat(),strPosition[1].toFloat());
-            auto intId = vector["id"].toInt();
-            vertices[intId]=pt;
+            auto servName = vector["name"].toString();
+            vertices.append(qMakePair(servName,pt));
+            index++;
         }
 
-        QJsonArray JSONtriangles = doc["triangles"].toArray();
-        qDebug() << "Triangles:" << JSONtriangles.size();
-        for (auto &&v:JSONtriangles) {
-            QJsonObject vector=v.toObject();
-            qDebug() << vector["tri"].toString() << "," << vector["color"];
-            auto tri = vector["tri"].toString().split(',');
-            auto color = vector["color"].toString();
-            if (tri.size()==3) {
-                addTriangle(tri[0].toInt(),tri[1].toInt(),tri[2].toInt(),QColor(color));
-            }
-        }
+
     }
     reScale();
     update();
@@ -232,7 +234,7 @@ QVector<const Vector2D*> Canvas::findOppositePointOfTrianglesWithEdgeCommon(cons
 
 bool Canvas::checkDelaunay(){
     qDebug()<< "Delaunay process";
-    bool isClosed = true;
+
     bool areAllDelaunay = true;
     for(auto &tri:triangles){
         bool res = tri->checkDelaunay(vertices);
@@ -528,7 +530,7 @@ void Canvas::processVoronoi(Vector2D &P){
 
 void Canvas::processPoly(){
     for(auto &p: vertices){
-        processVoronoi(p);
+        processVoronoi(p.second);
     }
     //processVoronoi(vertices[7]);
 }
