@@ -99,8 +99,8 @@ void Canvas::paintEvent(QPaintEvent *) {
     QFont font("Times",s,QFont::Normal);
     painter.setFont(font);
     painter.setPen(QPen(Qt::black));
-    const QRect rect(-3*s,-2.5*s,3*s,2.5*s);
-    int i=0;
+    const QRect rect(-8*s,-3.5*s,10*s,2.5*s);
+
     for (auto &v:vertices) {
         Vector2D pts = v.second ;
         qDebug() << "HELLO OOOooOooo" << pts ;
@@ -112,7 +112,7 @@ void Canvas::paintEvent(QPaintEvent *) {
 
         painter.translate(x,y);
         painter.fillRect(rect,QBrush(QColor(255,255,255,192)));
-        painter.drawText(rect,Qt::AlignCenter|Qt::AlignVCenter,QString::number(i++));
+        painter.drawText(rect,Qt::AlignCenter|Qt::AlignVCenter,v.first);
         painter.restore();
     }
 
@@ -127,7 +127,9 @@ QPair<Vector2D,Vector2D> Canvas::getBox() {
     auto indexEnd= vertices.end();
     auto ptsEnd = indexEnd->second;
     Vector2D infLeft(pts.x,pts.y),supRight(pts.x,pts.y);
-    while ( !(pts == ptsEnd) ) {
+    while ( index != indexEnd ) {
+        pts = index->second;
+        qDebug() <<  "PTS : " << pts << "  inf : " << infLeft;
         if (pts.x<infLeft.x) infLeft.x=pts.x;
         if (pts.y<infLeft.y) infLeft.y=pts.y;
         if (pts.x>supRight.x) supRight.x=pts.x;
@@ -135,6 +137,7 @@ QPair<Vector2D,Vector2D> Canvas::getBox() {
         index++;
         qDebug() << "FF";
     }
+
     return QPair<Vector2D,Vector2D>(infLeft,supRight);
 }
 
@@ -149,7 +152,7 @@ void Canvas::reScale() {
     int newHeight = height()-20;
 
     auto box=getBox();
-    qDebug() << "ICII";
+    qDebug() << box;
     float dataWidth=box.second.x-box.first.x;
     float dataHeight=box.second.y-box.first.y;
     scale=qMin(float(newWidth)/float(dataWidth),float(newHeight)/float(dataHeight)  );
