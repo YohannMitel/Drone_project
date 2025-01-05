@@ -76,6 +76,38 @@ NearestEdgeResult MyPolygon::nearestEdge(const Vector2D &M){
 }
 
 
+QVector<Triangle*> MyPolygon::earClipping( QVector<Vector2D * > &vertices){
+    QVector<Triangle*> triangles;
+    QVector<Vector2D*> tmp;
+
+    for(auto &v : vertices){
+        tmp.push_back(v);
+    }
+
+    tmp.push_back(vertices[0]);
+    tmp.push_back(vertices[1]);
+
+    qDebug() << tmp;
+    int i=0;
+    do {
+
+        Triangle* T = new Triangle (tmp[i],tmp[i+1],tmp[i+2]);
+        int j = i+3;
+        while(j<tmp.size()-2 && !T->isInside(*tmp[j])){
+            j++;
+        }
+        if(j==tmp.size()-2){
+            qDebug() << "A MIMIR";
+
+            triangles.push_back(T);
+            tmp.removeAt(i+1);
+            i = 0;
+        }else{
+            i++;
+        }
+    }while (tmp.size()>=5);
+    return triangles;
+}
 
 double MyPolygon::distanceToEdge(const Vector2D &M, int i) {
     Vector2D AB = tabPts[i+1] - tabPts[i];  // Vector AB representing the edge

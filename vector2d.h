@@ -62,6 +62,8 @@ public:
     static QString whichSide(const Vector2D &P, float canvasWidth, float canvasHeight);
 
 
+    static bool polarComparison(QPair<QString,Vector2D> P1,QPair<QString,Vector2D> P2);
+
 
 
 //////////////////////////////////

@@ -3,7 +3,8 @@
 
 #include <QWidget>
 #include <triangle.h>
-#include <voronoi.h>
+#include "cities.h"
+
 
 class Canvas : public QWidget
 {
@@ -24,13 +25,15 @@ public:
     void addTriangle(int id0,int id1,int id2,const QColor &color);
     void clear();
     void reScale();
-    inline int getSizeofV() { return vertices.size();}
-    inline int getSizeofT() { return triangles.size();}
+    inline int getSizeofV() { return cities->getSize();}
+    inline int getSizeofT() { return cities->getSize();}
     bool checkDelaunay();
     void flippAll();
     void processVoronoi(Vector2D &p);
     void processPoly();
     QVector<const Vector2D*> findOppositePointOfTrianglesWithEdgeCommon(const Triangle &tri);
+
+
 signals:
 
     /*
@@ -41,8 +44,9 @@ private:
     QPair<Vector2D,Vector2D> getBox();
 
     QVector<Triangle*> triangles;
-    QVector<QPair<QString,Vector2D>> vertices;
-    Voronoi *voronoiObj = new Voronoi();
+;
+    Cities *cities = new Cities();
+
     float scale=0.5;
     QPoint origin=QPoint(10,10);
 public:

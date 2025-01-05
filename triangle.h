@@ -25,6 +25,9 @@ private:
 
 public:
     Triangle(Vector2D *ptr1,Vector2D *ptr2,Vector2D *ptr3) {
+        qDebug() << "PTR1" << *ptr1;
+        qDebug() << "PTR2" << *ptr2;
+        qDebug() << "PTR3" << *ptr3;
         ptr[0]=ptr1;
         ptr[1]=ptr2;
         ptr[2]=ptr3;
@@ -99,7 +102,7 @@ public:
      *
      */
 
-    bool checkDelaunay(const QVector<QPair<QString,Vector2D>> &tabVertices) {
+    bool checkDelaunay(const QVector<Vector2D *> &tabVertices) {
         auto it = tabVertices.begin();
         bool isOk = true;
 
@@ -113,7 +116,7 @@ public:
         while (it != tabVertices.end() && isOk) {
             Matrix33 mat;
             // PAGE 35 DU COURS GEOMETRIC ALGOITHMS
-            const Vector2D D = (*it).second;
+            const Vector2D D = (*it);
             mat.m[0][0] = A->x - D.x;
             mat.m[0][1] = A->y - D.y;
             mat.m[0][2] = ((A->x * A->x) - (D.x * D.x)) + ((A->y * A->y) - (D.y * D.y));

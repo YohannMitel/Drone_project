@@ -3,6 +3,7 @@
 #include <vector2d.h>
 #include <QPainter>
 #include <nearestEdgeResult.h>
+#include "triangle.h"
 /**
  * @brief The MyPolygon class allwo to create, draw and manipulate polygons,
  *  especially check if a point is inside and compute the surface of the polygon
@@ -37,7 +38,7 @@ public:
     bool isOnTheLeft(const Vector2D &P,int i);
     bool isConvex();
     bool isInside(const Vector2D &P);
-
+    QVector<Triangle*> earClipping( QVector<Vector2D * > &vertices);
 
     double distanceToEdge(const Vector2D &M,int i);
     NearestEdgeResult nearestEdge(const Vector2D &M);

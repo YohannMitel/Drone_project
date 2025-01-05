@@ -18,33 +18,34 @@ Canvas::~Canvas() {
     for (Triangle* tri : triangles) {
         delete tri;  // Libère la mémoire allouée pour chaque Triangle
     }
-    delete voronoiObj;
+    delete cities;
 }
 
 void Canvas::clear() {
     triangles.clear();
-    vertices.clear();
+    cities->clear();
 }
 
 void Canvas::addPoints(QString &name ,const QVector<Vector2D> &tab) {
     for (auto &pt:tab) {
         // duplicate the point to get a local permanent version
-        vertices.append(qMakePair(name ,Vector2D(pt)));
+        cities->pushCity(name ,new Vector2D(pt), "");
     }
     reScale();
     update();
 }
 
 void Canvas::addTriangle( int id0, int id1, int id2) {
-    triangles.push_back(new Triangle(&vertices[id0].second,&vertices[id1].second,&vertices[id2].second));
+
+    triangles.push_back(new Triangle(cities->getPointByIndex(id0),cities->getPointByIndex(id1),cities->getPointByIndex(id2)));
 }
 
 void Canvas::addTriangle(int id0, int id1, int id2,const QColor &color) {
-    triangles.push_back(new Triangle(&vertices[id0].second,&vertices[id1].second,&vertices[id2].second,color));
+    triangles.push_back(new Triangle(cities->getPointByIndex(id0),cities->getPointByIndex(id1),cities->getPointByIndex(id2),color));
 }
 
 void Canvas::paintEvent(QPaintEvent *) {
-    qDebug() << "PAINT";
+    //qDebug() << "PAINT";
     QPainter painter(this);
     QBrush whiteBrush(Qt::SolidPattern);
     whiteBrush.setColor(Qt::white);
@@ -71,10 +72,13 @@ void Canvas::paintEvent(QPaintEvent *) {
 
     // draw triangles
     if (showTriangles) {
+        //qDebug() << triangles;
         for (auto &tri:triangles) {
             tri->draw(painter);
         }
+
     }
+
     // draw circle
     if (showCircles) {
         for (auto &tri:triangles) {
@@ -91,7 +95,8 @@ void Canvas::paintEvent(QPaintEvent *) {
         }
     }    // Draw voronoi polygons
 
-    voronoiObj->draw(painter, voronoiTransparency);
+    cities->draw(painter, voronoiTransparency);
+
     painter.restore();
 
     // draw the text in basic coordinate system
@@ -101,9 +106,10 @@ void Canvas::paintEvent(QPaintEvent *) {
     painter.setPen(QPen(Qt::black));
     const QRect rect(-8*s,-3.5*s,10*s,2.5*s);
 
-    for (auto &v:vertices) {
-        Vector2D pts = v.second ;
-        qDebug() << "HELLO OOOooOooo" << pts ;
+    for (auto &v:cities->getTabCities()) {
+        Vector2D pts = v->getPosition() ;
+        //TELEPORT
+
         painter.save();
         float x = (pts.x - origin.x())*scale+10+1.5*s;
         float y = -(pts.y - origin.y())*scale+height()-10+1.25*s;
@@ -112,28 +118,29 @@ void Canvas::paintEvent(QPaintEvent *) {
 
         painter.translate(x,y);
         painter.fillRect(rect,QBrush(QColor(255,255,255,192)));
-        painter.drawText(rect,Qt::AlignCenter|Qt::AlignVCenter,v.first);
+        painter.drawText(rect,Qt::AlignCenter|Qt::AlignVCenter,v->getName());
         painter.restore();
     }
 
 }
 
 QPair<Vector2D,Vector2D> Canvas::getBox() {
+    auto vertices = cities->getTabCities();
     if (vertices.empty()) {Vector2D infLeft,supRight;
         return QPair<Vector2D,Vector2D>(Vector2D(0,0),Vector2D(200,200));
     }
-    auto index=vertices.begin();
-    auto pts = index->second;
+    auto index= vertices.begin();
+    auto pts = *(*index)->getPosition();
     auto indexEnd= vertices.end();
-    auto ptsEnd = indexEnd->second;
+    //auto ptsEnd = (*indexEnd)->getPosition();
     Vector2D infLeft(pts.x,pts.y),supRight(pts.x,pts.y);
     while ( index != indexEnd ) {
-        pts = index->second;
+        pts = (*index)->getPosition();
         qDebug() <<  "PTS : " << pts << "  inf : " << infLeft;
-        if (pts.x<infLeft.x) infLeft.x=pts.x;
-        if (pts.y<infLeft.y) infLeft.y=pts.y;
-        if (pts.x>supRight.x) supRight.x=pts.x;
-        if (pts.y>supRight.y) supRight.y=pts.y;
+        if (pts.x<infLeft.x) infLeft.x= pts.x;
+        if (pts.y<infLeft.y) infLeft.y= pts.y;
+        if (pts.x>supRight.x) supRight.x= pts.x;
+        if (pts.y>supRight.y) supRight.y= pts.y;
         index++;
         qDebug() << "FF";
     }
@@ -190,8 +197,6 @@ void Canvas::mousePressEvent(QMouseEvent * event){
 
 }
 
-
-
 void Canvas::loadMesh(const QString &title) {
     QFile file(title);
 
@@ -207,7 +212,7 @@ void Canvas::loadMesh(const QString &title) {
 
         qDebug() << "Vertices:" << JSONvertices.size();
 
-
+        Vector2D origin;
         for (auto &&v:JSONvertices) {
 
             QJsonObject vector=v.toObject();
@@ -215,16 +220,18 @@ void Canvas::loadMesh(const QString &title) {
             auto strPosition = vector["position"].toString().split(',');
             Vector2D pt(strPosition[0].toFloat(),strPosition[1].toFloat());
             auto servName = vector["name"].toString();
-            vertices.append(qMakePair(servName,pt));
+            if(servName == "Freljord")  origin = pt;
+            cities->pushCity(servName, new Vector2D(pt.x, pt.y), "");
 
         }
+        triangles.clear();
+        cities->orderPolygonPoint(origin);
+        triangles = cities->initTriangulation();
 
-        qDebug() << "FF";
+
     }
     reScale();
-    qDebug() << "FF1";
     update();
-    qDebug() << "FF2";
 }
 
 QVector<const Vector2D*> Canvas::findOppositePointOfTrianglesWithEdgeCommon(const Triangle &tri){
@@ -249,6 +256,7 @@ bool Canvas::checkDelaunay(){
     qDebug()<< "Delaunay process";
 
     bool areAllDelaunay = true;
+    auto vertices = cities->getTabVertices();
     for(auto &tri:triangles){
         bool res = tri->checkDelaunay(vertices);
         //qDebug() << res;
@@ -535,15 +543,15 @@ void Canvas::processVoronoi(Vector2D &P){
         qDebug() << "La cellule de Voronoi est OUVERTE";
     }
 
-    voronoiObj->addPolygon(poly);
+    //voronoiObj->addPolygon(poly);
     update();
 
 
 }
 
 void Canvas::processPoly(){
-    for(auto &p: vertices){
-        processVoronoi(p.second);
+    for(auto &p: cities->getTabCities()){
+        processVoronoi(*p->getPosition());
     }
     //processVoronoi(vertices[7]);
 }

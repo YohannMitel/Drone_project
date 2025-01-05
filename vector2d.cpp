@@ -83,7 +83,21 @@ Vector2D Vector2D::extendLineToCanvas(const Vector2D& M, const Vector2D& P, floa
 }
 
 
+bool Vector2D::polarComparison(QPair<QString,Vector2D> P1,QPair<QString,Vector2D> P2) {
 
+    auto pts1 = P1.second;
+    auto pts2 = P2.second;
+
+
+    double a1 = asin(pts1.y/sqrt(pts1.x*pts1.x+pts1.y*pts1.y));
+
+    if (pts1.x<0.0) a1=M_PI-a1;
+
+    double a2 = asin(pts2.y/sqrt(pts2.x*pts2.x+pts2.y*pts2.y));
+    if (pts2.x<0.0) a2=M_PI-a2;
+
+    return a1<a2;
+}
 
 const Vector2D operator *(double a,const Vector2D &v) {
     return Vector2D(a*v.x,a*v.y);

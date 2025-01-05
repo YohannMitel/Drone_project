@@ -10,23 +10,25 @@ CONFIG += c++11
 
 SOURCES += \
     canvas.cpp \
+    cities.cpp \
+    city.cpp \
     determinant.cpp \
     main.cpp \
     mainwindow.cpp \
     mypolygon.cpp \
     triangle.cpp \
-    vector2d.cpp \
-    voronoi.cpp
+    vector2d.cpp
 
 HEADERS += \
     canvas.h \
+    cities.h \
+    city.h \
     determinant.h \
     mainwindow.h \
     mypolygon.h \
     nearestEdgeResult.h \
     triangle.h \
-    vector2d.h \
-    voronoi.h
+    vector2d.h
 
 FORMS += \
     mainwindow.ui
