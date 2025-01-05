@@ -57,9 +57,22 @@ bool Cities::isOnTheLeft(const Vector2D &P, const Vector2D &top_1, const Vector2
     return (AB.x*AP.y-AB.y*AP.x)>=0;
 }
 
-bool Cities::sorting(City &City, QPair<QString,Vector2D>  Pair ){
-    return City.getName() < Pair.first ;
+bool Cities::sortingByPointsRelative(const City* city1, const City* city2, const QVector<QPair<QString, Vector2D>>& pointsRelative) {
+    // Trouver les indices des villes dans pointsRelative
+    int index1 = -1, index2 = -1;
 
+    // Chercher l'indice de city1 et city2 dans pointsRelative en comparant les noms des villes
+    for (int i = 0; i < pointsRelative.size(); ++i) {
+        if (pointsRelative[i].first == city1->getName() ) {
+            index1 = i;
+        }
+        if (pointsRelative[i].first == city2->getName()) {
+            index2 = i;
+        }
+    }
+
+    // Comparer les indices pour définir l'ordre
+    return index1 < index2;
 }
 
 QVector<QPair<QString,Vector2D>> Cities::ascendingPolarAngle(Vector2D &porigin) {
@@ -135,7 +148,11 @@ void  Cities::orderPolygonPoint(Vector2D &porigin){
         CHstack.pop_back();
     }
 
-
+    std::sort(tabCities.begin(), tabCities.end(),
+              [&pointsRelativeList](City* city1, City* city2) {
+                  return sortingByPointsRelative(city1, city2, pointsRelativeList);
+              }
+              );
 
 }
 

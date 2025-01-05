@@ -13,7 +13,7 @@ City::~City(){
 
 /* Getters */
 
-QString City::getName(){
+QString City::getName() const{
     return name;
 };
 

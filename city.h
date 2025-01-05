@@ -16,7 +16,7 @@ public:
     City(QString _name, Vector2D *_position, QString _color );
     ~City();
 
-    QString getName();
+    QString getName() const;
     Vector2D* getPosition();
     QString getColor();
     MyPolygon* getMap();

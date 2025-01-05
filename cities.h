@@ -26,7 +26,8 @@ public:
     bool isOnTheLeft(const Vector2D &P, const Vector2D &top_1, const Vector2D &top);
 
     void orderPolygonPoint(Vector2D &porigin);
-    static bool sorting(City &City, QPair<QString,Vector2D>  Pair );
+    static bool sortingByPointsRelative(const City* city1, const City* city2,
+                                        const QVector<QPair<QString, Vector2D>>& pointsRelative);
     QVector<City*> getTabCities();
     QVector<Vector2D*> getTabVertices();
     QVector<Triangle*> initTriangulation();
