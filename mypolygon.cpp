@@ -11,7 +11,7 @@ void MyPolygon::addVertex(const Vector2D &P) {
     tabPts[N].y=tabPts[0].y;
 }
 
-void MyPolygon::draw(QPainter &painter, bool transparency) {
+void MyPolygon::draw(QPainter &painter, bool transparency, QString color) {
     QPen pen(Qt::black);
     pen.setWidth(3);
 
@@ -23,9 +23,15 @@ void MyPolygon::draw(QPainter &painter, bool transparency) {
     }
 
     if(transparency){
-        painter.setBrush(QColor (255,255,0,128));
+
+        QColor transparentColor(color);
+        transparentColor.setAlpha(128); // Réduire l'opacité à 50% (128/255)
+
+        painter.setBrush(transparentColor);
+
+
     }else{
-        painter.setBrush(Qt::yellow);
+        painter.setBrush(QColor (color));
     }
 
     painter.setPen(pen);
@@ -74,123 +80,75 @@ NearestEdgeResult MyPolygon::nearestEdge(const Vector2D &M){
     }
     return NearestEdgeResult{distance,nearest};
 }
+/* RECURSIVE FONCTION TO EARCLIP TRIANGLES */
+QVector<Triangle *> MyPolygon::earClippingUtils(Vector2D *p1, Vector2D *p2, Vector2D *p3,
+                                                QVector<Vector2D *> &vertices) {
+    // Liste des points exclus (les sommets du triangle courant)
+    QVector<Vector2D *> excluded = {p1, p2, p3};
 
-QVector<Triangle * > MyPolygon::earClippingUtils(Vector2D * p1, Vector2D * p2, Vector2D *p3,
-                                                QVector<Vector2D * > &vertices){
+    // Créer le triangle courant
+    Triangle *T = new Triangle(p1, p2, p3);
+    QVector<Triangle *> triangles;
 
-    //qDebug() << "earClippingUtils";
-    QVector<Vector2D * > excluded;
-    excluded.push_back(p1);
-    excluded.push_back(p2);
-    excluded.push_back(p3);
-
-    Triangle *T =  new Triangle (p1,p2,p3);
-    QVector<Triangle*> triangles;
-
-    // Résultat après soustraction
-    QVector<Vector2D * > result;
+    // Créer une liste des points restants après exclusion
+    QVector<Vector2D *> result;
 
     for (auto &v : vertices) {
-        bool isExcluded = false;
-
-        // Comparer manuellement avec les éléments de excluded
-        for (auto &e : excluded) {
-            if (*v == *e) { // Assurez-vous que Vector2D surcharge l'opérateur `==`
-                isExcluded = true;
-                break;
-            }
-        }
+        // Vérification si v est dans excluded
+        bool isExcluded = std::any_of(excluded.begin(), excluded.end(), [&](Vector2D *e) {
+            return *v == *e; // Nécessite que Vector2D surcharge `==`
+        });
 
         if (!isExcluded) {
             result.append(v);
         }
     }
 
+    // Vérifier si des points sont à l'intérieur du triangle courant
+    bool foundInteriorPoint = false;
 
-    for(auto &v : result){
+    for (auto &v : result) {
+        if (T->isInside(v)) {
+            // Points trouvés à l'intérieur du triangle, appeler récursivement
+            triangles += this->earClippingUtils(p1, p2, v, result);
+            triangles += this->earClippingUtils(p2, p3, v, result);
+            triangles += this->earClippingUtils(p3, p1, v, result);
 
-        if(T->isInside(v)){
+            // Debugging (facultatif, pour voir le processus)
             qDebug() << "TRIANGLE";
             qDebug() << *T->getVertexPtr(0);
             qDebug() << *T->getVertexPtr(1);
             qDebug() << *T->getVertexPtr(2);
-            qDebug() << "POINT A LINTERIEUR : " << *v;
+            qDebug() << "POINT À L'INTÉRIEUR : " << *v;
 
-            triangles.append(this->earClippingUtils(p1,p2,v,result));
-            triangles.append(this->earClippingUtils(p2,p3,v,result));
-            triangles.append(this->earClippingUtils(p3,p1,v,result));
-
-            qDebug() << "HIHI";
-
+            foundInteriorPoint = true;
+            break; // Si un point est trouvé à l'intérieur, on arrête la recherche
         }
     }
 
-    if(triangles.size() == 0){
-        //qDebug() << "HEEEEEEERE";
+    if (!foundInteriorPoint) {
+        // Aucun point à l'intérieur, conserver ce triangle
         triangles.push_back(T);
-
-    }else{
+    } else {
+        // Sinon, supprimer le triangle courant
         delete T;
     }
+
     return triangles;
 }
 
+
 QVector<Triangle*> MyPolygon::earClipping( QVector<Vector2D * > &vertices){
     QVector<Triangle*> triangles;
-    //QVector<Vector2D*> tmp;
-
-
-    if (N < 3) {
-        qDebug() << "Pas assez de points pour former des triangles.\n";
-    }
-
 
     // Génération des triangles (E0, Ei, Ei+1) pour i dans [1, m-2]
-    qDebug() << "GROS BORDEL ICI";
-            QVector<Vector2D * > excluded ;
-    triangles = this->earClippingUtils (&tabPts[0],&tabPts[1],&tabPts[2],vertices);
-    /*for (int i = 1; i < N - 1; ++i) {
+
+
+    for (int i = 1; i < N - 1; ++i) {
         QVector<Vector2D * > excluded ;
-        qDebug() << "ICI";
-        triangles.append(this->earClippingUtils (&tabPts[0],&tabPts[i],&tabPts[i+1],vertices,excluded));
-
-
-    }*/
-    qDebug() << triangles.size();
-    qDebug() << "LE BORDEL A PRIS FIN";
-    for(auto &t : triangles){
-       /* qDebug() << "TRi";
-        qDebug() << *t->getVertexPtr(0);
-        qDebug() << *t->getVertexPtr(1);
-        qDebug() << *t->getVertexPtr(2);*/
+        triangles.append(this->earClippingUtils (&tabPts[0],&tabPts[i],&tabPts[i+1],vertices));
 
     }
-/*
-    qDebug() << "BOUCLE DE EARCLIPPING";
-    for(auto &v : vertices){
-        tmp.push_back(v);
-        qDebug() << *v;
-    }
-
-    tmp.push_back(vertices[0]);
-    tmp.push_back(vertices[1]);
-
-    int i=0;
-    do {
-
-        Triangle* T = new Triangle (tmp[i],tmp[i+1],tmp[i+2]);
-        int j = i+3;
-        while(j<tmp.size()-2 && !T->isInside(*tmp[j])){
-            j++;
-        }
-        if(j==tmp.size()-2){
-            triangles.push_back(T);
-            tmp.removeAt(i+1);
-            i = 0;
-        }else{
-            i++;
-        }
-    }while (tmp.size()>=5);*/
     return triangles;
 }
 

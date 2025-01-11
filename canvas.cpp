@@ -159,7 +159,7 @@ void Canvas::reScale() {
     int newHeight = height()-20;
 
     auto box=getBox();
-    qDebug() << box;
+    // qDebug() << box;
     float dataWidth=box.second.x-box.first.x;
     float dataHeight=box.second.y-box.first.y;
     scale=qMin(float(newWidth)/float(dataWidth),float(newHeight)/float(dataHeight)  );
@@ -220,8 +220,9 @@ void Canvas::loadMesh(const QString &title) {
             auto strPosition = vector["position"].toString().split(',');
             Vector2D pt(strPosition[0].toFloat(),strPosition[1].toFloat());
             auto servName = vector["name"].toString();
+            auto color = vector["color"].toString();
             if(servName == "Freljord")  origin = pt;
-            cities->pushCity(servName, new Vector2D(pt.x, pt.y), "");
+            cities->pushCity(servName, new Vector2D(pt.x, pt.y), color);
 
         }
         triangles.clear();
@@ -323,7 +324,8 @@ Vector2D getBorderPointSide(QString sideP1, QString sideP2, const float &canvasW
     }
 }
 
-void Canvas::processVoronoi(Vector2D &P){
+void Canvas::processVoronoi(City &city){
+    Vector2D P = city.getPosition();
     qDebug() << "Processing polygons";
     bool isClosed = true; // Initialement, on suppose que la cellule est fermée
 
@@ -543,15 +545,15 @@ void Canvas::processVoronoi(Vector2D &P){
         qDebug() << "La cellule de Voronoi est OUVERTE";
     }
 
-    //voronoiObj->addPolygon(poly);
+    city.setMap(poly);
     update();
-
 
 }
 
 void Canvas::processPoly(){
-    for(auto &p: cities->getTabCities()){
-        processVoronoi(*p->getPosition());
+    for(auto &c: cities->getTabCities()){
+
+        processVoronoi(*c);
     }
     //processVoronoi(vertices[7]);
 }

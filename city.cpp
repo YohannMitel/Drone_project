@@ -38,7 +38,7 @@ void City::setMap(MyPolygon *poly){
 void City::drawMap(QPainter &painter, bool transparency){
     if(map == nullptr) return;
 
-    map->draw(painter, transparency);
+    map->draw(painter, transparency, color);
 }
 
 

@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->actionCircles->setChecked(ui->canvas->showCircles);
     ui->actionTriangles->setChecked(ui->canvas->showTriangles);
     ui->actionCenter->setChecked(ui->canvas->showCenters);
-    ui->canvas->loadMesh("C:/Users/MITEL Yohann/Desktop/fuckqt/Drone_project/models/config2.json");
+    //ui->canvas->loadMesh("C:/Users/MITEL Yohann/Desktop/fuckqt/Drone_project/models/config2.json");
     QObject::connect(ui->canvas, SIGNAL(updateSB(QString)), ui->statusBar, SLOT(showMessage(QString)));
 }
 

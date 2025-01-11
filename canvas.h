@@ -29,7 +29,7 @@ public:
     inline int getSizeofT() { return cities->getSize();}
     bool checkDelaunay();
     void flippAll();
-    void processVoronoi(Vector2D &p);
+    void processVoronoi(City &city);
     void processPoly();
     QVector<const Vector2D*> findOppositePointOfTrianglesWithEdgeCommon(const Triangle &tri);
 
