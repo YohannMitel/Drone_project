@@ -44,6 +44,9 @@ public:
     NearestEdgeResult nearestEdge(const Vector2D &M);
     Vector2D closestH(const Vector2D &M,int &nearest);
 
+    QVector<Triangle * > earClippingUtils(Vector2D * p1, Vector2D * p2, Vector2D *p3,
+                                         QVector<Vector2D * > &vertices);
+
 };
 
 

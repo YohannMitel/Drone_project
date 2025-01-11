@@ -81,15 +81,14 @@ QVector<QPair<QString,Vector2D>> Cities::ascendingPolarAngle(Vector2D &porigin) 
     QVector<QPair<QString,Vector2D>> pointsRelative;
     for (auto &v:tabCities) {
         auto pOrig = *(v->getPosition());
-        qDebug() << "pOrig : " << pOrig.y << " porigin : " << porigin.y;
+
         pointsRelative.append(qMakePair(v->getName(),Vector2D(pOrig.x - porigin.x, pOrig.y - porigin.y) ));
     }
     // sorting point with angular criteria
     std::sort(pointsRelative.begin()+1, pointsRelative.end(),Vector2D::polarComparison);
 
-    for(auto &p: pointsRelative){
-        qDebug() << p;
-    }
+
+
 
     return pointsRelative;
 
@@ -102,24 +101,34 @@ void  Cities::orderPolygonPoint(Vector2D &porigin){
     int N,Nmax;
     delete convexHull;
 
-    QVector<QPair<QString,Vector2D>> CHstack;
-    QPair<QString,Vector2D> top, top_1;
+    std::sort(tabCities.begin(), tabCities.end(),
+              [&pointsRelativeList](City* city1, City* city2) {
+                  return sortingByPointsRelative(city1, city2, pointsRelativeList);
+              }
+              );
 
-    CHstack.append(pointsRelativeList[0]);
-    CHstack.append(pointsRelativeList[1]);
-    CHstack.append(pointsRelativeList[2]);
-    auto it=pointsRelativeList.begin()+3;
 
-    while (it!=pointsRelativeList.end()) {
+    QVector<Vector2D*> tabVertices = this->getTabVertices();
+
+
+    QVector<Vector2D> CHstack;
+    Vector2D top, top_1;
+
+    CHstack.append(tabVertices[0]);
+    CHstack.append(tabVertices[1]);
+    CHstack.append(tabVertices[2]);
+    auto it=tabVertices.begin()+3;
+
+    while (it!=tabVertices.end()) {
         top = CHstack.last(); // extract top and top_1
         CHstack.pop_back();
         // from the stack
-        qDebug() << CHstack;
+
         top_1 = CHstack.last();
         CHstack.push_back(top);
 
 
-        while (!isOnTheLeft((*it).second,top_1.second,top.second)) {
+        while (!isOnTheLeft((*it),top_1,top)) {
 
             CHstack.pop_back(); // update top and top_1
             top = CHstack.last();
@@ -140,19 +149,19 @@ void  Cities::orderPolygonPoint(Vector2D &porigin){
     Nmax = N;
 
     convexHull = new MyPolygon(Nmax);
-
+    qDebug() << "IIIIIiiiiiIIIIiiIiiCi ";
     while (!CHstack.empty()) {
-        const Vector2D v = CHstack.last().second;
-
+        const Vector2D v = CHstack.first();
+        qDebug() << v;
         convexHull->addVertex(v);
-        CHstack.pop_back();
+        CHstack.pop_front();
     }
 
-    std::sort(tabCities.begin(), tabCities.end(),
+    /*std::sort(tabCities.begin(), tabCities.end(),
               [&pointsRelativeList](City* city1, City* city2) {
                   return sortingByPointsRelative(city1, city2, pointsRelativeList);
               }
-              );
+              );*/
 
 }
 

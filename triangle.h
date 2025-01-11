@@ -25,9 +25,9 @@ private:
 
 public:
     Triangle(Vector2D *ptr1,Vector2D *ptr2,Vector2D *ptr3) {
-        qDebug() << "PTR1" << *ptr1;
+        /*qDebug() << "PTR1" << *ptr1;
         qDebug() << "PTR2" << *ptr2;
-        qDebug() << "PTR3" << *ptr3;
+        qDebug() << "PTR3" << *ptr3;*/
         ptr[0]=ptr1;
         ptr[1]=ptr2;
         ptr[2]=ptr3;

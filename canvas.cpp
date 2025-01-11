@@ -136,13 +136,13 @@ QPair<Vector2D,Vector2D> Canvas::getBox() {
     Vector2D infLeft(pts.x,pts.y),supRight(pts.x,pts.y);
     while ( index != indexEnd ) {
         pts = (*index)->getPosition();
-        qDebug() <<  "PTS : " << pts << "  inf : " << infLeft;
+        //qDebug() <<  "PTS : " << pts << "  inf : " << infLeft;
         if (pts.x<infLeft.x) infLeft.x= pts.x;
         if (pts.y<infLeft.y) infLeft.y= pts.y;
         if (pts.x>supRight.x) supRight.x= pts.x;
         if (pts.y>supRight.y) supRight.y= pts.y;
         index++;
-        qDebug() << "FF";
+        //qDebug() << "FF";
     }
 
     return QPair<Vector2D,Vector2D>(infLeft,supRight);
@@ -154,7 +154,7 @@ void Canvas::resizeEvent(QResizeEvent *event) {
 }
 
 void Canvas::reScale() {
-    qDebug() << "RESCALE";
+    //qDebug() << "RESCALE";
     int newWidth = width()-20;
     int newHeight = height()-20;
 
