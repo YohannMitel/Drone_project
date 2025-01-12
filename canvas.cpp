@@ -439,19 +439,18 @@ void Canvas::processVoronoi(City &city){
 
                 qDebug() << "JE SUIS ICI : " << isOutsideCanvas((*it)->getCircleCenter());;
 
-                Lordered.push_front((*it)->getCircleCenter());
+               // Lordered.push_front((*it)->getCircleCenter());
 
 
                 if(!isOutsideCanvas((*it)->getCircleCenter())) {
+                     Lordered.push_front((*it)->getCircleCenter());
                     const Vector2D proj = Vector2D::projection(P, *(*it)->getEdgeTo(P), (*it)->getCircleCenter());
                     const Vector2D inter = Vector2D::extendLineToCanvas((*it)->getCircleCenter(), proj, canvasWidth, canvasHeight);
                     Lordered.push_front(inter);
 
-                    qDebug() << "EDGE : " << *(*it)->getEdgeTo(P);
-                    qDebug() << "P : " << P;
-                    qDebug()  << "PROJ : " << proj;
-                    qDebug() << "circumCircle :  " << (*it)->getCircleCenter();
-                    qDebug() << "INTERSECTION POINT : " << inter;
+
+                }else{
+                     Lordered.push_front((*it)->getCircleCenter());
                 }
 
 
@@ -502,6 +501,13 @@ void Canvas::processVoronoi(City &city){
                 Lordered.push_front(circumCircle);
                 const Vector2D proj = Vector2D::projection(edge, P, circumCircle);
                 const Vector2D inter = Vector2D::extendLineToCanvas(circumCircle, proj, canvasWidth, canvasHeight);
+
+                qDebug() << "EDGE : " << edge;
+                qDebug() << "P : " << P;
+                qDebug()  << "PROJ : " << proj;
+                qDebug() << "circumCircle :  " << circumCircle;
+                qDebug() << "INTERSECTION POINT : " << inter;
+
                 Lordered.push_back(inter);
             }
             L.removeOne(T);
@@ -533,9 +539,10 @@ void Canvas::processVoronoi(City &city){
 }
 
 void Canvas::processPoly(){
-for(auto &c: cities->getTabCities()){
+    flippAll();
+/*for(auto &c: cities->getTabCities()){
         processVoronoi(*c);
-    }
-   /*qDebug() << "VORONOI DE : "  << cities->getTabCities()[0]->getName();
-    processVoronoi(*cities->getTabCities()[0]);*/
+    }*/
+ qDebug() << "VORONOI DE : "  << cities->getTabCities()[1]->getName();
+    processVoronoi(*cities->getTabCities()[1]);
 }

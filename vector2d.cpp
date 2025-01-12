@@ -18,7 +18,7 @@ Vector2D Vector2D::projection(const Vector2D &A, const Vector2D &B, const Vector
 }
 
 QString Vector2D::whichSide(const Vector2D &P, float canvasWidth, float canvasHeight) {
-    qDebug() << "P.x : " << P.x << "P.y : " << P.y;
+    //qDebug() << "P.x : " << P.x << "P.y : " << P.y;
     if (P.x <= 0) {
         qDebug() << "Point is to the left of the canvas.";
         return "left";
@@ -27,7 +27,7 @@ QString Vector2D::whichSide(const Vector2D &P, float canvasWidth, float canvasHe
         qDebug() << "Point is to the right of the canvas.";
         return "right";
     }
-    else if (P.y > canvasHeight) {
+    else if (P.y > canvasHeight ) {
         qDebug() << "Point is above the canvas.";
         return "above";
     }
@@ -40,8 +40,8 @@ QString Vector2D::whichSide(const Vector2D &P, float canvasWidth, float canvasHe
 
 Vector2D Vector2D::extendLineToCanvas(const Vector2D& M, const Vector2D& P, float canvasWidth, float canvasHeight) {
     // Ajouter une marge de +30 pixels à la hauteur et -30 pixels à la largeur
-    float marginHeight = canvasHeight + 30;
-    float marginWidth = canvasWidth - 30;
+    float marginHeight = canvasHeight +30;
+    float marginWidth = canvasWidth ;
 
     // Direction de la droite MP
     Vector2D MP = P - M;
@@ -52,10 +52,10 @@ Vector2D Vector2D::extendLineToCanvas(const Vector2D& M, const Vector2D& P, floa
     }
 
     // Calcul des distances entre M et les bords du canvas
-    float distLeft = M.x;                // Distance au bord gauche
-    float distRight = marginWidth - M.x; // Distance au bord droit
-    float distTop = marginHeight - M.y;  // Distance au bord supérieur
-    float distBottom = M.y;              // Distance au bord inférieur
+    float distLeft = P.x;                // Distance au bord gauche
+    float distRight = marginWidth - P.x; // Distance au bord droit
+    float distTop = marginHeight - P.y;  // Distance au bord supérieur
+    float distBottom = P.y;              // Distance au bord inférieur
 
     // Déterminer le côté du canvas le plus proche de M
     float minDist = std::min({distLeft, distRight, distTop, distBottom});
