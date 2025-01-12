@@ -18,7 +18,8 @@ Vector2D Vector2D::projection(const Vector2D &A, const Vector2D &B, const Vector
 }
 
 QString Vector2D::whichSide(const Vector2D &P, float canvasWidth, float canvasHeight) {
-    if (P.x < 0) {
+    qDebug() << "P.x : " << P.x << "P.y : " << P.y;
+    if (P.x <= 0) {
         qDebug() << "Point is to the left of the canvas.";
         return "left";
     }
@@ -26,17 +27,13 @@ QString Vector2D::whichSide(const Vector2D &P, float canvasWidth, float canvasHe
         qDebug() << "Point is to the right of the canvas.";
         return "right";
     }
-    else if (P.y < 0) {
+    else if (P.y > canvasHeight) {
         qDebug() << "Point is above the canvas.";
         return "above";
     }
-    else if (P.y > canvasHeight) {
+    else {
         qDebug() << "Point is below the canvas.";
         return "bottom";
-    }
-    else {
-        qDebug() << "Point is inside the canvas.";
-        return "inside";
     }
 }
 

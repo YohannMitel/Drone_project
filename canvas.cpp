@@ -536,6 +536,6 @@ void Canvas::processPoly(){
 for(auto &c: cities->getTabCities()){
         processVoronoi(*c);
     }
-  /* qDebug() << "VORONOI DE : "  << cities->getTabCities()[0]->getName();
+   /*qDebug() << "VORONOI DE : "  << cities->getTabCities()[0]->getName();
     processVoronoi(*cities->getTabCities()[0]);*/
 }
