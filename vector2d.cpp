@@ -86,6 +86,13 @@ Vector2D Vector2D::extendLineToCanvas(const Vector2D& M, const Vector2D& P, floa
     return intersection;
 }
 
+Vector2D Vector2D::getCanvasIntersectionLimit(const Vector2D &A, const Vector2D &B, const Vector2D &M, float canvasWidth, float canvasHeight){
+    const Vector2D proj = Vector2D::projection(A, B, M);
+    const Vector2D inter = Vector2D::extendLineToCanvas(M, proj, canvasWidth, canvasHeight);
+
+    return inter;
+}
+
 
 bool Vector2D::polarComparison(QPair<QString,Vector2D> P1,QPair<QString,Vector2D> P2) {
 

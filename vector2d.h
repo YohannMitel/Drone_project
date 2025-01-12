@@ -64,7 +64,8 @@ public:
 
     static bool polarComparison(QPair<QString,Vector2D> P1,QPair<QString,Vector2D> P2);
 
-
+    // Calcul la projection et applique la fonction extendLine to Canvas
+    static Vector2D getCanvasIntersectionLimit(const Vector2D &A, const Vector2D &B, const Vector2D &M, float canvasWidth, float canvasHeight) ;
 
 //////////////////////////////////
 

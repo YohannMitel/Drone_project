@@ -329,15 +329,15 @@ Vector2D getBorderPointSide(QString sideP1, QString sideP2, const float &canvasW
     const QString result = sideP1 +  " " +sideP2;
 
     if(result == ("left above" ) || result == "above left"){
-        return new Vector2D(0, canvasHeight);
+        return Vector2D(0, canvasHeight);
     }else if(result == ("right above" ) || result == "above right"){
-        return new Vector2D(canvasWidth, canvasHeight);
+        return Vector2D(canvasWidth, canvasHeight);
     }else if(result == ("right bottom" ) || result == "bottom right"){
-        return new Vector2D(canvasWidth, 0);
+        return Vector2D(canvasWidth, 0);
     }else if(result == ("left bottom" ) || result == "bottom left"){
-        return new Vector2D(0, 0);
+        return Vector2D(0, 0);
     }else{
-        return new Vector2D(0,0);
+        return Vector2D(0,0);
     }
 }
 
@@ -348,7 +348,7 @@ bool Canvas::isOutsideCanvas(const Vector2D &point) const{
 
 
 void Canvas::finalizePolygon(City &city, const QVector<Vector2D> &Lordered, bool isClosed) {
-    MyPolygon *poly = new MyPolygon(Lordered.size());
+    /*MyPolygon *poly = new MyPolygon(Lordered.size());
     for (const Vector2D &vertex : Lordered) {
         poly->addVertex(vertex);
     }
@@ -357,8 +357,60 @@ void Canvas::finalizePolygon(City &city, const QVector<Vector2D> &Lordered, bool
     update();
 
     qDebug() << "Nombre de points trouvés : " << Lordered.size();
-    qDebug() << "La cellule de Voronoi est " << (isClosed ? "FERMÉE" : "OUVERTE");
+    qDebug() << "La cellule de Voronoi est " << (isClosed ? "FERMÉE" : "OUVERTE");*/
+
+
+    MyPolygon *poly = new MyPolygon(Lordered.size());
+    QVector<Vector2D> abovePoints, belowPoints, leftPoints, rightPoints; // Track points by side
+    const float canvasWidth = (width()-10)/scale+origin.x();
+    const float canvasHeight = (height()+10)/scale+origin.y();
+    for (Vector2D vertex : Lordered) {
+        if(isOutsideCanvas(vertex)){
+            QString test = Vector2D::whichSide(vertex,canvasWidth,canvasHeight);
+            if(test == "above"){
+                abovePoints.append(vertex);
+                vertex.y = canvasHeight;
+                vertex.x = vertex.x;
+            }else if (test == "left"){
+                leftPoints.append(vertex);
+                vertex.y = vertex.y;
+                vertex.x = 0;
+            }else if(test == "right"){
+                rightPoints.append(vertex);
+                vertex.y = vertex.y;
+                vertex.x = canvasWidth;
+            }else{
+                belowPoints.append(vertex);
+                vertex.y = 0;
+                vertex.x = vertex.x;
+            }
+            qDebug() << "test" << test;
+        }
+        poly->addVertex(vertex);
+        }
+
+        if (abovePoints.size() == 1) {
+
+        }
+        if (belowPoints.size() == 1) {
+
+        }
+        if (leftPoints.size() == 1) {
+
+        }
+        if (rightPoints.size() == 1) {
+
+        }
+
+
+        city.setMap(poly);
+        update();
+
+        qDebug() << "Nombre de points trouvés : " << Lordered.size();
+        qDebug() << "La cellule de Voronoi est " << (isClosed ? "FERMÉE" : "OUVERTE");
 }
+
+
 
 void Canvas::processVoronoi(City &city){
     Vector2D P = city.getPosition();
@@ -374,10 +426,7 @@ void Canvas::processVoronoi(City &city){
     // Récupère tous les triangles autour du point
     for(auto &tri:triangles){
         if(tri->contains(P)){
-            /*qDebug() << "Points triangle : ";
-            qDebug() << *(tri->getVertexPtr(0));
-            qDebug() << *(tri->getVertexPtr(1));
-            qDebug() << *(tri->getVertexPtr(2));*/
+
             L.push_back(tri);
         }
     }
@@ -394,16 +443,6 @@ void Canvas::processVoronoi(City &city){
     auto T = L.back();
     while(!L.isEmpty() ){
 
-        // search edge of T from P
-        /*qDebug() << "Triangle de départ";
-        qDebug() << *(T->getVertexPtr(0));
-        qDebug() << *(T->getVertexPtr(1));
-        qDebug() << *(T->getVertexPtr(2));*/
-
-        /* Si l'on sait que le triangle est fermé alors on cherche le prochain triangle a droite
-            sinon ont fait demi-tour pour chercher les triangles a gauche
-
-        */
         edge = isClosed ? T->getEdgeFrom(P) : T->getEdgeTo(P);
         qDebug() << "Coordonnée recherchée" << *edge;
 
@@ -437,15 +476,12 @@ void Canvas::processVoronoi(City &city){
                 Lordered.push_back((*it)->getCircleCenter());
             }else{
 
-                qDebug() << "JE SUIS ICI : " << isOutsideCanvas((*it)->getCircleCenter());;
+                if(!isOutsideCanvas((*it)->getCircleCenter()) && !isOutsideCanvas(T->getCircleCenter()) ) {
 
-               // Lordered.push_front((*it)->getCircleCenter());
+                    Lordered.push_front((*it)->getCircleCenter());
 
+                    const Vector2D inter = Vector2D::getCanvasIntersectionLimit(P, *(*it)->getEdgeTo(P), (*it)->getCircleCenter(), canvasWidth, canvasHeight);
 
-                if(!isOutsideCanvas((*it)->getCircleCenter())) {
-                     Lordered.push_front((*it)->getCircleCenter());
-                    const Vector2D proj = Vector2D::projection(P, *(*it)->getEdgeTo(P), (*it)->getCircleCenter());
-                    const Vector2D inter = Vector2D::extendLineToCanvas((*it)->getCircleCenter(), proj, canvasWidth, canvasHeight);
                     Lordered.push_front(inter);
 
 
@@ -459,7 +495,7 @@ void Canvas::processVoronoi(City &city){
             T = *it;
             L.removeOne(T);
 
-            /* La liste des triangles a parcourir est vide et le triangle est ouvert alors
+            /* La liste des triangles a parcourir est vide, le triangle est ouvert alors
                 ont cherche le point qui se trouve à la limite du canvas
             */
             if (L.isEmpty() && !isClosed) {
@@ -474,13 +510,9 @@ void Canvas::processVoronoi(City &city){
                     }
                     Lordered.push_back(circumCircle);
                 } else {
-                    qDebug() << "JE SUIS LA ";
-                    const Vector2D proj = Vector2D::projection(edge, P, circumCircle);
-                    const Vector2D inter1 = Vector2D::extendLineToCanvas(*(Lordered.end() - 2), Lordered.back(), canvasWidth, canvasHeight);
-                    const Vector2D inter2 = Vector2D::extendLineToCanvas(circumCircle, proj, canvasWidth, canvasHeight);
 
-                    qDebug( ) << "INTER 1 : " << inter1;
-                    qDebug( ) << "INTER 2 : " << inter2;
+                    const Vector2D inter1 = Vector2D::extendLineToCanvas(*(Lordered.end() - 2), Lordered.back(), canvasWidth, canvasHeight);
+                    const Vector2D inter2 = Vector2D::getCanvasIntersectionLimit(edge, P, circumCircle, canvasWidth, canvasHeight);
                     const QString side1 = Vector2D::whichSide(inter1, canvasWidth, canvasHeight);
                     const QString side2 = Vector2D::whichSide(inter2, canvasWidth, canvasHeight);
                     if (side1 != side2) {
@@ -490,8 +522,10 @@ void Canvas::processVoronoi(City &city){
                     Lordered.push_back(inter2);
                 }
             }
+        /* Aucun voisin n'a été trouvé le triangles est donc ouvert  */
         } else {
             isClosed = false;
+
             const Vector2D circumCircle = T->getCircleCenter();
             if (isOutsideCanvas(circumCircle)) {
 
@@ -499,17 +533,11 @@ void Canvas::processVoronoi(City &city){
             } else {
 
                 Lordered.push_front(circumCircle);
-                const Vector2D proj = Vector2D::projection(edge, P, circumCircle);
-                const Vector2D inter = Vector2D::extendLineToCanvas(circumCircle, proj, canvasWidth, canvasHeight);
-
-                qDebug() << "EDGE : " << edge;
-                qDebug() << "P : " << P;
-                qDebug()  << "PROJ : " << proj;
-                qDebug() << "circumCircle :  " << circumCircle;
-                qDebug() << "INTERSECTION POINT : " << inter;
+                const Vector2D inter = Vector2D::getCanvasIntersectionLimit(edge, P, circumCircle, canvasWidth, canvasHeight);
 
                 Lordered.push_back(inter);
             }
+
             L.removeOne(T);
 
             if(L.isEmpty() ){
@@ -523,9 +551,7 @@ void Canvas::processVoronoi(City &city){
                     Lordered.push_back(circumCircle);
 
                 }else{
-                    const Vector2D proj =  Vector2D::projection(edge,P, circumCircle);
-                    const Vector2D inter =   Vector2D::extendLineToCanvas(circumCircle, proj, (width()-10)/scale+origin.x(), (height()+10)/scale+origin.y());
-
+                    const Vector2D inter = Vector2D::getCanvasIntersectionLimit(edge, P, circumCircle, canvasWidth, canvasHeight);
                     Lordered.push_back(inter);
                 }
 
@@ -540,9 +566,9 @@ void Canvas::processVoronoi(City &city){
 
 void Canvas::processPoly(){
     flippAll();
-/*for(auto &c: cities->getTabCities()){
+    for(auto &c: cities->getTabCities()){
         processVoronoi(*c);
-    }*/
- qDebug() << "VORONOI DE : "  << cities->getTabCities()[1]->getName();
-    processVoronoi(*cities->getTabCities()[1]);
+    }
+   /* qDebug() << "VORONOI DE : "  << cities->getTabCities()[5]->getName();
+    processVoronoi(*cities->getTabCities()[5]);*/
 }

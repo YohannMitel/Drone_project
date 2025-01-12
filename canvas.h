@@ -31,8 +31,8 @@ public:
     void flippAll();
     void processVoronoi(City &city);
     bool isOutsideCanvas(const Vector2D &point) const;
-
     void finalizePolygon(City &city, const QVector<Vector2D> &Lordered, bool isClosed);
+
     void processPoly();
     QVector<const Vector2D*> findOppositePointOfTrianglesWithEdgeCommon(const Triangle &tri);
 
