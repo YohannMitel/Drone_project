@@ -17,68 +17,75 @@ Vector2D Vector2D::projection(const Vector2D &A, const Vector2D &B, const Vector
     return A + AB * t;
 }
 
-
-QString Vector2D::whichSide(const Vector2D &P, float canvasWidth, float canvasHeight){
-    if (P.x <= 0) {
+QString Vector2D::whichSide(const Vector2D &P, float canvasWidth, float canvasHeight) {
+    if (P.x < 0) {
         qDebug() << "Point is to the left of the canvas.";
         return "left";
-    } else if (P.x  >= canvasWidth) {
+    }
+    else if (P.x > canvasWidth-50) {
         qDebug() << "Point is to the right of the canvas.";
         return "right";
-    } else if (P.y  >= 0) {
+    }
+    else if (P.y < 0) {
         qDebug() << "Point is above the canvas.";
         return "above";
-    } else if (P.y   <= canvasHeight) {
+    }
+    else if (P.y > canvasHeight) {
         qDebug() << "Point is below the canvas.";
         return "bottom";
-        /*} else if (Lordered.back().x  >= 0 && Lordered.back().x <= canvasWidth && Lordered.back().y >= 0 && Lordered.back().y <= canvasHeight) {
-                        qDebug() << "Point is inside the canvas.";*/
-    } else {
-
-        qDebug() << "Unknown point position.";
-        return "none";
     }
-
+    else {
+        qDebug() << "Point is inside the canvas.";
+        return "inside";
+    }
 }
 
+
 Vector2D Vector2D::extendLineToCanvas(const Vector2D& M, const Vector2D& P, float canvasWidth, float canvasHeight) {
+    // Ajouter une marge de +30 pixels à la hauteur et -30 pixels à la largeur
+    float marginHeight = canvasHeight + 30;
+    float marginWidth = canvasWidth - 30;
+
     // Direction de la droite MP
     Vector2D MP = P - M;
 
-    // Calcul du paramètre t pour trouver l'intersection avec les bords du canvas
-
-    // Si la direction est nulle, retourner le point M
+    // Si la direction est nulle (M et P sont identiques), retourner M
     if (MP.x == 0 && MP.y == 0) {
         return M;
     }
 
-    // Paramètres pour les intersections avec x = 0, x = canvasWidth, y = 0, y = canvasHeight
-    float tX0 = -M.x / MP.x;
-    float tX1 = (canvasWidth - M.x) / MP.x;
-    float tY0 = -M.y / MP.y;
-    float tY1 = (canvasHeight - M.y) / MP.y;
+    // Calcul des distances entre M et les bords du canvas
+    float distLeft = M.x;                // Distance au bord gauche
+    float distRight = marginWidth - M.x; // Distance au bord droit
+    float distTop = marginHeight - M.y;  // Distance au bord supérieur
+    float distBottom = M.y;              // Distance au bord inférieur
 
-    // Trouver les points d'intersection en fonction des t
-    Vector2D pX0 = M + MP * tX0;
-    Vector2D pX1 = M + MP * tX1;
-    Vector2D pY0 = M + MP * tY0;
-    Vector2D pY1 = M + MP * tY1;
+    // Déterminer le côté du canvas le plus proche de M
+    float minDist = std::min({distLeft, distRight, distTop, distBottom});
+    int side = 0; // 0 = gauche, 1 = droite, 2 = haut, 3 = bas
 
-    // Vérifier quels points sont valides (dans les limites du canvas)
+    if (minDist == distLeft) side = 0; // Bord gauche
+    else if (minDist == distRight) side = 1; // Bord droit
+    else if (minDist == distTop) side = 2; // Bord supérieur
+    else if (minDist == distBottom) side = 3; // Bord inférieur
+
+    // Calcul des intersections avec le côté sélectionné
     Vector2D intersection;
-    if (tX0 >= 0 && pX0.y >= 0 && pX0.y <= canvasHeight) {
-        intersection = pX0; // Intersection avec x = 0
-    }
-    else if (tX1 >= 0 && pX1.y >= 0 && pX1.y <= canvasHeight) {
-        intersection = pX1; // Intersection avec x = canvasWidth
-    }
-    else if (tY0 >= 0 && pY0.x >= 0 && pY0.x <= canvasWidth) {
-        intersection = pY0; // Intersection avec y = 0
-    }
-    else if (tY1 >= 0 && pY1.x >= 0 && pY1.x <= canvasWidth) {
-        intersection = pY1; // Intersection avec y = canvasHeight
+    if (side == 0) { // Bord gauche (x = 0)
+        float t = (0 - M.x) / MP.x;
+        intersection = M + MP * t;
+    } else if (side == 1) { // Bord droit (x = marginWidth)
+        float t = (marginWidth - M.x) / MP.x;
+        intersection = M + MP * t;
+    } else if (side == 2) { // Bord supérieur (y = marginHeight)
+        float t = (marginHeight - M.y) / MP.y;
+        intersection = M + MP * t;
+    } else if (side == 3) { // Bord inférieur (y = 0)
+        float t = (0 - M.y) / MP.y;
+        intersection = M + MP * t;
     }
 
+    // Retourner le point d'intersection
     return intersection;
 }
 

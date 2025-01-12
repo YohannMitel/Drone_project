@@ -32,8 +32,7 @@ public:
     void processVoronoi(City &city);
     bool isOutsideCanvas(const Vector2D &point) const;
 
-    void handleOpenPolygon(Triangle *T, const Vector2D &P, QVector<Vector2D> &Lordered,
-                           float canvasWidth, float canvasHeight);
+    void finalizePolygon(City &city, const QVector<Vector2D> &Lordered, bool isClosed);
     void processPoly();
     QVector<const Vector2D*> findOppositePointOfTrianglesWithEdgeCommon(const Triangle &tri);
 
