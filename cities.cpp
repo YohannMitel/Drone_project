@@ -77,7 +77,7 @@ bool Cities::sortingByPointsRelative(const City* city1, const City* city2, const
 
 QVector<QPair<QString,Vector2D>> Cities::ascendingPolarAngle(Vector2D &porigin) {
 
-
+   // qDebug() << porigin;
     QVector<QPair<QString,Vector2D>> pointsRelative;
     for (auto &v:tabCities) {
         auto pOrig = *(v->getPosition());
@@ -85,9 +85,17 @@ QVector<QPair<QString,Vector2D>> Cities::ascendingPolarAngle(Vector2D &porigin) 
         pointsRelative.append(qMakePair(v->getName(),Vector2D(pOrig.x - porigin.x, pOrig.y - porigin.y) ));
     }
     // sorting point with angular criteria
-    std::sort(pointsRelative.begin()+1, pointsRelative.end(),Vector2D::polarComparison);
+    qDebug() << "AVANT TRIAGE : " ;
+    for(auto &t: pointsRelative){
+        qDebug() << t;
+    }
 
+    qDebug() << "APRES TRIAGE : " ;
+    std::sort(pointsRelative.begin(), pointsRelative.end(),Vector2D::polarComparison);
 
+    for(auto &t: pointsRelative){
+        qDebug() << t;
+    }
 
 
     return pointsRelative;
@@ -106,6 +114,10 @@ void  Cities::orderPolygonPoint(Vector2D &porigin){
                   return sortingByPointsRelative(city1, city2, pointsRelativeList);
               }
               );
+
+    /*for(auto &t: tabCities){
+        qDebug() << t->getName();
+    }*/
 
 
     QVector<Vector2D*> tabVertices = this->getTabVertices();
@@ -149,7 +161,7 @@ void  Cities::orderPolygonPoint(Vector2D &porigin){
     Nmax = N;
 
     convexHull = new MyPolygon(Nmax);
-    qDebug() << "IIIIIiiiiiIIIIiiIiiCi ";
+
     while (!CHstack.empty()) {
         const Vector2D v = CHstack.first();
         qDebug() << v;

@@ -30,6 +30,10 @@ public:
     bool checkDelaunay();
     void flippAll();
     void processVoronoi(City &city);
+    bool isOutsideCanvas(const Vector2D &point) const;
+
+    void handleOpenPolygon(Triangle *T, const Vector2D &P, QVector<Vector2D> &Lordered,
+                           float canvasWidth, float canvasHeight);
     void processPoly();
     QVector<const Vector2D*> findOppositePointOfTrianglesWithEdgeCommon(const Triangle &tri);
 
@@ -41,6 +45,7 @@ signals:
      */
     void updateSB(QString s);
 private:
+
     QPair<Vector2D,Vector2D> getBox();
 
     QVector<Triangle*> triangles;
@@ -50,6 +55,7 @@ private:
     float scale=0.5;
     QPoint origin=QPoint(10,10);
 public:
+    bool flipped = false ;
     bool showTriangles=true,showCenters=false,showCircles=false, voronoiTransparency = false;
 };
 

@@ -149,7 +149,7 @@ public:
 
     }
 
-    Vector2D* getEdgeFrom( Vector2D &P) const{
+    Vector2D* getEdgeFrom(const Vector2D &P) const{
         if(ptr[0] == P) return ptr[1];
         if(ptr[1] == P) return ptr[2];
         if(ptr[2] == P) return ptr[0];
@@ -157,7 +157,7 @@ public:
         return nullptr;
     }
 
-    Vector2D* getEdgeTo(Vector2D &P) const{
+    Vector2D* getEdgeTo(const Vector2D &P) const{
         if(ptr[0] == P) return ptr[2];
         if(ptr[1] == P) return ptr[0];
         if(ptr[2] == P) return ptr[1];

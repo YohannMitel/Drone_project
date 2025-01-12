@@ -89,12 +89,24 @@ bool Vector2D::polarComparison(QPair<QString,Vector2D> P1,QPair<QString,Vector2D
     auto pts2 = P2.second;
 
 
-    double a1 = asin(pts1.y/sqrt(pts1.x*pts1.x+pts1.y*pts1.y));
+    // Priorité si x == 0
+    if (pts1.x == 0 && pts2.x != 0) {
+        return true; // P1 est prioritaire
+    }
+    if (pts2.x == 0 && pts1.x != 0) {
+        return false; // P2 est prioritaire
+    }
 
-    if (pts1.x<0.0) a1=M_PI-a1;
+    // Calcul des angles polaires
+    double a1 = asin(pts1.y / sqrt(pts1.x * pts1.x + pts1.y * pts1.y));
+    if (pts1.x < 0.0) {
+        a1 = M_PI - a1;
+    }
 
-    double a2 = asin(pts2.y/sqrt(pts2.x*pts2.x+pts2.y*pts2.y));
-    if (pts2.x<0.0) a2=M_PI-a2;
+    double a2 = asin(pts2.y / sqrt(pts2.x * pts2.x + pts2.y * pts2.y));
+    if (pts2.x < 0.0) {
+        a2 = M_PI - a2;
+    }
 
     return a1<a2;
 }

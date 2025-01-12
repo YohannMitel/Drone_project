@@ -212,7 +212,8 @@ void Canvas::loadMesh(const QString &title) {
 
         qDebug() << "Vertices:" << JSONvertices.size();
 
-        Vector2D origin;
+
+
         for (auto &&v:JSONvertices) {
 
             QJsonObject vector=v.toObject();
@@ -221,10 +222,26 @@ void Canvas::loadMesh(const QString &title) {
             Vector2D pt(strPosition[0].toFloat(),strPosition[1].toFloat());
             auto servName = vector["name"].toString();
             auto color = vector["color"].toString();
-            if(servName == "Freljord")  origin = pt;
+            //if(servName == "Freljord")  origin = pt;
             cities->pushCity(servName, new Vector2D(pt.x, pt.y), color);
 
         }
+
+        QVector<Vector2D*> vertices = cities->getTabVertices();
+        if (vertices.isEmpty()) {
+            throw std::runtime_error("Le QVector est vide, impossible de trouver un point.");
+        }
+
+        Vector2D   origin = vertices[0]; // Initialiser avec le premier point
+        for (const auto &p : vertices) {
+            if (p->y < origin.y) { // Comparer les coordonnées y
+                origin = p;
+            }
+        }
+
+        //qDebug() << origin;
+
+
         triangles.clear();
         cities->orderPolygonPoint(origin);
         triangles = cities->initTriangulation();
@@ -324,6 +341,34 @@ Vector2D getBorderPointSide(QString sideP1, QString sideP2, const float &canvasW
     }
 }
 
+bool Canvas::isOutsideCanvas(const Vector2D &point) const{
+    return point.x  < 0 ||  point.x > (width()-10)/scale+origin.x() ||
+           point.y < 0 ||  point.y > (height()+10)/scale+origin.y();
+}
+
+
+void Canvas::handleOpenPolygon(Triangle *T, const Vector2D &P, QVector<Vector2D> &Lordered,
+                        float canvasWidth, float canvasHeight) {
+    Vector2D *edge = T->getEdgeTo(P);
+    Vector2D circumCircle = T->getCircleCenter();
+
+    if (isOutsideCanvas(circumCircle)) {
+        Lordered.push_back(circumCircle);
+    } else {
+        Vector2D proj = Vector2D::projection(edge, P, circumCircle);
+        Vector2D inter = Vector2D::extendLineToCanvas(circumCircle, proj, canvasWidth, canvasHeight);
+
+        QString side1 = Vector2D::whichSide(Lordered.back(), canvasWidth, canvasHeight);
+        QString side2 = Vector2D::whichSide(inter, canvasWidth, canvasHeight);
+
+        if (side1 != side2) {
+            Lordered.push_back(getBorderPointSide(side1, side2, canvasWidth, canvasHeight));
+        }
+        Lordered.push_back(inter);
+    }
+}
+
+
 void Canvas::processVoronoi(City &city){
     Vector2D P = city.getPosition();
     qDebug() << "Processing polygons";
@@ -339,10 +384,10 @@ void Canvas::processVoronoi(City &city){
     // Récupère tous les triangles autour du point
     for(auto &tri:triangles){
         if(tri->contains(P)){
-            qDebug() << "Points triangle : ";
+            /*qDebug() << "Points triangle : ";
             qDebug() << *(tri->getVertexPtr(0));
             qDebug() << *(tri->getVertexPtr(1));
-            qDebug() << *(tri->getVertexPtr(2));
+            qDebug() << *(tri->getVertexPtr(2));*/
             L.push_back(tri);
         }
     }
@@ -358,10 +403,10 @@ void Canvas::processVoronoi(City &city){
     while(!L.isEmpty() ){
 
         // search edge of T from P
-        qDebug() << "Triangle de départ";
+        /*qDebug() << "Triangle de départ";
         qDebug() << *(T->getVertexPtr(0));
         qDebug() << *(T->getVertexPtr(1));
-        qDebug() << *(T->getVertexPtr(2));
+        qDebug() << *(T->getVertexPtr(2));*/
 
         /* Si l'on sait que le triangle est fermé alors on cherche le prochain triangle a droite
             sinon ont fait demi-tour pour chercher les triangles a gauche
@@ -420,44 +465,7 @@ void Canvas::processVoronoi(City &city){
                 qDebug() << "EDGE  : " << *edge;
                 qDebug() << "P  : " << P;
 
-                /* Vérifie si le circumcircle est en dehors du canvas si c'est le cas
-                    on n'a pas besoin de chercher le point qui se trouve à la limite du canvas
-                */
-                if( circumCircle.x  < 0 ||  circumCircle.x > (width()-10)/scale+origin.x() ||
-                    circumCircle.y < 0 ||  circumCircle.y > (height()+10)/scale+origin.y()){
-                    qDebug() << "TRAVAIL SUR CE POINT : " << Lordered.back();
-                    const QString side1 = Vector2D::whichSide(Lordered.back(), canvasWidth, canvasHeight);
-                    const QString side2 = Vector2D::whichSide(circumCircle, canvasWidth, canvasHeight);
-
-                    qDebug() << "INTER PUSSSSSSSSSSSSSH DERNIER POINT IIIIIIIIIIICIIII";
-
-                    if(side1 != side2){
-                                           Lordered.push_back(getBorderPointSide(side1,side2,canvasWidth,canvasHeight));
-                    }
-
-                    Lordered.push_back(circumCircle);
-                    qDebug() << "DEHOOOOOORS";
-                }else{
-                    const Vector2D proj =  Vector2D::projection(edge,P, circumCircle);
-                    qDebug() << "POINT M : " << proj;
-
-                    qDebug() << "With : " << (width()-10)/scale+origin.x() << "Height : " << (height()+10)/scale+origin.y();
-                    const Vector2D inter =   Vector2D::extendLineToCanvas(circumCircle, proj, (width()-10)/scale+origin.x(), (height()+10)/scale+origin.y());
-
-
-                    qDebug() << "TRAVAIL SUR CE POINT : " << Lordered.back();
-                    const QString side1 = Vector2D::whichSide(Lordered.back(), canvasWidth, canvasHeight);
-                    const QString side2 = Vector2D::whichSide(inter, canvasWidth, canvasHeight);
-                    qDebug() << "INTER PUSSSSSSSSSSSSSH DERNIER POINT IIIIIIIIIIICIIII";
-                    if(side1 != side2){
-                        Lordered.push_back(getBorderPointSide(side1,side2,canvasWidth,canvasHeight));
-                    }
-
-                    Lordered.push_back(inter);
-
-
-                }
-
+                handleOpenPolygon(T,P,Lordered,canvasWidth,canvasHeight);
             }
 
         /* Aucun triangle voisin n'a été trouvé le polygon est donc ouvert c'est pourquoi
@@ -470,63 +478,7 @@ void Canvas::processVoronoi(City &city){
             qDebug() << "EDGE  : " << *edge;
             qDebug() << "P  : " << P;
 
-
-
-            qDebug() << "Closed";
-
-            /* Vérifie si le circumcircle est en dehors du canvas si c'est le cas
-                    on n'a pas besoin de chercher le point qui se trouve à la limite du canvas
-                */
-            if( circumCircle.x  < 0 ||  circumCircle.x > (width()-10)/scale+origin.x() ||
-                circumCircle.y < 0 ||  circumCircle.y > (height()+10)/scale+origin.y()){
-                Lordered.push_back(circumCircle);
-
-                qDebug() << "DEHOOOOOORS";
-            }else{
-                Lordered.push_front(circumCircle);
-
-                const Vector2D proj =  Vector2D::projection(edge,P, circumCircle);
-                qDebug() << "POINT M : " << proj;
-
-                qDebug() << "With : " << (width()-10)/scale+origin.x() << "Height : " << (height()+10)/scale+origin.y();
-                const Vector2D inter =   Vector2D::extendLineToCanvas(circumCircle, proj, (width()-10)/scale+origin.x(), (height()+10)/scale+origin.y());
-
-                qDebug() << "FINAL POINT : " <<  inter;
-                Lordered.push_back(inter);
-            }
-
-            L.removeOne(T);
-
-
-
-            if(L.isEmpty() ){
-                edge = T->getEdgeTo(P);
-
-                const Vector2D circumCircle = (T)->getCircleCenter();
-                qDebug() << "circumCircle : " << circumCircle;
-                qDebug() << "EDGE  : " << *edge;
-                qDebug() << "P  : " << P;
-
-                if( circumCircle.x  < 0 ||  circumCircle.x > (width()-10)/scale+origin.x() ||
-                    circumCircle.y < 0 ||  circumCircle.y > (height()+10)/scale+origin.y()){
-                    Lordered.push_back(circumCircle);
-                    qDebug() << "DEHOOOOOORS";
-                }else{
-                    const Vector2D proj =  Vector2D::projection(edge,P, circumCircle);
-                    qDebug() << "POINT M : " << proj;
-
-                    qDebug() << "With : " << (width()-10)/scale+origin.x() << "Height : " << (height()+10)/scale+origin.y();
-                    const Vector2D inter =   Vector2D::extendLineToCanvas(circumCircle, proj, (width()-10)/scale+origin.x(), (height()+10)/scale+origin.y());
-                    qDebug() << "INTER PUSSSSSSSSSSSSSH";
-                    Lordered.push_back(inter);
-                }
-                //Lordered.push_back(circumCircle);
-
-            }
-
-
-
-            qDebug() << QString::number(L.size());
+            handleOpenPolygon(T,P,Lordered,canvasWidth,canvasHeight);
 
         }
     }
@@ -551,9 +503,10 @@ void Canvas::processVoronoi(City &city){
 }
 
 void Canvas::processPoly(){
-    for(auto &c: cities->getTabCities()){
+    /*for(auto &c: cities->getTabCities()){
 
         processVoronoi(*c);
-    }
-    //processVoronoi(vertices[7]);
+    }*/
+    qDebug() << "VORONOI DE : "  << cities->getTabCities()[0]->getName();
+    processVoronoi(*cities->getTabCities()[0]);
 }

@@ -115,11 +115,11 @@ QVector<Triangle *> MyPolygon::earClippingUtils(Vector2D *p1, Vector2D *p2, Vect
             triangles += this->earClippingUtils(p3, p1, v, result);
 
             // Debugging (facultatif, pour voir le processus)
-            qDebug() << "TRIANGLE";
+            /*qDebug() << "TRIANGLE";
             qDebug() << *T->getVertexPtr(0);
             qDebug() << *T->getVertexPtr(1);
             qDebug() << *T->getVertexPtr(2);
-            qDebug() << "POINT À L'INTÉRIEUR : " << *v;
+            qDebug() << "POINT À L'INTÉRIEUR : " << *v;*/
 
             foundInteriorPoint = true;
             break; // Si un point est trouvé à l'intérieur, on arrête la recherche
@@ -149,6 +149,7 @@ QVector<Triangle*> MyPolygon::earClipping( QVector<Vector2D * > &vertices){
         triangles.append(this->earClippingUtils (&tabPts[0],&tabPts[i],&tabPts[i+1],vertices));
 
     }
+
     return triangles;
 }
 
