@@ -5,7 +5,6 @@
 #include <triangle.h>
 #include "cities.h"
 
-
 class Canvas : public QWidget
 {
     Q_OBJECT
