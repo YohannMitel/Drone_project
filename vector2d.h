@@ -50,6 +50,15 @@ public:
         return x * op.x + y * op.y;
     }
 
+    bool operator<(const Vector2D& other) const {
+        if (x < other.x) {
+            return true;
+        } else if (x == other.x) {
+            return y < other.y;
+        }
+        return false;
+    }
+
     /* Fonction pour faire la projection orthogonale, nous permettant de trouver la perpendiculaire entre le point et le vecteur
         il nous sera retourné le point d'intersection sur le vecteur
     */

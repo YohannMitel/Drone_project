@@ -8,6 +8,7 @@
 #include <mypolygon.h>
 
 #include "vector2d.h"
+#include "cities.h"
 
 Canvas::Canvas(QWidget *parent) : QWidget(parent) {
     setMouseTracking(true);
@@ -671,16 +672,15 @@ void Canvas::processVoronoi(City &city){
 
         }
     }
-
     finalizePolygon(city, Lordered, isClosed);
-
 }
 
 void Canvas::processPoly(){
     flippAll();
     for(auto &c: cities->getTabCities()){
         processVoronoi(*c);
-    }/*
-   qDebug() << "VORONOI DE : "  << cities->getTabCities()[1]->getName();
+    }
+    cities->connectionMatrix(cities->getTabCities());
+    /*   qDebug() << "VORONOI DE : "  << cities->getTabCities()[1]->getName();
     processVoronoi(*cities->getTabCities()[1]);*/
 }
