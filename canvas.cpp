@@ -483,7 +483,6 @@ Vector2D Canvas::calculateIntersection(const Vector2D &p1, const Vector2D &p2, f
 
 
 void Canvas::finalizePolygon(City &city, const QVector<Vector2D> &Lordered, bool isClosed) {
-
     QVector<Vector2D> clippedVertices; // Store the clipped vertices
     const float canvasMinX = 0;
     const float canvasMinY = 0;
@@ -491,34 +490,58 @@ void Canvas::finalizePolygon(City &city, const QVector<Vector2D> &Lordered, bool
     const float canvasMaxY = (height() + 10) / scale + origin.y();
 
     auto clipEdge = [&](const Vector2D &p1, const Vector2D &p2, QVector<Vector2D> &output) {
-        // Check if points are inside the canvas
-        bool insideP1;// = isInsideCanvas(p1);
-        bool insideP2;// = isInsideCanvas(p2);
-
-        if(isOutsideCanvas(p1) == true){
-            insideP1 = false;
-        }else{
-            insideP1 = true;
-        }
-
-        if(isOutsideCanvas(p2) == true){
-            insideP2 = false;
-        }else{
-            insideP2 = true;
-        }
+        bool insideP1 = !isOutsideCanvas(p1);
+        bool insideP2 = !isOutsideCanvas(p2);
 
         if (insideP1 && insideP2) {
-            // Both points inside: add p2
-            output.append(p2);
+            // Both points inside: add p2 if not already in the output
+            bool isDuplicate = false;
+            for (const auto &v : output) {
+                if (std::fabs(v.x - p2.x) < 0.001f && std::fabs(v.y - p2.y) < 0.001f) {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+            if (!isDuplicate) {
+                output.append(p2);
+            }
         } else if (insideP1 && !insideP2) {
-            // Going out of bounds: add intersection point
+            // Going out of bounds: add intersection point if not already in the output
             Vector2D intersection = calculateIntersection(p1, p2, canvasMinX, canvasMinY, canvasMaxX, canvasMaxY);
-            output.append(intersection);
+            bool isDuplicate = false;
+            for (const auto &v : output) {
+                if (std::fabs(v.x - intersection.x) < 0.001f && std::fabs(v.y - intersection.y) < 0.001f) {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+            if (!isDuplicate) {
+                output.append(intersection);
+            }
         } else if (!insideP1 && insideP2) {
-            // Coming back in bounds: add intersection and p2
+            // Coming back in bounds: add intersection and p2 if not already in the output
             Vector2D intersection = calculateIntersection(p1, p2, canvasMinX, canvasMinY, canvasMaxX, canvasMaxY);
-            output.append(intersection);
-            output.append(p2);
+            bool isDuplicate = false;
+            for (const auto &v : output) {
+                if (std::fabs(v.x - intersection.x) < 0.001f && std::fabs(v.y - intersection.y) < 0.001f) {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+            if (!isDuplicate) {
+                output.append(intersection);
+            }
+
+            isDuplicate = false;
+            for (const auto &v : output) {
+                if (std::fabs(v.x - p2.x) < 0.001f && std::fabs(v.y - p2.y) < 0.001f) {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+            if (!isDuplicate) {
+                output.append(p2);
+            }
         }
         // If both points are outside, no points are added.
     };
@@ -530,10 +553,16 @@ void Canvas::finalizePolygon(City &city, const QVector<Vector2D> &Lordered, bool
         clipEdge(current, next, clippedVertices);
     }
 
+    qDebug() << "Clipped vertices before filtering:";
+    for (const auto &vertex : clippedVertices) {
+        qDebug() << "Vertex:" << vertex.x << "," << vertex.y;
+    }
+
     MyPolygon *poly = new MyPolygon(clippedVertices.size());
+    qDebug() << "clippedVertices.size " << clippedVertices.size();
+
     // Add the clipped vertices to the polygon
     for (const Vector2D &vertex : clippedVertices) {
-
         poly->addVertex(vertex);
     }
 
@@ -743,13 +772,13 @@ void Canvas::processVoronoi(City &city){
 
 void Canvas::processPoly(){
     flippAll();
-    /*for(auto &c: cities->getTabCities()){
+    for(auto &c: cities->getTabCities()){
         processVoronoi(*c);
     }
-    if(cities->getTabCities().size() > 1 ) cities->connectionMatrix(cities->getTabCities());*/
-
-       qDebug() << "VORONOI DE : "  << cities->getTabCities()[2]->getName();
-    processVoronoi(*cities->getTabCities()[2]);
+    if(cities->getTabCities().size() > 1 ) cities->connectionMatrix(cities->getTabCities());
+/*
+       qDebug() << "VORONOI DE : "  << cities->getTabCities()[1]->getName();
+    processVoronoi(*cities->getTabCities()[1]);*/
 }
 
 

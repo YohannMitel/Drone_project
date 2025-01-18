@@ -41,16 +41,15 @@ public:
         }
         hovered= (it==triangles.end()?false:true);
 
-        if(it==triangles.end()){
             qDebug() << *triangles[0].getVertexPtr(0);
-                        qDebug() << *triangles[0].getVertexPtr(1);
-                        qDebug() << *triangles[0].getVertexPtr(2);
-                        qDebug() << triangles[0].isInside(pt);
+                        qDebug() << *triangles[1].getVertexPtr(1);
+                        qDebug() << *triangles[1].getVertexPtr(2);
+                        qDebug() << triangles[1].isInside(pt);
             qDebug() << pt;
-        }else{
-            qDebug() << currentColor;
 
-        }
+           // qDebug() << currentColor;
+
+
         //currentColor =  (isInside(pt) ?Qt::red : Qt::red );
     }
 
