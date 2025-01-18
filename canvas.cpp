@@ -346,70 +346,109 @@ bool Canvas::isOutsideCanvas(const Vector2D &point) const{
            point.y < 0 ||  point.y > (height()+10)/scale+origin.y();
 }
 
+Vector2D Canvas::calculateIntersection(const Vector2D &p1, const Vector2D &p2, float minX, float minY, float maxX, float maxY) {
+    float dx = p2.x - p1.x;
+    float dy = p2.y - p1.y;
+
+    // Intersection points
+    QVector<Vector2D> intersections;
+
+    // Check vertical boundaries (minX and maxX)
+    if (dx != 0) {
+        float t1 = (minX - p1.x) / dx; // Left boundary
+        if (t1 >= 0 && t1 <= 1) {
+            intersections.append(Vector2D(minX, p1.y + t1 * dy));
+        }
+        float t2 = (maxX - p1.x) / dx; // Right boundary
+        if (t2 >= 0 && t2 <= 1) {
+            intersections.append(Vector2D(maxX, p1.y + t2 * dy));
+        }
+    }
+
+    // Check horizontal boundaries (minY and maxY)
+    if (dy != 0) {
+        float t3 = (minY - p1.y) / dy; // Bottom boundary
+        if (t3 >= 0 && t3 <= 1) {
+            intersections.append(Vector2D(p1.x + t3 * dx, minY));
+        }
+        float t4 = (maxY - p1.y) / dy; // Top boundary
+        if (t4 >= 0 && t4 <= 1) {
+            intersections.append(Vector2D(p1.x + t4 * dx, maxY));
+        }
+    }
+
+    // Choose the first valid intersection (there should only be one per edge)
+    if (!intersections.isEmpty()) {
+        return intersections.first();
+    }
+
+    // If no intersection found (should not happen), return the original point
+    return p1;
+}
+
 
 void Canvas::finalizePolygon(City &city, const QVector<Vector2D> &Lordered, bool isClosed) {
-    /*MyPolygon *poly = new MyPolygon(Lordered.size());
-    for (const Vector2D &vertex : Lordered) {
+
+    QVector<Vector2D> clippedVertices; // Store the clipped vertices
+    const float canvasMinX = 0;
+    const float canvasMinY = 0;
+    const float canvasMaxX = (width() - 10) / scale + origin.x();
+    const float canvasMaxY = (height() + 10) / scale + origin.y();
+
+    auto clipEdge = [&](const Vector2D &p1, const Vector2D &p2, QVector<Vector2D> &output) {
+        // Check if points are inside the canvas
+        bool insideP1;// = isInsideCanvas(p1);
+        bool insideP2;// = isInsideCanvas(p2);
+
+        if(isOutsideCanvas(p1) == true){
+            insideP1 = false;
+        }else{
+            insideP1 = true;
+        }
+
+        if(isOutsideCanvas(p2) == true){
+            insideP2 = false;
+        }else{
+            insideP2 = true;
+        }
+
+        if (insideP1 && insideP2) {
+            // Both points inside: add p2
+            output.append(p2);
+        } else if (insideP1 && !insideP2) {
+            // Going out of bounds: add intersection point
+            Vector2D intersection = calculateIntersection(p1, p2, canvasMinX, canvasMinY, canvasMaxX, canvasMaxY);
+            output.append(intersection);
+        } else if (!insideP1 && insideP2) {
+            // Coming back in bounds: add intersection and p2
+            Vector2D intersection = calculateIntersection(p1, p2, canvasMinX, canvasMinY, canvasMaxX, canvasMaxY);
+            output.append(intersection);
+            output.append(p2);
+        }
+        // If both points are outside, no points are added.
+    };
+
+    // Iterate over the polygon edges and clip each edge
+    for (int i = 0; i < Lordered.size(); ++i) {
+        const Vector2D &current = Lordered[i];
+        const Vector2D &next = Lordered[(i + 1) % Lordered.size()]; // Next vertex (wrapping around for closed polygons)
+        clipEdge(current, next, clippedVertices);
+    }
+
+    MyPolygon *poly = new MyPolygon(Lordered.size());
+    // Add the clipped vertices to the polygon
+    for (const Vector2D &vertex : clippedVertices) {
+
         poly->addVertex(vertex);
     }
 
+    // Set the final polygon to the city
     city.setMap(poly);
     update();
 
-    qDebug() << "Nombre de points trouvés : " << Lordered.size();
-    qDebug() << "La cellule de Voronoi est " << (isClosed ? "FERMÉE" : "OUVERTE");*/
-
-
-    MyPolygon *poly = new MyPolygon(Lordered.size());
-    QVector<Vector2D> abovePoints, belowPoints, leftPoints, rightPoints; // Track points by side
-    const float canvasWidth = (width()-10)/scale+origin.x();
-    const float canvasHeight = (height()+10)/scale+origin.y();
-    for (Vector2D vertex : Lordered) {
-        if(isOutsideCanvas(vertex)){
-            QString test = Vector2D::whichSide(vertex,canvasWidth,canvasHeight);
-            if(test == "above"){
-                abovePoints.append(vertex);
-                vertex.y = canvasHeight;
-                vertex.x = vertex.x;
-            }else if (test == "left"){
-                leftPoints.append(vertex);
-                vertex.y = vertex.y;
-                vertex.x = 0;
-            }else if(test == "right"){
-                rightPoints.append(vertex);
-                vertex.y = vertex.y;
-                vertex.x = canvasWidth;
-            }else{
-                belowPoints.append(vertex);
-                vertex.y = 0;
-                vertex.x = vertex.x;
-            }
-            qDebug() << "test" << test;
-        }
-        poly->addVertex(vertex);
-        }
-
-        if (abovePoints.size() == 1) {
-
-        }
-        if (belowPoints.size() == 1) {
-
-        }
-        if (leftPoints.size() == 1) {
-
-        }
-        if (rightPoints.size() == 1) {
-
-        }
-
-
-        city.setMap(poly);
-        update();
-
-        qDebug() << "Nombre de points trouvés : " << Lordered.size();
-        qDebug() << "La cellule de Voronoi est " << (isClosed ? "FERMÉE" : "OUVERTE");
+    qDebug() << "Nombre de points trouvés : " << clippedVertices.size();
+    qDebug() << "La cellule de Voronoi est " << (isClosed ? "FERMÉE" : "OUVERTE");
 }
-
 
 
 void Canvas::processVoronoi(City &city){
@@ -569,6 +608,6 @@ void Canvas::processPoly(){
     for(auto &c: cities->getTabCities()){
         processVoronoi(*c);
     }
-   /* qDebug() << "VORONOI DE : "  << cities->getTabCities()[5]->getName();
-    processVoronoi(*cities->getTabCities()[5]);*/
+   /*qDebug() << "VORONOI DE : "  << cities->getTabCities()[7]->getName();
+    processVoronoi(*cities->getTabCities()[7]);*/
 }

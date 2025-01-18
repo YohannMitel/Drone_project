@@ -36,6 +36,7 @@ public:
     void processPoly();
     QVector<const Vector2D*> findOppositePointOfTrianglesWithEdgeCommon(const Triangle &tri);
 
+    Vector2D calculateIntersection(const Vector2D &p1, const Vector2D &p2, float minX, float minY, float maxX, float maxY);
 
 signals:
 
