@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['isdelaunay_0',['isDelaunay',['../class_triangle.html#ab6fd305c3b7114988efe91366cfdc58d',1,'Triangle']]],
-  ['isflippable_1',['isFlippable',['../class_triangle.html#afcaaedef11a6f06fb0eb778874f7a10b',1,'Triangle']]],
-  ['ishighlighted_2',['isHighlighted',['../class_triangle.html#a994f6a50a894f5a919ea4b5cda7c109f',1,'Triangle']]],
-  ['ishighlited_3',['isHighlited',['../class_triangle.html#a8111fa42515eee0ba748746365bac486',1,'Triangle']]],
-  ['isinside_4',['isInside',['../class_triangle.html#a2c84480dd64dd9d9f78142cd0f4a311b',1,'Triangle::isInside(float x, float y)'],['../class_triangle.html#aad6de8913e4bb6e9f8d929ffbb07a289',1,'Triangle::isInside(const Vector2D &amp;P)']]],
-  ['isontheleft_5',['isOnTheLeft',['../class_triangle.html#a6350e7211a97e18880ab8f03a1798425',1,'Triangle']]]
+  ['hascollision_0',['hasCollision',['../class_drone.html#a06d6c451149b1e9418eaefb3a9aeca90',1,'Drone']]],
+  ['height_1',['height',['../class_drone.html#ad28a7b7fb356db4edcc79da0cca93ca9',1,'Drone']]],
+  ['hovering_2',['hovering',['../class_drone.html#aeab5eed0a5d06cc3968da277ad2671afa6bc5f40d516ec9d2270e9011fa53ae91',1,'Drone']]],
+  ['hoveringheight_3',['hoveringHeight',['../class_drone.html#aa914c392ebe500aa63186a0b1b5e855c',1,'Drone']]]
 ];

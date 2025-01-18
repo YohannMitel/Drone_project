@@ -1,22 +1,51 @@
+/**
+ * @brief Drone_demo project
+ * @author B.Piranda
+ * @date dec. 2024
+ **/
 #ifndef CANVAS_H
 #define CANVAS_H
 
-#include <QWidget>
 #include <triangle.h>
 #include "cities.h"
+#include <QWidget>
+#include <drone.h>
+#include <QMouseEvent>
+#include <QPaintEvent>
 
-class Canvas : public QWidget
-{
+class Canvas : public QWidget {
     Q_OBJECT
 public:
+    const int droneIconSize=64; ///< size of the drone picture in the vanvas
+    const double droneCollisionDistance=droneIconSize*1.5; ///< distance to detect collision with other drone
+    /**
+     * @brief Canvas constructor
+     * @param parent
+     */
     explicit Canvas(QWidget *parent = nullptr);
+    /**
+     * @brief setMap set the list of drones (identified by their name) to the canvas
+     * @param map the map of couple "name of the drone"/"drone pointer"
+     */
+
     ~Canvas();
+    inline QVector<Drone*>& getMap() { return mapDrones; }
+    /**
+     * @brief paintEvent
+     */
+    void paintEvent(QPaintEvent*) override;
+    /**
+     * @brief mousePressEvent
+     * @param event
+     */
+    void mousePressEvent(QMouseEvent *event) override;
+
+
 
     void loadMesh(const QString &title);
 
-    void paintEvent(QPaintEvent*) override;
+
     void resizeEvent(QResizeEvent *event) override;
-    void mousePressEvent(QMouseEvent*) override;
     void mouseMoveEvent(QMouseEvent*) override;
 
     void addPoints(QString &name ,const QVector<Vector2D> &tab);
@@ -44,11 +73,12 @@ signals:
      */
     void updateSB(QString s);
 private:
-
+    QVector<Drone*> mapDrones; ///< pointer on the map of the drones
+    QImage droneImg; ///< picture representing the drone in the canvas
     QPair<Vector2D,Vector2D> getBox();
 
     QVector<Triangle*> triangles;
-;
+
     Cities *cities = new Cities();
 
     float scale=0.5;
@@ -56,6 +86,7 @@ private:
 public:
     bool flipped = false ;
     bool showTriangles=true,showCenters=false,showCircles=false, voronoiTransparency = false;
+
 };
 
 #endif // CANVAS_H

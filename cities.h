@@ -32,6 +32,11 @@ public:
     QVector<Vector2D*> getTabVertices();
     QVector<Triangle*> initTriangulation();
 
+    void connectionMatrix(const QVector<City*>& cities);
+    bool areNeighbors(Vector2D* vertices1, int numVertices1, Vector2D* vertices2, int numVertices2);
+    bool doIntersect(Vector2D p1, Vector2D p2, Vector2D q1, Vector2D q2);
+    int orientation(Vector2D p, Vector2D q, Vector2D r);
+
     void draw(QPainter &painter, bool transparency);
 
 };

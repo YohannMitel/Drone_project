@@ -1,21 +1,12 @@
 var searchData=
 [
-  ['on_5factionabout_5ftriggered_0',['on_actionAbout_triggered',['../class_main_window.html#a4f3ebda1ba39e0ef4d678b44893c9c7f',1,'MainWindow']]],
-  ['on_5factioncenter_5ftriggered_1',['on_actionCenter_triggered',['../class_main_window.html#aebda705f27cd9e017807a8f0d96df26e',1,'MainWindow']]],
-  ['on_5factioncheck_5fdelaunay_5ftriggered_2',['on_actionCheck_Delaunay_triggered',['../class_main_window.html#ae1f4934cb3d376225f7576ab05159bc0',1,'MainWindow']]],
-  ['on_5factioncircles_5ftriggered_3',['on_actionCircles_triggered',['../class_main_window.html#a217d51c631b720f86ec21d85758cbcf8',1,'MainWindow']]],
-  ['on_5factionload_5ftriggered_4',['on_actionLoad_triggered',['../class_main_window.html#ada6ecfabc8ccc186fb3134211099bcc8',1,'MainWindow']]],
-  ['on_5factionnew_5ftriggered_5',['on_actionNew_triggered',['../class_main_window.html#aed8d4c16aaa87ae02a2de2edd5fc91c7',1,'MainWindow']]],
-  ['on_5factionquit_5ftriggered_6',['on_actionQuit_triggered',['../class_main_window.html#aa68eba140c2cf5c1cd2b4bd81337fa83',1,'MainWindow']]],
-  ['on_5factiontriangles_5ftriggered_7',['on_actionTriangles_triggered',['../class_main_window.html#a493b04bdb535b924fe099a43045c79f0',1,'MainWindow']]],
-  ['operator_21_3d_8',['operator!=',['../class_vector2_d.html#ae0bc4e011d92acb25ce7b22537c3089d',1,'Vector2D::operator!='],['../vector2d_8h.html#ae0bc4e011d92acb25ce7b22537c3089d',1,'operator!=():&#160;vector2d.h']]],
-  ['operator_2a_9',['operator*',['../class_vector2_d.html#adaff64f54444c876c588bb9de8cff3d5',1,'Vector2D::operator*'],['../class_vector2_d.html#a4dc5874e264037c69a6dd041436e0bcd',1,'Vector2D::operator*'],['../vector2d_8cpp.html#a4dc5874e264037c69a6dd041436e0bcd',1,'operator*(double a, const Vector2D &amp;v):&#160;vector2d.cpp'],['../vector2d_8cpp.html#adaff64f54444c876c588bb9de8cff3d5',1,'operator*(const Vector2D &amp;u, const Vector2D &amp;v):&#160;vector2d.cpp'],['../vector2d_8h.html#a4dc5874e264037c69a6dd041436e0bcd',1,'operator*(double a, const Vector2D &amp;v):&#160;vector2d.cpp'],['../vector2d_8h.html#adaff64f54444c876c588bb9de8cff3d5',1,'operator*(const Vector2D &amp;u, const Vector2D &amp;v):&#160;vector2d.cpp']]],
-  ['operator_2b_10',['operator+',['../class_vector2_d.html#a37c1e7b52b4d9a0b452d9dc1e5a3535c',1,'Vector2D::operator+'],['../vector2d_8cpp.html#a37c1e7b52b4d9a0b452d9dc1e5a3535c',1,'operator+(const Vector2D &amp;u, const Vector2D &amp;v):&#160;vector2d.cpp'],['../vector2d_8h.html#a37c1e7b52b4d9a0b452d9dc1e5a3535c',1,'operator+(const Vector2D &amp;u, const Vector2D &amp;v):&#160;vector2d.cpp']]],
-  ['operator_2d_11',['operator-',['../class_vector2_d.html#a73d3241ae1e865371f1713718af3004f',1,'Vector2D::operator-'],['../class_vector2_d.html#a929d33d02e4b41eef1b71fde4f48b1b1',1,'Vector2D::operator-'],['../vector2d_8cpp.html#a73d3241ae1e865371f1713718af3004f',1,'operator-(const Vector2D &amp;u, const Vector2D &amp;v):&#160;vector2d.cpp'],['../vector2d_8cpp.html#a929d33d02e4b41eef1b71fde4f48b1b1',1,'operator-(const Vector2D &amp;v):&#160;vector2d.cpp'],['../vector2d_8h.html#a73d3241ae1e865371f1713718af3004f',1,'operator-(const Vector2D &amp;u, const Vector2D &amp;v):&#160;vector2d.cpp'],['../vector2d_8h.html#a929d33d02e4b41eef1b71fde4f48b1b1',1,'operator-(const Vector2D &amp;v):&#160;vector2d.cpp']]],
-  ['operator_3c_3c_12',['operator&lt;&lt;',['../class_vector2_d.html#a3632a18a6e82fdaa6497d8011990cb8d',1,'Vector2D']]],
-  ['operator_3d_3d_13',['operator==',['../class_vector2_d.html#a5a1dc24d8a7344df74f7865d34c2f3b2',1,'Vector2D::operator=='],['../vector2d_8cpp.html#a5a1dc24d8a7344df74f7865d34c2f3b2',1,'operator==(const Vector2D &amp;u, const Vector2D &amp;v):&#160;vector2d.cpp'],['../vector2d_8h.html#a5a1dc24d8a7344df74f7865d34c2f3b2',1,'operator==(const Vector2D &amp;u, const Vector2D &amp;v):&#160;vector2d.cpp']]],
-  ['operator_5b_5d_14',['operator[]',['../class_vector2_d.html#a3bf550ff454982ff7c839c84f89ce88a',1,'Vector2D']]],
-  ['operator_5e_15',['operator^',['../class_vector2_d.html#a0c76d01601145a90c052ace1be5f2357',1,'Vector2D::operator^'],['../vector2d_8cpp.html#a0c76d01601145a90c052ace1be5f2357',1,'operator^(const Vector2D &amp;u, const Vector2D &amp;v):&#160;vector2d.cpp'],['../vector2d_8h.html#a0c76d01601145a90c052ace1be5f2357',1,'operator^(const Vector2D &amp;u, const Vector2D &amp;v):&#160;vector2d.cpp']]],
-  ['origin_16',['origin',['../class_canvas.html#a1cfc6518e39c51d16ff4f8c9ddfed909',1,'Canvas']]],
-  ['orthonormed_17',['orthoNormed',['../class_vector2_d.html#ade14049e72c6167b1547bdccb61ad477',1,'Vector2D']]]
+  ['main_0',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
+  ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['mainwindow_2',['MainWindow',['../class_main_window.html',1,'MainWindow'],['../class_main_window.html#a996c5a2b6f77944776856f08ec30858d',1,'MainWindow::MainWindow()']]],
+  ['mainwindow_2ecpp_3',['mainwindow.cpp',['../mainwindow_8cpp.html',1,'']]],
+  ['mainwindow_2eh_4',['mainwindow.h',['../mainwindow_8h.html',1,'']]],
+  ['mapdrones_5',['mapDrones',['../class_canvas.html#a080f2bb0587f29c4b9d3ea31d5ed3a62',1,'Canvas::mapDrones'],['../class_main_window.html#a6621f2696f413932fc1175b57499aa91',1,'MainWindow::mapDrones']]],
+  ['maxpower_6',['maxPower',['../class_drone.html#a40543b6a36aabc1171d7ef4124850a52',1,'Drone']]],
+  ['maxspeed_7',['maxSpeed',['../class_drone.html#a6d336e477ca4ae7d28601e096f8d9063',1,'Drone']]],
+  ['mousepressevent_8',['mousePressEvent',['../class_canvas.html#ac766a4e369f781943df021b80e5922c4',1,'Canvas']]]
 ];

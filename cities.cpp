@@ -77,7 +77,7 @@ bool Cities::sortingByPointsRelative(const City* city1, const City* city2, const
 
 QVector<QPair<QString,Vector2D>> Cities::ascendingPolarAngle(Vector2D &porigin) {
 
-   // qDebug() << porigin;
+        // qDebug() << porigin;
     QVector<QPair<QString,Vector2D>> pointsRelative;
     for (auto &v:tabCities) {
         auto pOrig = *(v->getPosition());
@@ -183,6 +183,101 @@ QVector<Triangle*> Cities::initTriangulation(){
 
     return  convexHull->earClipping(tabVert );;
 }
+
+
+bool onSegment(Vector2D p1, Vector2D p2, Vector2D q) {
+    return (q.x >= std::min(p1.x, p2.x) && q.x <= std::max(p1.x, p2.x) &&
+            q.y >= std::min(p1.y, p2.y) && q.y <= std::max(p1.y, p2.y));
+}
+
+
+void Cities::connectionMatrix(const QVector<City*>& cities) {
+    int numCities = cities.size();
+
+    // Create a matrix of size numCities x numCities and initialize to 0
+    QVector<QVector<int>> matrix(numCities, QVector<int>(numCities, 0));
+
+    // Loop over each city to check for neighbors
+    for (int i = 0; i < numCities; ++i) {
+        City* city1 = cities[i];
+        // Get the vertices of city1's Voronoi polygon
+        int numVertices1 = 0;
+        Vector2D* vertices1 = city1->getMap()->getVertices(numVertices1);
+
+        for (int j = i + 1; j < numCities; ++j) {
+            City* city2 = cities[j];
+            // Get the vertices of city2's Voronoi polygon
+            int numVertices2 = 0;
+            Vector2D* vertices2 = city2->getMap()->getVertices(numVertices2);
+
+            // Check if the Voronoi polygons of city1 and city2 share an edge
+            if (areNeighbors(vertices1, numVertices1, vertices2, numVertices2)) {
+                // Set the matrix entries to 1 to indicate that these cities are neighbors
+                matrix[i][j] = 1;
+                matrix[j][i] = 1;  // The matrix is symmetric, so we set both [i][j] and [j][i]
+            }
+        }
+    }
+
+    // Optionally, print the matrix for debugging purposes
+    for (int i = 0; i < numCities; ++i) {
+        qDebug() << "City: " << cities[i]->getName();  // Print city name before the row
+        for (int j = 0; j < numCities; ++j) {
+            qDebug() << matrix[i][j] << " " << cities[j]->getName();
+        }
+        qDebug() << "\n";  // Print a new line after each row
+    }
+}
+
+bool Cities::areNeighbors(Vector2D* vertices1, int numVertices1, Vector2D* vertices2, int numVertices2) {
+    // Check if two Voronoi polygons share an edge by checking for intersection between edges.
+    for (int i = 0; i < numVertices1; ++i) {
+        Vector2D p1 = vertices1[i];
+        Vector2D p2 = vertices1[(i + 1) % numVertices1];  // Next vertex (with wrap around)
+
+        for (int j = 0; j < numVertices2; ++j) {
+            Vector2D q1 = vertices2[j];
+            Vector2D q2 = vertices2[(j + 1) % numVertices2];  // Next vertex (with wrap around)
+
+            // Check if the edge p1p2 intersects with q1q2
+            if (doIntersect(p1, p2, q1, q2)) {
+                return true;  // Return true if we find an intersection
+            }
+        }
+    }
+    return false;  // No intersection found
+}
+
+// Helper function to check if two line segments (p1p2 and q1q2) intersect
+bool Cities::doIntersect(Vector2D p1, Vector2D p2, Vector2D q1, Vector2D q2) {
+    int o1 = orientation(p1, p2, q1);
+    int o2 = orientation(p1, p2, q2);
+    int o3 = orientation(q1, q2, p1);
+    int o4 = orientation(q1, q2, p2);
+
+    // General case
+    if (o1 != o2 && o3 != o4) {
+        return true;
+    }
+
+    // Special cases: Check if the points are collinear and on the segment
+    if (o1 == 0 && onSegment(p1, p2, q1)) return true;
+    if (o2 == 0 && onSegment(p1, p2, q2)) return true;
+    if (o3 == 0 && onSegment(q1, q2, p1)) return true;
+    if (o4 == 0 && onSegment(q1, q2, p2)) return true;
+
+    return false;  // No intersection
+}
+
+// Function to calculate the orientation of the triplet (p, q, r)
+int Cities::orientation(Vector2D p, Vector2D q, Vector2D r) {
+    // Cross product of vector pq and qr
+    float val = (q.y - p.y) * (r.x - q.x) - (q.x - p.x) * (r.y - q.y);
+
+    if (val == 0) return 0;  // collinear
+    return (val > 0) ? 1 : 2;  // 1 -> clockwise, 2 -> counterclockwise
+}
+
 
 
 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Circum circle: Member List</title>
+<title>Drone demo: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="takeoff.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Circum circle
+   <div id="projectname">Drone demo<span id="projectnumber">&#160;1.0</span>
    </div>
   </td>
  </tr>
@@ -90,31 +91,14 @@ $(function(){ initResizable(false); });
 
 <p>This is the complete list of members for <a class="el" href="class_canvas.html">Canvas</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_canvas.html#ab2eac6e655c2f2c8993bcea546e45d45">addPoints</a>(const QVector&lt; Vector2D &gt; &amp;tab)</td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_canvas.html#a9be51dab63db480d6c237d45cc4a178a">addTriangle</a>(int id0, int id1, int id2)</td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_canvas.html#af2cb96ecee7fad0337ddc3e373027769">addTriangle</a>(int id0, int id1, int id2, const QColor &amp;color)</td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_canvas.html#aeea65f2bfc2be61bdbcaaa3a67c33185">Canvas</a>(QWidget *parent=nullptr)</td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_canvas.html#a875b0b334afc2eb857604adddc118671">checkDelaunay</a>()</td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_canvas.html#ac4559a6535f497f17415032632aa9f6a">clear</a>()</td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_canvas.html#a4be165c96a43cc3c780e211f5e7cc6c8">findOppositePointOfTrianglesWithEdgeCommon</a>(const Triangle &amp;tri)</td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_canvas.html#a36400779155b40787ab5f192d1168c54">getBox</a>()</td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_canvas.html#a5233eb6cb36a66bde65b0e4abf01e617">getSizeofT</a>()</td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_canvas.html#a99f4cab25a899653f9337ad36e4a3177">getSizeofV</a>()</td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_canvas.html#a02da07de074f8a6a92b346fd521ba018">loadMesh</a>(const QString &amp;title)</td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_canvas.html#a2f2bb37513c12c40f80ce6ba1ebfc3eb">mouseMoveEvent</a>(QMouseEvent *) override</td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_canvas.html#aa577b5ad3f5c1b8f211fbaf66e56ad9f">mousePressEvent</a>(QMouseEvent *) override</td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_canvas.html#a1cfc6518e39c51d16ff4f8c9ddfed909">origin</a></td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_canvas.html#aeea65f2bfc2be61bdbcaaa3a67c33185">Canvas</a>(QWidget *parent=nullptr)</td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_canvas.html#a5226f7b0b1190ff98adb88f2f79c9b5c">droneCollisionDistance</a></td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_canvas.html#a902077fa3f78b9de8c7de3fdb7f1d55a">droneIconSize</a></td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_canvas.html#a44d7f1a477fa5d0f28f622f8e23166ec">droneImg</a></td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_canvas.html#a080f2bb0587f29c4b9d3ea31d5ed3a62">mapDrones</a></td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_canvas.html#ac766a4e369f781943df021b80e5922c4">mousePressEvent</a>(QMouseEvent *event) override</td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_canvas.html#a743fefef4af18260e8d56d95f92618aa">paintEvent</a>(QPaintEvent *) override</td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_canvas.html#a7c6aa7f3b2af6d97f2f9358d3e66951d">reScale</a>()</td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_canvas.html#af6760030ef7aaf5cf73e89fbb55bee26">resizeEvent</a>(QResizeEvent *event) override</td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_canvas.html#a387509ed6ea92c766ec53cef653deab1">scale</a></td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_canvas.html#ac1a1b0d3b6fa9d3c4aa30c014e15051c">showCenters</a></td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_canvas.html#abb70425f30be2b4b97e56bb56486a525">showCircles</a></td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_canvas.html#adec15319e8610b6a4a016f70970ee82f">showTriangles</a></td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_canvas.html#aa3de99c5a524030b65b136f565879abd">triangles</a></td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_canvas.html#af64171658065e802d3a2451bd03a965d">updateSB</a>(QString s)</td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"><span class="mlabel">signal</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="class_canvas.html#a0ed3404d54fd67e188c9a35c6c0a0c2c">vertices</a></td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_canvas.html#a237c4549ad2e27c729cd1f71e89f0fd9">~Canvas</a>()</td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_canvas.html#a1c7573f5031e9c97f04699e0ba308bb0">setMap</a>(QMap&lt; QString, Drone * &gt; *map)</td><td class="entry"><a class="el" href="class_canvas.html">Canvas</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

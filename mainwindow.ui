@@ -6,17 +6,65 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1268</width>
+    <height>797</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Draw the Circumcircle</string>
+   <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,0">
     <item>
-     <widget class="Canvas" name="canvas" native="true"/>
+     <widget class="Canvas" name="widget" native="true"/>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Drone list:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QListWidget" name="listDronesInfo">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="lineWidth">
+         <number>2</number>
+        </property>
+        <property name="midLineWidth">
+         <number>1</number>
+        </property>
+        <property name="autoScrollMargin">
+         <number>12</number>
+        </property>
+        <property name="movement">
+         <enum>QListView::Movement::Snap</enum>
+        </property>
+        <property name="resizeMode">
+         <enum>QListView::ResizeMode::Adjust</enum>
+        </property>
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="gridSize">
+         <size>
+          <width>0</width>
+          <height>48</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>
@@ -25,7 +73,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1268</width>
      <height>25</height>
     </rect>
    </property>
@@ -33,25 +81,18 @@
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="actionNew"/>
     <addaction name="actionLoad"/>
     <addaction name="separator"/>
     <addaction name="actionQuit"/>
    </widget>
-   <widget class="QMenu" name="menuDraw">
+   <widget class="QMenu" name="menuShow">
     <property name="title">
      <string>Show</string>
     </property>
     <addaction name="actionCircles"/>
-    <addaction name="actionCenter"/>
+    <addaction name="actionCenters"/>
     <addaction name="actionTriangles"/>
     <addaction name="actionVoronoi_transparency"/>
-   </widget>
-   <widget class="QMenu" name="menuAbout">
-    <property name="title">
-     <string>Help</string>
-    </property>
-    <addaction name="actionAbout"/>
    </widget>
    <widget class="QMenu" name="menuCompile">
     <property name="title">
@@ -61,21 +102,21 @@
     <addaction name="actionProcess_flip"/>
     <addaction name="actionProcess_polygons"/>
    </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
    <addaction name="menuFile"/>
-   <addaction name="menuDraw"/>
+   <addaction name="menuShow"/>
    <addaction name="menuCompile"/>
-   <addaction name="menuAbout"/>
+   <addaction name="menuHelp"/>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QStatusBar" name="statusbar"/>
   <action name="actionLoad">
    <property name="text">
     <string>Load</string>
-   </property>
-   <property name="toolTip">
-    <string>Load a file with triangles</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+L</string>
    </property>
   </action>
   <action name="actionQuit">
@@ -86,17 +127,6 @@
     <string>Ctrl+Q</string>
    </property>
   </action>
-  <action name="actionNew">
-   <property name="text">
-    <string>New</string>
-   </property>
-   <property name="toolTip">
-    <string>New trangle</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+N</string>
-   </property>
-  </action>
   <action name="actionCircles">
    <property name="checkable">
     <bool>true</bool>
@@ -104,22 +134,16 @@
    <property name="text">
     <string>Circles</string>
    </property>
-   <property name="toolTip">
-    <string>Show Circles</string>
-   </property>
    <property name="shortcut">
     <string>Ctrl+O</string>
    </property>
   </action>
-  <action name="actionCenter">
+  <action name="actionCenters">
    <property name="checkable">
     <bool>true</bool>
    </property>
    <property name="text">
     <string>Centers</string>
-   </property>
-   <property name="toolTip">
-    <string>Show Centers</string>
    </property>
   </action>
   <action name="actionTriangles">
@@ -129,16 +153,19 @@
    <property name="text">
     <string>Triangles</string>
    </property>
-   <property name="toolTip">
-    <string>Show triangles</string>
-   </property>
    <property name="shortcut">
     <string>Ctrl+T</string>
    </property>
   </action>
-  <action name="actionAbout">
+  <action name="actionVoronoi_transparency">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
-    <string>About</string>
+    <string>Voronoi transparency</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
    </property>
   </action>
   <action name="actionCheck_Delaunay">
@@ -165,12 +192,9 @@
     <string>Ctrl+P</string>
    </property>
   </action>
-  <action name="actionVoronoi_transparency">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
+  <action name="actionAbout">
    <property name="text">
-    <string>Voronoi transparency</string>
+    <string>About</string>
    </property>
   </action>
  </widget>

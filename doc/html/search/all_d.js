@@ -1,12 +1,8 @@
 var searchData=
 [
-  ['scale_0',['scale',['../class_canvas.html#a387509ed6ea92c766ec53cef653deab1',1,'Canvas']]],
-  ['set_1',['set',['../class_vector2_d.html#a14a6cb145a9ac37b7242977b4d861040',1,'Vector2D']]],
-  ['setcolor_2',['setColor',['../class_triangle.html#a9d9365aceb3f6e4f53867a0d37710cbb',1,'Triangle']]],
-  ['setdelaunay_3',['setDelaunay',['../class_triangle.html#a650fc423f2b682cc33b47c5313463406',1,'Triangle']]],
-  ['sethighlighted_4',['setHighlighted',['../class_triangle.html#a1eaa6931e3451fb195f24a2c1da5f2fc',1,'Triangle']]],
-  ['setopposite_5',['setOpposite',['../class_triangle.html#a27f92765672968ee36819c38c377139b',1,'Triangle']]],
-  ['showcenters_6',['showCenters',['../class_canvas.html#ac1a1b0d3b6fa9d3c4aa30c014e15051c',1,'Canvas']]],
-  ['showcircles_7',['showCircles',['../class_canvas.html#abb70425f30be2b4b97e56bb56486a525',1,'Canvas']]],
-  ['showtriangles_8',['showTriangles',['../class_canvas.html#adec15319e8610b6a4a016f70970ee82f',1,'Canvas']]]
+  ['paintevent_0',['paintEvent',['../class_canvas.html#a743fefef4af18260e8d56d95f92618aa',1,'Canvas::paintEvent()'],['../class_drone.html#a6d7cda9ed3d1a173f107bfef3a635a90',1,'Drone::paintEvent(QPaintEvent *) override']]],
+  ['position_1',['position',['../class_drone.html#a1c4e77ec65b47ddaae2a0e2d29f5ea6a',1,'Drone']]],
+  ['power_2',['power',['../class_drone.html#a1eba81b4e971f830fc498a51345d1248',1,'Drone']]],
+  ['powerconsumption_3',['powerConsumption',['../class_drone.html#ac7d3282ce0c3400891283566e205dfa2',1,'Drone']]],
+  ['powerpb_4',['powerPB',['../class_drone.html#a6786055bfa5b8345336b9518f8b24c07',1,'Drone']]]
 ];

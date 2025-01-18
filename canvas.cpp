@@ -1,3 +1,4 @@
+#include <QPainter>
 #include "canvas.h"
 #include <QMouseEvent>
 #include <QJsonDocument>
@@ -6,13 +7,15 @@
 #include <QFile>
 #include <QVector>
 #include <mypolygon.h>
-
 #include "vector2d.h"
 
-Canvas::Canvas(QWidget *parent) : QWidget(parent) {
+Canvas::Canvas(QWidget *parent)
+    : QWidget{parent} {
+    droneImg.load("../../media/drone.png");
     setMouseTracking(true);
-
 }
+
+
 
 Canvas::~Canvas() {
     clear();
@@ -23,34 +26,26 @@ Canvas::~Canvas() {
 }
 
 void Canvas::clear() {
+    for( auto d: mapDrones){
+        delete d;
+    }
+    mapDrones.clear();
     triangles.clear();
     cities->clear();
 }
 
-void Canvas::addPoints(QString &name ,const QVector<Vector2D> &tab) {
-    for (auto &pt:tab) {
-        // duplicate the point to get a local permanent version
-        cities->pushCity(name ,new Vector2D(pt), "");
-    }
-    reScale();
-    update();
-}
-
-void Canvas::addTriangle( int id0, int id1, int id2) {
-
-    triangles.push_back(new Triangle(cities->getPointByIndex(id0),cities->getPointByIndex(id1),cities->getPointByIndex(id2)));
-}
-
-void Canvas::addTriangle(int id0, int id1, int id2,const QColor &color) {
-    triangles.push_back(new Triangle(cities->getPointByIndex(id0),cities->getPointByIndex(id1),cities->getPointByIndex(id2),color));
-}
 
 void Canvas::paintEvent(QPaintEvent *) {
-    //qDebug() << "PAINT";
     QPainter painter(this);
     QBrush whiteBrush(Qt::SolidPattern);
+    QPen penCol(Qt::DashDotDotLine);
+    penCol.setColor(Qt::lightGray);
+    penCol.setWidth(3);
     whiteBrush.setColor(Qt::white);
     painter.fillRect(0,0,width(),height(),whiteBrush);
+
+
+    //painter.fillRect(0,0,width(),height(),whiteBrush);
 
     // draw axes
     QPointF points[7]={{0,-2},{80,-2},{80,-10},{100,0},{80,10},{80,2},{0,2}};
@@ -123,7 +118,94 @@ void Canvas::paintEvent(QPaintEvent *) {
         painter.restore();
     }
 
+
+    if (mapDrones.size() > 0 ) {
+        Vector2D p;
+        QRect rect(-droneIconSize/2,-droneIconSize/2,droneIconSize,droneIconSize);
+        QRect rectCol(-droneCollisionDistance/2,-droneCollisionDistance/2,droneCollisionDistance,droneCollisionDistance);
+
+        for (auto &drone:mapDrones) {
+            painter.save();
+            // place and orient the drone
+            painter.translate(drone->getPosition().x,drone->getPosition().y);
+            painter.rotate(drone->getAzimut());
+            painter.drawImage(rect,droneImg);
+            // light leds if flying
+            if (drone->getStatus()!=Drone::landed) {
+                painter.setPen(Qt::NoPen);
+                painter.setBrush(Qt::red);
+                painter.drawEllipse((-185.0/511.0)*droneIconSize,(-185.0/511.0)*droneIconSize,(65.0/511.0)*droneIconSize,(65.0/511.0)*droneIconSize);
+                painter.drawEllipse((115.0/511.0)*droneIconSize,(-185.0/511.0)*droneIconSize,(65.0/511.0)*droneIconSize,(65.0/511.0)*droneIconSize);
+                painter.setBrush(Qt::green);
+                painter.drawEllipse((-185.0/511.0)*droneIconSize,(115.0/511.0)*droneIconSize,(70.0/511.0)*droneIconSize,(70.0/511.0)*droneIconSize);
+                painter.drawEllipse((115.0/511.0)*droneIconSize,(115.0/511.0)*droneIconSize,(70.0/511.0)*droneIconSize,(70.0/511.0)*droneIconSize);
+            }
+            // draw collision detector
+            if (drone->hasCollision()) {
+                painter.setPen(penCol);
+                painter.setBrush(Qt::NoBrush);
+                painter.drawEllipse(rectCol);
+            }
+            painter.restore();
+        }
+    }
+
 }
+
+void Canvas::mousePressEvent(QMouseEvent *event) {
+    // search for a drone that is landed
+    float mouseX=float(event->pos().x()-10)/scale+origin.x();
+    float mouseY=-float(event->pos().y()-height()+10)/scale+origin.y();
+
+    for (auto &tri:triangles) {
+
+        if(tri->isInside(mouseX,mouseY) && tri->isFlippable()){
+
+            tri->flippIt(triangles);
+            checkDelaunay();
+            qDebug() << "FlippIt ended";
+            break;
+        }
+    }
+
+
+    auto it = mapDrones.begin();
+    while (it!=mapDrones.end() && (*it)->getStatus()!=Drone::landed) {
+        it++;
+    }
+    // if found, ask for a motion to the mouse position
+    if (it!=mapDrones.end()) {
+        (*it)->setGoalPosition(Vector2D(mouseX,mouseY));
+        (*it)->start();
+    }
+
+
+
+    repaint();
+}
+
+
+
+
+
+void Canvas::addPoints(QString &name ,const QVector<Vector2D> &tab) {
+    for (auto &pt:tab) {
+        // duplicate the point to get a local permanent version
+        cities->pushCity(name ,new Vector2D(pt), "");
+    }
+    reScale();
+    update();
+}
+
+void Canvas::addTriangle( int id0, int id1, int id2) {
+
+    triangles.push_back(new Triangle(cities->getPointByIndex(id0),cities->getPointByIndex(id1),cities->getPointByIndex(id2)));
+}
+
+void Canvas::addTriangle(int id0, int id1, int id2,const QColor &color) {
+    triangles.push_back(new Triangle(cities->getPointByIndex(id0),cities->getPointByIndex(id1),cities->getPointByIndex(id2),color));
+}
+
 
 QPair<Vector2D,Vector2D> Canvas::getBox() {
     auto vertices = cities->getTabCities();
@@ -179,39 +261,23 @@ void Canvas::mouseMoveEvent(QMouseEvent *event) {
     update();
 }
 
-void Canvas::mousePressEvent(QMouseEvent * event){
-
-    float mouseX=float(event->pos().x()-10)/scale+origin.x();
-    float mouseY=-float(event->pos().y()-height()+10)/scale+origin.y();
-
-    for (auto &tri:triangles) {
-
-        if(tri->isInside(mouseX,mouseY) && tri->isFlippable()){
-
-            tri->flippIt(triangles);
-            checkDelaunay();
-            qDebug() << "FlippIt ended";
-            break;
-        }
-    }
-
-
-}
 
 void Canvas::loadMesh(const QString &title) {
     QFile file(title);
 
     if (file.open(QIODevice::ReadOnly|QIODevice::Text)) {
-            qDebug() << "ça sent l'roussi";
+        qDebug() << "ça sent l'roussi";
         clear();
         QString JSON=file.readAll();
         file.close();
 
         QJsonDocument doc = QJsonDocument::fromJson(JSON.toUtf8());
         QJsonArray JSONvertices = doc["servers"].toArray();
+        QJsonArray JSONdrone =  doc["drones"].toArray();
 
 
         qDebug() << "Vertices:" << JSONvertices.size();
+        qDebug() << "Drones:" << JSONdrone.size();
 
 
 
@@ -246,6 +312,23 @@ void Canvas::loadMesh(const QString &title) {
         triangles.clear();
         cities->orderPolygonPoint(origin);
         triangles = cities->initTriangulation();
+
+
+        /* preset initial positions of the drones */
+
+        int n= 0;
+        for (auto &&v:JSONdrone) {
+            QJsonObject vector=v.toObject();
+
+
+            QString name= vector["name"].toString();
+            auto strPosition = vector["position"].toString().split(',');
+            Vector2D pt(strPosition[0].toFloat(),strPosition[1].toFloat());
+            Drone *drone = new Drone(name);
+            drone->setInitialPosition(pt);
+            mapDrones.push_back(drone);
+
+        }
 
 
     }
@@ -539,7 +622,7 @@ void Canvas::processVoronoi(City &city){
 
                 }else{
                     qDebug() << "ICI 4";
-                     Lordered.push_front((*it)->getCircleCenter());
+                    Lordered.push_front((*it)->getCircleCenter());
                 }
 
 
@@ -588,7 +671,7 @@ void Canvas::processVoronoi(City &city){
 
                 }
             }
-        /* Aucun voisin n'a été trouvé le triangles es tdonc ouvert  */
+            /* Aucun voisin n'a été trouvé le triangles es tdonc ouvert  */
         } else {
             isClosed = false;
 
@@ -631,8 +714,8 @@ void Canvas::processVoronoi(City &city){
                     qDebug() << "ICI 13";
                     qDebug() << "computedLimitPointNb";
 
-                        Lordered.push_back(inter);
-                        computedLimitPointNb++;
+                    Lordered.push_back(inter);
+                    computedLimitPointNb++;
 
 
                 }
@@ -651,7 +734,12 @@ void Canvas::processPoly(){
     flippAll();
     for(auto &c: cities->getTabCities()){
         processVoronoi(*c);
-    }/*
-   qDebug() << "VORONOI DE : "  << cities->getTabCities()[1]->getName();
+    }
+    cities->connectionMatrix(cities->getTabCities());
+    /*   qDebug() << "VORONOI DE : "  << cities->getTabCities()[1]->getName();
     processVoronoi(*cities->getTabCities()[1]);*/
 }
+
+
+
+

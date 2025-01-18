@@ -1,8 +1,12 @@
 var searchData=
 [
-  ['determinant_0',['determinant',['../class_matrix22.html#ad18ae363d30a93115d9ac2fb53e6e71a',1,'Matrix22::determinant()'],['../class_matrix33.html#a91bdfd4a4ea7467fbb843761a830f090',1,'Matrix33::determinant()'],['../class_matrix44.html#aa04b9a3ed2ab380ba4aa3b91d514c4cd',1,'Matrix44::determinant()']]],
-  ['determinant_2ecpp_1',['determinant.cpp',['../determinant_8cpp.html',1,'']]],
-  ['determinant_2eh_2',['determinant.h',['../determinant_8h.html',1,'']]],
-  ['draw_3',['draw',['../class_triangle.html#a2ee48003aaf0a326c3866c7e2d61a261',1,'Triangle']]],
-  ['drawcircle_4',['drawCircle',['../class_triangle.html#afa7613cc5c6e20df91f408166bd1aa61',1,'Triangle']]]
+  ['damping_0',['damping',['../class_drone.html#ab6681e09ecbb19bfb49378bdd3d1b112',1,'Drone']]],
+  ['direction_1',['direction',['../class_drone.html#a38dc018619251cfc499cc0fb42844671',1,'Drone']]],
+  ['drone_2',['Drone',['../class_drone.html',1,'Drone'],['../class_drone.html#a1701904e4a77b668620ffe92a0f15bf1',1,'Drone::Drone()']]],
+  ['drone_2ecpp_3',['drone.cpp',['../drone_8cpp.html',1,'']]],
+  ['drone_2eh_4',['drone.h',['../drone_8h.html',1,'']]],
+  ['dronecollisiondistance_5',['droneCollisionDistance',['../class_canvas.html#a5226f7b0b1190ff98adb88f2f79c9b5c',1,'Canvas']]],
+  ['droneiconsize_6',['droneIconSize',['../class_canvas.html#a902077fa3f78b9de8c7de3fdb7f1d55a',1,'Canvas']]],
+  ['droneimg_7',['droneImg',['../class_canvas.html#a44d7f1a477fa5d0f28f622f8e23166ec',1,'Canvas']]],
+  ['dronestatus_8',['droneStatus',['../class_drone.html#aeab5eed0a5d06cc3968da277ad2671af',1,'Drone']]]
 ];

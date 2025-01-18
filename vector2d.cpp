@@ -1,8 +1,5 @@
 #include "vector2d.h"
 
-
-
-
 Vector2D Vector2D::projection(const Vector2D &A, const Vector2D &B, const Vector2D &M) {
     Vector2D AB = B - A;   // Vector AB
     Vector2D AM = M - A;   // Vector AM
@@ -122,8 +119,9 @@ bool Vector2D::polarComparison(QPair<QString,Vector2D> P1,QPair<QString,Vector2D
     return a1<a2;
 }
 
+
 const Vector2D operator *(double a,const Vector2D &v) {
-    return Vector2D(a*v.x,a*v.y);
+    return Vector2D(float(a*v.x),float(a*v.y));
 }
 
  double operator *(const Vector2D &u,const Vector2D &v) {
@@ -149,9 +147,11 @@ const Vector2D operator-(const Vector2D &v) {
  bool operator==(const Vector2D &u,const Vector2D &v) {
     return (u.x==v.x && u.y==v.y);
 }
-bool edgesMatch(const Vector2D* p1, const Vector2D* p2, const Vector2D* p3, const Vector2D* p4) {
+
+ bool edgesMatch(const Vector2D* p1, const Vector2D* p2, const Vector2D* p3, const Vector2D* p4) {
      // Compare the edges (p1, p2) and (p3, p4)
      return ((p1 == p3 && p2 == p4) || (p1 == p4 && p2 == p3));
-}
+ }
+
 
 

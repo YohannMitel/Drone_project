@@ -45,7 +45,7 @@ public:
 
     bool isOnTheLeft(const Vector2D *P,const Vector2D *P1,const Vector2D *P2) {
         Vector2D AB = *P2-*P1,
-                AP = *P-*P1;
+            AP = *P-*P1;
 
         return (AB.x*AP.y - AB.y*AP.x)>=0;
     }

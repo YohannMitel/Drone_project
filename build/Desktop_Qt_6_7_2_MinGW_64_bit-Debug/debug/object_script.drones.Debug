@@ -1,0 +1,13 @@
+debug/canvas.o
+debug/cities.o
+debug/city.o
+debug/determinant.o
+debug/drone.o
+debug/main.o
+debug/mainwindow.o
+debug/mypolygon.o
+debug/triangle.o
+debug/vector2d.o
+debug/moc_canvas.o
+debug/moc_drone.o
+debug/moc_mainwindow.o

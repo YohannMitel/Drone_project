@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Circum circle: Canvas Class Reference</title>
+<title>Drone demo: Canvas Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,8 +24,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="takeoff.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Circum circle
+   <div id="projectname">Drone demo<span id="projectnumber">&#160;1.0</span>
    </div>
   </td>
  </tr>
@@ -85,15 +86,16 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_canvas-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Canvas Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Drone_demo project.  
+ <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="canvas_8h_source.html">canvas.h</a>&gt;</code></p>
 <div class="dynheader">
@@ -103,74 +105,45 @@ Inheritance diagram for Canvas:</div>
   <img src="class_canvas.png" alt=""/>
  </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
-Signals</h2></td></tr>
-<tr class="memitem:af64171658065e802d3a2451bd03a965d" id="r_af64171658065e802d3a2451bd03a965d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af64171658065e802d3a2451bd03a965d">updateSB</a> (QString s)</td></tr>
-<tr class="separator:af64171658065e802d3a2451bd03a965d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aeea65f2bfc2be61bdbcaaa3a67c33185" id="r_aeea65f2bfc2be61bdbcaaa3a67c33185"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeea65f2bfc2be61bdbcaaa3a67c33185">Canvas</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:aeea65f2bfc2be61bdbcaaa3a67c33185"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_canvas.html" title="Drone_demo project.">Canvas</a> constructor.  <br /></td></tr>
 <tr class="separator:aeea65f2bfc2be61bdbcaaa3a67c33185"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a237c4549ad2e27c729cd1f71e89f0fd9" id="r_a237c4549ad2e27c729cd1f71e89f0fd9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a237c4549ad2e27c729cd1f71e89f0fd9">~Canvas</a> ()</td></tr>
-<tr class="separator:a237c4549ad2e27c729cd1f71e89f0fd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02da07de074f8a6a92b346fd521ba018" id="r_a02da07de074f8a6a92b346fd521ba018"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02da07de074f8a6a92b346fd521ba018">loadMesh</a> (const QString &amp;title)</td></tr>
-<tr class="separator:a02da07de074f8a6a92b346fd521ba018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c7573f5031e9c97f04699e0ba308bb0" id="r_a1c7573f5031e9c97f04699e0ba308bb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c7573f5031e9c97f04699e0ba308bb0">setMap</a> (QMap&lt; QString, <a class="el" href="class_drone.html">Drone</a> * &gt; *map)</td></tr>
+<tr class="memdesc:a1c7573f5031e9c97f04699e0ba308bb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">setMap set the list of drones (identified by their name) to the canvas  <br /></td></tr>
+<tr class="separator:a1c7573f5031e9c97f04699e0ba308bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a743fefef4af18260e8d56d95f92618aa" id="r_a743fefef4af18260e8d56d95f92618aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a743fefef4af18260e8d56d95f92618aa">paintEvent</a> (QPaintEvent *) override</td></tr>
+<tr class="memdesc:a743fefef4af18260e8d56d95f92618aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">paintEvent  <br /></td></tr>
 <tr class="separator:a743fefef4af18260e8d56d95f92618aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6760030ef7aaf5cf73e89fbb55bee26" id="r_af6760030ef7aaf5cf73e89fbb55bee26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6760030ef7aaf5cf73e89fbb55bee26">resizeEvent</a> (QResizeEvent *event) override</td></tr>
-<tr class="separator:af6760030ef7aaf5cf73e89fbb55bee26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa577b5ad3f5c1b8f211fbaf66e56ad9f" id="r_aa577b5ad3f5c1b8f211fbaf66e56ad9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa577b5ad3f5c1b8f211fbaf66e56ad9f">mousePressEvent</a> (QMouseEvent *) override</td></tr>
-<tr class="separator:aa577b5ad3f5c1b8f211fbaf66e56ad9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f2bb37513c12c40f80ce6ba1ebfc3eb" id="r_a2f2bb37513c12c40f80ce6ba1ebfc3eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f2bb37513c12c40f80ce6ba1ebfc3eb">mouseMoveEvent</a> (QMouseEvent *) override</td></tr>
-<tr class="separator:a2f2bb37513c12c40f80ce6ba1ebfc3eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2eac6e655c2f2c8993bcea546e45d45" id="r_ab2eac6e655c2f2c8993bcea546e45d45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2eac6e655c2f2c8993bcea546e45d45">addPoints</a> (const QVector&lt; <a class="el" href="class_vector2_d.html">Vector2D</a> &gt; &amp;tab)</td></tr>
-<tr class="separator:ab2eac6e655c2f2c8993bcea546e45d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9be51dab63db480d6c237d45cc4a178a" id="r_a9be51dab63db480d6c237d45cc4a178a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9be51dab63db480d6c237d45cc4a178a">addTriangle</a> (int id0, int id1, int id2)</td></tr>
-<tr class="separator:a9be51dab63db480d6c237d45cc4a178a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2cb96ecee7fad0337ddc3e373027769" id="r_af2cb96ecee7fad0337ddc3e373027769"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2cb96ecee7fad0337ddc3e373027769">addTriangle</a> (int id0, int id1, int id2, const QColor &amp;color)</td></tr>
-<tr class="separator:af2cb96ecee7fad0337ddc3e373027769"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4559a6535f497f17415032632aa9f6a" id="r_ac4559a6535f497f17415032632aa9f6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4559a6535f497f17415032632aa9f6a">clear</a> ()</td></tr>
-<tr class="separator:ac4559a6535f497f17415032632aa9f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c6aa7f3b2af6d97f2f9358d3e66951d" id="r_a7c6aa7f3b2af6d97f2f9358d3e66951d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c6aa7f3b2af6d97f2f9358d3e66951d">reScale</a> ()</td></tr>
-<tr class="separator:a7c6aa7f3b2af6d97f2f9358d3e66951d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99f4cab25a899653f9337ad36e4a3177" id="r_a99f4cab25a899653f9337ad36e4a3177"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99f4cab25a899653f9337ad36e4a3177">getSizeofV</a> ()</td></tr>
-<tr class="separator:a99f4cab25a899653f9337ad36e4a3177"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5233eb6cb36a66bde65b0e4abf01e617" id="r_a5233eb6cb36a66bde65b0e4abf01e617"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5233eb6cb36a66bde65b0e4abf01e617">getSizeofT</a> ()</td></tr>
-<tr class="separator:a5233eb6cb36a66bde65b0e4abf01e617"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a875b0b334afc2eb857604adddc118671" id="r_a875b0b334afc2eb857604adddc118671"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a875b0b334afc2eb857604adddc118671">checkDelaunay</a> ()</td></tr>
-<tr class="separator:a875b0b334afc2eb857604adddc118671"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4be165c96a43cc3c780e211f5e7cc6c8" id="r_a4be165c96a43cc3c780e211f5e7cc6c8"><td class="memItemLeft" align="right" valign="top">QVector&lt; const <a class="el" href="class_vector2_d.html">Vector2D</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4be165c96a43cc3c780e211f5e7cc6c8">findOppositePointOfTrianglesWithEdgeCommon</a> (const <a class="el" href="class_triangle.html">Triangle</a> &amp;tri)</td></tr>
-<tr class="separator:a4be165c96a43cc3c780e211f5e7cc6c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac766a4e369f781943df021b80e5922c4" id="r_ac766a4e369f781943df021b80e5922c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac766a4e369f781943df021b80e5922c4">mousePressEvent</a> (QMouseEvent *event) override</td></tr>
+<tr class="memdesc:ac766a4e369f781943df021b80e5922c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">mousePressEvent  <br /></td></tr>
+<tr class="separator:ac766a4e369f781943df021b80e5922c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:adec15319e8610b6a4a016f70970ee82f" id="r_adec15319e8610b6a4a016f70970ee82f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adec15319e8610b6a4a016f70970ee82f">showTriangles</a> =true</td></tr>
-<tr class="separator:adec15319e8610b6a4a016f70970ee82f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1a1b0d3b6fa9d3c4aa30c014e15051c" id="r_ac1a1b0d3b6fa9d3c4aa30c014e15051c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1a1b0d3b6fa9d3c4aa30c014e15051c">showCenters</a> =false</td></tr>
-<tr class="separator:ac1a1b0d3b6fa9d3c4aa30c014e15051c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb70425f30be2b4b97e56bb56486a525" id="r_abb70425f30be2b4b97e56bb56486a525"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb70425f30be2b4b97e56bb56486a525">showCircles</a> =false</td></tr>
-<tr class="separator:abb70425f30be2b4b97e56bb56486a525"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a36400779155b40787ab5f192d1168c54" id="r_a36400779155b40787ab5f192d1168c54"><td class="memItemLeft" align="right" valign="top">QPair&lt; <a class="el" href="class_vector2_d.html">Vector2D</a>, <a class="el" href="class_vector2_d.html">Vector2D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36400779155b40787ab5f192d1168c54">getBox</a> ()</td></tr>
-<tr class="separator:a36400779155b40787ab5f192d1168c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a902077fa3f78b9de8c7de3fdb7f1d55a" id="r_a902077fa3f78b9de8c7de3fdb7f1d55a"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a902077fa3f78b9de8c7de3fdb7f1d55a">droneIconSize</a> =64</td></tr>
+<tr class="memdesc:a902077fa3f78b9de8c7de3fdb7f1d55a"><td class="mdescLeft">&#160;</td><td class="mdescRight">size of the drone picture in the vanvas  <br /></td></tr>
+<tr class="separator:a902077fa3f78b9de8c7de3fdb7f1d55a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5226f7b0b1190ff98adb88f2f79c9b5c" id="r_a5226f7b0b1190ff98adb88f2f79c9b5c"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5226f7b0b1190ff98adb88f2f79c9b5c">droneCollisionDistance</a> =<a class="el" href="#a902077fa3f78b9de8c7de3fdb7f1d55a">droneIconSize</a>*1.5</td></tr>
+<tr class="memdesc:a5226f7b0b1190ff98adb88f2f79c9b5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">distance to detect collision with other drone  <br /></td></tr>
+<tr class="separator:a5226f7b0b1190ff98adb88f2f79c9b5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:aa3de99c5a524030b65b136f565879abd" id="r_aa3de99c5a524030b65b136f565879abd"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="class_triangle.html">Triangle</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3de99c5a524030b65b136f565879abd">triangles</a></td></tr>
-<tr class="separator:aa3de99c5a524030b65b136f565879abd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ed3404d54fd67e188c9a35c6c0a0c2c" id="r_a0ed3404d54fd67e188c9a35c6c0a0c2c"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="class_vector2_d.html">Vector2D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ed3404d54fd67e188c9a35c6c0a0c2c">vertices</a></td></tr>
-<tr class="separator:a0ed3404d54fd67e188c9a35c6c0a0c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a387509ed6ea92c766ec53cef653deab1" id="r_a387509ed6ea92c766ec53cef653deab1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a387509ed6ea92c766ec53cef653deab1">scale</a> =0.5</td></tr>
-<tr class="separator:a387509ed6ea92c766ec53cef653deab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1cfc6518e39c51d16ff4f8c9ddfed909" id="r_a1cfc6518e39c51d16ff4f8c9ddfed909"><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cfc6518e39c51d16ff4f8c9ddfed909">origin</a> =QPoint(10,10)</td></tr>
-<tr class="separator:a1cfc6518e39c51d16ff4f8c9ddfed909"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a080f2bb0587f29c4b9d3ea31d5ed3a62" id="r_a080f2bb0587f29c4b9d3ea31d5ed3a62"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, <a class="el" href="class_drone.html">Drone</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a080f2bb0587f29c4b9d3ea31d5ed3a62">mapDrones</a> =nullptr</td></tr>
+<tr class="memdesc:a080f2bb0587f29c4b9d3ea31d5ed3a62"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer on the map of the drones  <br /></td></tr>
+<tr class="separator:a080f2bb0587f29c4b9d3ea31d5ed3a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44d7f1a477fa5d0f28f622f8e23166ec" id="r_a44d7f1a477fa5d0f28f622f8e23166ec"><td class="memItemLeft" align="right" valign="top">QImage&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44d7f1a477fa5d0f28f622f8e23166ec">droneImg</a></td></tr>
+<tr class="memdesc:a44d7f1a477fa5d0f28f622f8e23166ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">picture representing the drone in the canvas  <br /></td></tr>
+<tr class="separator:a44d7f1a477fa5d0f28f622f8e23166ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="canvas_8h_source.html#l00007">7</a> of file <a class="el" href="canvas_8h_source.html">canvas.h</a>.</p>
+<div class="textblock"><p>Drone_demo project. </p>
+<dl class="section author"><dt>Author</dt><dd>B.Piranda </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>dec. 2024 </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="canvas_8h_source.html#l00014">14</a> of file <a class="el" href="canvas_8h_source.html">canvas.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aeea65f2bfc2be61bdbcaaa3a67c33185" name="aeea65f2bfc2be61bdbcaaa3a67c33185"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeea65f2bfc2be61bdbcaaa3a67c33185">&#9670;&#160;</a></span>Canvas()</h2>
@@ -195,296 +168,21 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="canvas_8cpp_source.html#l00010">10</a> of file <a class="el" href="canvas_8cpp_source.html">canvas.cpp</a>.</p>
+<p><a class="el" href="class_canvas.html" title="Drone_demo project.">Canvas</a> constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
-</div>
-</div>
-<a id="a237c4549ad2e27c729cd1f71e89f0fd9" name="a237c4549ad2e27c729cd1f71e89f0fd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a237c4549ad2e27c729cd1f71e89f0fd9">&#9670;&#160;</a></span>~Canvas()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Canvas::~Canvas </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="canvas_8cpp_source.html#l00015">15</a> of file <a class="el" href="canvas_8cpp_source.html">canvas.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="canvas_8cpp_source.html#l00004">4</a> of file <a class="el" href="canvas_8cpp_source.html">canvas.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab2eac6e655c2f2c8993bcea546e45d45" name="ab2eac6e655c2f2c8993bcea546e45d45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2eac6e655c2f2c8993bcea546e45d45">&#9670;&#160;</a></span>addPoints()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Canvas::addPoints </td>
-          <td>(</td>
-          <td class="paramtype">const QVector&lt; <a class="el" href="class_vector2_d.html">Vector2D</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>tab</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="canvas_8cpp_source.html#l00027">27</a> of file <a class="el" href="canvas_8cpp_source.html">canvas.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a9be51dab63db480d6c237d45cc4a178a" name="a9be51dab63db480d6c237d45cc4a178a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9be51dab63db480d6c237d45cc4a178a">&#9670;&#160;</a></span>addTriangle() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Canvas::addTriangle </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id0</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id1</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id2</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="canvas_8cpp_source.html#l00036">36</a> of file <a class="el" href="canvas_8cpp_source.html">canvas.cpp</a>.</p>
-
-</div>
-</div>
-<a id="af2cb96ecee7fad0337ddc3e373027769" name="af2cb96ecee7fad0337ddc3e373027769"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2cb96ecee7fad0337ddc3e373027769">&#9670;&#160;</a></span>addTriangle() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Canvas::addTriangle </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id0</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id1</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id2</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QColor &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="canvas_8cpp_source.html#l00040">40</a> of file <a class="el" href="canvas_8cpp_source.html">canvas.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a875b0b334afc2eb857604adddc118671" name="a875b0b334afc2eb857604adddc118671"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a875b0b334afc2eb857604adddc118671">&#9670;&#160;</a></span>checkDelaunay()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Canvas::checkDelaunay </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="canvas_8cpp_source.html#l00223">223</a> of file <a class="el" href="canvas_8cpp_source.html">canvas.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ac4559a6535f497f17415032632aa9f6a" name="ac4559a6535f497f17415032632aa9f6a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4559a6535f497f17415032632aa9f6a">&#9670;&#160;</a></span>clear()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Canvas::clear </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="canvas_8cpp_source.html#l00022">22</a> of file <a class="el" href="canvas_8cpp_source.html">canvas.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a4be165c96a43cc3c780e211f5e7cc6c8" name="a4be165c96a43cc3c780e211f5e7cc6c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4be165c96a43cc3c780e211f5e7cc6c8">&#9670;&#160;</a></span>findOppositePointOfTrianglesWithEdgeCommon()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QVector&lt; const <a class="el" href="class_vector2_d.html">Vector2D</a> * &gt; Canvas::findOppositePointOfTrianglesWithEdgeCommon </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_triangle.html">Triangle</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>tri</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="canvas_8cpp_source.html#l00205">205</a> of file <a class="el" href="canvas_8cpp_source.html">canvas.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a36400779155b40787ab5f192d1168c54" name="a36400779155b40787ab5f192d1168c54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36400779155b40787ab5f192d1168c54">&#9670;&#160;</a></span>getBox()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QPair&lt; <a class="el" href="class_vector2_d.html">Vector2D</a>, <a class="el" href="class_vector2_d.html">Vector2D</a> &gt; Canvas::getBox </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="canvas_8cpp_source.html#l00109">109</a> of file <a class="el" href="canvas_8cpp_source.html">canvas.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a5233eb6cb36a66bde65b0e4abf01e617" name="a5233eb6cb36a66bde65b0e4abf01e617"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5233eb6cb36a66bde65b0e4abf01e617">&#9670;&#160;</a></span>getSizeofT()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Canvas::getSizeofT </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="canvas_8h_source.html#l00027">27</a> of file <a class="el" href="canvas_8h_source.html">canvas.h</a>.</p>
-
-</div>
-</div>
-<a id="a99f4cab25a899653f9337ad36e4a3177" name="a99f4cab25a899653f9337ad36e4a3177"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99f4cab25a899653f9337ad36e4a3177">&#9670;&#160;</a></span>getSizeofV()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Canvas::getSizeofV </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="canvas_8h_source.html#l00026">26</a> of file <a class="el" href="canvas_8h_source.html">canvas.h</a>.</p>
-
-</div>
-</div>
-<a id="a02da07de074f8a6a92b346fd521ba018" name="a02da07de074f8a6a92b346fd521ba018"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02da07de074f8a6a92b346fd521ba018">&#9670;&#160;</a></span>loadMesh()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Canvas::loadMesh </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>title</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="canvas_8cpp_source.html#l00169">169</a> of file <a class="el" href="canvas_8cpp_source.html">canvas.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a2f2bb37513c12c40f80ce6ba1ebfc3eb" name="a2f2bb37513c12c40f80ce6ba1ebfc3eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f2bb37513c12c40f80ce6ba1ebfc3eb">&#9670;&#160;</a></span>mouseMoveEvent()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Canvas::mouseMoveEvent </td>
-          <td>(</td>
-          <td class="paramtype">QMouseEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="canvas_8cpp_source.html#l00141">141</a> of file <a class="el" href="canvas_8cpp_source.html">canvas.cpp</a>.</p>
-
-</div>
-</div>
-<a id="aa577b5ad3f5c1b8f211fbaf66e56ad9f" name="aa577b5ad3f5c1b8f211fbaf66e56ad9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa577b5ad3f5c1b8f211fbaf66e56ad9f">&#9670;&#160;</a></span>mousePressEvent()</h2>
+<a id="ac766a4e369f781943df021b80e5922c4" name="ac766a4e369f781943df021b80e5922c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac766a4e369f781943df021b80e5922c4">&#9670;&#160;</a></span>mousePressEvent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -506,7 +204,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="canvas_8cpp_source.html#l00152">152</a> of file <a class="el" href="canvas_8cpp_source.html">canvas.cpp</a>.</p>
+<p>mousePressEvent </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="canvas_8cpp_source.html#l00051">51</a> of file <a class="el" href="canvas_8cpp_source.html">canvas.cpp</a>.</p>
 
 </div>
 </div>
@@ -533,31 +239,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="canvas_8cpp_source.html#l00044">44</a> of file <a class="el" href="canvas_8cpp_source.html">canvas.cpp</a>.</p>
+<p>paintEvent </p>
+
+<p class="definition">Definition at line <a class="el" href="canvas_8cpp_source.html#l00010">10</a> of file <a class="el" href="canvas_8cpp_source.html">canvas.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a7c6aa7f3b2af6d97f2f9358d3e66951d" name="a7c6aa7f3b2af6d97f2f9358d3e66951d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c6aa7f3b2af6d97f2f9358d3e66951d">&#9670;&#160;</a></span>reScale()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Canvas::reScale </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="canvas_8cpp_source.html#l00130">130</a> of file <a class="el" href="canvas_8cpp_source.html">canvas.cpp</a>.</p>
-
-</div>
-</div>
-<a id="af6760030ef7aaf5cf73e89fbb55bee26" name="af6760030ef7aaf5cf73e89fbb55bee26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6760030ef7aaf5cf73e89fbb55bee26">&#9670;&#160;</a></span>resizeEvent()</h2>
+<a id="a1c7573f5031e9c97f04699e0ba308bb0" name="a1c7573f5031e9c97f04699e0ba308bb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c7573f5031e9c97f04699e0ba308bb0">&#9670;&#160;</a></span>setMap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -566,51 +255,70 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Canvas::resizeEvent </td>
+          <td class="memname">void Canvas::setMap </td>
           <td>(</td>
-          <td class="paramtype">QResizeEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td class="paramtype">QMap&lt; QString, <a class="el" href="class_drone.html">Drone</a> * &gt; *</td>          <td class="paramname"><span class="paramname"><em>map</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="canvas_8cpp_source.html#l00125">125</a> of file <a class="el" href="canvas_8cpp_source.html">canvas.cpp</a>.</p>
+<p>setMap set the list of drones (identified by their name) to the canvas </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">map</td><td>the map of couple "name of the drone"/"drone pointer" </td></tr>
+  </table>
+  </dd>
+</dl>
 
-</div>
-</div>
-<a id="af64171658065e802d3a2451bd03a965d" name="af64171658065e802d3a2451bd03a965d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af64171658065e802d3a2451bd03a965d">&#9670;&#160;</a></span>updateSB</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Canvas::updateSB </td>
-          <td>(</td>
-          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p class="definition">Definition at line <a class="el" href="canvas_8h_source.html#l00028">28</a> of file <a class="el" href="canvas_8h_source.html">canvas.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a1cfc6518e39c51d16ff4f8c9ddfed909" name="a1cfc6518e39c51d16ff4f8c9ddfed909"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1cfc6518e39c51d16ff4f8c9ddfed909">&#9670;&#160;</a></span>origin</h2>
+<a id="a5226f7b0b1190ff98adb88f2f79c9b5c" name="a5226f7b0b1190ff98adb88f2f79c9b5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5226f7b0b1190ff98adb88f2f79c9b5c">&#9670;&#160;</a></span>droneCollisionDistance</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double Canvas::droneCollisionDistance =<a class="el" href="#a902077fa3f78b9de8c7de3fdb7f1d55a">droneIconSize</a>*1.5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>distance to detect collision with other drone </p>
+
+<p class="definition">Definition at line <a class="el" href="canvas_8h_source.html#l00018">18</a> of file <a class="el" href="canvas_8h_source.html">canvas.h</a>.</p>
+
+</div>
+</div>
+<a id="a902077fa3f78b9de8c7de3fdb7f1d55a" name="a902077fa3f78b9de8c7de3fdb7f1d55a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a902077fa3f78b9de8c7de3fdb7f1d55a">&#9670;&#160;</a></span>droneIconSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int Canvas::droneIconSize =64</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>size of the drone picture in the vanvas </p>
+
+<p class="definition">Definition at line <a class="el" href="canvas_8h_source.html#l00017">17</a> of file <a class="el" href="canvas_8h_source.html">canvas.h</a>.</p>
+
+</div>
+</div>
+<a id="a44d7f1a477fa5d0f28f622f8e23166ec" name="a44d7f1a477fa5d0f28f622f8e23166ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44d7f1a477fa5d0f28f622f8e23166ec">&#9670;&#160;</a></span>droneImg</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -619,7 +327,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QPoint Canvas::origin =QPoint(10,10)</td>
+          <td class="memname">QImage Canvas::droneImg</td>
         </tr>
       </table>
   </td>
@@ -628,13 +336,15 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>picture representing the drone in the canvas </p>
 
 <p class="definition">Definition at line <a class="el" href="canvas_8h_source.html#l00042">42</a> of file <a class="el" href="canvas_8h_source.html">canvas.h</a>.</p>
 
 </div>
 </div>
-<a id="a387509ed6ea92c766ec53cef653deab1" name="a387509ed6ea92c766ec53cef653deab1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a387509ed6ea92c766ec53cef653deab1">&#9670;&#160;</a></span>scale</h2>
+<a id="a080f2bb0587f29c4b9d3ea31d5ed3a62" name="a080f2bb0587f29c4b9d3ea31d5ed3a62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a080f2bb0587f29c4b9d3ea31d5ed3a62">&#9670;&#160;</a></span>mapDrones</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -643,7 +353,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float Canvas::scale =0.5</td>
+          <td class="memname">QMap&lt;QString,<a class="el" href="class_drone.html">Drone</a>*&gt;* Canvas::mapDrones =nullptr</td>
         </tr>
       </table>
   </td>
@@ -652,110 +362,16 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>pointer on the map of the drones </p>
 
 <p class="definition">Definition at line <a class="el" href="canvas_8h_source.html#l00041">41</a> of file <a class="el" href="canvas_8h_source.html">canvas.h</a>.</p>
 
 </div>
 </div>
-<a id="ac1a1b0d3b6fa9d3c4aa30c014e15051c" name="ac1a1b0d3b6fa9d3c4aa30c014e15051c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1a1b0d3b6fa9d3c4aa30c014e15051c">&#9670;&#160;</a></span>showCenters</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Canvas::showCenters =false</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="canvas_8h_source.html#l00044">44</a> of file <a class="el" href="canvas_8h_source.html">canvas.h</a>.</p>
-
-</div>
-</div>
-<a id="abb70425f30be2b4b97e56bb56486a525" name="abb70425f30be2b4b97e56bb56486a525"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb70425f30be2b4b97e56bb56486a525">&#9670;&#160;</a></span>showCircles</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Canvas::showCircles =false</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="canvas_8h_source.html#l00044">44</a> of file <a class="el" href="canvas_8h_source.html">canvas.h</a>.</p>
-
-</div>
-</div>
-<a id="adec15319e8610b6a4a016f70970ee82f" name="adec15319e8610b6a4a016f70970ee82f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adec15319e8610b6a4a016f70970ee82f">&#9670;&#160;</a></span>showTriangles</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Canvas::showTriangles =true</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="canvas_8h_source.html#l00044">44</a> of file <a class="el" href="canvas_8h_source.html">canvas.h</a>.</p>
-
-</div>
-</div>
-<a id="aa3de99c5a524030b65b136f565879abd" name="aa3de99c5a524030b65b136f565879abd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3de99c5a524030b65b136f565879abd">&#9670;&#160;</a></span>triangles</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QVector&lt;<a class="el" href="class_triangle.html">Triangle</a>*&gt; Canvas::triangles</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="canvas_8h_source.html#l00039">39</a> of file <a class="el" href="canvas_8h_source.html">canvas.h</a>.</p>
-
-</div>
-</div>
-<a id="a0ed3404d54fd67e188c9a35c6c0a0c2c" name="a0ed3404d54fd67e188c9a35c6c0a0c2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ed3404d54fd67e188c9a35c6c0a0c2c">&#9670;&#160;</a></span>vertices</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QVector&lt;<a class="el" href="class_vector2_d.html">Vector2D</a>&gt; Canvas::vertices</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="canvas_8h_source.html#l00040">40</a> of file <a class="el" href="canvas_8h_source.html">canvas.h</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/MITEL Yohann/Desktop/QT/QtCircumcircle/<a class="el" href="canvas_8h_source.html">canvas.h</a></li>
-<li>C:/Users/MITEL Yohann/Desktop/QT/QtCircumcircle/<a class="el" href="canvas_8cpp_source.html">canvas.cpp</a></li>
+<li><a class="el" href="canvas_8h_source.html">canvas.h</a></li>
+<li><a class="el" href="canvas_8cpp_source.html">canvas.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

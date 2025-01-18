@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['vector2d_0',['Vector2D',['../class_vector2_d.html',1,'Vector2D'],['../class_vector2_d.html#ac55d52c97b338457bc3afb5d2f5e3344',1,'Vector2D::Vector2D(float p_x, float p_y)'],['../class_vector2_d.html#a98e9997ebb7a629f4db52397d4e0d653',1,'Vector2D::Vector2D()'],['../class_vector2_d.html#a93a8c1453c5de442266172d112cda946',1,'Vector2D::Vector2D(Vector2D *p)']]],
-  ['vector2d_2ecpp_1',['vector2d.cpp',['../vector2d_8cpp.html',1,'']]],
-  ['vector2d_2eh_2',['vector2d.h',['../vector2d_8h.html',1,'']]],
-  ['vertices_3',['vertices',['../class_canvas.html#a0ed3404d54fd67e188c9a35c6c0a0c2c',1,'Canvas']]]
+  ['takeoff_0',['takeoff',['../class_drone.html#aeab5eed0a5d06cc3968da277ad2671afad019f6ff2c3f203f876bb50bbaac2a0a',1,'Drone']]],
+  ['takeoffimg_1',['takeoffImg',['../class_drone.html#a19add27702d2136f4d8f135277e12905',1,'Drone']]],
+  ['takeoffspeed_2',['takeoffSpeed',['../class_drone.html#aa702eec241419c8360b51b80d6f29286',1,'Drone']]],
+  ['timer_3',['timer',['../class_main_window.html#a356578805ed1248a7f2807434cb0e5ee',1,'MainWindow']]],
+  ['turning_4',['turning',['../class_drone.html#aeab5eed0a5d06cc3968da277ad2671afa7653c975d1148f427139e926f79cf97d',1,'Drone']]]
 ];

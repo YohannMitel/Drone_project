@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['brush_0',['brush',['../class_triangle.html#a7f583b1f53acb36d618a013586bdb2ce',1,'Triangle']]]
+  ['azimut_0',['azimut',['../class_drone.html#a17af56928b969a9f2a99ea78bfafa72f',1,'Drone']]]
 ];

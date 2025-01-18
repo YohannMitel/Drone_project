@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vertices_0',['vertices',['../class_canvas.html#a0ed3404d54fd67e188c9a35c6c0a0c2c',1,'Canvas']]]
+  ['name_0',['name',['../class_drone.html#a72a835041f01fd55b8a315a6b811881b',1,'Drone']]]
 ];
