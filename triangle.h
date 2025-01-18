@@ -61,6 +61,7 @@ public:
     }
 
     void draw(QPainter &painter);
+    void transparencyDraw(QPainter &painter);
     void drawCircle(QPainter &painter);
 
     void setColor(const QColor &p_color) {

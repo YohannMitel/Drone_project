@@ -100,7 +100,7 @@ void MainWindow::on_actionCenters_triggered(bool checked)
 
 void MainWindow::on_actionVoronoi_transparency_triggered(bool checked)
 {
-    qDebug()<< checked;
+
     ui->widget->voronoiTransparency=checked;
     update();
 }

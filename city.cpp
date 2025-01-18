@@ -33,12 +33,14 @@ MyPolygon* City::getMap(){
 
 void City::setMap(MyPolygon *poly){
     map = poly;
+    map->earClipping();
+    map->setColor(color);
 }
 
 void City::drawMap(QPainter &painter, bool transparency){
     if(map == nullptr) return;
 
-    map->draw(painter, transparency, color);
+    map->draw(painter, transparency);
 }
 
 

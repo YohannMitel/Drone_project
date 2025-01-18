@@ -14,30 +14,53 @@ class MyPolygon
 private:
     int Nmax; // maximum number of vertices for the current Polygon
     int N; // current number of Vertices
+    QVector<Triangle> triangles; // array of triangles of the triangulation
     Vector2D *tabPts; // array of vertex positions
-    QColor currentColor; // current drawing color
+    QString currentColor; // current drawing color
+    bool hovered = false;
 
 public:
     MyPolygon(int p_Nmax):Nmax(p_Nmax) {
         N=0;
         tabPts = new Vector2D[Nmax+1];
-        currentColor=Qt::green;
+        currentColor = "#0000FF";
     }
     ~MyPolygon() {
         delete [] tabPts;
     }
 
 
-
     Vector2D *getVertices(int &n) { n=N; return tabPts; };
     void addVertex(const Vector2D &P);
-    void draw(QPainter &painter, bool transparency, QString color);
-    void setColor(const QColor c) { currentColor=c; }
+    void draw(QPainter &painter, bool transparency);
+    void changeColor(const Vector2D &pt) {
+        //isInside(pt) ? setColor(Qt::red) : setColor(currentColor) ;
+        auto it=triangles.begin();
+        while (it!=triangles.end() && !(it->isInside(pt))) {
+            it++;
+        }
+        hovered= (it==triangles.end()?false:true);
+
+        if(it==triangles.end()){
+            qDebug() << *triangles[0].getVertexPtr(0);
+                        qDebug() << *triangles[0].getVertexPtr(1);
+                        qDebug() << *triangles[0].getVertexPtr(2);
+                        qDebug() << triangles[0].isInside(pt);
+            qDebug() << pt;
+        }else{
+            qDebug() << currentColor;
+
+        }
+        //currentColor =  (isInside(pt) ?Qt::red : Qt::red );
+    }
+
+    inline void setColor(const QString c) { currentColor=c; }
 
 
     bool isOnTheLeft(const Vector2D &P,int i);
     bool isConvex();
     bool isInside(const Vector2D &P);
+    void earClipping();
     QVector<Triangle*> earClipping( QVector<Vector2D * > &vertices);
 
     double distanceToEdge(const Vector2D &M,int i);

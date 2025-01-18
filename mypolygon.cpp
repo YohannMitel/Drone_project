@@ -11,10 +11,15 @@ void MyPolygon::addVertex(const Vector2D &P) {
     tabPts[N].y=tabPts[0].y;
 }
 
-void MyPolygon::draw(QPainter &painter, bool transparency, QString color) {
+void MyPolygon::draw(QPainter &painter, bool transparency) {
     QPen pen(Qt::black);
     pen.setWidth(3);
-
+    QString color;
+    if(hovered == true){
+        color = "#FF0000";
+    }else{
+        color=currentColor;
+    }
     QPoint *points=new QPoint[N];
     for (int i=0; i<N; i++) {
 
@@ -36,7 +41,9 @@ void MyPolygon::draw(QPainter &painter, bool transparency, QString color) {
 
     painter.setPen(pen);
     painter.drawPolygon(points,N,Qt::OddEvenFill);
-
+    for(auto &t: triangles){
+        t.transparencyDraw(painter);
+    }
 
     delete [] points;
 }
@@ -145,13 +152,43 @@ QVector<Triangle*> MyPolygon::earClipping( QVector<Vector2D * > &vertices){
 
 
     for (int i = 1; i < N - 1; ++i) {
-        QVector<Vector2D * > excluded ;
+
         triangles.append(this->earClippingUtils (&tabPts[0],&tabPts[i],&tabPts[i+1],vertices));
 
     }
 
     return triangles;
 }
+
+
+void MyPolygon::earClipping(){
+    triangles.clear();
+    QVector<Vector2D*> tmp;
+    for(int i = 0; i<N; i++){
+        tmp.push_back(&tabPts[i]);
+    }
+    tmp.push_back(&tabPts[0]);
+    tmp.push_back(&tabPts[1]);
+
+    int i=0;
+    do {
+        Triangle T(tmp[i+1],tmp[i],tmp[i+2]);
+        int j = i+3;
+        while(j<tmp.size()-2 && !T.isInside(*tmp[j])){
+            j++;
+        }
+        if(j==tmp.size()-2){
+            triangles.push_back(T);
+            tmp.removeAt(i+1);
+            i = 0;
+        }else{
+            i++;
+        }
+    }while (tmp.size()>=5);
+
+}
+
+
 
 double MyPolygon::distanceToEdge(const Vector2D &M, int i) {
     Vector2D AB = tabPts[i+1] - tabPts[i];  // Vector AB representing the edge

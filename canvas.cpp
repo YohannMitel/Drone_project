@@ -51,6 +51,7 @@ void Canvas::paintEvent(QPaintEvent *) {
     QPointF points[7]={{0,-2},{80,-2},{80,-10},{100,0},{80,10},{80,2},{0,2}};
     painter.save();
     painter.translate(20,height()-20);
+    //painter.translate(20,height()-20);
     painter.setPen(Qt::NoPen);
     painter.setBrush(Qt::red);
     painter.drawPolygon(points,7);
@@ -175,6 +176,7 @@ void Canvas::mousePressEvent(QMouseEvent *event) {
     }
     // if found, ask for a motion to the mouse position
     if (it!=mapDrones.end()) {
+        qDebug() << mouseX <<"  " << mouseY ;
         (*it)->setGoalPosition(Vector2D(mouseX,mouseY));
         (*it)->start();
     }
@@ -255,8 +257,18 @@ void Canvas::mouseMoveEvent(QMouseEvent *event) {
     float mouseY=-float(event->pos().y()-height()+10)/scale+origin.y();
     emit updateSB(QString("Mouse position= (") + QString::number(mouseX, 'f', 1) + "," + QString::number(mouseY, 'f', 1) + ")");
 
+
     for (auto &tri:triangles) {
         tri->setHighlighted(tri->isInside(mouseX,mouseY));
+    }
+
+    for (auto &c: cities->getTabCities()) {
+
+        if(c->getMap()){
+            //qDebug() << c->getName();
+            c->getMap()->changeColor(Vector2D(mouseX,mouseY));
+        }
+
     }
     update();
 }
@@ -316,7 +328,6 @@ void Canvas::loadMesh(const QString &title) {
 
         /* preset initial positions of the drones */
 
-        int n= 0;
         for (auto &&v:JSONdrone) {
             QJsonObject vector=v.toObject();
 
@@ -732,12 +743,13 @@ void Canvas::processVoronoi(City &city){
 
 void Canvas::processPoly(){
     flippAll();
-    for(auto &c: cities->getTabCities()){
+    /*for(auto &c: cities->getTabCities()){
         processVoronoi(*c);
     }
-    cities->connectionMatrix(cities->getTabCities());
-    /*   qDebug() << "VORONOI DE : "  << cities->getTabCities()[1]->getName();
-    processVoronoi(*cities->getTabCities()[1]);*/
+    if(cities->getTabCities().size() > 1 ) cities->connectionMatrix(cities->getTabCities());*/
+
+       qDebug() << "VORONOI DE : "  << cities->getTabCities()[2]->getName();
+    processVoronoi(*cities->getTabCities()[2]);
 }
 
 
