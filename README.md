@@ -1,3 +1,5 @@
+Yohann MITEL & Pierre MEYER
+
 # Voronoi-Based Drone Routing Project
 
 ## Project Overview
