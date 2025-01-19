@@ -825,7 +825,8 @@ void Canvas::droneSequence(Drone &d){
         const auto &citiesList = cities->getTabCities();
 
 
-
+        bool isOutside = false;
+        int destCity = d.getDestCity();
         auto it = citiesList.begin();
         auto end = citiesList.end();
 
@@ -836,6 +837,7 @@ void Canvas::droneSequence(Drone &d){
 
 
                 if (cities->isOutsideCities(pt)) {
+                    isOutside = true;
                     // Calculer la distance à l'arête la plus proche
                     NearestEdgeResult res = c->getMap()->nearestEdge(pt);
                     double distance = res.distance;
@@ -867,8 +869,11 @@ void Canvas::droneSequence(Drone &d){
 
         d.setCurrentCity(closestCity);
 
-        if(closestCity != d.getDestCity() ){
-            d.setGoalPosition(cities->nextDestCityId(closestCity, d.getDestCity()));
+        if(closestCity != destCity ){
+            d.setGoalPosition(cities->nextDestCityId(closestCity,destCity));
+            d.start();
+        }else if(isOutside){
+            d.setGoalPosition(cities->getPointByIndex(destCity));
             d.start();
         }
 
