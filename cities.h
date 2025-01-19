@@ -1,6 +1,8 @@
 /**
  * @brief Cities management module for handling city data and geometric operations.
- */
+ * @author Yohann Mitel & Pierre Meyer
+ * @date Janvier 2025
+ **/
 #ifndef CITIES_H
 #define CITIES_H
 

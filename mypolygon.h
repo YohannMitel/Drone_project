@@ -1,3 +1,9 @@
+/**
+ * @brief he MyPolygon class allows the creation, drawing, and manipulation of polygons.
+ * This class provides methods to check if a point is inside the polygon and compute its surface.
+ * @author Yohann Mitel & Pierre Meyer
+ * @date Janvier 2025
+ **/
 #ifndef MYPOLYGON_H
 #define MYPOLYGON_H
 
@@ -6,10 +12,6 @@
 #include <nearestEdgeResult.h>
 #include "triangle.h"
 
-/**
- * @brief The MyPolygon class allows the creation, drawing, and manipulation of polygons.
- * This class provides methods to check if a point is inside the polygon and compute its surface.
- */
 class MyPolygon {
 private:
     int Nmax; ///< Maximum number of vertices for the current polygon.

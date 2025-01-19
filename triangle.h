@@ -1,3 +1,7 @@
+/**
+ * @author Yohann Mitel & Pierre Meyer
+ * @date Janvier 2025
+ **/
 #ifndef TRIANGLE_H
 #define TRIANGLE_H
 

@@ -1,6 +1,8 @@
 /**
  * @brief City management class for representing individual cities and their properties.
- */
+ * @author Yohann Mitel & Pierre Meyer
+ * @date Janvier 2025
+ **/
 #ifndef CITY_H
 #define CITY_H
 
