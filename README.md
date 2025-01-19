@@ -1,47 +1,84 @@
-# Voronoi Maps and Drones Project in C++
+# Voronoi-Based Drone Routing Project
 
-## Project Description
+## Project Overview
 
-This project aims to generate Voronoi maps using a set of points through a series of algorithmic steps. Each Voronoi cell is represented by a polygon. Simultaneously, drones are integrated, with their positions and destinations extracted from a JSON file. Drones are assigned to specific zones on the generated map, and their movement is simulated until they reach their respective destinations.
+This project involves the creation of a drone routing system using Voronoi diagrams to map and manage drone navigation between server areas. The system adheres to the specifications outlined in the project requirements and includes:
 
-## Features
+- A GitHub repository with the full implementation.
+- Documentation and algorithm explanations.
+- A dedicated branch for the Voronoi diagram implementation.
 
-- **Point Cloud Reading**: Points are extracted from a JSON file to define the Voronoi cells.
-- **Voronoi Map Generation**: After processing the points, Voronoi polygons representing the map are generated.
-- **Drone Integration**: Drones are also retrieved from a JSON file, each with a destination to reach on the map.
-- **Drone and Voronoi Zone Processing**: Drones are assigned to specific zones, and their movements are simulated until they reach their destination.
+## Initial Problem Statement
 
-## Process Steps
+The initial data for the project was provided in `config1.json` and `config2.json`. Key features of the problem include:
 
-1. **Voronoi Circumcircle**  
-   Calculation of the circumcircles of the Voronoi triangles, used for triangulation management.
+### Servers and Voronoi Areas:
 
-2. **Point Cloud**  
-   Creation of a set of random or provided points to initiate the map generation.
+- Servers are identified by unique names.
+- Each server is associated with a colored area defined by a Voronoi diagram.
+- Servers are connected through a wired network, with connections existing when server polygons share a common edge.
 
-3. **Polar Angle Sorting**  
-   Sorting the points by their polar angle to facilitate the generation of the Voronoi map.
+### Drones:
 
-4. **Convex Hull**  
-   Calculation of the convex hull of the points to define the map's boundaries.
+- Drones are uniquely identified and have an initial position and a target server area.
+- Drones communicate only with the server associated with the zone they are flying over.
+- Servers guide the drones to their target areas.
 
-5. **Triangulation**  
-   Using a triangulation algorithm to organize the points before constructing the Voronoi polygons.
+## Project Deliverables
 
-6. **Delaunay + Flip**  
-   Applying the Delaunay algorithm to ensure optimal triangles, followed by edge flipping to improve quality.
+The GitHub repository contains:
 
-7. **Voronoi (bounded by background) + Neighbor Matrix (polygons)**  
-   Generation of Voronoi polygons that respect the canvas boundaries, and creation of a neighbor matrix for each cell.
+- The source code, organized and thoroughly commented.
+- A dedicated branch for the Voronoi diagram implementation (`voronoi` branch).
+- HTML documentation generated using Doxygen.
 
-8. **Drone Code Integration**  
-   Integration of drones into the Voronoi model, allowing them to interact with the generated geographic zones.
+## Implementation Details
 
-9. **Drone Scaling**  
-   Adjusting the size and movements of drones based on Voronoi zones.
+### Voronoi Diagram Construction
 
-10. **Triangulation within Voronoi**  
-    Updating triangulation according to Voronoi zones.
+The Voronoi diagram forms the backbone of the mapping system, dividing the area into zones associated with each server. This process involves:
 
-11. **Edge Nearest for Drones Outside Boundaries**  
-    Calculating the nearest edges for drones located outside the Voronoi map boundaries.
+#### Input Processing:
+
+- Input consisted of points rather than triangles.
+- Points were sorted using a polar angle in ascending order to prepare for convex hull construction.
+
+#### Convex Hull Construction:
+
+- The convex hull was constructed to define the boundary of the area.
+
+#### Triangulation:
+
+- An ear-clipping algorithm was applied to subdivide the convex hull into triangles.
+
+#### Delaunay Triangulation and Flipping:
+
+- Delaunay triangulation was performed using edge-flipping techniques to ensure the properties of the Voronoi diagram were satisfied.
+
+### Drone Routing System
+
+Once the Voronoi diagrams were generated and zones mapped:
+
+#### Integration of Drone Data:
+
+- Data about drones, including their initial positions and target areas, was added to the system.
+
+#### Routing Algorithm:
+
+- Drones were routed through the network of server areas.
+- Each server guided the drones within its zone to reach their target areas efficiently.
+
+## Branch Organization
+
+The `voronoi` branch is the exercise of constructing voronoi polygons from triangles.
+The `triangulation-convexHull-voronoi` branch is the part where we construct the voronoi polygons from a point cloud.
+
+## Code Quality and Documentation
+
+### Code Comments
+
+The source code is thoroughly commented to explain the purpose and functionality of each component, making it easier to understand and maintain.
+
+### Doxygen Documentation
+
+HTML documentation has been generated using Doxygen and is available in the repository. This documentation provides an overview of the project structure, functions, and classes used in the implementation.
