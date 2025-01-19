@@ -57,21 +57,29 @@ void Drone::paintEvent(QPaintEvent *) {
         case takeoff: painter.drawImage(rect,takeoffImg); break;
         case landing: painter.drawImage(rect,landingImg); break;
         default : {
-            painter.drawImage(rect,compasImg);
-            // draw the compass needle
-            QPointF *points = new QPointF[3];
-            points[0] = QPointF(-compasSize/5.0,0);
-            points[1] = QPointF(compasSize/5.0,0);
-            points[2] = QPointF(0,compasSize/2.2);
+            painter.drawImage(rect, compasImg);
+
+            // Inverser l'axe Y
             painter.save();
-            painter.translate(compasSize/2.0,compasSize/2.0);
+            painter.translate(compasSize / 2.0, compasSize / 2.0); // Déplacer l'origine
+            painter.scale(1, -1);  // Inverser Y
+
+            // Dessiner l'aiguille de la boussole
+            QPointF points[3] = {
+                QPointF(-compasSize / 5.0, 0),
+                QPointF(compasSize / 5.0, 0),
+                QPointF(0, compasSize / 2.2)
+            };
+
             painter.rotate(azimut);
             painter.setBrush(Qt::white);
             painter.setPen(Qt::black);
-            painter.drawPolygon(points,3);
+            painter.drawPolygon(points, 3);
+
             painter.setBrush(Qt::red);
             painter.rotate(180);
-            painter.drawPolygon(points,3);
+            painter.drawPolygon(points, 3);
+
             painter.restore();
         }
     }
