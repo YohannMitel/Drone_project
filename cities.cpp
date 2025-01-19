@@ -1,5 +1,9 @@
 #include "cities.h"
 
+#include <queue>
+
+using namespace std;
+
 Cities::Cities() {
 
 }
@@ -184,7 +188,6 @@ QVector<Triangle*> Cities::initTriangulation(){
     return  convexHull->earClipping(tabVert );;
 }
 
-
 bool onSegment(Vector2D p1, Vector2D p2, Vector2D q) {
     return (q.x >= std::min(p1.x, p2.x) && q.x <= std::max(p1.x, p2.x) &&
             q.y >= std::min(p1.y, p2.y) && q.y <= std::max(p1.y, p2.y));
@@ -195,7 +198,7 @@ void Cities::connectionMatrix(const QVector<City*>& cities) {
     int numCities = cities.size();
 
     // Create a matrix of size numCities x numCities and initialize to 0
-    QVector<QVector<int>> matrix(numCities, QVector<int>(numCities, 0));
+    adjacencyMatrix = QVector<QVector<int>>(numCities, QVector<int>(numCities, 0));
 
     // Loop over each city to check for neighbors
     for (int i = 0; i < numCities; ++i) {
@@ -213,8 +216,8 @@ void Cities::connectionMatrix(const QVector<City*>& cities) {
             // Check if the Voronoi polygons of city1 and city2 share an edge
             if (areNeighbors(vertices1, numVertices1, vertices2, numVertices2)) {
                 // Set the matrix entries to 1 to indicate that these cities are neighbors
-                matrix[i][j] = 1;
-                matrix[j][i] = 1;  // The matrix is symmetric, so we set both [i][j] and [j][i]
+                adjacencyMatrix [i][j] = 1;
+                adjacencyMatrix [j][i] = 1;  // The matrix is symmetric, so we set both [i][j] and [j][i]
             }
         }
     }
@@ -223,7 +226,7 @@ void Cities::connectionMatrix(const QVector<City*>& cities) {
     for (int i = 0; i < numCities; ++i) {
         qDebug() << "City: " << cities[i]->getName();  // Print city name before the row
         for (int j = 0; j < numCities; ++j) {
-            qDebug() << matrix[i][j] << " " << cities[j]->getName();
+            qDebug() << adjacencyMatrix [i][j] << " " << cities[j]->getName();
         }
         qDebug() << "\n";  // Print a new line after each row
     }
@@ -278,6 +281,53 @@ int Cities::orientation(Vector2D p, Vector2D q, Vector2D r) {
     return (val > 0) ? 1 : 2;  // 1 -> clockwise, 2 -> counterclockwise
 }
 
+QVector<int> findPath(const QVector<QVector<int>>& matrix, int start, int end) {
+    int n = matrix.size();
+    vector<bool> visited(n, false);  // To track visited cities
+    vector<int> parent(n, -1);       // To reconstruct the path
+    queue<int> queue;                // Queue for BFS
 
+    // Start BFS from the starting city
+    queue.push(start);
+    visited[start] = true;
 
+    while (!queue.empty()) {
+        int current = queue.front();
+        queue.pop();
 
+        // If we reached the destination, reconstruct and return the path
+        if (current == end) {
+            QVector<int> path;
+            for (int at = end; at != -1; at = parent[at]) {
+                path.push_back(at);
+            }
+            reverse(path.begin(), path.end());  // Reverse to get the correct order
+            return path;
+        }
+
+        // Explore neighbors
+        for (int neighbor = 0; neighbor < n; ++neighbor) {
+            if (matrix[current][neighbor] == 1 && !visited[neighbor]) {
+                visited[neighbor] = true;
+                parent[neighbor] = current;
+                queue.push(neighbor);
+            }
+        }
+    }
+
+    // If no path is found, return an empty vector
+    return {};
+}
+
+void Cities::testPathFinding(int start, int end) {
+    QVector<int> path = findPath(adjacencyMatrix, start, end);
+
+    if (path.empty()) {
+        qDebug() << "No path found between city" << start << "and city" << end;
+    } else {
+        qDebug() << "Path from city" << start << "to city" << end << ":";
+        for (int city : path) {
+            qDebug() << city;  // Or use city names if needed
+        }
+    }
+}

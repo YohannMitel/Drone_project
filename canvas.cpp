@@ -776,6 +776,7 @@ void Canvas::processPoly(){
         processVoronoi(*c);
     }
     if(cities->getTabCities().size() > 1 ) cities->connectionMatrix(cities->getTabCities());
+    cities->testPathFinding(5,1);
 /*
        qDebug() << "VORONOI DE : "  << cities->getTabCities()[1]->getName();
     processVoronoi(*cities->getTabCities()[1]);*/

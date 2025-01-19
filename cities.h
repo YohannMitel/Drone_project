@@ -8,6 +8,7 @@ class Cities
 private:
     QVector<City*> tabCities;
     MyPolygon *convexHull = nullptr;
+    QVector<QVector<int>> adjacencyMatrix;
 public:
     Cities();
     ~Cities();
@@ -38,6 +39,7 @@ public:
     int orientation(Vector2D p, Vector2D q, Vector2D r);
 
     void draw(QPainter &painter, bool transparency);
+    void testPathFinding(int start, int end);
 
 };
 
