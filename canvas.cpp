@@ -118,37 +118,53 @@ void Canvas::paintEvent(QPaintEvent *) {
         painter.drawText(rect,Qt::AlignCenter|Qt::AlignVCenter,v->getName());
         painter.restore();
     }
+    for (auto &drone : mapDrones) {
+        painter.save();
 
+        // Calculer la position transformée du drone
+        float x = (drone->getPosition().x - origin.x()) * scale + 10;
+        float y = -(drone->getPosition().y - origin.y()) * scale + height() - 10;
 
-    if (mapDrones.size() > 0 ) {
-        Vector2D p;
-        QRect rect(-droneIconSize/2,-droneIconSize/2,droneIconSize,droneIconSize);
-        QRect rectCol(-droneCollisionDistance/2,-droneCollisionDistance/2,droneCollisionDistance,droneCollisionDistance);
+        // Appliquer les transformations pour le drone
+        painter.translate(x, y);
+        painter.rotate(drone->getAzimut());
 
-        for (auto &drone:mapDrones) {
-            painter.save();
-            // place and orient the drone
-            painter.translate(drone->getPosition().x,drone->getPosition().y);
-            painter.rotate(drone->getAzimut());
-            painter.drawImage(rect,droneImg);
-            // light leds if flying
-            if (drone->getStatus()!=Drone::landed) {
-                painter.setPen(Qt::NoPen);
-                painter.setBrush(Qt::red);
-                painter.drawEllipse((-185.0/511.0)*droneIconSize,(-185.0/511.0)*droneIconSize,(65.0/511.0)*droneIconSize,(65.0/511.0)*droneIconSize);
-                painter.drawEllipse((115.0/511.0)*droneIconSize,(-185.0/511.0)*droneIconSize,(65.0/511.0)*droneIconSize,(65.0/511.0)*droneIconSize);
-                painter.setBrush(Qt::green);
-                painter.drawEllipse((-185.0/511.0)*droneIconSize,(115.0/511.0)*droneIconSize,(70.0/511.0)*droneIconSize,(70.0/511.0)*droneIconSize);
-                painter.drawEllipse((115.0/511.0)*droneIconSize,(115.0/511.0)*droneIconSize,(70.0/511.0)*droneIconSize,(70.0/511.0)*droneIconSize);
-            }
-            // draw collision detector
-            if (drone->hasCollision()) {
-                painter.setPen(penCol);
-                painter.setBrush(Qt::NoBrush);
-                painter.drawEllipse(rectCol);
-            }
-            painter.restore();
+        // Redimensionner le rectangle pour adapter la taille de l'image au scale
+        int scaledDroneSize = static_cast<int>(droneIconSize * scale);
+        QRect rect(-scaledDroneSize / 2, -scaledDroneSize / 2, scaledDroneSize, scaledDroneSize);
+
+        // Dessiner l'image du drone
+        painter.drawImage(rect, droneImg);
+
+        // Allumer les LEDs si le drone est en vol
+        if (drone->getStatus() != Drone::landed) {
+            painter.setPen(Qt::NoPen);
+
+            // LEDs rouges
+            painter.setBrush(Qt::red);
+            painter.drawEllipse((-185.0 / 511.0) * scaledDroneSize, (-185.0 / 511.0) * scaledDroneSize,
+                                (65.0 / 511.0) * scaledDroneSize, (65.0 / 511.0) * scaledDroneSize);
+            painter.drawEllipse((115.0 / 511.0) * scaledDroneSize, (-185.0 / 511.0) * scaledDroneSize,
+                                (65.0 / 511.0) * scaledDroneSize, (65.0 / 511.0) * scaledDroneSize);
+
+            // LEDs vertes
+            painter.setBrush(Qt::green);
+            painter.drawEllipse((-185.0 / 511.0) * scaledDroneSize, (115.0 / 511.0) * scaledDroneSize,
+                                (70.0 / 511.0) * scaledDroneSize, (70.0 / 511.0) * scaledDroneSize);
+            painter.drawEllipse((115.0 / 511.0) * scaledDroneSize, (115.0 / 511.0) * scaledDroneSize,
+                                (70.0 / 511.0) * scaledDroneSize, (70.0 / 511.0) * scaledDroneSize);
         }
+
+        // Dessiner le détecteur de collision
+        if (drone->hasCollision()) {
+            QRect rectCol(-droneCollisionDistance / 2 * scale, -droneCollisionDistance / 2 * scale,
+                          droneCollisionDistance * scale, droneCollisionDistance * scale);
+            painter.setPen(penCol);
+            painter.setBrush(Qt::NoBrush);
+            painter.drawEllipse(rectCol);
+        }
+
+        painter.restore();
     }
 
 }

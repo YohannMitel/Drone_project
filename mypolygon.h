@@ -40,13 +40,13 @@ public:
             it++;
         }
         hovered= (it==triangles.end()?false:true);
-
+/*
             qDebug() << *triangles[0].getVertexPtr(0);
                         qDebug() << *triangles[1].getVertexPtr(1);
                         qDebug() << *triangles[1].getVertexPtr(2);
                         qDebug() << triangles[1].isInside(pt);
             qDebug() << pt;
-
+*/
            // qDebug() << currentColor;
 
 

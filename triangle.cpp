@@ -45,20 +45,21 @@ void Triangle::draw(QPainter &painter) {
 
 void Triangle::transparencyDraw(QPainter &painter) {
 
-    QPen pen(Qt::black);
+    QPen pen(QColor(128, 128, 128, 128)); // Gris (128,128,128) avec 50% de transparence (alpha = 128)
     pen.setWidth(3);
+    pen.setStyle(Qt::DotLine); // Définit un style de ligne pointillé
     painter.setPen(pen);
 
-    //painter.setBrush(isHighlited?(isDelaunay?Qt::green:Qt::red):Qt::yellow);
+    // painter.setBrush(isHighlited ? (isDelaunay ? Qt::green : Qt::red) : Qt::yellow);
 
     QPointF points[3];
 
-    for (int i=0; i<3; i++) {
+    for (int i = 0; i < 3; i++) {
         points[i].setX(ptr[i]->x);
         points[i].setY(ptr[i]->y);
     }
 
-    painter.drawPolygon(points,3);
+    painter.drawPolygon(points, 3);
 
 }
 
