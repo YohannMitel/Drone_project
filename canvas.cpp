@@ -260,7 +260,7 @@ void Canvas::mouseMoveEvent(QMouseEvent *event) {
     float mouseY=-float(event->pos().y()-height()+10)/scale+origin.y();
     emit updateSB(QString("Mouse position= (") + QString::number(mouseX, 'f', 1) + "," + QString::number(mouseY, 'f', 1) + ")");
 
-    if(voronoiTransparency){
+    if(voronoiTransparency || !processPolyState){
         for (auto &tri:triangles) {
             tri->setHighlighted(tri->isInside(mouseX,mouseY));
         }

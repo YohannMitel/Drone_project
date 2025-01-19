@@ -200,7 +200,16 @@ void MainWindow::on_actionLoad_triggered()
 
 void MainWindow::on_actionAbout_triggered()
 {
-    QMessageBox::information(this,"About Drone Project","This project involves constructing a map from a point cloud, where drones navigate to reach their destination cities.");
+    QMessageBox::information(this, "About Drone Project",
+                             "Welcome to the Drone Project!\n\n"
+                             "This project involves constructing a detailed map from a point cloud, enabling drones to navigate efficiently and reach their destination cities.\n\n"
+                             "Here’s a guide to the triangle classifications created by triangulation:\n"
+                             "  - YELLOW : Not Delaunay\n"
+                             "  - GRAY : Flippable\n"
+                             "  - BLUE : Delaunay triangle\n\n"
+                             "Happy mapping!"
+                             );
+
 }
 
 
