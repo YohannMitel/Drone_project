@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Drone demo: Drone Class Reference</title>
+<title>Drone Project: Drone Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,10 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="takeoff.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Drone demo<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">Drone Project
    </div>
+   <div id="projectbrief">This project involves constructing a map from a point cloud, where drones navigate to reach their destination cities.</div>
   </td>
  </tr>
  </tbody>
@@ -108,14 +108,14 @@ Inheritance diagram for Drone:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:aeab5eed0a5d06cc3968da277ad2671af" id="r_aeab5eed0a5d06cc3968da277ad2671af"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeab5eed0a5d06cc3968da277ad2671af">droneStatus</a> { <br />
-&#160;&#160;<a class="el" href="#aeab5eed0a5d06cc3968da277ad2671afa2c9801355402c5d98dc3829e93acb822">landed</a>
-, <a class="el" href="#aeab5eed0a5d06cc3968da277ad2671afad019f6ff2c3f203f876bb50bbaac2a0a">takeoff</a>
-, <a class="el" href="#aeab5eed0a5d06cc3968da277ad2671afa923018fadd8a51cdf671b498ea34f49d">landing</a>
-, <a class="el" href="#aeab5eed0a5d06cc3968da277ad2671afa6bc5f40d516ec9d2270e9011fa53ae91">hovering</a>
+<tr class="memitem:aeab5eed0a5d06cc3968da277ad2671af" id="r_aeab5eed0a5d06cc3968da277ad2671af"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>droneStatus</b> { <br />
+&#160;&#160;<b>landed</b>
+, <b>takeoff</b>
+, <b>landing</b>
+, <b>hovering</b>
 , <br />
-&#160;&#160;<a class="el" href="#aeab5eed0a5d06cc3968da277ad2671afa7653c975d1148f427139e926f79cf97d">turning</a>
-, <a class="el" href="#aeab5eed0a5d06cc3968da277ad2671afaa5663777fef12567238b99e6de3dfd98">flying</a>
+&#160;&#160;<b>turning</b>
+, <b>flying</b>
 <br />
  }</td></tr>
 <tr class="separator:aeab5eed0a5d06cc3968da277ad2671af"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,7 +145,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af9acfa889406ec85fe8a43b1941d1bf3" id="r_af9acfa889406ec85fe8a43b1941d1bf3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9acfa889406ec85fe8a43b1941d1bf3">getPosition</a> ()</td></tr>
 <tr class="memdesc:af9acfa889406ec85fe8a43b1941d1bf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">getPosition get the current position of the drone  <br /></td></tr>
 <tr class="separator:af9acfa889406ec85fe8a43b1941d1bf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afafc9ba6fcff0a9b028594b6433adffc" id="r_afafc9ba6fcff0a9b028594b6433adffc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aeab5eed0a5d06cc3968da277ad2671af">droneStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afafc9ba6fcff0a9b028594b6433adffc">getStatus</a> ()</td></tr>
+<tr class="memitem:afafc9ba6fcff0a9b028594b6433adffc" id="r_afafc9ba6fcff0a9b028594b6433adffc"><td class="memItemLeft" align="right" valign="top">droneStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afafc9ba6fcff0a9b028594b6433adffc">getStatus</a> ()</td></tr>
 <tr class="memdesc:afafc9ba6fcff0a9b028594b6433adffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">getStatus get the current status of the drone  <br /></td></tr>
 <tr class="separator:afafc9ba6fcff0a9b028594b6433adffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ccec19f2f37c7d6eeb087e48df247aa" id="r_a5ccec19f2f37c7d6eeb087e48df247aa"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ccec19f2f37c7d6eeb087e48df247aa">getName</a> ()</td></tr>
@@ -169,105 +169,160 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afddb2c5e752785dca168f58d7568206e" id="r_afddb2c5e752785dca168f58d7568206e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afddb2c5e752785dca168f58d7568206e">addCollision</a> (const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;A, float threshold)</td></tr>
 <tr class="memdesc:afddb2c5e752785dca168f58d7568206e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a collision force.  <br /></td></tr>
 <tr class="separator:afddb2c5e752785dca168f58d7568206e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14087b32f7ea35175a36186e1f5f566f" id="r_a14087b32f7ea35175a36186e1f5f566f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14087b32f7ea35175a36186e1f5f566f">getNbCollisions</a> ()</td></tr>
+<tr class="memdesc:a14087b32f7ea35175a36186e1f5f566f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of collisions that have occurred since the drone began moving.  <br /></td></tr>
+<tr class="separator:a14087b32f7ea35175a36186e1f5f566f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06d6c451149b1e9418eaefb3a9aeca90" id="r_a06d6c451149b1e9418eaefb3a9aeca90"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06d6c451149b1e9418eaefb3a9aeca90">hasCollision</a> ()</td></tr>
 <tr class="memdesc:a06d6c451149b1e9418eaefb3a9aeca90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get if a collision has occurred.  <br /></td></tr>
 <tr class="separator:a06d6c451149b1e9418eaefb3a9aeca90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c7c09da3a1d8d9e67fdd402b7a8a0b1" id="r_a1c7c09da3a1d8d9e67fdd402b7a8a0b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c7c09da3a1d8d9e67fdd402b7a8a0b1">setDestCity</a> (int &amp;c)</td></tr>
+<tr class="memdesc:a1c7c09da3a1d8d9e67fdd402b7a8a0b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">setDestCity set the final city destination  <br /></td></tr>
+<tr class="separator:a1c7c09da3a1d8d9e67fdd402b7a8a0b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab88053ca8c7062af17af5f9ff957be3" id="r_aab88053ca8c7062af17af5f9ff957be3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab88053ca8c7062af17af5f9ff957be3">getDestCity</a> ()</td></tr>
+<tr class="memdesc:aab88053ca8c7062af17af5f9ff957be3"><td class="mdescLeft">&#160;</td><td class="mdescRight">getDestCity get the final city destination  <br /></td></tr>
+<tr class="separator:aab88053ca8c7062af17af5f9ff957be3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac886eaaa20cc145b5525602c003abe51" id="r_ac886eaaa20cc145b5525602c003abe51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac886eaaa20cc145b5525602c003abe51">setCurrentCity</a> (int &amp;c)</td></tr>
+<tr class="memdesc:ac886eaaa20cc145b5525602c003abe51"><td class="mdescLeft">&#160;</td><td class="mdescRight">setCurrentCity set the current city  <br /></td></tr>
+<tr class="separator:ac886eaaa20cc145b5525602c003abe51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a7a5401d1db948fa10531e6a2f6b52f" id="r_a6a7a5401d1db948fa10531e6a2f6b52f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a7a5401d1db948fa10531e6a2f6b52f">getCurrentCity</a> ()</td></tr>
+<tr class="memdesc:a6a7a5401d1db948fa10531e6a2f6b52f"><td class="mdescLeft">&#160;</td><td class="mdescRight">getCurrentCity get the current city  <br /></td></tr>
+<tr class="separator:a6a7a5401d1db948fa10531e6a2f6b52f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46d1a506d237feef77be41f9424ce406" id="r_a46d1a506d237feef77be41f9424ce406"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46d1a506d237feef77be41f9424ce406">inDestCity</a> ()</td></tr>
+<tr class="memdesc:a46d1a506d237feef77be41f9424ce406"><td class="mdescLeft">&#160;</td><td class="mdescRight">inDestCity check if the drone is in his dest city  <br /></td></tr>
+<tr class="separator:a46d1a506d237feef77be41f9424ce406"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a6d336e477ca4ae7d28601e096f8d9063" id="r_a6d336e477ca4ae7d28601e096f8d9063"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d336e477ca4ae7d28601e096f8d9063">maxSpeed</a> =50</td></tr>
-<tr class="memdesc:a6d336e477ca4ae7d28601e096f8d9063"><td class="mdescLeft">&#160;</td><td class="mdescRight">max speed in pixels per second  <br /></td></tr>
+<tr class="memitem:a6d336e477ca4ae7d28601e096f8d9063" id="r_a6d336e477ca4ae7d28601e096f8d9063"><td class="memItemLeft" align="right" valign="top"><a id="a6d336e477ca4ae7d28601e096f8d9063" name="a6d336e477ca4ae7d28601e096f8d9063"></a>
+const double&#160;</td><td class="memItemRight" valign="bottom"><b>maxSpeed</b> =50</td></tr>
+<tr class="memdesc:a6d336e477ca4ae7d28601e096f8d9063"><td class="mdescLeft">&#160;</td><td class="mdescRight">max speed in pixels per second <br /></td></tr>
 <tr class="separator:a6d336e477ca4ae7d28601e096f8d9063"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40543b6a36aabc1171d7ef4124850a52" id="r_a40543b6a36aabc1171d7ef4124850a52"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40543b6a36aabc1171d7ef4124850a52">maxPower</a> =200</td></tr>
-<tr class="memdesc:a40543b6a36aabc1171d7ef4124850a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">max power of drone motors  <br /></td></tr>
+<tr class="memitem:a40543b6a36aabc1171d7ef4124850a52" id="r_a40543b6a36aabc1171d7ef4124850a52"><td class="memItemLeft" align="right" valign="top"><a id="a40543b6a36aabc1171d7ef4124850a52" name="a40543b6a36aabc1171d7ef4124850a52"></a>
+const double&#160;</td><td class="memItemRight" valign="bottom"><b>maxPower</b> =200</td></tr>
+<tr class="memdesc:a40543b6a36aabc1171d7ef4124850a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">max power of drone motors <br /></td></tr>
 <tr class="separator:a40543b6a36aabc1171d7ef4124850a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa702eec241419c8360b51b80d6f29286" id="r_aa702eec241419c8360b51b80d6f29286"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa702eec241419c8360b51b80d6f29286">takeoffSpeed</a> =2.5</td></tr>
-<tr class="memdesc:aa702eec241419c8360b51b80d6f29286"><td class="mdescLeft">&#160;</td><td class="mdescRight">unit/s  <br /></td></tr>
+<tr class="memitem:aa702eec241419c8360b51b80d6f29286" id="r_aa702eec241419c8360b51b80d6f29286"><td class="memItemLeft" align="right" valign="top"><a id="aa702eec241419c8360b51b80d6f29286" name="aa702eec241419c8360b51b80d6f29286"></a>
+const double&#160;</td><td class="memItemRight" valign="bottom"><b>takeoffSpeed</b> =2.5</td></tr>
+<tr class="memdesc:aa702eec241419c8360b51b80d6f29286"><td class="mdescLeft">&#160;</td><td class="mdescRight">unit/s <br /></td></tr>
 <tr class="separator:aa702eec241419c8360b51b80d6f29286"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa914c392ebe500aa63186a0b1b5e855c" id="r_aa914c392ebe500aa63186a0b1b5e855c"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa914c392ebe500aa63186a0b1b5e855c">hoveringHeight</a> =5</td></tr>
-<tr class="memdesc:aa914c392ebe500aa63186a0b1b5e855c"><td class="mdescLeft">&#160;</td><td class="mdescRight">units  <br /></td></tr>
+<tr class="memitem:aa914c392ebe500aa63186a0b1b5e855c" id="r_aa914c392ebe500aa63186a0b1b5e855c"><td class="memItemLeft" align="right" valign="top"><a id="aa914c392ebe500aa63186a0b1b5e855c" name="aa914c392ebe500aa63186a0b1b5e855c"></a>
+const double&#160;</td><td class="memItemRight" valign="bottom"><b>hoveringHeight</b> =5</td></tr>
+<tr class="memdesc:aa914c392ebe500aa63186a0b1b5e855c"><td class="mdescLeft">&#160;</td><td class="mdescRight">units <br /></td></tr>
 <tr class="separator:aa914c392ebe500aa63186a0b1b5e855c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad538d6b86956f7cb011941c06992e93" id="r_aad538d6b86956f7cb011941c06992e93"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad538d6b86956f7cb011941c06992e93">coefCollision</a> =1000</td></tr>
-<tr class="memdesc:aad538d6b86956f7cb011941c06992e93"><td class="mdescLeft">&#160;</td><td class="mdescRight">coefficient for collision avoidment  <br /></td></tr>
+<tr class="memitem:aad538d6b86956f7cb011941c06992e93" id="r_aad538d6b86956f7cb011941c06992e93"><td class="memItemLeft" align="right" valign="top"><a id="aad538d6b86956f7cb011941c06992e93" name="aad538d6b86956f7cb011941c06992e93"></a>
+const double&#160;</td><td class="memItemRight" valign="bottom"><b>coefCollision</b> =1000</td></tr>
+<tr class="memdesc:aad538d6b86956f7cb011941c06992e93"><td class="mdescLeft">&#160;</td><td class="mdescRight">coefficient for collision avoidment <br /></td></tr>
 <tr class="separator:aad538d6b86956f7cb011941c06992e93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6681e09ecbb19bfb49378bdd3d1b112" id="r_ab6681e09ecbb19bfb49378bdd3d1b112"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6681e09ecbb19bfb49378bdd3d1b112">damping</a> =0.2</td></tr>
-<tr class="memdesc:ab6681e09ecbb19bfb49378bdd3d1b112"><td class="mdescLeft">&#160;</td><td class="mdescRight">damping for motion simulation  <br /></td></tr>
+<tr class="memitem:ab6681e09ecbb19bfb49378bdd3d1b112" id="r_ab6681e09ecbb19bfb49378bdd3d1b112"><td class="memItemLeft" align="right" valign="top"><a id="ab6681e09ecbb19bfb49378bdd3d1b112" name="ab6681e09ecbb19bfb49378bdd3d1b112"></a>
+const double&#160;</td><td class="memItemRight" valign="bottom"><b>damping</b> =0.2</td></tr>
+<tr class="memdesc:ab6681e09ecbb19bfb49378bdd3d1b112"><td class="mdescLeft">&#160;</td><td class="mdescRight">damping for motion simulation <br /></td></tr>
 <tr class="separator:ab6681e09ecbb19bfb49378bdd3d1b112"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a408b128f8cefa55dfbc53da173e52f19" id="r_a408b128f8cefa55dfbc53da173e52f19"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a408b128f8cefa55dfbc53da173e52f19">chargingSpeed</a> =10</td></tr>
-<tr class="memdesc:a408b128f8cefa55dfbc53da173e52f19"><td class="mdescLeft">&#160;</td><td class="mdescRight">speed of charging (power/s)  <br /></td></tr>
+<tr class="memitem:a408b128f8cefa55dfbc53da173e52f19" id="r_a408b128f8cefa55dfbc53da173e52f19"><td class="memItemLeft" align="right" valign="top"><a id="a408b128f8cefa55dfbc53da173e52f19" name="a408b128f8cefa55dfbc53da173e52f19"></a>
+const double&#160;</td><td class="memItemRight" valign="bottom"><b>chargingSpeed</b> =10</td></tr>
+<tr class="memdesc:a408b128f8cefa55dfbc53da173e52f19"><td class="mdescLeft">&#160;</td><td class="mdescRight">speed of charging (power/s) <br /></td></tr>
 <tr class="separator:a408b128f8cefa55dfbc53da173e52f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7d3282ce0c3400891283566e205dfa2" id="r_ac7d3282ce0c3400891283566e205dfa2"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7d3282ce0c3400891283566e205dfa2">powerConsumption</a> =5</td></tr>
-<tr class="memdesc:ac7d3282ce0c3400891283566e205dfa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">speed of consumption (power/s)  <br /></td></tr>
+<tr class="memitem:ac7d3282ce0c3400891283566e205dfa2" id="r_ac7d3282ce0c3400891283566e205dfa2"><td class="memItemLeft" align="right" valign="top"><a id="ac7d3282ce0c3400891283566e205dfa2" name="ac7d3282ce0c3400891283566e205dfa2"></a>
+const double&#160;</td><td class="memItemRight" valign="bottom"><b>powerConsumption</b> =5</td></tr>
+<tr class="memdesc:ac7d3282ce0c3400891283566e205dfa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">speed of consumption (power/s) <br /></td></tr>
 <tr class="separator:ac7d3282ce0c3400891283566e205dfa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:ab80b4a7573dbf12f8c295b0f0952ec99" id="r_ab80b4a7573dbf12f8c295b0f0952ec99"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab80b4a7573dbf12f8c295b0f0952ec99">compasSize</a> = 48</td></tr>
-<tr class="memdesc:ab80b4a7573dbf12f8c295b0f0952ec99"><td class="mdescLeft">&#160;</td><td class="mdescRight">size of the compas image (compasSize x compasSize)  <br /></td></tr>
+<tr class="memitem:a75ab1c901cff1cd40117b211db733899" id="r_a75ab1c901cff1cd40117b211db733899"><td class="memItemLeft" align="right" valign="top"><a id="a75ab1c901cff1cd40117b211db733899" name="a75ab1c901cff1cd40117b211db733899"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>destCityId</b> = -2</td></tr>
+<tr class="separator:a75ab1c901cff1cd40117b211db733899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac78af1e669ba213ec613f636a71ff02c" id="r_ac78af1e669ba213ec613f636a71ff02c"><td class="memItemLeft" align="right" valign="top"><a id="ac78af1e669ba213ec613f636a71ff02c" name="ac78af1e669ba213ec613f636a71ff02c"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>currentCityId</b> = -1</td></tr>
+<tr class="separator:ac78af1e669ba213ec613f636a71ff02c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab80b4a7573dbf12f8c295b0f0952ec99" id="r_ab80b4a7573dbf12f8c295b0f0952ec99"><td class="memItemLeft" align="right" valign="top"><a id="ab80b4a7573dbf12f8c295b0f0952ec99" name="ab80b4a7573dbf12f8c295b0f0952ec99"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><b>compasSize</b> = 48</td></tr>
+<tr class="memdesc:ab80b4a7573dbf12f8c295b0f0952ec99"><td class="mdescLeft">&#160;</td><td class="mdescRight">size of the compas image (compasSize x compasSize) <br /></td></tr>
 <tr class="separator:ab80b4a7573dbf12f8c295b0f0952ec99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff9b28040fa3f797ce3c6329179bb4c9" id="r_aff9b28040fa3f797ce3c6329179bb4c9"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff9b28040fa3f797ce3c6329179bb4c9">barSpace</a> = 150</td></tr>
-<tr class="memdesc:aff9b28040fa3f797ce3c6329179bb4c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">minimum size of the ProgressBar  <br /></td></tr>
+<tr class="memitem:aff9b28040fa3f797ce3c6329179bb4c9" id="r_aff9b28040fa3f797ce3c6329179bb4c9"><td class="memItemLeft" align="right" valign="top"><a id="aff9b28040fa3f797ce3c6329179bb4c9" name="aff9b28040fa3f797ce3c6329179bb4c9"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><b>barSpace</b> = 150</td></tr>
+<tr class="memdesc:aff9b28040fa3f797ce3c6329179bb4c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">minimum size of the ProgressBar <br /></td></tr>
 <tr class="separator:aff9b28040fa3f797ce3c6329179bb4c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36df26e775f422a6df74abdd185bc63c" id="r_a36df26e775f422a6df74abdd185bc63c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aeab5eed0a5d06cc3968da277ad2671af">droneStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36df26e775f422a6df74abdd185bc63c">status</a></td></tr>
-<tr class="memdesc:a36df26e775f422a6df74abdd185bc63c"><td class="mdescLeft">&#160;</td><td class="mdescRight">status of the drone  <br /></td></tr>
+<tr class="memitem:a36df26e775f422a6df74abdd185bc63c" id="r_a36df26e775f422a6df74abdd185bc63c"><td class="memItemLeft" align="right" valign="top"><a id="a36df26e775f422a6df74abdd185bc63c" name="a36df26e775f422a6df74abdd185bc63c"></a>
+droneStatus&#160;</td><td class="memItemRight" valign="bottom"><b>status</b></td></tr>
+<tr class="memdesc:a36df26e775f422a6df74abdd185bc63c"><td class="mdescLeft">&#160;</td><td class="mdescRight">status of the drone <br /></td></tr>
 <tr class="separator:a36df26e775f422a6df74abdd185bc63c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad28a7b7fb356db4edcc79da0cca93ca9" id="r_ad28a7b7fb356db4edcc79da0cca93ca9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad28a7b7fb356db4edcc79da0cca93ca9">height</a></td></tr>
-<tr class="memdesc:ad28a7b7fb356db4edcc79da0cca93ca9"><td class="mdescLeft">&#160;</td><td class="mdescRight">current height of the drone  <br /></td></tr>
+<tr class="memitem:ad28a7b7fb356db4edcc79da0cca93ca9" id="r_ad28a7b7fb356db4edcc79da0cca93ca9"><td class="memItemLeft" align="right" valign="top"><a id="ad28a7b7fb356db4edcc79da0cca93ca9" name="ad28a7b7fb356db4edcc79da0cca93ca9"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>height</b></td></tr>
+<tr class="memdesc:ad28a7b7fb356db4edcc79da0cca93ca9"><td class="mdescLeft">&#160;</td><td class="mdescRight">current height of the drone <br /></td></tr>
 <tr class="separator:ad28a7b7fb356db4edcc79da0cca93ca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72a835041f01fd55b8a315a6b811881b" id="r_a72a835041f01fd55b8a315a6b811881b"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72a835041f01fd55b8a315a6b811881b">name</a></td></tr>
-<tr class="memdesc:a72a835041f01fd55b8a315a6b811881b"><td class="mdescLeft">&#160;</td><td class="mdescRight">name of the drone  <br /></td></tr>
+<tr class="memitem:a72a835041f01fd55b8a315a6b811881b" id="r_a72a835041f01fd55b8a315a6b811881b"><td class="memItemLeft" align="right" valign="top"><a id="a72a835041f01fd55b8a315a6b811881b" name="a72a835041f01fd55b8a315a6b811881b"></a>
+QString&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
+<tr class="memdesc:a72a835041f01fd55b8a315a6b811881b"><td class="mdescLeft">&#160;</td><td class="mdescRight">name of the drone <br /></td></tr>
 <tr class="separator:a72a835041f01fd55b8a315a6b811881b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac04fecb02613506f58074db57ee488c6" id="r_ac04fecb02613506f58074db57ee488c6"><td class="memItemLeft" align="right" valign="top">QProgressBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac04fecb02613506f58074db57ee488c6">speedPB</a></td></tr>
-<tr class="memdesc:ac04fecb02613506f58074db57ee488c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">progress bar widget for the speed  <br /></td></tr>
+<tr class="memitem:ac04fecb02613506f58074db57ee488c6" id="r_ac04fecb02613506f58074db57ee488c6"><td class="memItemLeft" align="right" valign="top"><a id="ac04fecb02613506f58074db57ee488c6" name="ac04fecb02613506f58074db57ee488c6"></a>
+QProgressBar *&#160;</td><td class="memItemRight" valign="bottom"><b>speedPB</b></td></tr>
+<tr class="memdesc:ac04fecb02613506f58074db57ee488c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">progress bar widget for the speed <br /></td></tr>
 <tr class="separator:ac04fecb02613506f58074db57ee488c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6786055bfa5b8345336b9518f8b24c07" id="r_a6786055bfa5b8345336b9518f8b24c07"><td class="memItemLeft" align="right" valign="top">QProgressBar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6786055bfa5b8345336b9518f8b24c07">powerPB</a></td></tr>
-<tr class="memdesc:a6786055bfa5b8345336b9518f8b24c07"><td class="mdescLeft">&#160;</td><td class="mdescRight">progress bar widget for the power  <br /></td></tr>
+<tr class="memitem:a6786055bfa5b8345336b9518f8b24c07" id="r_a6786055bfa5b8345336b9518f8b24c07"><td class="memItemLeft" align="right" valign="top"><a id="a6786055bfa5b8345336b9518f8b24c07" name="a6786055bfa5b8345336b9518f8b24c07"></a>
+QProgressBar *&#160;</td><td class="memItemRight" valign="bottom"><b>powerPB</b></td></tr>
+<tr class="memdesc:a6786055bfa5b8345336b9518f8b24c07"><td class="mdescLeft">&#160;</td><td class="mdescRight">progress bar widget for the power <br /></td></tr>
 <tr class="separator:a6786055bfa5b8345336b9518f8b24c07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c4e77ec65b47ddaae2a0e2d29f5ea6a" id="r_a1c4e77ec65b47ddaae2a0e2d29f5ea6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c4e77ec65b47ddaae2a0e2d29f5ea6a">position</a></td></tr>
-<tr class="memdesc:a1c4e77ec65b47ddaae2a0e2d29f5ea6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">current position of the drone  <br /></td></tr>
+<tr class="memitem:a1c4e77ec65b47ddaae2a0e2d29f5ea6a" id="r_a1c4e77ec65b47ddaae2a0e2d29f5ea6a"><td class="memItemLeft" align="right" valign="top"><a id="a1c4e77ec65b47ddaae2a0e2d29f5ea6a" name="a1c4e77ec65b47ddaae2a0e2d29f5ea6a"></a>
+<a class="el" href="class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>position</b></td></tr>
+<tr class="memdesc:a1c4e77ec65b47ddaae2a0e2d29f5ea6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">current position of the drone <br /></td></tr>
 <tr class="separator:a1c4e77ec65b47ddaae2a0e2d29f5ea6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c7fdb92102009fa20b5e21d7f0db884" id="r_a6c7fdb92102009fa20b5e21d7f0db884"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c7fdb92102009fa20b5e21d7f0db884">goalPosition</a></td></tr>
-<tr class="memdesc:a6c7fdb92102009fa20b5e21d7f0db884"><td class="mdescLeft">&#160;</td><td class="mdescRight">goal position for the drone  <br /></td></tr>
+<tr class="memitem:a6c7fdb92102009fa20b5e21d7f0db884" id="r_a6c7fdb92102009fa20b5e21d7f0db884"><td class="memItemLeft" align="right" valign="top"><a id="a6c7fdb92102009fa20b5e21d7f0db884" name="a6c7fdb92102009fa20b5e21d7f0db884"></a>
+<a class="el" href="class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>goalPosition</b></td></tr>
+<tr class="memdesc:a6c7fdb92102009fa20b5e21d7f0db884"><td class="mdescLeft">&#160;</td><td class="mdescRight">goal position for the drone <br /></td></tr>
 <tr class="separator:a6c7fdb92102009fa20b5e21d7f0db884"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38dc018619251cfc499cc0fb42844671" id="r_a38dc018619251cfc499cc0fb42844671"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38dc018619251cfc499cc0fb42844671">direction</a></td></tr>
-<tr class="memdesc:a38dc018619251cfc499cc0fb42844671"><td class="mdescLeft">&#160;</td><td class="mdescRight">current direction  <br /></td></tr>
+<tr class="memitem:a38dc018619251cfc499cc0fb42844671" id="r_a38dc018619251cfc499cc0fb42844671"><td class="memItemLeft" align="right" valign="top"><a id="a38dc018619251cfc499cc0fb42844671" name="a38dc018619251cfc499cc0fb42844671"></a>
+<a class="el" href="class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>direction</b></td></tr>
+<tr class="memdesc:a38dc018619251cfc499cc0fb42844671"><td class="mdescLeft">&#160;</td><td class="mdescRight">current direction <br /></td></tr>
 <tr class="separator:a38dc018619251cfc499cc0fb42844671"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a6223ce74d9de69d795a8584dc1367f" id="r_a6a6223ce74d9de69d795a8584dc1367f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a6223ce74d9de69d795a8584dc1367f">V</a></td></tr>
-<tr class="memdesc:a6a6223ce74d9de69d795a8584dc1367f"><td class="mdescLeft">&#160;</td><td class="mdescRight">current speed vector  <br /></td></tr>
+<tr class="memitem:a6a6223ce74d9de69d795a8584dc1367f" id="r_a6a6223ce74d9de69d795a8584dc1367f"><td class="memItemLeft" align="right" valign="top"><a id="a6a6223ce74d9de69d795a8584dc1367f" name="a6a6223ce74d9de69d795a8584dc1367f"></a>
+<a class="el" href="class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>V</b></td></tr>
+<tr class="memdesc:a6a6223ce74d9de69d795a8584dc1367f"><td class="mdescLeft">&#160;</td><td class="mdescRight">current speed vector <br /></td></tr>
 <tr class="separator:a6a6223ce74d9de69d795a8584dc1367f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa90a26ccde03c43b58d57cbb9f4ef2e0" id="r_aa90a26ccde03c43b58d57cbb9f4ef2e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa90a26ccde03c43b58d57cbb9f4ef2e0">ForceCollision</a></td></tr>
-<tr class="memdesc:aa90a26ccde03c43b58d57cbb9f4ef2e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">force generated by the collision detection  <br /></td></tr>
+<tr class="memitem:aa90a26ccde03c43b58d57cbb9f4ef2e0" id="r_aa90a26ccde03c43b58d57cbb9f4ef2e0"><td class="memItemLeft" align="right" valign="top"><a id="aa90a26ccde03c43b58d57cbb9f4ef2e0" name="aa90a26ccde03c43b58d57cbb9f4ef2e0"></a>
+<a class="el" href="class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ForceCollision</b></td></tr>
+<tr class="memdesc:aa90a26ccde03c43b58d57cbb9f4ef2e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">force generated by the collision detection <br /></td></tr>
 <tr class="separator:aa90a26ccde03c43b58d57cbb9f4ef2e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cbe7d72da36c27cb58fa797240c9698" id="r_a4cbe7d72da36c27cb58fa797240c9698"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4cbe7d72da36c27cb58fa797240c9698">speed</a></td></tr>
-<tr class="memdesc:a4cbe7d72da36c27cb58fa797240c9698"><td class="mdescLeft">&#160;</td><td class="mdescRight">current speed  <br /></td></tr>
+<tr class="memitem:a4cbe7d72da36c27cb58fa797240c9698" id="r_a4cbe7d72da36c27cb58fa797240c9698"><td class="memItemLeft" align="right" valign="top"><a id="a4cbe7d72da36c27cb58fa797240c9698" name="a4cbe7d72da36c27cb58fa797240c9698"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>speed</b></td></tr>
+<tr class="memdesc:a4cbe7d72da36c27cb58fa797240c9698"><td class="mdescLeft">&#160;</td><td class="mdescRight">current speed <br /></td></tr>
 <tr class="separator:a4cbe7d72da36c27cb58fa797240c9698"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ffe5cfbb988f0f9650c69fb229eb927" id="r_a7ffe5cfbb988f0f9650c69fb229eb927"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ffe5cfbb988f0f9650c69fb229eb927">speedSetpoint</a></td></tr>
-<tr class="memdesc:a7ffe5cfbb988f0f9650c69fb229eb927"><td class="mdescLeft">&#160;</td><td class="mdescRight">speed to reach if possible  <br /></td></tr>
+<tr class="memitem:a7ffe5cfbb988f0f9650c69fb229eb927" id="r_a7ffe5cfbb988f0f9650c69fb229eb927"><td class="memItemLeft" align="right" valign="top"><a id="a7ffe5cfbb988f0f9650c69fb229eb927" name="a7ffe5cfbb988f0f9650c69fb229eb927"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>speedSetpoint</b></td></tr>
+<tr class="memdesc:a7ffe5cfbb988f0f9650c69fb229eb927"><td class="mdescLeft">&#160;</td><td class="mdescRight">speed to reach if possible <br /></td></tr>
 <tr class="separator:a7ffe5cfbb988f0f9650c69fb229eb927"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1eba81b4e971f830fc498a51345d1248" id="r_a1eba81b4e971f830fc498a51345d1248"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1eba81b4e971f830fc498a51345d1248">power</a></td></tr>
-<tr class="memdesc:a1eba81b4e971f830fc498a51345d1248"><td class="mdescLeft">&#160;</td><td class="mdescRight">current power  <br /></td></tr>
+<tr class="memitem:a1eba81b4e971f830fc498a51345d1248" id="r_a1eba81b4e971f830fc498a51345d1248"><td class="memItemLeft" align="right" valign="top"><a id="a1eba81b4e971f830fc498a51345d1248" name="a1eba81b4e971f830fc498a51345d1248"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>power</b></td></tr>
+<tr class="memdesc:a1eba81b4e971f830fc498a51345d1248"><td class="mdescLeft">&#160;</td><td class="mdescRight">current power <br /></td></tr>
 <tr class="separator:a1eba81b4e971f830fc498a51345d1248"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17af56928b969a9f2a99ea78bfafa72f" id="r_a17af56928b969a9f2a99ea78bfafa72f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17af56928b969a9f2a99ea78bfafa72f">azimut</a></td></tr>
-<tr class="memdesc:a17af56928b969a9f2a99ea78bfafa72f"><td class="mdescLeft">&#160;</td><td class="mdescRight">rotation angle of the drone  <br /></td></tr>
+<tr class="memitem:a17af56928b969a9f2a99ea78bfafa72f" id="r_a17af56928b969a9f2a99ea78bfafa72f"><td class="memItemLeft" align="right" valign="top"><a id="a17af56928b969a9f2a99ea78bfafa72f" name="a17af56928b969a9f2a99ea78bfafa72f"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>azimut</b></td></tr>
+<tr class="memdesc:a17af56928b969a9f2a99ea78bfafa72f"><td class="mdescLeft">&#160;</td><td class="mdescRight">rotation angle of the drone <br /></td></tr>
 <tr class="separator:a17af56928b969a9f2a99ea78bfafa72f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4619c071d489711ba7ee9d69a46a3c7" id="r_ad4619c071d489711ba7ee9d69a46a3c7"><td class="memItemLeft" align="right" valign="top">QImage&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4619c071d489711ba7ee9d69a46a3c7">compasImg</a></td></tr>
+<tr class="memitem:ad4619c071d489711ba7ee9d69a46a3c7" id="r_ad4619c071d489711ba7ee9d69a46a3c7"><td class="memItemLeft" align="right" valign="top"><a id="ad4619c071d489711ba7ee9d69a46a3c7" name="ad4619c071d489711ba7ee9d69a46a3c7"></a>
+QImage&#160;</td><td class="memItemRight" valign="bottom"><b>compasImg</b></td></tr>
 <tr class="separator:ad4619c071d489711ba7ee9d69a46a3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9f5320910b5400ac4e9d0c8292edab2" id="r_ab9f5320910b5400ac4e9d0c8292edab2"><td class="memItemLeft" align="right" valign="top">QImage&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9f5320910b5400ac4e9d0c8292edab2">stopImg</a></td></tr>
+<tr class="memitem:ab9f5320910b5400ac4e9d0c8292edab2" id="r_ab9f5320910b5400ac4e9d0c8292edab2"><td class="memItemLeft" align="right" valign="top"><a id="ab9f5320910b5400ac4e9d0c8292edab2" name="ab9f5320910b5400ac4e9d0c8292edab2"></a>
+QImage&#160;</td><td class="memItemRight" valign="bottom"><b>stopImg</b></td></tr>
 <tr class="separator:ab9f5320910b5400ac4e9d0c8292edab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19add27702d2136f4d8f135277e12905" id="r_a19add27702d2136f4d8f135277e12905"><td class="memItemLeft" align="right" valign="top">QImage&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19add27702d2136f4d8f135277e12905">takeoffImg</a></td></tr>
+<tr class="memitem:a19add27702d2136f4d8f135277e12905" id="r_a19add27702d2136f4d8f135277e12905"><td class="memItemLeft" align="right" valign="top"><a id="a19add27702d2136f4d8f135277e12905" name="a19add27702d2136f4d8f135277e12905"></a>
+QImage&#160;</td><td class="memItemRight" valign="bottom"><b>takeoffImg</b></td></tr>
 <tr class="separator:a19add27702d2136f4d8f135277e12905"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d460a57cb77948877f545137b845a79" id="r_a8d460a57cb77948877f545137b845a79"><td class="memItemLeft" align="right" valign="top">QImage&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d460a57cb77948877f545137b845a79">landingImg</a></td></tr>
+<tr class="memitem:a8d460a57cb77948877f545137b845a79" id="r_a8d460a57cb77948877f545137b845a79"><td class="memItemLeft" align="right" valign="top"><a id="a8d460a57cb77948877f545137b845a79" name="a8d460a57cb77948877f545137b845a79"></a>
+QImage&#160;</td><td class="memItemRight" valign="bottom"><b>landingImg</b></td></tr>
 <tr class="separator:a8d460a57cb77948877f545137b845a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b9789266ddba9f9a18a4f66bd3ba49d" id="r_a7b9789266ddba9f9a18a4f66bd3ba49d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b9789266ddba9f9a18a4f66bd3ba49d">showCollision</a></td></tr>
-<tr class="memdesc:a7b9789266ddba9f9a18a4f66bd3ba49d"><td class="mdescLeft">&#160;</td><td class="mdescRight">true if a collision is detected  <br /></td></tr>
+<tr class="memitem:a7b9789266ddba9f9a18a4f66bd3ba49d" id="r_a7b9789266ddba9f9a18a4f66bd3ba49d"><td class="memItemLeft" align="right" valign="top"><a id="a7b9789266ddba9f9a18a4f66bd3ba49d" name="a7b9789266ddba9f9a18a4f66bd3ba49d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>showCollision</b></td></tr>
+<tr class="memdesc:a7b9789266ddba9f9a18a4f66bd3ba49d"><td class="mdescLeft">&#160;</td><td class="mdescRight">true if a collision is detected <br /></td></tr>
 <tr class="separator:a7b9789266ddba9f9a18a4f66bd3ba49d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a580642ee401a0f40d79e19da80d14e6d" id="r_a580642ee401a0f40d79e19da80d14e6d"><td class="memItemLeft" align="right" valign="top"><a id="a580642ee401a0f40d79e19da80d14e6d" name="a580642ee401a0f40d79e19da80d14e6d"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>nbCollisions</b> = 0</td></tr>
+<tr class="memdesc:a580642ee401a0f40d79e19da80d14e6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of collisions. <br /></td></tr>
+<tr class="separator:a580642ee401a0f40d79e19da80d14e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Drone_demo project. </p>
 <dl class="section author"><dt>Author</dt><dd>B.Piranda </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>dec. 2024 </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00014">14</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="aeab5eed0a5d06cc3968da277ad2671af" name="aeab5eed0a5d06cc3968da277ad2671af"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeab5eed0a5d06cc3968da277ad2671af">&#9670;&#160;</a></span>droneStatus</h2>
@@ -276,21 +331,12 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="#aeab5eed0a5d06cc3968da277ad2671af">Drone::droneStatus</a></td>
+          <td class="memname">enum Drone::droneStatus</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aeab5eed0a5d06cc3968da277ad2671afa2c9801355402c5d98dc3829e93acb822" name="aeab5eed0a5d06cc3968da277ad2671afa2c9801355402c5d98dc3829e93acb822"></a>landed&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aeab5eed0a5d06cc3968da277ad2671afad019f6ff2c3f203f876bb50bbaac2a0a" name="aeab5eed0a5d06cc3968da277ad2671afad019f6ff2c3f203f876bb50bbaac2a0a"></a>takeoff&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aeab5eed0a5d06cc3968da277ad2671afa923018fadd8a51cdf671b498ea34f49d" name="aeab5eed0a5d06cc3968da277ad2671afa923018fadd8a51cdf671b498ea34f49d"></a>landing&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aeab5eed0a5d06cc3968da277ad2671afa6bc5f40d516ec9d2270e9011fa53ae91" name="aeab5eed0a5d06cc3968da277ad2671afa6bc5f40d516ec9d2270e9011fa53ae91"></a>hovering&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aeab5eed0a5d06cc3968da277ad2671afa7653c975d1148f427139e926f79cf97d" name="aeab5eed0a5d06cc3968da277ad2671afa7653c975d1148f427139e926f79cf97d"></a>turning&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aeab5eed0a5d06cc3968da277ad2671afaa5663777fef12567238b99e6de3dfd98" name="aeab5eed0a5d06cc3968da277ad2671afaa5663777fef12567238b99e6de3dfd98"></a>flying&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00026">26</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   28</span>{ landed,takeoff,landing,hovering,turning,flying};</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -329,9 +375,62 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="drone_8cpp_source.html#l00006">6</a> of file <a class="el" href="drone_8cpp_source.html">drone.cpp</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">    7</span>    : QWidget{parent},<a class="code hl_variable" href="#a72a835041f01fd55b8a315a6b811881b">name</a>(n) {</div>
+<div class="line"><span class="lineno">    8</span> </div>
+<div class="line"><span class="lineno">    9</span>    <a class="code hl_variable" href="#a36df26e775f422a6df74abdd185bc63c">status</a>=landed;</div>
+<div class="line"><span class="lineno">   10</span>    <a class="code hl_variable" href="#a4cbe7d72da36c27cb58fa797240c9698">speed</a>=0;</div>
+<div class="line"><span class="lineno">   11</span>    <a class="code hl_variable" href="#a1eba81b4e971f830fc498a51345d1248">power</a>=<a class="code hl_variable" href="#a40543b6a36aabc1171d7ef4124850a52">maxPower</a>/2.0;</div>
+<div class="line"><span class="lineno">   12</span>    <a class="code hl_variable" href="#a6a6223ce74d9de69d795a8584dc1367f">V</a>.<a class="code hl_function" href="class_vector2_d.html#a973094c245c43d462b2f018ab669baa8">set</a>(0,0);</div>
+<div class="line"><span class="lineno">   13</span>    <a class="code hl_variable" href="#aa90a26ccde03c43b58d57cbb9f4ef2e0">ForceCollision</a>.<a class="code hl_function" href="class_vector2_d.html#a973094c245c43d462b2f018ab669baa8">set</a>(0,0);</div>
+<div class="line"><span class="lineno">   14</span>    <a class="code hl_variable" href="#a1c4e77ec65b47ddaae2a0e2d29f5ea6a">position</a>=<a class="code hl_class" href="class_vector2_d.html">Vector2D</a>(50,50);</div>
+<div class="line"><span class="lineno">   15</span>    <a class="code hl_variable" href="#a6c7fdb92102009fa20b5e21d7f0db884">goalPosition</a>=<a class="code hl_class" href="class_vector2_d.html">Vector2D</a>(550,600);</div>
+<div class="line"><span class="lineno">   16</span>    <a class="code hl_variable" href="#a7b9789266ddba9f9a18a4f66bd3ba49d">showCollision</a>=<span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_variable" href="#a17af56928b969a9f2a99ea78bfafa72f">azimut</a>=0;</div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>    <a class="code hl_variable" href="#ac04fecb02613506f58074db57ee488c6">speedPB</a>=<span class="keyword">new</span> QProgressBar(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   20</span>    <a class="code hl_variable" href="#ac04fecb02613506f58074db57ee488c6">speedPB</a>-&gt;setValue(<a class="code hl_variable" href="#a4cbe7d72da36c27cb58fa797240c9698">speed</a>);</div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_variable" href="#ac04fecb02613506f58074db57ee488c6">speedPB</a>-&gt;setMaximum(<a class="code hl_variable" href="#a6d336e477ca4ae7d28601e096f8d9063">maxSpeed</a>);</div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_variable" href="#ac04fecb02613506f58074db57ee488c6">speedPB</a>-&gt;setMinimum(0);</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_variable" href="#ac04fecb02613506f58074db57ee488c6">speedPB</a>-&gt;setFormat(<a class="code hl_variable" href="#a72a835041f01fd55b8a315a6b811881b">name</a>+<span class="stringliteral">&quot; speed %p%&quot;</span>);</div>
+<div class="line"><span class="lineno">   24</span>    <a class="code hl_variable" href="#ac04fecb02613506f58074db57ee488c6">speedPB</a>-&gt;setAlignment(Qt::AlignCenter);</div>
+<div class="line"><span class="lineno">   25</span>    <span class="comment">//speedPB-&gt;setStyleSheet(&quot;QProgressBar::chunk{background-color:red&quot;);</span></div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_variable" href="#a6786055bfa5b8345336b9518f8b24c07">powerPB</a>=<span class="keyword">new</span> QProgressBar(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   28</span>    <a class="code hl_variable" href="#a6786055bfa5b8345336b9518f8b24c07">powerPB</a>-&gt;setValue(<a class="code hl_variable" href="#a1eba81b4e971f830fc498a51345d1248">power</a>);</div>
+<div class="line"><span class="lineno">   29</span>    <a class="code hl_variable" href="#a6786055bfa5b8345336b9518f8b24c07">powerPB</a>-&gt;setMaximum(<a class="code hl_variable" href="#a40543b6a36aabc1171d7ef4124850a52">maxPower</a>);</div>
+<div class="line"><span class="lineno">   30</span>    <a class="code hl_variable" href="#a6786055bfa5b8345336b9518f8b24c07">powerPB</a>-&gt;setMinimum(0);</div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_variable" href="#a6786055bfa5b8345336b9518f8b24c07">powerPB</a>-&gt;setFormat(<span class="stringliteral">&quot;power %p%&quot;</span>);</div>
+<div class="line"><span class="lineno">   32</span>    <a class="code hl_variable" href="#a6786055bfa5b8345336b9518f8b24c07">powerPB</a>-&gt;setAlignment(Qt::AlignCenter);</div>
+<div class="line"><span class="lineno">   33</span>    <span class="comment">//powerPB-&gt;setStyleSheet(&quot;QProgressBar::chunk{background-color:yellow&quot;);</span></div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>    setBaseSize(<a class="code hl_variable" href="#aff9b28040fa3f797ce3c6329179bb4c9">barSpace</a>+<a class="code hl_variable" href="#ab80b4a7573dbf12f8c295b0f0952ec99">compasSize</a>,2*<a class="code hl_variable" href="#ab80b4a7573dbf12f8c295b0f0952ec99">compasSize</a>);</div>
+<div class="line"><span class="lineno">   36</span>    setMinimumHeight(2*<a class="code hl_variable" href="#ab80b4a7573dbf12f8c295b0f0952ec99">compasSize</a>);</div>
+<div class="line"><span class="lineno">   37</span>    setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed);</div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>    compasImg.load(<span class="stringliteral">&quot;../../media/compas.png&quot;</span>);</div>
+<div class="line"><span class="lineno">   40</span>    stopImg.load(<span class="stringliteral">&quot;../../media/stop.png&quot;</span>);</div>
+<div class="line"><span class="lineno">   41</span>    takeoffImg.load(<span class="stringliteral">&quot;../../media/takeoff.png&quot;</span>);</div>
+<div class="line"><span class="lineno">   42</span>    landingImg.load(<span class="stringliteral">&quot;../../media/landing.png&quot;</span>);</div>
+<div class="line"><span class="lineno">   43</span>}</div>
+<div class="ttc" id="aclass_drone_html_a17af56928b969a9f2a99ea78bfafa72f"><div class="ttname"><a href="#a17af56928b969a9f2a99ea78bfafa72f">Drone::azimut</a></div><div class="ttdeci">double azimut</div><div class="ttdoc">rotation angle of the drone</div><div class="ttdef"><b>Definition</b> drone.h:168</div></div>
+<div class="ttc" id="aclass_drone_html_a1c4e77ec65b47ddaae2a0e2d29f5ea6a"><div class="ttname"><a href="#a1c4e77ec65b47ddaae2a0e2d29f5ea6a">Drone::position</a></div><div class="ttdeci">Vector2D position</div><div class="ttdoc">current position of the drone</div><div class="ttdef"><b>Definition</b> drone.h:160</div></div>
+<div class="ttc" id="aclass_drone_html_a1eba81b4e971f830fc498a51345d1248"><div class="ttname"><a href="#a1eba81b4e971f830fc498a51345d1248">Drone::power</a></div><div class="ttdeci">double power</div><div class="ttdoc">current power</div><div class="ttdef"><b>Definition</b> drone.h:167</div></div>
+<div class="ttc" id="aclass_drone_html_a36df26e775f422a6df74abdd185bc63c"><div class="ttname"><a href="#a36df26e775f422a6df74abdd185bc63c">Drone::status</a></div><div class="ttdeci">droneStatus status</div><div class="ttdoc">status of the drone</div><div class="ttdef"><b>Definition</b> drone.h:155</div></div>
+<div class="ttc" id="aclass_drone_html_a40543b6a36aabc1171d7ef4124850a52"><div class="ttname"><a href="#a40543b6a36aabc1171d7ef4124850a52">Drone::maxPower</a></div><div class="ttdeci">const double maxPower</div><div class="ttdoc">max power of drone motors</div><div class="ttdef"><b>Definition</b> drone.h:20</div></div>
+<div class="ttc" id="aclass_drone_html_a4cbe7d72da36c27cb58fa797240c9698"><div class="ttname"><a href="#a4cbe7d72da36c27cb58fa797240c9698">Drone::speed</a></div><div class="ttdeci">double speed</div><div class="ttdoc">current speed</div><div class="ttdef"><b>Definition</b> drone.h:165</div></div>
+<div class="ttc" id="aclass_drone_html_a6786055bfa5b8345336b9518f8b24c07"><div class="ttname"><a href="#a6786055bfa5b8345336b9518f8b24c07">Drone::powerPB</a></div><div class="ttdeci">QProgressBar * powerPB</div><div class="ttdoc">progress bar widget for the power</div><div class="ttdef"><b>Definition</b> drone.h:159</div></div>
+<div class="ttc" id="aclass_drone_html_a6a6223ce74d9de69d795a8584dc1367f"><div class="ttname"><a href="#a6a6223ce74d9de69d795a8584dc1367f">Drone::V</a></div><div class="ttdeci">Vector2D V</div><div class="ttdoc">current speed vector</div><div class="ttdef"><b>Definition</b> drone.h:163</div></div>
+<div class="ttc" id="aclass_drone_html_a6c7fdb92102009fa20b5e21d7f0db884"><div class="ttname"><a href="#a6c7fdb92102009fa20b5e21d7f0db884">Drone::goalPosition</a></div><div class="ttdeci">Vector2D goalPosition</div><div class="ttdoc">goal position for the drone</div><div class="ttdef"><b>Definition</b> drone.h:161</div></div>
+<div class="ttc" id="aclass_drone_html_a6d336e477ca4ae7d28601e096f8d9063"><div class="ttname"><a href="#a6d336e477ca4ae7d28601e096f8d9063">Drone::maxSpeed</a></div><div class="ttdeci">const double maxSpeed</div><div class="ttdoc">max speed in pixels per second</div><div class="ttdef"><b>Definition</b> drone.h:19</div></div>
+<div class="ttc" id="aclass_drone_html_a72a835041f01fd55b8a315a6b811881b"><div class="ttname"><a href="#a72a835041f01fd55b8a315a6b811881b">Drone::name</a></div><div class="ttdeci">QString name</div><div class="ttdoc">name of the drone</div><div class="ttdef"><b>Definition</b> drone.h:157</div></div>
+<div class="ttc" id="aclass_drone_html_a7b9789266ddba9f9a18a4f66bd3ba49d"><div class="ttname"><a href="#a7b9789266ddba9f9a18a4f66bd3ba49d">Drone::showCollision</a></div><div class="ttdeci">bool showCollision</div><div class="ttdoc">true if a collision is detected</div><div class="ttdef"><b>Definition</b> drone.h:170</div></div>
+<div class="ttc" id="aclass_drone_html_aa90a26ccde03c43b58d57cbb9f4ef2e0"><div class="ttname"><a href="#aa90a26ccde03c43b58d57cbb9f4ef2e0">Drone::ForceCollision</a></div><div class="ttdeci">Vector2D ForceCollision</div><div class="ttdoc">force generated by the collision detection</div><div class="ttdef"><b>Definition</b> drone.h:164</div></div>
+<div class="ttc" id="aclass_drone_html_ab80b4a7573dbf12f8c295b0f0952ec99"><div class="ttname"><a href="#ab80b4a7573dbf12f8c295b0f0952ec99">Drone::compasSize</a></div><div class="ttdeci">const int compasSize</div><div class="ttdoc">size of the compas image (compasSize x compasSize)</div><div class="ttdef"><b>Definition</b> drone.h:153</div></div>
+<div class="ttc" id="aclass_drone_html_ac04fecb02613506f58074db57ee488c6"><div class="ttname"><a href="#ac04fecb02613506f58074db57ee488c6">Drone::speedPB</a></div><div class="ttdeci">QProgressBar * speedPB</div><div class="ttdoc">progress bar widget for the speed</div><div class="ttdef"><b>Definition</b> drone.h:158</div></div>
+<div class="ttc" id="aclass_drone_html_aff9b28040fa3f797ce3c6329179bb4c9"><div class="ttname"><a href="#aff9b28040fa3f797ce3c6329179bb4c9">Drone::barSpace</a></div><div class="ttdeci">const int barSpace</div><div class="ttdoc">minimum size of the ProgressBar</div><div class="ttdef"><b>Definition</b> drone.h:154</div></div>
+<div class="ttc" id="aclass_vector2_d_html"><div class="ttname"><a href="class_vector2_d.html">Vector2D</a></div><div class="ttdoc">Drone_demo project.</div><div class="ttdef"><b>Definition</b> vector2d.h:17</div></div>
+<div class="ttc" id="aclass_vector2_d_html_a973094c245c43d462b2f018ab669baa8"><div class="ttname"><a href="class_vector2_d.html#a973094c245c43d462b2f018ab669baa8">Vector2D::set</a></div><div class="ttdeci">void set(float p_x, float p_y)</div><div class="ttdoc">set new coordinates to the vector</div><div class="ttdef"><b>Definition</b> vector2d.h:44</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a667075abb1eb5c54be6418884a387d14" name="a667075abb1eb5c54be6418884a387d14"></a>
@@ -349,9 +448,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p><a class="el" href="class_drone.html" title="Drone_demo project.">Drone</a> destructor </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8cpp_source.html#l00045">45</a> of file <a class="el" href="drone_8cpp_source.html">drone.cpp</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   45</span>              {</div>
+<div class="line"><span class="lineno">   46</span>    <span class="keyword">delete</span> <a class="code hl_variable" href="#ac04fecb02613506f58074db57ee488c6">speedPB</a>;</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keyword">delete</span> <a class="code hl_variable" href="#a6786055bfa5b8345336b9518f8b24c07">powerPB</a>;</div>
+<div class="line"><span class="lineno">   48</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -382,9 +483,20 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="drone_8cpp_source.html#l00170">170</a> of file <a class="el" href="drone_8cpp_source.html">drone.cpp</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  179</span>                                                          {</div>
+<div class="line"><span class="lineno">  180</span>    <a class="code hl_class" href="class_vector2_d.html">Vector2D</a> AB=B-<a class="code hl_variable" href="#a1c4e77ec65b47ddaae2a0e2d29f5ea6a">position</a>;</div>
+<div class="line"><span class="lineno">  181</span>    <span class="keywordtype">double</span> l=AB.<a class="code hl_function" href="class_vector2_d.html#ab08635b0482451cc43b5b399034eff2f">length</a>();</div>
+<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">if</span> (l&lt;threshold) {</div>
+<div class="line"><span class="lineno">  183</span>        <a class="code hl_variable" href="#aa90a26ccde03c43b58d57cbb9f4ef2e0">ForceCollision</a>+=(-<a class="code hl_variable" href="#aad538d6b86956f7cb011941c06992e93">coefCollision</a>/threshold)*AB;</div>
+<div class="line"><span class="lineno">  184</span>        <a class="code hl_variable" href="#a7b9789266ddba9f9a18a4f66bd3ba49d">showCollision</a>=<span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  185</span>        <a class="code hl_variable" href="#a580642ee401a0f40d79e19da80d14e6d">nbCollisions</a>++;</div>
+<div class="line"><span class="lineno">  186</span>    }</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>}</div>
+<div class="ttc" id="aclass_drone_html_a580642ee401a0f40d79e19da80d14e6d"><div class="ttname"><a href="#a580642ee401a0f40d79e19da80d14e6d">Drone::nbCollisions</a></div><div class="ttdeci">int nbCollisions</div><div class="ttdoc">Number of collisions.</div><div class="ttdef"><b>Definition</b> drone.h:171</div></div>
+<div class="ttc" id="aclass_drone_html_aad538d6b86956f7cb011941c06992e93"><div class="ttname"><a href="#aad538d6b86956f7cb011941c06992e93">Drone::coefCollision</a></div><div class="ttdeci">const double coefCollision</div><div class="ttdoc">coefficient for collision avoidment</div><div class="ttdef"><b>Definition</b> drone.h:23</div></div>
+<div class="ttc" id="aclass_vector2_d_html_ab08635b0482451cc43b5b399034eff2f"><div class="ttname"><a href="class_vector2_d.html#ab08635b0482451cc43b5b399034eff2f">Vector2D::length</a></div><div class="ttdeci">double length() const</div><div class="ttdoc">Computes the length (or norm) of the vector.</div><div class="ttdef"><b>Definition</b> vector2d.h:50</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0535438871ce596434f05813be6fb2ce" name="a0535438871ce596434f05813be6fb2ce"></a>
@@ -412,9 +524,65 @@ Private Attributes</h2></td></tr>
 
 <p>getAzimut get the direction of motion of the drone (angle in degree relatively to the y direction) /** * </p>
 <p>/** * </p><dl class="section return"><dt>Returns</dt><dd>the angle in degree </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#a17af56928b969a9f2a99ea78bfafa72f">azimut</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6a7a5401d1db948fa10531e6a2f6b52f" name="a6a7a5401d1db948fa10531e6a2f6b52f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a7a5401d1db948fa10531e6a2f6b52f">&#9670;&#160;</a></span>getCurrentCity()</h2>
 
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00079">79</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Drone::getCurrentCity </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
+<p>getCurrentCity get the current city </p>
+<div class="fragment"><div class="line"><span class="lineno">  135</span>{ <span class="keywordflow">return</span> currentCityId; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aab88053ca8c7062af17af5f9ff957be3" name="aab88053ca8c7062af17af5f9ff957be3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab88053ca8c7062af17af5f9ff957be3">&#9670;&#160;</a></span>getDestCity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Drone::getDestCity </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>getDestCity get the final city destination </p>
+<dl class="section return"><dt>Returns</dt><dd>the city id </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  124</span>{ <span class="keywordflow">return</span> destCityId; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a5ccec19f2f37c7d6eeb087e48df247aa" name="a5ccec19f2f37c7d6eeb087e48df247aa"></a>
@@ -442,9 +610,37 @@ Private Attributes</h2></td></tr>
 
 <p>getName get the name of the drone </p>
 <dl class="section return"><dt>Returns</dt><dd>the name </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">   76</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#a72a835041f01fd55b8a315a6b811881b">name</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a14087b32f7ea35175a36186e1f5f566f" name="a14087b32f7ea35175a36186e1f5f566f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14087b32f7ea35175a36186e1f5f566f">&#9670;&#160;</a></span>getNbCollisions()</h2>
 
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00074">74</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Drone::getNbCollisions </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
+<p>Get the number of collisions that have occurred since the drone began moving. </p>
+<dl class="section return"><dt>Returns</dt><dd>the number of collisions </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>{<span class="keywordflow">return</span> <a class="code hl_variable" href="#a580642ee401a0f40d79e19da80d14e6d">nbCollisions</a>;};</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="af9acfa889406ec85fe8a43b1941d1bf3" name="af9acfa889406ec85fe8a43b1941d1bf3"></a>
@@ -472,9 +668,8 @@ Private Attributes</h2></td></tr>
 
 <p>getPosition get the current position of the drone </p>
 <dl class="section return"><dt>Returns</dt><dd>the position </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00064">64</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   66</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#a1c4e77ec65b47ddaae2a0e2d29f5ea6a">position</a>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac36d9fdaf2a0d2e31bb2924f04a0298f" name="ac36d9fdaf2a0d2e31bb2924f04a0298f"></a>
@@ -502,9 +697,8 @@ Private Attributes</h2></td></tr>
 
 <p>get the Power rank between 0 and 100 </p>
 <dl class="section return"><dt>Returns</dt><dd>the rank </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00084">84</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   86</span>{ <span class="keywordflow">return</span> 100.0*<a class="code hl_variable" href="#a1eba81b4e971f830fc498a51345d1248">power</a>/<a class="code hl_variable" href="#a40543b6a36aabc1171d7ef4124850a52">maxPower</a>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="afafc9ba6fcff0a9b028594b6433adffc" name="afafc9ba6fcff0a9b028594b6433adffc"></a>
@@ -517,7 +711,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#aeab5eed0a5d06cc3968da277ad2671af">droneStatus</a> Drone::getStatus </td>
+          <td class="memname">droneStatus Drone::getStatus </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -532,9 +726,8 @@ Private Attributes</h2></td></tr>
 
 <p>getStatus get the current status of the drone </p>
 <dl class="section return"><dt>Returns</dt><dd>the status </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00069">69</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   71</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#a36df26e775f422a6df74abdd185bc63c">status</a>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a06d6c451149b1e9418eaefb3a9aeca90" name="a06d6c451149b1e9418eaefb3a9aeca90"></a>
@@ -562,9 +755,37 @@ Private Attributes</h2></td></tr>
 
 <p>Get if a collision has occurred. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if collision </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  113</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#a7b9789266ddba9f9a18a4f66bd3ba49d">showCollision</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a46d1a506d237feef77be41f9424ce406" name="a46d1a506d237feef77be41f9424ce406"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46d1a506d237feef77be41f9424ce406">&#9670;&#160;</a></span>inDestCity()</h2>
 
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00103">103</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Drone::inDestCity </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
+<p>inDestCity check if the drone is in his dest city </p>
+<dl class="section return"><dt>Returns</dt><dd>true if the drone is in his dest city </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  144</span>{ <span class="keywordflow">return</span> destCityId == currentCityId; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="afac93725223c6dfa88f55331edd85768" name="afac93725223c6dfa88f55331edd85768"></a>
@@ -583,9 +804,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Prepare data for collision detections. </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8cpp_source.html#l00164">164</a> of file <a class="el" href="drone_8cpp_source.html">drone.cpp</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  173</span>                          {</div>
+<div class="line"><span class="lineno">  174</span>    <a class="code hl_variable" href="#aa90a26ccde03c43b58d57cbb9f4ef2e0">ForceCollision</a>.<a class="code hl_function" href="class_vector2_d.html#a973094c245c43d462b2f018ab669baa8">set</a>(0,0);</div>
+<div class="line"><span class="lineno">  175</span>    <a class="code hl_variable" href="#a7b9789266ddba9f9a18a4f66bd3ba49d">showCollision</a>=<span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  176</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6d7cda9ed3d1a173f107bfef3a635a90" name="a6d7cda9ed3d1a173f107bfef3a635a90"></a>
@@ -610,9 +833,44 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="drone_8cpp_source.html#l00050">50</a> of file <a class="el" href="drone_8cpp_source.html">drone.cpp</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   50</span>                                    {</div>
+<div class="line"><span class="lineno">   51</span>    QPainter painter(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   52</span>    QBrush whiteBrush(Qt::SolidPattern);</div>
+<div class="line"><span class="lineno">   53</span>    whiteBrush.setColor(Qt::white);</div>
+<div class="line"><span class="lineno">   54</span>    QRect rect(0,0,<a class="code hl_variable" href="#ab80b4a7573dbf12f8c295b0f0952ec99">compasSize</a>,<a class="code hl_variable" href="#ab80b4a7573dbf12f8c295b0f0952ec99">compasSize</a>);</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">switch</span> (<a class="code hl_variable" href="#a36df26e775f422a6df74abdd185bc63c">status</a>) {</div>
+<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">case</span> landed: painter.drawImage(rect,stopImg); <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">case</span> takeoff: painter.drawImage(rect,takeoffImg); <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">case</span> landing: painter.drawImage(rect,landingImg); <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   59</span>        default : {</div>
+<div class="line"><span class="lineno">   60</span>            painter.drawImage(rect, compasImg);</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>            <span class="comment">// Inverser l&#39;axe Y</span></div>
+<div class="line"><span class="lineno">   63</span>            painter.save();</div>
+<div class="line"><span class="lineno">   64</span>            painter.translate(<a class="code hl_variable" href="#ab80b4a7573dbf12f8c295b0f0952ec99">compasSize</a> / 2.0, <a class="code hl_variable" href="#ab80b4a7573dbf12f8c295b0f0952ec99">compasSize</a> / 2.0); <span class="comment">// Déplacer l&#39;origine</span></div>
+<div class="line"><span class="lineno">   65</span>            painter.scale(1, -1);  <span class="comment">// Inverser Y</span></div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>            <span class="comment">// Dessiner l&#39;aiguille de la boussole</span></div>
+<div class="line"><span class="lineno">   68</span>            QPointF points[3] = {</div>
+<div class="line"><span class="lineno">   69</span>                QPointF(-<a class="code hl_variable" href="#ab80b4a7573dbf12f8c295b0f0952ec99">compasSize</a> / 5.0, 0),</div>
+<div class="line"><span class="lineno">   70</span>                QPointF(<a class="code hl_variable" href="#ab80b4a7573dbf12f8c295b0f0952ec99">compasSize</a> / 5.0, 0),</div>
+<div class="line"><span class="lineno">   71</span>                QPointF(0, <a class="code hl_variable" href="#ab80b4a7573dbf12f8c295b0f0952ec99">compasSize</a> / 2.2)</div>
+<div class="line"><span class="lineno">   72</span>            };</div>
+<div class="line"><span class="lineno">   73</span> </div>
+<div class="line"><span class="lineno">   74</span>            painter.rotate(<a class="code hl_variable" href="#a17af56928b969a9f2a99ea78bfafa72f">azimut</a>);</div>
+<div class="line"><span class="lineno">   75</span>            painter.setBrush(Qt::white);</div>
+<div class="line"><span class="lineno">   76</span>            painter.setPen(Qt::black);</div>
+<div class="line"><span class="lineno">   77</span>            painter.drawPolygon(points, 3);</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>            painter.setBrush(Qt::red);</div>
+<div class="line"><span class="lineno">   80</span>            painter.rotate(180);</div>
+<div class="line"><span class="lineno">   81</span>            painter.drawPolygon(points, 3);</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>            painter.restore();</div>
+<div class="line"><span class="lineno">   84</span>        }</div>
+<div class="line"><span class="lineno">   85</span>    }</div>
+<div class="line"><span class="lineno">   86</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a146d36465d4e260c199dc97c5f2ef105" name="a146d36465d4e260c199dc97c5f2ef105"></a>
@@ -637,9 +895,70 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   88</span>                                      {</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>    QRect rect(<a class="code hl_variable" href="#ab80b4a7573dbf12f8c295b0f0952ec99">compasSize</a>+5,0,width()-<a class="code hl_variable" href="#ab80b4a7573dbf12f8c295b0f0952ec99">compasSize</a>-5,<a class="code hl_variable" href="#ab80b4a7573dbf12f8c295b0f0952ec99">compasSize</a>/2);</div>
+<div class="line"><span class="lineno">   91</span>    <a class="code hl_variable" href="#ac04fecb02613506f58074db57ee488c6">speedPB</a>-&gt;setGeometry(rect);</div>
+<div class="line"><span class="lineno">   92</span>    rect.setRect(<a class="code hl_variable" href="#ab80b4a7573dbf12f8c295b0f0952ec99">compasSize</a>+5,<a class="code hl_variable" href="#ab80b4a7573dbf12f8c295b0f0952ec99">compasSize</a>/2,width()-<a class="code hl_variable" href="#ab80b4a7573dbf12f8c295b0f0952ec99">compasSize</a>-5,<a class="code hl_variable" href="#ab80b4a7573dbf12f8c295b0f0952ec99">compasSize</a>/2);</div>
+<div class="line"><span class="lineno">   93</span>    <a class="code hl_variable" href="#a6786055bfa5b8345336b9518f8b24c07">powerPB</a>-&gt;setGeometry(rect);</div>
+<div class="line"><span class="lineno">   94</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac886eaaa20cc145b5525602c003abe51" name="ac886eaaa20cc145b5525602c003abe51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac886eaaa20cc145b5525602c003abe51">&#9670;&#160;</a></span>setCurrentCity()</h2>
 
-<p class="definition">Definition at line <a class="el" href="drone_8cpp_source.html#l00080">80</a> of file <a class="el" href="drone_8cpp_source.html">drone.cpp</a>.</p>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Drone::setCurrentCity </td>
+          <td>(</td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
+<p>setCurrentCity set the current city </p>
+<div class="fragment"><div class="line"><span class="lineno">  130</span>{ currentCityId = c; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1c7c09da3a1d8d9e67fdd402b7a8a0b1" name="a1c7c09da3a1d8d9e67fdd402b7a8a0b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c7c09da3a1d8d9e67fdd402b7a8a0b1">&#9670;&#160;</a></span>setDestCity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Drone::setDestCity </td>
+          <td>(</td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>setDestCity set the final city destination </p>
+<div class="fragment"><div class="line"><span class="lineno">  118</span>{ destCityId = c; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a8bb0fc208bfbe8cbc427f4f236fe4e39" name="a8bb0fc208bfbe8cbc427f4f236fe4e39"></a>
@@ -672,9 +991,8 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00059">59</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   61</span>{ <a class="code hl_variable" href="#a6c7fdb92102009fa20b5e21d7f0db884">goalPosition</a>=pos; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a8f7aa3baf1bff990f15d1fe6d4be0a79" name="a8f7aa3baf1bff990f15d1fe6d4be0a79"></a>
@@ -707,9 +1025,8 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00054">54</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   56</span>{ <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a36df26e775f422a6df74abdd185bc63c">status</a>==landed) <a class="code hl_variable" href="#a1c4e77ec65b47ddaae2a0e2d29f5ea6a">position</a>=pos; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ad6693e9a61008cf9c28efb235da85554" name="ad6693e9a61008cf9c28efb235da85554"></a>
@@ -742,9 +1059,9 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00049">49</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   51</span>{ <a class="code hl_variable" href="#a7ffe5cfbb988f0f9650c69fb229eb927">speedSetpoint</a>=(s&gt;<a class="code hl_variable" href="#a6d336e477ca4ae7d28601e096f8d9063">maxSpeed</a>?<a class="code hl_variable" href="#a6d336e477ca4ae7d28601e096f8d9063">maxSpeed</a>:s); }</div>
+<div class="ttc" id="aclass_drone_html_a7ffe5cfbb988f0f9650c69fb229eb927"><div class="ttname"><a href="#a7ffe5cfbb988f0f9650c69fb229eb927">Drone::speedSetpoint</a></div><div class="ttdeci">double speedSetpoint</div><div class="ttdoc">speed to reach if possible</div><div class="ttdef"><b>Definition</b> drone.h:166</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a1a34de39d4f9a80f4272fea73337ca0f" name="a1a34de39d4f9a80f4272fea73337ca0f"></a>
@@ -771,9 +1088,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Make the drone takeoff to move to a target position. </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00040">40</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   42</span>{ <a class="code hl_variable" href="#a36df26e775f422a6df74abdd185bc63c">status</a>=takeoff; <a class="code hl_variable" href="#ad28a7b7fb356db4edcc79da0cca93ca9">height</a>=0; <a class="code hl_variable" href="#a580642ee401a0f40d79e19da80d14e6d">nbCollisions</a>=0; repaint(); }</div>
+<div class="ttc" id="aclass_drone_html_ad28a7b7fb356db4edcc79da0cca93ca9"><div class="ttname"><a href="#ad28a7b7fb356db4edcc79da0cca93ca9">Drone::height</a></div><div class="ttdeci">double height</div><div class="ttdoc">current height of the drone</div><div class="ttdef"><b>Definition</b> drone.h:156</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="abbb3667113cd142d7299866cf58265c8" name="abbb3667113cd142d7299866cf58265c8"></a>
@@ -800,9 +1117,8 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Ask for landing. </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00044">44</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   46</span>{ <a class="code hl_variable" href="#a36df26e775f422a6df74abdd185bc63c">status</a>=landing; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aa151b14b7b3660c8e7e910b74c8d4f08" name="aa151b14b7b3660c8e7e910b74c8d4f08"></a>
@@ -819,697 +1135,94 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="drone_8cpp_source.html#l00087">87</a> of file <a class="el" href="drone_8cpp_source.html">drone.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a17af56928b969a9f2a99ea78bfafa72f" name="a17af56928b969a9f2a99ea78bfafa72f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17af56928b969a9f2a99ea78bfafa72f">&#9670;&#160;</a></span>azimut</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Drone::azimut</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>rotation angle of the drone </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00122">122</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="aff9b28040fa3f797ce3c6329179bb4c9" name="aff9b28040fa3f797ce3c6329179bb4c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff9b28040fa3f797ce3c6329179bb4c9">&#9670;&#160;</a></span>barSpace</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int Drone::barSpace = 150</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>minimum size of the ProgressBar </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00108">108</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="a408b128f8cefa55dfbc53da173e52f19" name="a408b128f8cefa55dfbc53da173e52f19"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a408b128f8cefa55dfbc53da173e52f19">&#9670;&#160;</a></span>chargingSpeed</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const double Drone::chargingSpeed =10</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>speed of charging (power/s) </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00024">24</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="aad538d6b86956f7cb011941c06992e93" name="aad538d6b86956f7cb011941c06992e93"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad538d6b86956f7cb011941c06992e93">&#9670;&#160;</a></span>coefCollision</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const double Drone::coefCollision =1000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>coefficient for collision avoidment </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00022">22</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="ad4619c071d489711ba7ee9d69a46a3c7" name="ad4619c071d489711ba7ee9d69a46a3c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4619c071d489711ba7ee9d69a46a3c7">&#9670;&#160;</a></span>compasImg</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QImage Drone::compasImg</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00123">123</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="ab80b4a7573dbf12f8c295b0f0952ec99" name="ab80b4a7573dbf12f8c295b0f0952ec99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab80b4a7573dbf12f8c295b0f0952ec99">&#9670;&#160;</a></span>compasSize</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int Drone::compasSize = 48</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>size of the compas image (compasSize x compasSize) </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00107">107</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="ab6681e09ecbb19bfb49378bdd3d1b112" name="ab6681e09ecbb19bfb49378bdd3d1b112"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6681e09ecbb19bfb49378bdd3d1b112">&#9670;&#160;</a></span>damping</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const double Drone::damping =0.2</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>damping for motion simulation </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00023">23</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="a38dc018619251cfc499cc0fb42844671" name="a38dc018619251cfc499cc0fb42844671"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38dc018619251cfc499cc0fb42844671">&#9670;&#160;</a></span>direction</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_vector2_d.html">Vector2D</a> Drone::direction</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>current direction </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00116">116</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="aa90a26ccde03c43b58d57cbb9f4ef2e0" name="aa90a26ccde03c43b58d57cbb9f4ef2e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa90a26ccde03c43b58d57cbb9f4ef2e0">&#9670;&#160;</a></span>ForceCollision</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_vector2_d.html">Vector2D</a> Drone::ForceCollision</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>force generated by the collision detection </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00118">118</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="a6c7fdb92102009fa20b5e21d7f0db884" name="a6c7fdb92102009fa20b5e21d7f0db884"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c7fdb92102009fa20b5e21d7f0db884">&#9670;&#160;</a></span>goalPosition</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_vector2_d.html">Vector2D</a> Drone::goalPosition</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>goal position for the drone </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00115">115</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="ad28a7b7fb356db4edcc79da0cca93ca9" name="ad28a7b7fb356db4edcc79da0cca93ca9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad28a7b7fb356db4edcc79da0cca93ca9">&#9670;&#160;</a></span>height</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Drone::height</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>current height of the drone </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00110">110</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="aa914c392ebe500aa63186a0b1b5e855c" name="aa914c392ebe500aa63186a0b1b5e855c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa914c392ebe500aa63186a0b1b5e855c">&#9670;&#160;</a></span>hoveringHeight</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const double Drone::hoveringHeight =5</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>units </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00021">21</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="a8d460a57cb77948877f545137b845a79" name="a8d460a57cb77948877f545137b845a79"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d460a57cb77948877f545137b845a79">&#9670;&#160;</a></span>landingImg</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QImage Drone::landingImg</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00123">123</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="a40543b6a36aabc1171d7ef4124850a52" name="a40543b6a36aabc1171d7ef4124850a52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40543b6a36aabc1171d7ef4124850a52">&#9670;&#160;</a></span>maxPower</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const double Drone::maxPower =200</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>max power of drone motors </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00019">19</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="a6d336e477ca4ae7d28601e096f8d9063" name="a6d336e477ca4ae7d28601e096f8d9063"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d336e477ca4ae7d28601e096f8d9063">&#9670;&#160;</a></span>maxSpeed</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const double Drone::maxSpeed =50</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>max speed in pixels per second </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00018">18</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="a72a835041f01fd55b8a315a6b811881b" name="a72a835041f01fd55b8a315a6b811881b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72a835041f01fd55b8a315a6b811881b">&#9670;&#160;</a></span>name</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QString Drone::name</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>name of the drone </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00111">111</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="a1c4e77ec65b47ddaae2a0e2d29f5ea6a" name="a1c4e77ec65b47ddaae2a0e2d29f5ea6a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c4e77ec65b47ddaae2a0e2d29f5ea6a">&#9670;&#160;</a></span>position</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_vector2_d.html">Vector2D</a> Drone::position</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>current position of the drone </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00114">114</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="a1eba81b4e971f830fc498a51345d1248" name="a1eba81b4e971f830fc498a51345d1248"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1eba81b4e971f830fc498a51345d1248">&#9670;&#160;</a></span>power</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Drone::power</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>current power </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00121">121</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="ac7d3282ce0c3400891283566e205dfa2" name="ac7d3282ce0c3400891283566e205dfa2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7d3282ce0c3400891283566e205dfa2">&#9670;&#160;</a></span>powerConsumption</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const double Drone::powerConsumption =5</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>speed of consumption (power/s) </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00025">25</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="a6786055bfa5b8345336b9518f8b24c07" name="a6786055bfa5b8345336b9518f8b24c07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6786055bfa5b8345336b9518f8b24c07">&#9670;&#160;</a></span>powerPB</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QProgressBar* Drone::powerPB</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>progress bar widget for the power </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00113">113</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="a7b9789266ddba9f9a18a4f66bd3ba49d" name="a7b9789266ddba9f9a18a4f66bd3ba49d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b9789266ddba9f9a18a4f66bd3ba49d">&#9670;&#160;</a></span>showCollision</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Drone::showCollision</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>true if a collision is detected </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00124">124</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="a4cbe7d72da36c27cb58fa797240c9698" name="a4cbe7d72da36c27cb58fa797240c9698"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4cbe7d72da36c27cb58fa797240c9698">&#9670;&#160;</a></span>speed</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Drone::speed</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>current speed </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00119">119</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="ac04fecb02613506f58074db57ee488c6" name="ac04fecb02613506f58074db57ee488c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac04fecb02613506f58074db57ee488c6">&#9670;&#160;</a></span>speedPB</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QProgressBar* Drone::speedPB</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>progress bar widget for the speed </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00112">112</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="a7ffe5cfbb988f0f9650c69fb229eb927" name="a7ffe5cfbb988f0f9650c69fb229eb927"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ffe5cfbb988f0f9650c69fb229eb927">&#9670;&#160;</a></span>speedSetpoint</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Drone::speedSetpoint</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>speed to reach if possible </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00120">120</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="a36df26e775f422a6df74abdd185bc63c" name="a36df26e775f422a6df74abdd185bc63c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36df26e775f422a6df74abdd185bc63c">&#9670;&#160;</a></span>status</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#aeab5eed0a5d06cc3968da277ad2671af">droneStatus</a> Drone::status</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>status of the drone </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00109">109</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="ab9f5320910b5400ac4e9d0c8292edab2" name="ab9f5320910b5400ac4e9d0c8292edab2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9f5320910b5400ac4e9d0c8292edab2">&#9670;&#160;</a></span>stopImg</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QImage Drone::stopImg</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00123">123</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="a19add27702d2136f4d8f135277e12905" name="a19add27702d2136f4d8f135277e12905"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19add27702d2136f4d8f135277e12905">&#9670;&#160;</a></span>takeoffImg</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QImage Drone::takeoffImg</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00123">123</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="aa702eec241419c8360b51b80d6f29286" name="aa702eec241419c8360b51b80d6f29286"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa702eec241419c8360b51b80d6f29286">&#9670;&#160;</a></span>takeoffSpeed</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const double Drone::takeoffSpeed =2.5</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>unit/s </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00020">20</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
-</div>
-</div>
-<a id="a6a6223ce74d9de69d795a8584dc1367f" name="a6a6223ce74d9de69d795a8584dc1367f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a6223ce74d9de69d795a8584dc1367f">&#9670;&#160;</a></span>V</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_vector2_d.html">Vector2D</a> Drone::V</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>current speed vector </p>
-
-<p class="definition">Definition at line <a class="el" href="drone_8h_source.html#l00117">117</a> of file <a class="el" href="drone_8h_source.html">drone.h</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   96</span>                            {</div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a36df26e775f422a6df74abdd185bc63c">status</a>==landed) {</div>
+<div class="line"><span class="lineno">   98</span>        <a class="code hl_variable" href="#a1eba81b4e971f830fc498a51345d1248">power</a>+=dt*<a class="code hl_variable" href="#a408b128f8cefa55dfbc53da173e52f19">chargingSpeed</a>;</div>
+<div class="line"><span class="lineno">   99</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1eba81b4e971f830fc498a51345d1248">power</a>&gt;<a class="code hl_variable" href="#a40543b6a36aabc1171d7ef4124850a52">maxPower</a>) {</div>
+<div class="line"><span class="lineno">  100</span>            <a class="code hl_variable" href="#a1eba81b4e971f830fc498a51345d1248">power</a>=<a class="code hl_variable" href="#a40543b6a36aabc1171d7ef4124850a52">maxPower</a>;</div>
+<div class="line"><span class="lineno">  101</span>        }</div>
+<div class="line"><span class="lineno">  102</span>        <a class="code hl_variable" href="#a6786055bfa5b8345336b9518f8b24c07">powerPB</a>-&gt;setValue(<a class="code hl_variable" href="#a1eba81b4e971f830fc498a51345d1248">power</a>);</div>
+<div class="line"><span class="lineno">  103</span>        repaint();</div>
+<div class="line"><span class="lineno">  104</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  105</span>    }</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a36df26e775f422a6df74abdd185bc63c">status</a>==takeoff) {</div>
+<div class="line"><span class="lineno">  108</span>        <a class="code hl_variable" href="#ad28a7b7fb356db4edcc79da0cca93ca9">height</a>+=dt*<a class="code hl_variable" href="#aa702eec241419c8360b51b80d6f29286">takeoffSpeed</a>;</div>
+<div class="line"><span class="lineno">  109</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ad28a7b7fb356db4edcc79da0cca93ca9">height</a>&gt;=<a class="code hl_variable" href="#aa914c392ebe500aa63186a0b1b5e855c">hoveringHeight</a>) {</div>
+<div class="line"><span class="lineno">  110</span>            <a class="code hl_variable" href="#ad28a7b7fb356db4edcc79da0cca93ca9">height</a>=<a class="code hl_variable" href="#aa914c392ebe500aa63186a0b1b5e855c">hoveringHeight</a>;</div>
+<div class="line"><span class="lineno">  111</span>            <a class="code hl_variable" href="#a36df26e775f422a6df74abdd185bc63c">status</a>=hovering;</div>
+<div class="line"><span class="lineno">  112</span>        }</div>
+<div class="line"><span class="lineno">  113</span>        <a class="code hl_variable" href="#a1eba81b4e971f830fc498a51345d1248">power</a>-=dt*<a class="code hl_variable" href="#ac7d3282ce0c3400891283566e205dfa2">powerConsumption</a>;</div>
+<div class="line"><span class="lineno">  114</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1eba81b4e971f830fc498a51345d1248">power</a>&lt;20+<a class="code hl_variable" href="#ac7d3282ce0c3400891283566e205dfa2">powerConsumption</a>/<a class="code hl_variable" href="#aa702eec241419c8360b51b80d6f29286">takeoffSpeed</a>) {</div>
+<div class="line"><span class="lineno">  115</span>            <a class="code hl_variable" href="#a36df26e775f422a6df74abdd185bc63c">status</a>=landing;</div>
+<div class="line"><span class="lineno">  116</span>            <a class="code hl_variable" href="#a4cbe7d72da36c27cb58fa797240c9698">speed</a>=0;</div>
+<div class="line"><span class="lineno">  117</span>        }</div>
+<div class="line"><span class="lineno">  118</span>        <a class="code hl_variable" href="#a6786055bfa5b8345336b9518f8b24c07">powerPB</a>-&gt;setValue(<a class="code hl_variable" href="#a1eba81b4e971f830fc498a51345d1248">power</a>);</div>
+<div class="line"><span class="lineno">  119</span>        repaint();</div>
+<div class="line"><span class="lineno">  120</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  121</span>    }</div>
+<div class="line"><span class="lineno">  122</span> </div>
+<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a36df26e775f422a6df74abdd185bc63c">status</a>==landing) {</div>
+<div class="line"><span class="lineno">  124</span>        <a class="code hl_variable" href="#ad28a7b7fb356db4edcc79da0cca93ca9">height</a>-=dt*<a class="code hl_variable" href="#aa702eec241419c8360b51b80d6f29286">takeoffSpeed</a>;</div>
+<div class="line"><span class="lineno">  125</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ad28a7b7fb356db4edcc79da0cca93ca9">height</a>&lt;=0) {</div>
+<div class="line"><span class="lineno">  126</span>            <a class="code hl_variable" href="#ad28a7b7fb356db4edcc79da0cca93ca9">height</a>=0;</div>
+<div class="line"><span class="lineno">  127</span>            <a class="code hl_variable" href="#a36df26e775f422a6df74abdd185bc63c">status</a>=landed;</div>
+<div class="line"><span class="lineno">  128</span>            <a class="code hl_variable" href="#a7b9789266ddba9f9a18a4f66bd3ba49d">showCollision</a>=<span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  129</span>        }</div>
+<div class="line"><span class="lineno">  130</span>        <a class="code hl_variable" href="#a1eba81b4e971f830fc498a51345d1248">power</a>-=dt*<a class="code hl_variable" href="#ac7d3282ce0c3400891283566e205dfa2">powerConsumption</a>;</div>
+<div class="line"><span class="lineno">  131</span>        <a class="code hl_variable" href="#a6786055bfa5b8345336b9518f8b24c07">powerPB</a>-&gt;setValue(<a class="code hl_variable" href="#a1eba81b4e971f830fc498a51345d1248">power</a>);</div>
+<div class="line"><span class="lineno">  132</span>        repaint();</div>
+<div class="line"><span class="lineno">  133</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  134</span>    }</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a36df26e775f422a6df74abdd185bc63c">status</a>&gt;=hovering) {</div>
+<div class="line"><span class="lineno">  137</span>        <a class="code hl_class" href="class_vector2_d.html">Vector2D</a> toGoal=<a class="code hl_variable" href="#a6c7fdb92102009fa20b5e21d7f0db884">goalPosition</a>-<a class="code hl_variable" href="#a1c4e77ec65b47ddaae2a0e2d29f5ea6a">position</a>;</div>
+<div class="line"><span class="lineno">  138</span>        <span class="keywordtype">double</span> distance = toGoal.<a class="code hl_function" href="class_vector2_d.html#ab08635b0482451cc43b5b399034eff2f">length</a>();</div>
+<div class="line"><span class="lineno">  139</span> </div>
+<div class="line"><span class="lineno">  140</span>        <span class="keywordtype">double</span> damp= 1-dt*(1-<a class="code hl_variable" href="#ab6681e09ecbb19bfb49378bdd3d1b112">damping</a>);</div>
+<div class="line"><span class="lineno">  141</span>        <a class="code hl_variable" href="#a6a6223ce74d9de69d795a8584dc1367f">V</a> = damp*<a class="code hl_variable" href="#a6a6223ce74d9de69d795a8584dc1367f">V</a>+((<a class="code hl_variable" href="#a40543b6a36aabc1171d7ef4124850a52">maxPower</a>*dt/distance)*toGoal)+dt*<a class="code hl_variable" href="#aa90a26ccde03c43b58d57cbb9f4ef2e0">ForceCollision</a>;</div>
+<div class="line"><span class="lineno">  142</span>        <a class="code hl_variable" href="#a1c4e77ec65b47ddaae2a0e2d29f5ea6a">position</a> += dt*<a class="code hl_variable" href="#a6a6223ce74d9de69d795a8584dc1367f">V</a>;</div>
+<div class="line"><span class="lineno">  143</span>        <a class="code hl_variable" href="#a4cbe7d72da36c27cb58fa797240c9698">speed</a>=<a class="code hl_variable" href="#a6a6223ce74d9de69d795a8584dc1367f">V</a>.<a class="code hl_function" href="class_vector2_d.html#ab08635b0482451cc43b5b399034eff2f">length</a>();</div>
+<div class="line"><span class="lineno">  144</span>        <a class="code hl_class" href="class_vector2_d.html">Vector2D</a> Vn = (1.0/<a class="code hl_variable" href="#a4cbe7d72da36c27cb58fa797240c9698">speed</a>)*<a class="code hl_variable" href="#a6a6223ce74d9de69d795a8584dc1367f">V</a>;</div>
+<div class="line"><span class="lineno">  145</span>        <span class="keywordflow">if</span> (Vn.<a class="code hl_variable" href="class_vector2_d.html#a85215519d3f71d0e6be7d636346f3b7d">y</a>==0) {</div>
+<div class="line"><span class="lineno">  146</span>            <span class="keywordflow">if</span> (Vn.x&gt;0) {</div>
+<div class="line"><span class="lineno">  147</span>                <a class="code hl_variable" href="#a17af56928b969a9f2a99ea78bfafa72f">azimut</a> = -90;</div>
+<div class="line"><span class="lineno">  148</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  149</span>                <a class="code hl_variable" href="#a17af56928b969a9f2a99ea78bfafa72f">azimut</a> = 90.0;</div>
+<div class="line"><span class="lineno">  150</span>            }</div>
+<div class="line"><span class="lineno">  151</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (Vn.<a class="code hl_variable" href="class_vector2_d.html#a85215519d3f71d0e6be7d636346f3b7d">y</a>&gt;0) {</div>
+<div class="line"><span class="lineno">  152</span>            <a class="code hl_variable" href="#a17af56928b969a9f2a99ea78bfafa72f">azimut</a> = 180.0-180.0*atan(Vn.x/Vn.<a class="code hl_variable" href="class_vector2_d.html#a85215519d3f71d0e6be7d636346f3b7d">y</a>)/M_PI;</div>
+<div class="line"><span class="lineno">  153</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  154</span>            <a class="code hl_variable" href="#a17af56928b969a9f2a99ea78bfafa72f">azimut</a> = -180.0*atan(Vn.x/Vn.<a class="code hl_variable" href="class_vector2_d.html#a85215519d3f71d0e6be7d636346f3b7d">y</a>)/M_PI;</div>
+<div class="line"><span class="lineno">  155</span>        }</div>
+<div class="line"><span class="lineno">  156</span>        <span class="keywordflow">if</span> (toGoal.<a class="code hl_function" href="class_vector2_d.html#ab08635b0482451cc43b5b399034eff2f">length</a>()&lt;1.0 &amp;&amp; <a class="code hl_variable" href="#a4cbe7d72da36c27cb58fa797240c9698">speed</a>&lt;10) {</div>
+<div class="line"><span class="lineno">  157</span>            <a class="code hl_variable" href="#a6a6223ce74d9de69d795a8584dc1367f">V</a>.<a class="code hl_function" href="class_vector2_d.html#a973094c245c43d462b2f018ab669baa8">set</a>(0,0);</div>
+<div class="line"><span class="lineno">  158</span>            <a class="code hl_variable" href="#a4cbe7d72da36c27cb58fa797240c9698">speed</a>=0;</div>
+<div class="line"><span class="lineno">  159</span>            <a class="code hl_variable" href="#a36df26e775f422a6df74abdd185bc63c">status</a>=landing;</div>
+<div class="line"><span class="lineno">  160</span>        }</div>
+<div class="line"><span class="lineno">  161</span>        <a class="code hl_variable" href="#ac04fecb02613506f58074db57ee488c6">speedPB</a>-&gt;setValue(<a class="code hl_variable" href="#a4cbe7d72da36c27cb58fa797240c9698">speed</a>);</div>
+<div class="line"><span class="lineno">  162</span>        <a class="code hl_variable" href="#a1eba81b4e971f830fc498a51345d1248">power</a>-=dt*<a class="code hl_variable" href="#ac7d3282ce0c3400891283566e205dfa2">powerConsumption</a>;</div>
+<div class="line"><span class="lineno">  163</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a1eba81b4e971f830fc498a51345d1248">power</a>&lt;20+<a class="code hl_variable" href="#ac7d3282ce0c3400891283566e205dfa2">powerConsumption</a>/<a class="code hl_variable" href="#aa702eec241419c8360b51b80d6f29286">takeoffSpeed</a>) {</div>
+<div class="line"><span class="lineno">  164</span>            <a class="code hl_variable" href="#a4cbe7d72da36c27cb58fa797240c9698">speed</a>=0;</div>
+<div class="line"><span class="lineno">  165</span>            <a class="code hl_variable" href="#a6a6223ce74d9de69d795a8584dc1367f">V</a>.<a class="code hl_function" href="class_vector2_d.html#a973094c245c43d462b2f018ab669baa8">set</a>(0,0);</div>
+<div class="line"><span class="lineno">  166</span>            <a class="code hl_variable" href="#a36df26e775f422a6df74abdd185bc63c">status</a>=landing;</div>
+<div class="line"><span class="lineno">  167</span>        }</div>
+<div class="line"><span class="lineno">  168</span>        <a class="code hl_variable" href="#a6786055bfa5b8345336b9518f8b24c07">powerPB</a>-&gt;setValue(<a class="code hl_variable" href="#a1eba81b4e971f830fc498a51345d1248">power</a>);</div>
+<div class="line"><span class="lineno">  169</span>    }</div>
+<div class="line"><span class="lineno">  170</span>    repaint();</div>
+<div class="line"><span class="lineno">  171</span>}</div>
+<div class="ttc" id="aclass_drone_html_a408b128f8cefa55dfbc53da173e52f19"><div class="ttname"><a href="#a408b128f8cefa55dfbc53da173e52f19">Drone::chargingSpeed</a></div><div class="ttdeci">const double chargingSpeed</div><div class="ttdoc">speed of charging (power/s)</div><div class="ttdef"><b>Definition</b> drone.h:25</div></div>
+<div class="ttc" id="aclass_drone_html_aa702eec241419c8360b51b80d6f29286"><div class="ttname"><a href="#aa702eec241419c8360b51b80d6f29286">Drone::takeoffSpeed</a></div><div class="ttdeci">const double takeoffSpeed</div><div class="ttdoc">unit/s</div><div class="ttdef"><b>Definition</b> drone.h:21</div></div>
+<div class="ttc" id="aclass_drone_html_aa914c392ebe500aa63186a0b1b5e855c"><div class="ttname"><a href="#aa914c392ebe500aa63186a0b1b5e855c">Drone::hoveringHeight</a></div><div class="ttdeci">const double hoveringHeight</div><div class="ttdoc">units</div><div class="ttdef"><b>Definition</b> drone.h:22</div></div>
+<div class="ttc" id="aclass_drone_html_ab6681e09ecbb19bfb49378bdd3d1b112"><div class="ttname"><a href="#ab6681e09ecbb19bfb49378bdd3d1b112">Drone::damping</a></div><div class="ttdeci">const double damping</div><div class="ttdoc">damping for motion simulation</div><div class="ttdef"><b>Definition</b> drone.h:24</div></div>
+<div class="ttc" id="aclass_drone_html_ac7d3282ce0c3400891283566e205dfa2"><div class="ttname"><a href="#ac7d3282ce0c3400891283566e205dfa2">Drone::powerConsumption</a></div><div class="ttdeci">const double powerConsumption</div><div class="ttdoc">speed of consumption (power/s)</div><div class="ttdef"><b>Definition</b> drone.h:26</div></div>
+<div class="ttc" id="aclass_vector2_d_html_a85215519d3f71d0e6be7d636346f3b7d"><div class="ttname"><a href="class_vector2_d.html#a85215519d3f71d0e6be7d636346f3b7d">Vector2D::y</a></div><div class="ttdeci">float y</div><div class="ttdoc">coordinates of the vector</div><div class="ttdef"><b>Definition</b> vector2d.h:19</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="drone_8h_source.html">drone.h</a></li>
-<li><a class="el" href="drone_8cpp_source.html">drone.cpp</a></li>
+<li><b>drone.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

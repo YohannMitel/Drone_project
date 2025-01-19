@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['update_0',['update',['../class_drone.html#aa151b14b7b3660c8e7e910b74c8d4f08',1,'Drone::update()'],['../class_main_window.html#a128f71880d4b9683149023fc46fcc9f8',1,'MainWindow::update()']]]
+  ['rescale_0',['reScale',['../class_canvas.html#a7c6aa7f3b2af6d97f2f9358d3e66951d',1,'Canvas']]],
+  ['resizeevent_1',['resizeEvent',['../class_canvas.html#af6760030ef7aaf5cf73e89fbb55bee26',1,'Canvas']]]
 ];

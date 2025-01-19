@@ -1,0 +1,101 @@
+\doxysection{canvas.\+h}
+\hypertarget{canvas_8h_source}{}\label{canvas_8h_source}\index{canvas.h@{canvas.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ CANVAS\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ CANVAS\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <triangle.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}cities.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <drone.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QMouseEvent>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QPaintEvent>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_canvas}{Canvas}}\ :\ \textcolor{keyword}{public}\ QWidget\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_canvas_a902077fa3f78b9de8c7de3fdb7f1d55a}{droneIconSize}}\ =\ 64;\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_canvas_a5226f7b0b1190ff98adb88f2f79c9b5c}{droneCollisionDistance}}\ =\ \mbox{\hyperlink{class_canvas_a902077fa3f78b9de8c7de3fdb7f1d55a}{droneIconSize}}\ *\ 1.5;\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_canvas_aeea65f2bfc2be61bdbcaaa3a67c33185}{Canvas}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_canvas_a237c4549ad2e27c729cd1f71e89f0fd9}{\string~Canvas}}();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{inline}\ QVector<Drone*>\&\ \mbox{\hyperlink{class_canvas_a0e2a9e3404e5aba5b072d8f4fb9ab79d}{getMap}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_canvas_a3d8eeaed74c759f4b6d4e47531df2823}{mapDrones}};\ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_canvas_a717e89de1ecd0e11a140ca5268ef7f7c}{getProcessPolyState}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_canvas_a4ce6a9bde445736415e5bc834abea5f3}{processPolyState}};\ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_canvas_a67dbba80855f3b4fb95c26d5012f7ccc}{paintEvent}}(QPaintEvent*\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_canvas_ac766a4e369f781943df021b80e5922c4}{mousePressEvent}}(QMouseEvent*\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_canvas_a02da07de074f8a6a92b346fd521ba018}{loadMesh}}(\textcolor{keyword}{const}\ QString\ \&title);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_canvas_af6760030ef7aaf5cf73e89fbb55bee26}{resizeEvent}}(QResizeEvent\ *event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_canvas_ae9f5a1c5981b802814aa5b189faba710}{mouseMoveEvent}}(QMouseEvent*\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_canvas_a17ae75cd1dc0380f00481efaca896cd5}{addPoints}}(QString\ \&name,\ \textcolor{keyword}{const}\ QVector<Vector2D>\ \&tab);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_canvas_a9be51dab63db480d6c237d45cc4a178a}{addTriangle}}(\textcolor{keywordtype}{int}\ id0,\ \textcolor{keywordtype}{int}\ id1,\ \textcolor{keywordtype}{int}\ id2);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_canvas_a9be51dab63db480d6c237d45cc4a178a}{addTriangle}}(\textcolor{keywordtype}{int}\ id0,\ \textcolor{keywordtype}{int}\ id1,\ \textcolor{keywordtype}{int}\ id2,\ \textcolor{keyword}{const}\ QColor\ \&color);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_canvas_ac4559a6535f497f17415032632aa9f6a}{clear}}();}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_canvas_a7c6aa7f3b2af6d97f2f9358d3e66951d}{reScale}}();}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_canvas_a99f4cab25a899653f9337ad36e4a3177}{getSizeofV}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_acbfaef7e0197f38e6a4a492d2660a420}{getSize}}();\ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_canvas_a5233eb6cb36a66bde65b0e4abf01e617}{getSizeofT}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_acbfaef7e0197f38e6a4a492d2660a420}{getSize}}();\ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_canvas_a875b0b334afc2eb857604adddc118671}{checkDelaunay}}();}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_canvas_a1f4f7e4221b1e378d99e498b0e9f3b89}{flippAll}}();}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_canvas_a9ef5ceffb7e43a85f446d47177565afb}{processVoronoi}}(\mbox{\hyperlink{class_city}{City}}\ \&city);}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_canvas_a0c866cccd753e3a59ab4d152f2d81f66}{isOutsideCanvas}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ \&point)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_canvas_a63228e07e968ff5b5af221ba3534d48b}{finalizePolygon}}(\mbox{\hyperlink{class_city}{City}}\ \&city,\ \textcolor{keyword}{const}\ QVector<Vector2D>\ \&Lordered,\ \textcolor{keywordtype}{bool}\ isClosed);}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_canvas_aebc60f04885f4d900a45044ca4a5c230}{processPoly}}();}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00166\ \ \ \ \ QVector<const\ Vector2D*>\ \mbox{\hyperlink{class_canvas_a4be165c96a43cc3c780e211f5e7cc6c8}{findOppositePointOfTrianglesWithEdgeCommon}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_triangle}{Triangle}}\ \&tri);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ \mbox{\hyperlink{class_canvas_a63db1f7f5f0983b3bf64c53e9bb803f3}{calculateIntersection}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ \&p1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ \&p2,\ \textcolor{keywordtype}{float}\ minX,\ \textcolor{keywordtype}{float}\ minY,\ \textcolor{keywordtype}{float}\ maxX,\ \textcolor{keywordtype}{float}\ maxY);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_canvas_a8722fdb0a7e30a942bb84b5c4f048ac0}{droneSequence}}(\mbox{\hyperlink{class_drone}{Drone}}\ \&d);}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00189\ \ \ \ \ QString\ \mbox{\hyperlink{class_canvas_a95b3c6439fcf6efc455d9a88854d15c2}{getCitiesInfos}}();}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ signals:}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_canvas_af64171658065e802d3a2451bd03a965d}{updateSB}}(QString\ s);}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00200\ \ \ \ \ QVector<Drone*>\ \mbox{\hyperlink{class_canvas_a3d8eeaed74c759f4b6d4e47531df2823}{mapDrones}};\ }
+\DoxyCodeLine{00201\ \ \ \ \ QImage\ \mbox{\hyperlink{class_canvas_a44d7f1a477fa5d0f28f622f8e23166ec}{droneImg}};\ }
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00207\ \ \ \ \ QPair<Vector2D,\ Vector2D>\ \mbox{\hyperlink{class_canvas_a36400779155b40787ab5f192d1168c54}{getBox}}();}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ QVector<Triangle*>\ \mbox{\hyperlink{class_canvas_aa3de99c5a524030b65b136f565879abd}{triangles}};\ }
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_canvas_a4ce6a9bde445736415e5bc834abea5f3}{processPolyState}}\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00211\ \ \ \ \ \mbox{\hyperlink{class_cities}{Cities}}\ *\mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_cities}{Cities}}();\ }
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_canvas_a387509ed6ea92c766ec53cef653deab1}{scale}}\ =\ 0.5;\ }
+\DoxyCodeLine{00214\ \ \ \ \ QPoint\ \mbox{\hyperlink{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}{origin}}\ =\ QPoint(10,\ 10);\ }
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_canvas_a0363c9a3f54977367bfdb89421304e56}{flipped}}\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_canvas_adec15319e8610b6a4a016f70970ee82f}{showTriangles}}\ =\ \textcolor{keyword}{true};\ }
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_canvas_ac1a1b0d3b6fa9d3c4aa30c014e15051c}{showCenters}}\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_canvas_abb70425f30be2b4b97e56bb56486a525}{showCircles}}\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_canvas_ac577f4cc29e3b1a9bcfc7080a5210a75}{voronoiTransparency}}\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00222\ \};}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CANVAS\_H}}
+
+\end{DoxyCode}

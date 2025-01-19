@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['height_0',['height',['../class_drone.html#ad28a7b7fb356db4edcc79da0cca93ca9',1,'Drone']]],
-  ['hoveringheight_1',['hoveringHeight',['../class_drone.html#aa914c392ebe500aa63186a0b1b5e855c',1,'Drone']]]
+  ['isdelaunay_0',['isDelaunay',['../class_triangle.html#ab6fd305c3b7114988efe91366cfdc58d',1,'Triangle']]],
+  ['ishighlited_1',['isHighlited',['../class_triangle.html#a8111fa42515eee0ba748746365bac486',1,'Triangle']]]
 ];

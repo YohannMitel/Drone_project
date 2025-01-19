@@ -1,0 +1,40 @@
+\doxysection{city.\+h}
+\hypertarget{city_8h_source}{}\label{city_8h_source}\index{city.h@{city.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ CITY\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ CITY\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}vector2d.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}mypolygon.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_city}{City}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ QString\ \mbox{\hyperlink{class_city_a4a5b42d915083867ea9a57a8bd1fd472}{name}};\ }
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ *\mbox{\hyperlink{class_city_a997dfb5b129087c9e9749701b3b539cb}{position}}\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00020\ \ \ \ \ QString\ \mbox{\hyperlink{class_city_a530516ea4a574a60563c4962c54adacb}{color}};\ }
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_my_polygon}{MyPolygon}}\ *\mbox{\hyperlink{class_city_ab60e02ceceb1a973e8d7a2a66321ad95}{map}}\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_city_a4deaec3976d3abb38345b8bcafa721bd}{City}}(QString\ \_name,\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ *\_position,\ QString\ \_color);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_city_ae95feee8a1d4e1f14ea41ec89b47304f}{\string~City}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \ \ \ \ QString\ \mbox{\hyperlink{class_city_ad73598d937870a165cb530958106ff07}{getName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}*\ \mbox{\hyperlink{class_city_a7f7a9743ff8a46dfd83e67ca45b7d57e}{getPosition}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00053\ \ \ \ \ QString\ \mbox{\hyperlink{class_city_af29eea28eba981c1995ea79cd94f5ed1}{getColor}}();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_my_polygon}{MyPolygon}}*\ \mbox{\hyperlink{class_city_a986acd8e0097e1cf5de1ac159b1605e3}{getMap}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_city_aedf709e8522c1f7bf79e54c802f455c1}{setMap}}(\mbox{\hyperlink{class_my_polygon}{MyPolygon}}\ *poly);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_city_a89a13998c148ba2816a74725314d9928}{drawMap}}(QPainter\ \&painter,\ \textcolor{keywordtype}{bool}\ transparency);}
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CITY\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,94 @@
+\doxysection{Matrix22 Class Reference}
+\hypertarget{class_matrix22}{}\label{class_matrix22}\index{Matrix22@{Matrix22}}
+
+
+The \doxylink{class_matrix22}{Matrix22} class represents a 2x2 matrix and provides functionality to compute its determinant.  
+
+
+
+
+{\ttfamily \#include $<$determinant.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_matrix22_a847e41917439faa7d5707bbf1332b5a0}{get2x2\+From3x3}} (const \mbox{\hyperlink{class_matrix33}{Matrix33}} \&mat33, int shadow\+Lin, int shadow\+Col)
+\begin{DoxyCompactList}\small\item\em Extracts a 2x2 submatrix from a 3x3 matrix by shadowing a specific row and column. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_matrix22_ad18ae363d30a93115d9ac2fb53e6e71a}{determinant}} ()
+\begin{DoxyCompactList}\small\item\em Computes the determinant of the 2x2 matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_matrix22_af43a553822d93f8d38fdf057603be0ae}\label{class_matrix22_af43a553822d93f8d38fdf057603be0ae} 
+float {\bfseries m} \mbox{[}2\mbox{]}\mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em Elements of the 2x2 matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{class_matrix22}{Matrix22} class represents a 2x2 matrix and provides functionality to compute its determinant. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_matrix22_ad18ae363d30a93115d9ac2fb53e6e71a}\index{Matrix22@{Matrix22}!determinant@{determinant}}
+\index{determinant@{determinant}!Matrix22@{Matrix22}}
+\doxysubsubsection{\texorpdfstring{determinant()}{determinant()}}
+{\footnotesize\ttfamily \label{class_matrix22_ad18ae363d30a93115d9ac2fb53e6e71a} 
+float Matrix22\+::determinant (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Computes the determinant of the 2x2 matrix. 
+
+\begin{DoxyReturn}{Returns}
+Determinant of the matrix. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_matrix22_af43a553822d93f8d38fdf057603be0ae}{m}}[0][0]\ *\ \mbox{\hyperlink{class_matrix22_af43a553822d93f8d38fdf057603be0ae}{m}}[1][1]\ -\/\ \mbox{\hyperlink{class_matrix22_af43a553822d93f8d38fdf057603be0ae}{m}}[0][1]\ *\ \mbox{\hyperlink{class_matrix22_af43a553822d93f8d38fdf057603be0ae}{m}}[1][0];}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_matrix22_a847e41917439faa7d5707bbf1332b5a0}\index{Matrix22@{Matrix22}!get2x2From3x3@{get2x2From3x3}}
+\index{get2x2From3x3@{get2x2From3x3}!Matrix22@{Matrix22}}
+\doxysubsubsection{\texorpdfstring{get2x2From3x3()}{get2x2From3x3()}}
+{\footnotesize\ttfamily \label{class_matrix22_a847e41917439faa7d5707bbf1332b5a0} 
+void Matrix22\+::get2x2\+From3x3 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix33}{Matrix33}} \&}]{mat33}{, }\item[{int}]{shadow\+Lin}{, }\item[{int}]{shadow\+Col}{}\end{DoxyParamCaption})}
+
+
+
+Extracts a 2x2 submatrix from a 3x3 matrix by shadowing a specific row and column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat33} & Reference to the source 3x3 matrix. \\
+\hline
+{\em shadow\+Lin} & Index of the row to shadow. \\
+\hline
+{\em shadow\+Col} & Index of the column to shadow. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{int}\ l=0;}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ lig=0;\ lig<3;\ lig++)\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lig!=shadowLin)\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ c=0;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ col=0;\ col<3;\ col++)\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (col!=shadowCol)\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_matrix22_af43a553822d93f8d38fdf057603be0ae}{m}}[l][c]\ =\ mat33.\mbox{\hyperlink{class_matrix33_a78b7575191a5193b403a29a387ea9012}{m}}[lig][col];}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c++;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ l++;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+\DoxyCodeLine{00020\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+determinant.\+h\item 
+determinant.\+cpp\end{DoxyCompactItemize}

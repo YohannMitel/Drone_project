@@ -1,0 +1,388 @@
+\doxysection{Main\+Window Class Reference}
+\hypertarget{class_main_window}{}\label{class_main_window}\index{MainWindow@{MainWindow}}
+Inheritance diagram for Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_window}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_aa68eba140c2cf5c1cd2b4bd81337fa83}{on\+\_\+action\+Quit\+\_\+triggered}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_a128f71880d4b9683149023fc46fcc9f8}{update}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_a217d51c631b720f86ec21d85758cbcf8}{on\+\_\+action\+Circles\+\_\+triggered}} (bool checked)
+\item 
+void \mbox{\hyperlink{class_main_window_a83a596075bba4bc3a977a79d35cc79a3}{on\+\_\+action\+Centers\+\_\+triggered}} (bool checked)
+\item 
+void \mbox{\hyperlink{class_main_window_ad3ce5e6ac50849155a5cb296cccfc326}{on\+\_\+action\+Voronoi\+\_\+transparency\+\_\+triggered}} (bool checked)
+\item 
+void \mbox{\hyperlink{class_main_window_a493b04bdb535b924fe099a43045c79f0}{on\+\_\+action\+Triangles\+\_\+triggered}} (bool checked)
+\item 
+void \mbox{\hyperlink{class_main_window_ae1f4934cb3d376225f7576ab05159bc0}{on\+\_\+action\+Check\+\_\+\+Delaunay\+\_\+triggered}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_ae652bfd7eb9af77488c6febd68083602}{on\+\_\+action\+Process\+\_\+flip\+\_\+triggered}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_a716676643b7c9613d7b527e29ded9c43}{on\+\_\+action\+Process\+\_\+polygons\+\_\+triggered}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_ada6ecfabc8ccc186fb3134211099bcc8}{on\+\_\+action\+Load\+\_\+triggered}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_a4f3ebda1ba39e0ef4d678b44893c9c7f}{on\+\_\+action\+About\+\_\+triggered}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_ac03fa77444d328be09cbb7dbb3c65b0a}{on\+\_\+action\+Cities\+\_\+triggered}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_main_window_a35466a70ed47252a0191168126a352a5}\label{class_main_window_a35466a70ed47252a0191168126a352a5} 
+Ui\+::\+Main\+Window \texorpdfstring{$\ast$}{*} {\bfseries ui}
+\item 
+\Hypertarget{class_main_window_a8db89b435dc3f676d3b8722239618dd7}\label{class_main_window_a8db89b435dc3f676d3b8722239618dd7} 
+QVector$<$ \mbox{\hyperlink{class_drone}{Drone}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} {\bfseries map\+Drones} =nullptr
+\item 
+\Hypertarget{class_main_window_a4d1376f7bc9a8efa6e7e1eff65cf4217}\label{class_main_window_a4d1376f7bc9a8efa6e7e1eff65cf4217} 
+bool {\bfseries drone\+Process} = false
+\item 
+\Hypertarget{class_main_window_a356578805ed1248a7f2807434cb0e5ee}\label{class_main_window_a356578805ed1248a7f2807434cb0e5ee} 
+QTimer \texorpdfstring{$\ast$}{*} {\bfseries timer}
+\item 
+\Hypertarget{class_main_window_afbd1d4920f59a85049eac42e281b4d80}\label{class_main_window_afbd1d4920f59a85049eac42e281b4d80} 
+QElapsed\+Timer {\bfseries elapsed\+Timer}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_main_window_a996c5a2b6f77944776856f08ec30858d}\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily \label{class_main_window_a996c5a2b6f77944776856f08ec30858d} 
+Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \ \ \ \ :\ QMainWindow(parent)}
+\DoxyCodeLine{00009\ \ \ \ \ ,\ ui(\textcolor{keyword}{new}\ Ui::MainWindow) }
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ ui-\/>setupUi(\textcolor{keyword}{this});}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ ui-\/>actionCircles-\/>setChecked(ui-\/>widget-\/>showCircles);}
+\DoxyCodeLine{00015\ \ \ \ \ ui-\/>actionTriangles-\/>setChecked(ui-\/>widget-\/>showTriangles);}
+\DoxyCodeLine{00016\ \ \ \ \ ui-\/>actionCenters-\/>setChecked(ui-\/>widget-\/>showCenters);}
+\DoxyCodeLine{00017\ \ \ \ \ ui-\/>widget-\/>loadMesh(\textcolor{stringliteral}{"{}../../models/config1.json"{}});}
+\DoxyCodeLine{00018\ \ \ \ \ QObject::connect(ui-\/>widget,\ SIGNAL(updateSB(QString)),\ ui-\/>statusbar,\ SLOT(showMessage(QString)));}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{/*\ preset\ initial\ positions\ of\ the\ drones\ */}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ mapDrones\ =\ \&ui-\/>widget-\/>getMap();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Ajouter\ chaque\ drone\ au\ QListWidget}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_drone}{Drone}}*\ drone\ :\ *mapDrones)\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ QListWidgetItem\ *LWitems=\ \textcolor{keyword}{new}\ QListWidgetItem(ui-\/>listDronesInfo);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ ui-\/>listDronesInfo-\/>addItem(LWitems);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ ui-\/>listDronesInfo-\/>setItemWidget(LWitems,drone);}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ timer\ =\ \textcolor{keyword}{new}\ QTimer(\textcolor{keyword}{this});}
+\DoxyCodeLine{00032\ \ \ \ \ timer-\/>setInterval(100);}
+\DoxyCodeLine{00033\ \ \ \ \ connect(timer,SIGNAL(timeout()),\textcolor{keyword}{this},SLOT(update()));}
+\DoxyCodeLine{00034\ \ \ \ \ timer-\/>start();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ elapsedTimer.start();}
+\DoxyCodeLine{00037\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}\index{MainWindow@{MainWindow}!````~MainWindow@{\texorpdfstring{$\sim$}{\string~}MainWindow}}
+\index{````~MainWindow@{\texorpdfstring{$\sim$}{\string~}MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MainWindow()}{\string~MainWindow()}}
+{\footnotesize\ttfamily \label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7} 
+Main\+Window\+::\texorpdfstring{$\sim$}{\string~}\+Main\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{delete}\ ui;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{delete}\ timer;}
+\DoxyCodeLine{00043\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_main_window_a4f3ebda1ba39e0ef4d678b44893c9c7f}\index{MainWindow@{MainWindow}!on\_actionAbout\_triggered@{on\_actionAbout\_triggered}}
+\index{on\_actionAbout\_triggered@{on\_actionAbout\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_actionAbout\_triggered}{on\_actionAbout\_triggered}}
+{\footnotesize\ttfamily \label{class_main_window_a4f3ebda1ba39e0ef4d678b44893c9c7f} 
+void Main\+Window\+::on\+\_\+action\+About\+\_\+triggered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00202\ \{}
+\DoxyCodeLine{00203\ \ \ \ \ QMessageBox::information(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}About\ Drone\ Project"{}},}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Welcome\ to\ the\ Drone\ Project!\(\backslash\)n\(\backslash\)n"{}}}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}This\ project\ involves\ constructing\ a\ detailed\ map\ from\ a\ point\ cloud,\ enabling\ drones\ to\ navigate\ efficiently\ and\ reach\ their\ destination\ cities.\(\backslash\)n\(\backslash\)n"{}}}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Here’s\ a\ guide\ to\ the\ triangle\ classifications\ created\ by\ triangulation:\(\backslash\)n"{}}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ -\/\ YELLOW\ :\ Not\ Delaunay\(\backslash\)n"{}}}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ -\/\ GRAY\ :\ Flippable\(\backslash\)n"{}}}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ -\/\ BLUE\ :\ Delaunay\ triangle\(\backslash\)n\(\backslash\)n"{}}}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Happy\ mapping!"{}}}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_main_window_a83a596075bba4bc3a977a79d35cc79a3}\index{MainWindow@{MainWindow}!on\_actionCenters\_triggered@{on\_actionCenters\_triggered}}
+\index{on\_actionCenters\_triggered@{on\_actionCenters\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_actionCenters\_triggered}{on\_actionCenters\_triggered}}
+{\footnotesize\ttfamily \label{class_main_window_a83a596075bba4bc3a977a79d35cc79a3} 
+void Main\+Window\+::on\+\_\+action\+Centers\+\_\+triggered (\begin{DoxyParamCaption}\item[{bool}]{checked}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00122\ \{}
+\DoxyCodeLine{00123\ \ \ \ \ ui-\/>widget-\/>showCenters=checked;}
+\DoxyCodeLine{00124\ \ \ \ \ update();}
+\DoxyCodeLine{00125\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_main_window_ae1f4934cb3d376225f7576ab05159bc0}\index{MainWindow@{MainWindow}!on\_actionCheck\_Delaunay\_triggered@{on\_actionCheck\_Delaunay\_triggered}}
+\index{on\_actionCheck\_Delaunay\_triggered@{on\_actionCheck\_Delaunay\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_actionCheck\_Delaunay\_triggered}{on\_actionCheck\_Delaunay\_triggered}}
+{\footnotesize\ttfamily \label{class_main_window_ae1f4934cb3d376225f7576ab05159bc0} 
+void Main\+Window\+::on\+\_\+action\+Check\+\_\+\+Delaunay\+\_\+triggered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00144\ \{}
+\DoxyCodeLine{00145\ \ \ \ \ ui-\/>widget-\/>checkDelaunay();}
+\DoxyCodeLine{00146\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_main_window_a217d51c631b720f86ec21d85758cbcf8}\index{MainWindow@{MainWindow}!on\_actionCircles\_triggered@{on\_actionCircles\_triggered}}
+\index{on\_actionCircles\_triggered@{on\_actionCircles\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_actionCircles\_triggered}{on\_actionCircles\_triggered}}
+{\footnotesize\ttfamily \label{class_main_window_a217d51c631b720f86ec21d85758cbcf8} 
+void Main\+Window\+::on\+\_\+action\+Circles\+\_\+triggered (\begin{DoxyParamCaption}\item[{bool}]{checked}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00115\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ ui-\/>widget-\/>showCircles=checked;}
+\DoxyCodeLine{00117\ \ \ \ \ update();}
+\DoxyCodeLine{00118\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_main_window_ac03fa77444d328be09cbb7dbb3c65b0a}\index{MainWindow@{MainWindow}!on\_actionCities\_triggered@{on\_actionCities\_triggered}}
+\index{on\_actionCities\_triggered@{on\_actionCities\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_actionCities\_triggered}{on\_actionCities\_triggered}}
+{\footnotesize\ttfamily \label{class_main_window_ac03fa77444d328be09cbb7dbb3c65b0a} 
+void Main\+Window\+::on\+\_\+action\+Cities\+\_\+triggered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00217\ \{}
+\DoxyCodeLine{00218\ \ \ \ \ QMessageBox::information(\textcolor{keyword}{this},\textcolor{stringliteral}{"{}Cities\ infos"{}},droneProcess\ ==\ \textcolor{keyword}{false}\ ?\ \textcolor{stringliteral}{"{}Not\ all\ drones\ have\ reached\ their\ final\ destinations,\ please\ wait..."{}}\ :\ \ ui-\/>widget-\/>getCitiesInfos()\ );}
+\DoxyCodeLine{00219\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_main_window_ada6ecfabc8ccc186fb3134211099bcc8}\index{MainWindow@{MainWindow}!on\_actionLoad\_triggered@{on\_actionLoad\_triggered}}
+\index{on\_actionLoad\_triggered@{on\_actionLoad\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_actionLoad\_triggered}{on\_actionLoad\_triggered}}
+{\footnotesize\ttfamily \label{class_main_window_ada6ecfabc8ccc186fb3134211099bcc8} 
+void Main\+Window\+::on\+\_\+action\+Load\+\_\+triggered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00163\ \{}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ QString\ fileName\ =\ QFileDialog::getOpenFileName(\textcolor{keyword}{this},\textcolor{stringliteral}{"{}Load\ Polygon\ file"{}},\textcolor{stringliteral}{"{}."{}},\textcolor{stringliteral}{"{}*.json"{}});}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{comment}{//\ Parcourir\ et\ supprimer\ chaque\ widget\ associé\ à\ un\ QListWidgetItem}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordflow}{if}\ (fileName.isEmpty())\ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};\ \textcolor{comment}{//\ Arrêter\ si\ aucun\ fichier\ n'a\ été\ sélectionné}}
+\DoxyCodeLine{00171\ \ \ \ \ \}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ ui-\/>listDronesInfo-\/>count()\ ;\ i++)\ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ QListWidgetItem*\ item\ =\ ui-\/>listDronesInfo-\/>item(i);}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Supprimer\ l'élément\ de\ la\ liste}}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ item;}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{comment}{//\ Nettoyer\ complètement\ la\ liste}}
+\DoxyCodeLine{00181\ \ \ \ \ ui-\/>listDronesInfo-\/>clear();}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ ui-\/>widget-\/>loadMesh(fileName);}
+\DoxyCodeLine{00185\ \ \ \ \ ui-\/>statusbar-\/>showMessage(\textcolor{stringliteral}{"{}Stats:\ |V|="{}}+QString::number(ui-\/>widget-\/>getSizeofV())+}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\ \ |T|="{}}+QString::number(ui-\/>widget-\/>getSizeofT()));}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ mapDrones\ =\ \&ui-\/>widget-\/>getMap();}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{comment}{//\ Ajouter\ chaque\ drone\ au\ QListWidget}}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_drone}{Drone}}*\ drone\ :\ *mapDrones)\ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ QListWidgetItem\ *LWitems=\ \textcolor{keyword}{new}\ QListWidgetItem(ui-\/>listDronesInfo);}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ ui-\/>listDronesInfo-\/>addItem(LWitems);}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ ui-\/>listDronesInfo-\/>setItemWidget(LWitems,drone);}
+\DoxyCodeLine{00194\ \ \ \ \ \}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_main_window_ae652bfd7eb9af77488c6febd68083602}\index{MainWindow@{MainWindow}!on\_actionProcess\_flip\_triggered@{on\_actionProcess\_flip\_triggered}}
+\index{on\_actionProcess\_flip\_triggered@{on\_actionProcess\_flip\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_actionProcess\_flip\_triggered}{on\_actionProcess\_flip\_triggered}}
+{\footnotesize\ttfamily \label{class_main_window_ae652bfd7eb9af77488c6febd68083602} 
+void Main\+Window\+::on\+\_\+action\+Process\+\_\+flip\+\_\+triggered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00150\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{comment}{//\ Its\ like\ a\ solve\ delaunay\ function}}
+\DoxyCodeLine{00152\ \ \ \ \ ui-\/>widget-\/>flippAll();}
+\DoxyCodeLine{00153\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_main_window_a716676643b7c9613d7b527e29ded9c43}\index{MainWindow@{MainWindow}!on\_actionProcess\_polygons\_triggered@{on\_actionProcess\_polygons\_triggered}}
+\index{on\_actionProcess\_polygons\_triggered@{on\_actionProcess\_polygons\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_actionProcess\_polygons\_triggered}{on\_actionProcess\_polygons\_triggered}}
+{\footnotesize\ttfamily \label{class_main_window_a716676643b7c9613d7b527e29ded9c43} 
+void Main\+Window\+::on\+\_\+action\+Process\+\_\+polygons\+\_\+triggered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00157\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ ui-\/>widget-\/>processPoly();}
+\DoxyCodeLine{00159\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_main_window_aa68eba140c2cf5c1cd2b4bd81337fa83}\index{MainWindow@{MainWindow}!on\_actionQuit\_triggered@{on\_actionQuit\_triggered}}
+\index{on\_actionQuit\_triggered@{on\_actionQuit\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_actionQuit\_triggered}{on\_actionQuit\_triggered}}
+{\footnotesize\ttfamily \label{class_main_window_aa68eba140c2cf5c1cd2b4bd81337fa83} 
+void Main\+Window\+::on\+\_\+action\+Quit\+\_\+triggered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ QApplication::quit();}
+\DoxyCodeLine{00048\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_main_window_a493b04bdb535b924fe099a43045c79f0}\index{MainWindow@{MainWindow}!on\_actionTriangles\_triggered@{on\_actionTriangles\_triggered}}
+\index{on\_actionTriangles\_triggered@{on\_actionTriangles\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_actionTriangles\_triggered}{on\_actionTriangles\_triggered}}
+{\footnotesize\ttfamily \label{class_main_window_a493b04bdb535b924fe099a43045c79f0} 
+void Main\+Window\+::on\+\_\+action\+Triangles\+\_\+triggered (\begin{DoxyParamCaption}\item[{bool}]{checked}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00137\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ ui-\/>widget-\/>showTriangles=checked;}
+\DoxyCodeLine{00139\ \ \ \ \ update();}
+\DoxyCodeLine{00140\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_main_window_ad3ce5e6ac50849155a5cb296cccfc326}\index{MainWindow@{MainWindow}!on\_actionVoronoi\_transparency\_triggered@{on\_actionVoronoi\_transparency\_triggered}}
+\index{on\_actionVoronoi\_transparency\_triggered@{on\_actionVoronoi\_transparency\_triggered}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{on\_actionVoronoi\_transparency\_triggered}{on\_actionVoronoi\_transparency\_triggered}}
+{\footnotesize\ttfamily \label{class_main_window_ad3ce5e6ac50849155a5cb296cccfc326} 
+void Main\+Window\+::on\+\_\+action\+Voronoi\+\_\+transparency\+\_\+triggered (\begin{DoxyParamCaption}\item[{bool}]{checked}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00129\ \{}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ ui-\/>widget-\/>voronoiTransparency=checked;}
+\DoxyCodeLine{00132\ \ \ \ \ update();}
+\DoxyCodeLine{00133\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_main_window_a128f71880d4b9683149023fc46fcc9f8}\index{MainWindow@{MainWindow}!update@{update}}
+\index{update@{update}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{update}{update}}
+{\footnotesize\ttfamily \label{class_main_window_a128f71880d4b9683149023fc46fcc9f8} 
+void Main\+Window\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{/*QListWidgetItem\ *LWitems=\ new\ QListWidgetItem(ui-\/>listDronesInfo); }}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ \ \ \ ui-\/>listDronesInfo-\/>addItem(LWitems); }}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ \ \ \ ui-\/>listDronesInfo-\/>setItemWidget(LWitems,mapDrones[1]);*/}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//qDebug()\ <<\ mapDrones-\/>size();}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ last=elapsedTimer.elapsed();}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ steps=5;}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ current=elapsedTimer.elapsed();}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{double}\ dt=(current-\/last)/(1000.0*steps);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ step=0;\ step<steps;\ step++)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ update\ positions\ of\ drones}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ tmp\_droneProcess\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&drone:*mapDrones)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ tmp\_landedbool\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ tmp\_powerMaxBool\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ detect\ collisions\ between\ drone\ and\ other\ flying\ drones}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (drone-\/>getStatus()!=Drone::landed)\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ drone-\/>initCollision();}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&obs:*mapDrones)\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (obs-\/>getStatus()!=Drone::landed\ \&\&\ obs-\/>getName()!=drone-\/>getName())\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ B=obs-\/>getPosition();}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ drone-\/>addCollision(B,ui-\/>widget-\/>droneCollisionDistance);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//qDebug()\ <<\ drone-\/>getNbCollisions();}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ To\ much\ collisons\ ==\ stop}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp\_droneProcess\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(drone-\/>getNbCollisions()\ >\ 400\ )\ drone-\/>stop();}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp\_landedbool\ =\textcolor{keyword}{false};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(drone-\/>getPower()\ !=\ 100)\{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp\_powerMaxBool\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ drone-\/>update(dt);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tmp\_landedbool\ \&\&\ ui-\/>widget-\/>getProcessPolyState()\ \ \&\&\ tmp\_powerMaxBool\ \&\&\ !drone-\/>inDestCity())\{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>widget-\/>droneSequence(*drone);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmp\_droneProcess\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ droneProcess\ =\ tmp\_droneProcess;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{int}\ d\ =\ elapsedTimer.elapsed()-\/current;}
+\DoxyCodeLine{00103\ \ \ \ \ ui-\/>statusbar-\/>showMessage(\textcolor{stringliteral}{"{}duree:"{}}+QString::number(d)+\textcolor{stringliteral}{"{}\ steps="{}}+QString::number(steps));}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordflow}{if}\ (d>90)\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ steps/=2;}
+\DoxyCodeLine{00106\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (steps<10)\ steps++;}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ last=current;}
+\DoxyCodeLine{00111\ \ \ \ \ ui-\/>widget-\/>repaint();}
+\DoxyCodeLine{00112\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+mainwindow.\+h\item 
+mainwindow.\+cpp\end{DoxyCompactItemize}

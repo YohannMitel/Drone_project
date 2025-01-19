@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Drone demo: Vector2D Class Reference</title>
+<title>Drone Project: Vector2D Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,10 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="takeoff.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Drone demo<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">Drone Project
    </div>
+   <div id="projectbrief">This project involves constructing a map from a point cloud, where drones navigate to reach their destination cities.</div>
   </td>
  </tr>
  </tbody>
@@ -87,6 +87,7 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="class_vector2_d-members.html">List of all members</a>  </div>
@@ -102,36 +103,67 @@ $(function(){ initResizable(false); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac55d52c97b338457bc3afb5d2f5e3344" id="r_ac55d52c97b338457bc3afb5d2f5e3344"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac55d52c97b338457bc3afb5d2f5e3344">Vector2D</a> (float p_x, float p_y)</td></tr>
+<tr class="memdesc:ac55d52c97b338457bc3afb5d2f5e3344"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a vector with specified x and y coordinates.  <br /></td></tr>
 <tr class="separator:ac55d52c97b338457bc3afb5d2f5e3344"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98e9997ebb7a629f4db52397d4e0d653" id="r_a98e9997ebb7a629f4db52397d4e0d653"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98e9997ebb7a629f4db52397d4e0d653">Vector2D</a> ()</td></tr>
+<tr class="memdesc:a98e9997ebb7a629f4db52397d4e0d653"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor initializing the vector to (0, 0).  <br /></td></tr>
 <tr class="separator:a98e9997ebb7a629f4db52397d4e0d653"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93a8c1453c5de442266172d112cda946" id="r_a93a8c1453c5de442266172d112cda946"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93a8c1453c5de442266172d112cda946">Vector2D</a> (<a class="el" href="class_vector2_d.html">Vector2D</a> *p)</td></tr>
+<tr class="memdesc:a93a8c1453c5de442266172d112cda946"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor to initialize from another vector.  <br /></td></tr>
 <tr class="separator:a93a8c1453c5de442266172d112cda946"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a973094c245c43d462b2f018ab669baa8" id="r_a973094c245c43d462b2f018ab669baa8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a973094c245c43d462b2f018ab669baa8">set</a> (float p_x, float p_y)</td></tr>
 <tr class="memdesc:a973094c245c43d462b2f018ab669baa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">set new coordinates to the vector  <br /></td></tr>
 <tr class="separator:a973094c245c43d462b2f018ab669baa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab08635b0482451cc43b5b399034eff2f" id="r_ab08635b0482451cc43b5b399034eff2f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab08635b0482451cc43b5b399034eff2f">length</a> () const</td></tr>
-<tr class="memdesc:ab08635b0482451cc43b5b399034eff2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">length: return the length (or the norm) of the vector  <br /></td></tr>
+<tr class="memdesc:ab08635b0482451cc43b5b399034eff2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the length (or norm) of the vector.  <br /></td></tr>
 <tr class="separator:ab08635b0482451cc43b5b399034eff2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39a3335f33d7e9850b99e4498ba4d856" id="r_a39a3335f33d7e9850b99e4498ba4d856"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39a3335f33d7e9850b99e4498ba4d856">normalize</a> ()</td></tr>
-<tr class="memdesc:a39a3335f33d7e9850b99e4498ba4d856"><td class="mdescLeft">&#160;</td><td class="mdescRight">normalize: change the current vector to a vector with the same direction but a norme equal to 1  <br /></td></tr>
+<tr class="memdesc:a39a3335f33d7e9850b99e4498ba4d856"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalizes the vector to have a norm of 1 while maintaining its direction.  <br /></td></tr>
 <tr class="separator:a39a3335f33d7e9850b99e4498ba4d856"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade14049e72c6167b1547bdccb61ad477" id="r_ade14049e72c6167b1547bdccb61ad477"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade14049e72c6167b1547bdccb61ad477">orthoNormed</a> () const</td></tr>
-<tr class="memdesc:ade14049e72c6167b1547bdccb61ad477"><td class="mdescLeft">&#160;</td><td class="mdescRight">orthoNormed: return a new vector, orthogonal and normed  <br /></td></tr>
+<tr class="memdesc:ade14049e72c6167b1547bdccb61ad477"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new vector that is orthogonal to this vector and normalized.  <br /></td></tr>
 <tr class="separator:ade14049e72c6167b1547bdccb61ad477"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bf550ff454982ff7c839c84f89ce88a" id="r_a3bf550ff454982ff7c839c84f89ce88a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bf550ff454982ff7c839c84f89ce88a">operator[]</a> (const int i) const</td></tr>
-<tr class="memdesc:a3bf550ff454982ff7c839c84f89ce88a"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator []: a way to get the component of the vector  <br /></td></tr>
+<tr class="memdesc:a3bf550ff454982ff7c839c84f89ce88a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesses the components of the vector.  <br /></td></tr>
 <tr class="separator:a3bf550ff454982ff7c839c84f89ce88a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf56b22bca709c514070ad91720723ba" id="r_acf56b22bca709c514070ad91720723ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf56b22bca709c514070ad91720723ba">operator+=</a> (const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;v)</td></tr>
-<tr class="memdesc:acf56b22bca709c514070ad91720723ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator +=: multiply the components of the current vector with the components of the vector v  <br /></td></tr>
 <tr class="separator:acf56b22bca709c514070ad91720723ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9128e7f96f9fec286ce2e41692811b9b" id="r_a9128e7f96f9fec286ce2e41692811b9b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9128e7f96f9fec286ce2e41692811b9b">isInsideCanvas</a> (float width, float height) const</td></tr>
+<tr class="memdesc:a9128e7f96f9fec286ce2e41692811b9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the vector is inside a specified rectangular canvas.  <br /></td></tr>
+<tr class="separator:a9128e7f96f9fec286ce2e41692811b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade6501d6c7e51e0b0184ece75c101bc5" id="r_ade6501d6c7e51e0b0184ece75c101bc5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade6501d6c7e51e0b0184ece75c101bc5">operator*</a> (float scalar) const</td></tr>
+<tr class="memdesc:ade6501d6c7e51e0b0184ece75c101bc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies the vector by a scalar.  <br /></td></tr>
+<tr class="separator:ade6501d6c7e51e0b0184ece75c101bc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b5fba27a5216141fba5bb3ac96702c4" id="r_a3b5fba27a5216141fba5bb3ac96702c4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b5fba27a5216141fba5bb3ac96702c4">dot</a> (const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;op)</td></tr>
+<tr class="memdesc:a3b5fba27a5216141fba5bb3ac96702c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the dot product of this vector with another vector.  <br /></td></tr>
+<tr class="separator:a3b5fba27a5216141fba5bb3ac96702c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a58d3663755d0d5022cc392620056f6b1" id="r_a58d3663755d0d5022cc392620056f6b1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58d3663755d0d5022cc392620056f6b1">projection</a> (const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;A, const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;B, const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;M)</td></tr>
+<tr class="memdesc:a58d3663755d0d5022cc392620056f6b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the orthogonal projection of a point onto a line defined by two vectors.  <br /></td></tr>
+<tr class="separator:a58d3663755d0d5022cc392620056f6b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedcebd5eddd56b82253b96305825337c" id="r_aedcebd5eddd56b82253b96305825337c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedcebd5eddd56b82253b96305825337c">extendLineToCanvas</a> (const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;M, const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;P, float canvasWidth, float canvasHeight)</td></tr>
+<tr class="memdesc:aedcebd5eddd56b82253b96305825337c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extends a line segment to the boundary of a canvas.  <br /></td></tr>
+<tr class="separator:aedcebd5eddd56b82253b96305825337c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afefd4ee5571fe6ce0fa3a2c448dfaae5" id="r_afefd4ee5571fe6ce0fa3a2c448dfaae5"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afefd4ee5571fe6ce0fa3a2c448dfaae5">whichSide</a> (const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;P, float canvasWidth, float canvasHeight)</td></tr>
+<tr class="memdesc:afefd4ee5571fe6ce0fa3a2c448dfaae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines which side of the canvas a point lies on.  <br /></td></tr>
+<tr class="separator:afefd4ee5571fe6ce0fa3a2c448dfaae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4231f74d46fcb33712df77afcb9066ae" id="r_a4231f74d46fcb33712df77afcb9066ae"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4231f74d46fcb33712df77afcb9066ae">polarComparison</a> (QPair&lt; QString, <a class="el" href="class_vector2_d.html">Vector2D</a> &gt; P1, QPair&lt; QString, <a class="el" href="class_vector2_d.html">Vector2D</a> &gt; P2)</td></tr>
+<tr class="memdesc:a4231f74d46fcb33712df77afcb9066ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two points based on their polar angle relative to the origin.  <br /></td></tr>
+<tr class="separator:a4231f74d46fcb33712df77afcb9066ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7808cd7f0c715a3b7cefb5b8d2fa09fb" id="r_a7808cd7f0c715a3b7cefb5b8d2fa09fb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7808cd7f0c715a3b7cefb5b8d2fa09fb">getCanvasIntersectionLimit</a> (const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;A, const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;B, const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;M, float canvasWidth, float canvasHeight)</td></tr>
+<tr class="memdesc:a7808cd7f0c715a3b7cefb5b8d2fa09fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the intersection point on the canvas boundary after projecting a point onto a vector.  <br /></td></tr>
+<tr class="separator:a7808cd7f0c715a3b7cefb5b8d2fa09fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aeb4253ba6555251d010ea4450619029e" id="r_aeb4253ba6555251d010ea4450619029e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb4253ba6555251d010ea4450619029e">x</a></td></tr>
+<tr class="memitem:aeb4253ba6555251d010ea4450619029e" id="r_aeb4253ba6555251d010ea4450619029e"><td class="memItemLeft" align="right" valign="top"><a id="aeb4253ba6555251d010ea4450619029e" name="aeb4253ba6555251d010ea4450619029e"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>x</b></td></tr>
 <tr class="separator:aeb4253ba6555251d010ea4450619029e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85215519d3f71d0e6be7d636346f3b7d" id="r_a85215519d3f71d0e6be7d636346f3b7d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a></td></tr>
-<tr class="memdesc:a85215519d3f71d0e6be7d636346f3b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">coordinates of the vector  <br /></td></tr>
+<tr class="memitem:a85215519d3f71d0e6be7d636346f3b7d" id="r_a85215519d3f71d0e6be7d636346f3b7d"><td class="memItemLeft" align="right" valign="top"><a id="a85215519d3f71d0e6be7d636346f3b7d" name="a85215519d3f71d0e6be7d636346f3b7d"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>y</b></td></tr>
+<tr class="memdesc:a85215519d3f71d0e6be7d636346f3b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">coordinates of the vector <br /></td></tr>
 <tr class="separator:a85215519d3f71d0e6be7d636346f3b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
@@ -150,15 +182,17 @@ Friends</h2></td></tr>
 <tr class="separator:a0c76d01601145a90c052ace1be5f2357"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a1dc24d8a7344df74f7865d34c2f3b2" id="r_a5a1dc24d8a7344df74f7865d34c2f3b2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a1dc24d8a7344df74f7865d34c2f3b2">operator==</a> (const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;u, const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;v)</td></tr>
 <tr class="separator:a5a1dc24d8a7344df74f7865d34c2f3b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0bc4e011d92acb25ce7b22537c3089d" id="r_ae0bc4e011d92acb25ce7b22537c3089d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0bc4e011d92acb25ce7b22537c3089d">operator!=</a> (const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;, const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;)</td></tr>
+<tr class="memitem:ae0bc4e011d92acb25ce7b22537c3089d" id="r_ae0bc4e011d92acb25ce7b22537c3089d"><td class="memItemLeft" align="right" valign="top"><a id="ae0bc4e011d92acb25ce7b22537c3089d" name="ae0bc4e011d92acb25ce7b22537c3089d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;, const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;)</td></tr>
 <tr class="separator:ae0bc4e011d92acb25ce7b22537c3089d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3632a18a6e82fdaa6497d8011990cb8d" id="r_a3632a18a6e82fdaa6497d8011990cb8d"><td class="memItemLeft" align="right" valign="top">QDebug&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3632a18a6e82fdaa6497d8011990cb8d">operator&lt;&lt;</a> (QDebug dbg, const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;v)</td></tr>
+<tr class="separator:a3632a18a6e82fdaa6497d8011990cb8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Drone_demo project. </p>
 <dl class="section author"><dt>Author</dt><dd>B.Piranda </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>dec. 2024 </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="vector2d_8h_source.html#l00011">11</a> of file <a class="el" href="vector2d_8h_source.html">vector2d.h</a>.</p>
+<dl class="section date"><dt>Date</dt><dd>dec. 2024</dd></dl>
+<p>Represents a 2D vector with various mathematical and geometric utilities. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac55d52c97b338457bc3afb5d2f5e3344" name="ac55d52c97b338457bc3afb5d2f5e3344"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac55d52c97b338457bc3afb5d2f5e3344">&#9670;&#160;</a></span>Vector2D() <span class="overload">[1/3]</span></h2>
@@ -187,8 +221,17 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vector2d_8h_source.html#l00014">14</a> of file <a class="el" href="vector2d_8h_source.html">vector2d.h</a>.</p>
-
+<p>Constructs a vector with specified x and y coordinates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_x</td><td>X component of the vector. </td></tr>
+    <tr><td class="paramname">p_y</td><td>Y component of the vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>:x(p_x),<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>(p_y) {};</div>
+<div class="ttc" id="aclass_vector2_d_html_a85215519d3f71d0e6be7d636346f3b7d"><div class="ttname"><a href="#a85215519d3f71d0e6be7d636346f3b7d">Vector2D::y</a></div><div class="ttdeci">float y</div><div class="ttdoc">coordinates of the vector</div><div class="ttdef"><b>Definition</b> vector2d.h:19</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a98e9997ebb7a629f4db52397d4e0d653" name="a98e9997ebb7a629f4db52397d4e0d653"></a>
@@ -214,8 +257,9 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vector2d_8h_source.html#l00015">15</a> of file <a class="el" href="vector2d_8h_source.html">vector2d.h</a>.</p>
-
+<p>Default constructor initializing the vector to (0, 0). </p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>{ x=<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>=0.0; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a93a8c1453c5de442266172d112cda946" name="a93a8c1453c5de442266172d112cda946"></a>
@@ -241,11 +285,261 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vector2d_8h_source.html#l00016">16</a> of file <a class="el" href="vector2d_8h_source.html">vector2d.h</a>.</p>
-
+<p>Copy constructor to initialize from another vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>Pointer to the vector to copy. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>:x(p-&gt;x),<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>(p-&gt;<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>) {};</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3b5fba27a5216141fba5bb3ac96702c4" name="a3b5fba27a5216141fba5bb3ac96702c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b5fba27a5216141fba5bb3ac96702c4">&#9670;&#160;</a></span>dot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Vector2D::dot </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>op</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes the dot product of this vector with another vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">op</td><td>The other vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The dot product of the two vectors. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  125</span>                                  {</div>
+<div class="line"><span class="lineno">  126</span>        <span class="keywordflow">return</span> x * op.x + <a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a> * op.<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>;</div>
+<div class="line"><span class="lineno">  127</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aedcebd5eddd56b82253b96305825337c" name="aedcebd5eddd56b82253b96305825337c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedcebd5eddd56b82253b96305825337c">&#9670;&#160;</a></span>extendLineToCanvas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vector2_d.html">Vector2D</a> Vector2D::extendLineToCanvas </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>M</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>P</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>canvasWidth</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>canvasHeight</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Extends a line segment to the boundary of a canvas. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">M</td><td>Starting point of the line. </td></tr>
+    <tr><td class="paramname">P</td><td>Direction point of the line. </td></tr>
+    <tr><td class="paramname">canvasWidth</td><td>Width of the canvas. </td></tr>
+    <tr><td class="paramname">canvasHeight</td><td>Height of the canvas. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The intersection point on the canvas boundary. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>                                                                                                                 {</div>
+<div class="line"><span class="lineno">   39</span>    <span class="comment">// Ajouter une marge de +30 pixels à la hauteur et -30 pixels à la largeur</span></div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordtype">float</span> marginHeight = canvasHeight +30;</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordtype">float</span> marginWidth = canvasWidth ;</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>    <span class="comment">// Direction de la droite MP</span></div>
+<div class="line"><span class="lineno">   44</span>    <a class="code hl_class" href="class_vector2_d.html">Vector2D</a> MP = P - M;</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>    <span class="comment">// Si la direction est nulle (M et P sont identiques), retourner M</span></div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">if</span> (MP.x == 0 &amp;&amp; MP.<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a> == 0) {</div>
+<div class="line"><span class="lineno">   48</span>        <span class="keywordflow">return</span> M;</div>
+<div class="line"><span class="lineno">   49</span>    }</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>    <span class="comment">// Calcul des distances entre M et les bords du canvas</span></div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordtype">float</span> distLeft = P.x;                <span class="comment">// Distance au bord gauche</span></div>
+<div class="line"><span class="lineno">   53</span>    <span class="keywordtype">float</span> distRight = marginWidth - P.x; <span class="comment">// Distance au bord droit</span></div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordtype">float</span> distTop = marginHeight - P.<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>;  <span class="comment">// Distance au bord supérieur</span></div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordtype">float</span> distBottom = P.<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>;              <span class="comment">// Distance au bord inférieur</span></div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>    <span class="comment">// Déterminer le côté du canvas le plus proche de M</span></div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordtype">float</span> minDist = std::min({distLeft, distRight, distTop, distBottom});</div>
+<div class="line"><span class="lineno">   59</span>    <span class="keywordtype">int</span> side = 0; <span class="comment">// 0 = gauche, 1 = droite, 2 = haut, 3 = bas</span></div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">if</span> (minDist == distLeft) side = 0; <span class="comment">// Bord gauche</span></div>
+<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (minDist == distRight) side = 1; <span class="comment">// Bord droit</span></div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (minDist == distTop) side = 2; <span class="comment">// Bord supérieur</span></div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (minDist == distBottom) side = 3; <span class="comment">// Bord inférieur</span></div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>    <span class="comment">// Calcul des intersections avec le côté sélectionné</span></div>
+<div class="line"><span class="lineno">   67</span>    <a class="code hl_class" href="class_vector2_d.html">Vector2D</a> intersection;</div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">if</span> (side == 0) { <span class="comment">// Bord gauche (x = 0)</span></div>
+<div class="line"><span class="lineno">   69</span>        <span class="keywordtype">float</span> t = (0 - M.x) / MP.x;</div>
+<div class="line"><span class="lineno">   70</span>        intersection = M + MP * t;</div>
+<div class="line"><span class="lineno">   71</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (side == 1) { <span class="comment">// Bord droit (x = marginWidth)</span></div>
+<div class="line"><span class="lineno">   72</span>        <span class="keywordtype">float</span> t = (marginWidth - M.x) / MP.x;</div>
+<div class="line"><span class="lineno">   73</span>        intersection = M + MP * t;</div>
+<div class="line"><span class="lineno">   74</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (side == 2) { <span class="comment">// Bord supérieur (y = marginHeight)</span></div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordtype">float</span> t = (marginHeight - M.y) / MP.<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>;</div>
+<div class="line"><span class="lineno">   76</span>        intersection = M + MP * t;</div>
+<div class="line"><span class="lineno">   77</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (side == 3) { <span class="comment">// Bord inférieur (y = 0)</span></div>
+<div class="line"><span class="lineno">   78</span>        <span class="keywordtype">float</span> t = (0 - M.y) / MP.<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>;</div>
+<div class="line"><span class="lineno">   79</span>        intersection = M + MP * t;</div>
+<div class="line"><span class="lineno">   80</span>    }</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>    <span class="comment">// Retourner le point d&#39;intersection</span></div>
+<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">return</span> intersection;</div>
+<div class="line"><span class="lineno">   84</span>}</div>
+<div class="ttc" id="aclass_vector2_d_html"><div class="ttname"><a href="class_vector2_d.html">Vector2D</a></div><div class="ttdoc">Drone_demo project.</div><div class="ttdef"><b>Definition</b> vector2d.h:17</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7808cd7f0c715a3b7cefb5b8d2fa09fb" name="a7808cd7f0c715a3b7cefb5b8d2fa09fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7808cd7f0c715a3b7cefb5b8d2fa09fb">&#9670;&#160;</a></span>getCanvasIntersectionLimit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vector2_d.html">Vector2D</a> Vector2D::getCanvasIntersectionLimit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>B</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>M</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>canvasWidth</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>canvasHeight</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes the intersection point on the canvas boundary after projecting a point onto a vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">A</td><td>Starting point of the vector. </td></tr>
+    <tr><td class="paramname">B</td><td>Ending point of the vector. </td></tr>
+    <tr><td class="paramname">M</td><td>Point to project. </td></tr>
+    <tr><td class="paramname">canvasWidth</td><td>Width of the canvas. </td></tr>
+    <tr><td class="paramname">canvasHeight</td><td>Height of the canvas. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The intersection point on the canvas boundary. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">   86</span>                                                                                                                                           {</div>
+<div class="line"><span class="lineno">   87</span>    <span class="keyword">const</span> <a class="code hl_class" href="class_vector2_d.html">Vector2D</a> proj = <a class="code hl_function" href="#a58d3663755d0d5022cc392620056f6b1">Vector2D::projection</a>(A, B, M);</div>
+<div class="line"><span class="lineno">   88</span>    <span class="keyword">const</span> <a class="code hl_class" href="class_vector2_d.html">Vector2D</a> inter = <a class="code hl_function" href="#aedcebd5eddd56b82253b96305825337c">Vector2D::extendLineToCanvas</a>(M, proj, canvasWidth, canvasHeight);</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">return</span> inter;</div>
+<div class="line"><span class="lineno">   91</span>}</div>
+<div class="ttc" id="aclass_vector2_d_html_a58d3663755d0d5022cc392620056f6b1"><div class="ttname"><a href="#a58d3663755d0d5022cc392620056f6b1">Vector2D::projection</a></div><div class="ttdeci">static Vector2D projection(const Vector2D &amp;A, const Vector2D &amp;B, const Vector2D &amp;M)</div><div class="ttdoc">Computes the orthogonal projection of a point onto a line defined by two vectors.</div><div class="ttdef"><b>Definition</b> vector2d.cpp:3</div></div>
+<div class="ttc" id="aclass_vector2_d_html_aedcebd5eddd56b82253b96305825337c"><div class="ttname"><a href="#aedcebd5eddd56b82253b96305825337c">Vector2D::extendLineToCanvas</a></div><div class="ttdeci">static Vector2D extendLineToCanvas(const Vector2D &amp;M, const Vector2D &amp;P, float canvasWidth, float canvasHeight)</div><div class="ttdoc">Extends a line segment to the boundary of a canvas.</div><div class="ttdef"><b>Definition</b> vector2d.cpp:38</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9128e7f96f9fec286ce2e41692811b9b" name="a9128e7f96f9fec286ce2e41692811b9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9128e7f96f9fec286ce2e41692811b9b">&#9670;&#160;</a></span>isInsideCanvas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Vector2D::isInsideCanvas </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>height</em></span>&#160;) const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if the vector is inside a specified rectangular canvas. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>Width of the canvas. </td></tr>
+    <tr><td class="paramname">height</td><td>Height of the canvas. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the vector is inside the canvas, false otherwise. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  107</span>                                                         {</div>
+<div class="line"><span class="lineno">  108</span>        <span class="keywordflow">return</span> x &gt;= 0 &amp;&amp; x &lt;= width &amp;&amp; y &gt;= 0 &amp;&amp; <a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a> &lt;= height;</div>
+<div class="line"><span class="lineno">  109</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ab08635b0482451cc43b5b399034eff2f" name="ab08635b0482451cc43b5b399034eff2f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab08635b0482451cc43b5b399034eff2f">&#9670;&#160;</a></span>length()</h2>
 
@@ -269,11 +563,12 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>length: return the length (or the norm) of the vector </p>
-<dl class="section return"><dt>Returns</dt><dd>the length </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="vector2d_8h_source.html#l00028">28</a> of file <a class="el" href="vector2d_8h_source.html">vector2d.h</a>.</p>
-
+<p>Computes the length (or norm) of the vector. </p>
+<dl class="section return"><dt>Returns</dt><dd>The length of the vector. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>                          {</div>
+<div class="line"><span class="lineno">   51</span>        <span class="keywordflow">return</span> sqrt(x*x+<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>*<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>);</div>
+<div class="line"><span class="lineno">   52</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a39a3335f33d7e9850b99e4498ba4d856" name="a39a3335f33d7e9850b99e4498ba4d856"></a>
@@ -299,10 +594,52 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>normalize: change the current vector to a vector with the same direction but a norme equal to 1 </p>
+<p>Normalizes the vector to have a norm of 1 while maintaining its direction. </p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>                     {</div>
+<div class="line"><span class="lineno">   58</span>        <span class="keywordtype">float</span> l=float(<a class="code hl_function" href="#ab08635b0482451cc43b5b399034eff2f">length</a>());</div>
+<div class="line"><span class="lineno">   59</span>        x/=l;</div>
+<div class="line"><span class="lineno">   60</span>        <a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>/=l;</div>
+<div class="line"><span class="lineno">   61</span>    }</div>
+<div class="ttc" id="aclass_vector2_d_html_ab08635b0482451cc43b5b399034eff2f"><div class="ttname"><a href="#ab08635b0482451cc43b5b399034eff2f">Vector2D::length</a></div><div class="ttdeci">double length() const</div><div class="ttdoc">Computes the length (or norm) of the vector.</div><div class="ttdef"><b>Definition</b> vector2d.h:50</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ade6501d6c7e51e0b0184ece75c101bc5" name="ade6501d6c7e51e0b0184ece75c101bc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade6501d6c7e51e0b0184ece75c101bc5">&#9670;&#160;</a></span>operator*()</h2>
 
-<p class="definition">Definition at line <a class="el" href="vector2d_8h_source.html#l00034">34</a> of file <a class="el" href="vector2d_8h_source.html">vector2d.h</a>.</p>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vector2_d.html">Vector2D</a> Vector2D::operator* </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>scalar</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
+<p>Multiplies the vector by a scalar. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scalar</td><td>Scalar value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The scaled vector. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  116</span>                                           {</div>
+<div class="line"><span class="lineno">  117</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="#a98e9997ebb7a629f4db52397d4e0d653">Vector2D</a>(x * scalar, <a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a> * scalar);</div>
+<div class="line"><span class="lineno">  118</span>    }</div>
+<div class="ttc" id="aclass_vector2_d_html_a98e9997ebb7a629f4db52397d4e0d653"><div class="ttname"><a href="#a98e9997ebb7a629f4db52397d4e0d653">Vector2D::Vector2D</a></div><div class="ttdeci">Vector2D()</div><div class="ttdoc">Default constructor initializing the vector to (0, 0).</div><div class="ttdef"><b>Definition</b> vector2d.h:31</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="acf56b22bca709c514070ad91720723ba" name="acf56b22bca709c514070ad91720723ba"></a>
@@ -327,17 +664,11 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>operator +=: multiply the components of the current vector with the components of the vector v </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">v</td><td>the multiplier </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="vector2d_8h_source.html#l00059">59</a> of file <a class="el" href="vector2d_8h_source.html">vector2d.h</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   82</span>                                       {</div>
+<div class="line"><span class="lineno">   83</span>        x+=v.x;</div>
+<div class="line"><span class="lineno">   84</span>        <a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>+=v.<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>;</div>
+<div class="line"><span class="lineno">   85</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3bf550ff454982ff7c839c84f89ce88a" name="a3bf550ff454982ff7c839c84f89ce88a"></a>
@@ -363,17 +694,18 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>operator []: a way to get the component of the vector </p>
+<p>Accesses the components of the vector. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">i</td><td>equal to 0 or 1 </td></tr>
+    <tr><td class="paramname">i</td><td>Index (0 for x, 1 for y). </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>x if i is equal to 0 and y else </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="vector2d_8h_source.html#l00052">52</a> of file <a class="el" href="vector2d_8h_source.html">vector2d.h</a>.</p>
-
+<dl class="section return"><dt>Returns</dt><dd>The x or y component of the vector. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>                                        {</div>
+<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">return</span> (i==0)?x:<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>;</div>
+<div class="line"><span class="lineno">   79</span>    };</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ade14049e72c6167b1547bdccb61ad477" name="ade14049e72c6167b1547bdccb61ad477"></a>
@@ -399,11 +731,138 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>orthoNormed: return a new vector, orthogonal and normed </p>
-<dl class="section return"><dt>Returns</dt><dd>the orthonormed vector </dd></dl>
+<p>Returns a new vector that is orthogonal to this vector and normalized. </p>
+<dl class="section return"><dt>Returns</dt><dd>The orthonormal vector. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>                                 {</div>
+<div class="line"><span class="lineno">   68</span>        <span class="keywordtype">float</span> l=float(<a class="code hl_function" href="#ab08635b0482451cc43b5b399034eff2f">length</a>());</div>
+<div class="line"><span class="lineno">   69</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="#a98e9997ebb7a629f4db52397d4e0d653">Vector2D</a>(<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>/l,-x/l);</div>
+<div class="line"><span class="lineno">   70</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4231f74d46fcb33712df77afcb9066ae" name="a4231f74d46fcb33712df77afcb9066ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4231f74d46fcb33712df77afcb9066ae">&#9670;&#160;</a></span>polarComparison()</h2>
 
-<p class="definition">Definition at line <a class="el" href="vector2d_8h_source.html#l00043">43</a> of file <a class="el" href="vector2d_8h_source.html">vector2d.h</a>.</p>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Vector2D::polarComparison </td>
+          <td>(</td>
+          <td class="paramtype">QPair&lt; QString, <a class="el" href="class_vector2_d.html">Vector2D</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>P1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QPair&lt; QString, <a class="el" href="class_vector2_d.html">Vector2D</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>P2</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
+<p>Compares two points based on their polar angle relative to the origin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">P1</td><td>First point pair. </td></tr>
+    <tr><td class="paramname">P2</td><td>Second point pair. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if P1 is less than P2 in polar angle, false otherwise. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">   94</span>                                                                                    {</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>    <span class="keyword">auto</span> pts1 = P1.second;</div>
+<div class="line"><span class="lineno">   97</span>    <span class="keyword">auto</span> pts2 = P2.second;</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>    <span class="comment">// Priorité si x == 0</span></div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">if</span> (pts1.x == 0 &amp;&amp; pts2.x != 0) {</div>
+<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>; <span class="comment">// P1 est prioritaire</span></div>
+<div class="line"><span class="lineno">  103</span>    }</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordflow">if</span> (pts2.x == 0 &amp;&amp; pts1.x != 0) {</div>
+<div class="line"><span class="lineno">  105</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// P2 est prioritaire</span></div>
+<div class="line"><span class="lineno">  106</span>    }</div>
+<div class="line"><span class="lineno">  107</span> </div>
+<div class="line"><span class="lineno">  108</span>    <span class="comment">// Calcul des angles polaires</span></div>
+<div class="line"><span class="lineno">  109</span>    <span class="keywordtype">double</span> a1 = asin(pts1.y / sqrt(pts1.x * pts1.x + pts1.y * pts1.y));</div>
+<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">if</span> (pts1.x &lt; 0.0) {</div>
+<div class="line"><span class="lineno">  111</span>        a1 = M_PI - a1;</div>
+<div class="line"><span class="lineno">  112</span>    }</div>
+<div class="line"><span class="lineno">  113</span> </div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordtype">double</span> a2 = asin(pts2.y / sqrt(pts2.x * pts2.x + pts2.y * pts2.y));</div>
+<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">if</span> (pts2.x &lt; 0.0) {</div>
+<div class="line"><span class="lineno">  116</span>        a2 = M_PI - a2;</div>
+<div class="line"><span class="lineno">  117</span>    }</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">return</span> a1&lt;a2;</div>
+<div class="line"><span class="lineno">  120</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a58d3663755d0d5022cc392620056f6b1" name="a58d3663755d0d5022cc392620056f6b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58d3663755d0d5022cc392620056f6b1">&#9670;&#160;</a></span>projection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vector2_d.html">Vector2D</a> Vector2D::projection </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>A</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>B</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>M</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes the orthogonal projection of a point onto a line defined by two vectors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">A</td><td>Starting point of the line. </td></tr>
+    <tr><td class="paramname">B</td><td>Ending point of the line. </td></tr>
+    <tr><td class="paramname">M</td><td>Point to project. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The projection point on the line. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">    3</span>                                                                                     {</div>
+<div class="line"><span class="lineno">    4</span>    <a class="code hl_class" href="class_vector2_d.html">Vector2D</a> AB = B - A;   <span class="comment">// Vector AB</span></div>
+<div class="line"><span class="lineno">    5</span>    <a class="code hl_class" href="class_vector2_d.html">Vector2D</a> AM = M - A;   <span class="comment">// Vector AM</span></div>
+<div class="line"><span class="lineno">    6</span> </div>
+<div class="line"><span class="lineno">    7</span>    <span class="comment">// Projection factor t</span></div>
+<div class="line"><span class="lineno">    8</span>    <span class="keywordtype">float</span> t = AM.<a class="code hl_function" href="#a3b5fba27a5216141fba5bb3ac96702c4">dot</a>(AB) / (AB.<a class="code hl_function" href="#ab08635b0482451cc43b5b399034eff2f">length</a>() * AB.<a class="code hl_function" href="#ab08635b0482451cc43b5b399034eff2f">length</a>());</div>
+<div class="line"><span class="lineno">    9</span> </div>
+<div class="line"><span class="lineno">   10</span>    <span class="comment">// Clamp t to the range [0, 1]</span></div>
+<div class="line"><span class="lineno">   11</span>    t = std::max(0.0f, std::min(1.0f, t));</div>
+<div class="line"><span class="lineno">   12</span> </div>
+<div class="line"><span class="lineno">   13</span>    <span class="comment">// Point M = A + t * AB</span></div>
+<div class="line"><span class="lineno">   14</span>    <span class="keywordflow">return</span> A + AB * t;</div>
+<div class="line"><span class="lineno">   15</span>}</div>
+<div class="ttc" id="aclass_vector2_d_html_a3b5fba27a5216141fba5bb3ac96702c4"><div class="ttname"><a href="#a3b5fba27a5216141fba5bb3ac96702c4">Vector2D::dot</a></div><div class="ttdeci">float dot(const Vector2D &amp;op)</div><div class="ttdoc">Computes the dot product of this vector with another vector.</div><div class="ttdef"><b>Definition</b> vector2d.h:125</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a973094c245c43d462b2f018ab669baa8" name="a973094c245c43d462b2f018ab669baa8"></a>
@@ -441,14 +900,12 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="vector2d_8h_source.html#l00023">23</a> of file <a class="el" href="vector2d_8h_source.html">vector2d.h</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">   44</span>{ x=p_x; <a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>=p_y; }</div>
+</div><!-- fragment -->
 </div>
 </div>
-<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
-<a id="ae0bc4e011d92acb25ce7b22537c3089d" name="ae0bc4e011d92acb25ce7b22537c3089d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0bc4e011d92acb25ce7b22537c3089d">&#9670;&#160;</a></span>operator!=</h2>
+<a id="afefd4ee5571fe6ce0fa3a2c448dfaae5" name="afefd4ee5571fe6ce0fa3a2c448dfaae5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afefd4ee5571fe6ce0fa3a2c448dfaae5">&#9670;&#160;</a></span>whichSide()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -457,25 +914,61 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool operator!= </td>
+          <td class="memname">QString Vector2D::whichSide </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+          <td class="paramtype">const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>P</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>canvasWidth</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>canvasHeight</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
+<p>Determines which side of the canvas a point lies on. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">P</td><td>Point to check. </td></tr>
+    <tr><td class="paramname">canvasWidth</td><td>Width of the canvas. </td></tr>
+    <tr><td class="paramname">canvasHeight</td><td>Height of the canvas. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A string indicating the side of the canvas ("top", "bottom", "left", "right"). </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>                                                                                    {</div>
+<div class="line"><span class="lineno">   18</span>    <span class="comment">//qDebug() &lt;&lt; &quot;P.x : &quot; &lt;&lt; P.x &lt;&lt; &quot;P.y : &quot; &lt;&lt; P.y;</span></div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">if</span> (P.x &lt;= 0) {</div>
+<div class="line"><span class="lineno">   20</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Point is to the left of the canvas.&quot;</span>;</div>
+<div class="line"><span class="lineno">   21</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;left&quot;</span>;</div>
+<div class="line"><span class="lineno">   22</span>    }</div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (P.x &gt; canvasWidth-50) {</div>
+<div class="line"><span class="lineno">   24</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Point is to the right of the canvas.&quot;</span>;</div>
+<div class="line"><span class="lineno">   25</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;right&quot;</span>;</div>
+<div class="line"><span class="lineno">   26</span>    }</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (P.<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a> &gt; canvasHeight ) {</div>
+<div class="line"><span class="lineno">   28</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Point is above the canvas.&quot;</span>;</div>
+<div class="line"><span class="lineno">   29</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;above&quot;</span>;</div>
+<div class="line"><span class="lineno">   30</span>    }</div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   32</span>        qDebug() &lt;&lt; <span class="stringliteral">&quot;Point is below the canvas.&quot;</span>;</div>
+<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;bottom&quot;</span>;</div>
+<div class="line"><span class="lineno">   34</span>    }</div>
+<div class="line"><span class="lineno">   35</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
+<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
 <a id="adaff64f54444c876c588bb9de8cff3d5" name="adaff64f54444c876c588bb9de8cff3d5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adaff64f54444c876c588bb9de8cff3d5">&#9670;&#160;</a></span>operator* <span class="overload">[1/2]</span></h2>
 
@@ -502,9 +995,10 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="vector2d_8cpp_source.html#l00007">7</a> of file <a class="el" href="vector2d_8cpp_source.html">vector2d.cpp</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  127</span>                                                        {</div>
+<div class="line"><span class="lineno">  128</span>    <span class="keywordflow">return</span> u.x*v.x+u.<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>*v.<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>;</div>
+<div class="line"><span class="lineno">  129</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4dc5874e264037c69a6dd041436e0bcd" name="a4dc5874e264037c69a6dd041436e0bcd"></a>
@@ -533,9 +1027,10 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="vector2d_8cpp_source.html#l00003">3</a> of file <a class="el" href="vector2d_8cpp_source.html">vector2d.cpp</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  123</span>                                                      {</div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a98e9997ebb7a629f4db52397d4e0d653">Vector2D</a>(<span class="keywordtype">float</span>(a*v.x),<span class="keywordtype">float</span>(a*v.<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>));</div>
+<div class="line"><span class="lineno">  125</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a37c1e7b52b4d9a0b452d9dc1e5a3535c" name="a37c1e7b52b4d9a0b452d9dc1e5a3535c"></a>
@@ -564,9 +1059,10 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="vector2d_8cpp_source.html#l00011">11</a> of file <a class="el" href="vector2d_8cpp_source.html">vector2d.cpp</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  131</span>                                                               {</div>
+<div class="line"><span class="lineno">  132</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a98e9997ebb7a629f4db52397d4e0d653">Vector2D</a>(u.x+v.x,u.<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>+v.<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>);</div>
+<div class="line"><span class="lineno">  133</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a73d3241ae1e865371f1713718af3004f" name="a73d3241ae1e865371f1713718af3004f"></a>
@@ -595,9 +1091,10 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="vector2d_8cpp_source.html#l00015">15</a> of file <a class="el" href="vector2d_8cpp_source.html">vector2d.cpp</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  135</span>                                                               {</div>
+<div class="line"><span class="lineno">  136</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a98e9997ebb7a629f4db52397d4e0d653">Vector2D</a>(u.x-v.x,u.<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>-v.<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>);</div>
+<div class="line"><span class="lineno">  137</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a929d33d02e4b41eef1b71fde4f48b1b1" name="a929d33d02e4b41eef1b71fde4f48b1b1"></a>
@@ -622,9 +1119,43 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">  139</span>                                            {</div>
+<div class="line"><span class="lineno">  140</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a98e9997ebb7a629f4db52397d4e0d653">Vector2D</a>(-v.x,-v.<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>);</div>
+<div class="line"><span class="lineno">  141</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3632a18a6e82fdaa6497d8011990cb8d" name="a3632a18a6e82fdaa6497d8011990cb8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3632a18a6e82fdaa6497d8011990cb8d">&#9670;&#160;</a></span>operator&lt;&lt;</h2>
 
-<p class="definition">Definition at line <a class="el" href="vector2d_8cpp_source.html#l00019">19</a> of file <a class="el" href="vector2d_8cpp_source.html">vector2d.cpp</a>.</p>
-
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDebug operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">QDebug</td>          <td class="paramname"><span class="paramname"><em>dbg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_vector2_d.html">Vector2D</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>v</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><span class="lineno">   96</span>                                                            {</div>
+<div class="line"><span class="lineno">   97</span>        dbg.nospace() &lt;&lt; <span class="stringliteral">&quot;Vector2D(&quot;</span> &lt;&lt; v.x &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; v.<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a> &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><span class="lineno">   98</span>        <span class="keywordflow">return</span> dbg.space();</div>
+<div class="line"><span class="lineno">   99</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a5a1dc24d8a7344df74f7865d34c2f3b2" name="a5a1dc24d8a7344df74f7865d34c2f3b2"></a>
@@ -653,9 +1184,10 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="vector2d_8cpp_source.html#l00027">27</a> of file <a class="el" href="vector2d_8cpp_source.html">vector2d.cpp</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  147</span>                                                      {</div>
+<div class="line"><span class="lineno">  148</span>    <span class="keywordflow">return</span> (u.x==v.x &amp;&amp; u.<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>==v.<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>);</div>
+<div class="line"><span class="lineno">  149</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0c76d01601145a90c052ace1be5f2357" name="a0c76d01601145a90c052ace1be5f2357"></a>
@@ -684,48 +1216,15 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="vector2d_8cpp_source.html#l00023">23</a> of file <a class="el" href="vector2d_8cpp_source.html">vector2d.cpp</a>.</p>
-
+<div class="fragment"><div class="line"><span class="lineno">  143</span>                                                        {</div>
+<div class="line"><span class="lineno">  144</span>    <span class="keywordflow">return</span> u.x*v.<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>-u.<a class="code hl_variable" href="#a85215519d3f71d0e6be7d636346f3b7d">y</a>*v.x;</div>
+<div class="line"><span class="lineno">  145</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="aeb4253ba6555251d010ea4450619029e" name="aeb4253ba6555251d010ea4450619029e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb4253ba6555251d010ea4450619029e">&#9670;&#160;</a></span>x</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float Vector2D::x</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="vector2d_8h_source.html#l00013">13</a> of file <a class="el" href="vector2d_8h_source.html">vector2d.h</a>.</p>
-
-</div>
-</div>
-<a id="a85215519d3f71d0e6be7d636346f3b7d" name="a85215519d3f71d0e6be7d636346f3b7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85215519d3f71d0e6be7d636346f3b7d">&#9670;&#160;</a></span>y</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float Vector2D::y</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>coordinates of the vector </p>
-
-<p class="definition">Definition at line <a class="el" href="vector2d_8h_source.html#l00013">13</a> of file <a class="el" href="vector2d_8h_source.html">vector2d.h</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="vector2d_8h_source.html">vector2d.h</a></li>
+<li><b>vector2d.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

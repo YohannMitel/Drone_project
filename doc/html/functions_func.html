@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Drone demo: Class Members - Functions</title>
+<title>Drone Project: Class Members - Functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -24,10 +24,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="takeoff.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Drone demo<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">Drone Project
    </div>
+   <div id="projectbrief">This project involves constructing a map from a point cloud, where drones navigate to reach their destination cities.</div>
   </td>
  </tr>
  </tbody>
@@ -85,89 +85,190 @@ $(function(){ initResizable(false); });
 </div>
 
 <div class="contents">
-<div class="textblock">Here is a list of all functions with links to the classes they belong to:</div>
+<div class="textblock">Here is a list of all documented functions with links to the class documentation for each member:</div>
 
 <h3><a id="index_a" name="index_a"></a>- a -</h3><ul>
 <li>addCollision()&#160;:&#160;<a class="el" href="class_drone.html#afddb2c5e752785dca168f58d7568206e">Drone</a></li>
+<li>addPoints()&#160;:&#160;<a class="el" href="class_canvas.html#a17ae75cd1dc0380f00481efaca896cd5">Canvas</a></li>
+<li>addTriangle()&#160;:&#160;<a class="el" href="class_canvas.html#a9be51dab63db480d6c237d45cc4a178a">Canvas</a></li>
+<li>addVertex()&#160;:&#160;<a class="el" href="class_my_polygon.html#ac00111379e93e80ae3bfc45d789ce198">MyPolygon</a></li>
+<li>areNeighbors()&#160;:&#160;<a class="el" href="class_cities.html#a48e2f82aa6b47951dd03e47b1d0cfcfe">Cities</a></li>
+<li>ascendingPolarAngle()&#160;:&#160;<a class="el" href="class_cities.html#a8c519e6136bfe8624f1a5c5125a52a25">Cities</a></li>
 </ul>
 
 
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
+<li>calculateIntersection()&#160;:&#160;<a class="el" href="class_canvas.html#a63db1f7f5f0983b3bf64c53e9bb803f3">Canvas</a></li>
 <li>Canvas()&#160;:&#160;<a class="el" href="class_canvas.html#aeea65f2bfc2be61bdbcaaa3a67c33185">Canvas</a></li>
+<li>checkDelaunay()&#160;:&#160;<a class="el" href="class_canvas.html#a875b0b334afc2eb857604adddc118671">Canvas</a>, <a class="el" href="class_triangle.html#a80d2c07c90cf773a7ad2299c72eddcdc">Triangle</a></li>
+<li>circleContains()&#160;:&#160;<a class="el" href="class_triangle.html#a9e8fb3bac838c95865165e61b14ee6bc">Triangle</a></li>
+<li>Cities()&#160;:&#160;<a class="el" href="class_cities.html#ae4660b0d896333bdf7fba3bb1465af32">Cities</a></li>
+<li>City()&#160;:&#160;<a class="el" href="class_city.html#a4deaec3976d3abb38345b8bcafa721bd">City</a></li>
+<li>clear()&#160;:&#160;<a class="el" href="class_canvas.html#ac4559a6535f497f17415032632aa9f6a">Canvas</a>, <a class="el" href="class_cities.html#a5dc3d3ace199e440293ef8d68e6b75e4">Cities</a></li>
+<li>closestH()&#160;:&#160;<a class="el" href="class_my_polygon.html#aa1adb2f322c9c52ffce77b69990c72a2">MyPolygon</a></li>
+<li>computeCircle()&#160;:&#160;<a class="el" href="class_triangle.html#abc1d2380e0daf2b13ef96e3e89f01a2d">Triangle</a></li>
+<li>connectionMatrix()&#160;:&#160;<a class="el" href="class_cities.html#a07ecd6b3f074c44914a497dc68e2e3dc">Cities</a></li>
+<li>contains()&#160;:&#160;<a class="el" href="class_triangle.html#aba5922794392893f80af8de5b75e582b">Triangle</a></li>
 </ul>
 
 
 <h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
+<li>determinant()&#160;:&#160;<a class="el" href="class_matrix22.html#ad18ae363d30a93115d9ac2fb53e6e71a">Matrix22</a>, <a class="el" href="class_matrix33.html#a91bdfd4a4ea7467fbb843761a830f090">Matrix33</a>, <a class="el" href="class_matrix44.html#aa04b9a3ed2ab380ba4aa3b91d514c4cd">Matrix44</a></li>
+<li>distanceToEdge()&#160;:&#160;<a class="el" href="class_my_polygon.html#a70380762b15e4ce81a03ff0906e253d7">MyPolygon</a></li>
+<li>doIntersect()&#160;:&#160;<a class="el" href="class_cities.html#a0468ed2f2cb2c78bf53f936f0466457d">Cities</a></li>
+<li>dot()&#160;:&#160;<a class="el" href="class_vector2_d.html#a3b5fba27a5216141fba5bb3ac96702c4">Vector2D</a></li>
+<li>draw()&#160;:&#160;<a class="el" href="class_cities.html#a81589add9a37634223b775911115d0c8">Cities</a>, <a class="el" href="class_my_polygon.html#ab511b988a34d634437fbaf54b3143927">MyPolygon</a>, <a class="el" href="class_triangle.html#a2ee48003aaf0a326c3866c7e2d61a261">Triangle</a></li>
+<li>drawCircle()&#160;:&#160;<a class="el" href="class_triangle.html#afa7613cc5c6e20df91f408166bd1aa61">Triangle</a></li>
+<li>drawMap()&#160;:&#160;<a class="el" href="class_city.html#a89a13998c148ba2816a74725314d9928">City</a></li>
 <li>Drone()&#160;:&#160;<a class="el" href="class_drone.html#a1701904e4a77b668620ffe92a0f15bf1">Drone</a></li>
+<li>droneSequence()&#160;:&#160;<a class="el" href="class_canvas.html#a8722fdb0a7e30a942bb84b5c4f048ac0">Canvas</a></li>
+</ul>
+
+
+<h3><a id="index_e" name="index_e"></a>- e -</h3><ul>
+<li>earClipping()&#160;:&#160;<a class="el" href="class_my_polygon.html#a381c4099e2e2968e480b5fb30a8e1fe4">MyPolygon</a></li>
+<li>earClippingUtils()&#160;:&#160;<a class="el" href="class_my_polygon.html#a7468f6171fc327f4235e116b47027f2e">MyPolygon</a></li>
+<li>extendLineToCanvas()&#160;:&#160;<a class="el" href="class_vector2_d.html#aedcebd5eddd56b82253b96305825337c">Vector2D</a></li>
+</ul>
+
+
+<h3><a id="index_f" name="index_f"></a>- f -</h3><ul>
+<li>finalizePolygon()&#160;:&#160;<a class="el" href="class_canvas.html#a63228e07e968ff5b5af221ba3534d48b">Canvas</a></li>
+<li>findOppositePointOfTrianglesWithEdgeCommon()&#160;:&#160;<a class="el" href="class_canvas.html#a4be165c96a43cc3c780e211f5e7cc6c8">Canvas</a></li>
+<li>flippAll()&#160;:&#160;<a class="el" href="class_canvas.html#a1f4f7e4221b1e378d99e498b0e9f3b89">Canvas</a></li>
+<li>flippIt()&#160;:&#160;<a class="el" href="class_triangle.html#af70623b23e3c3e4151823a0809b9c18d">Triangle</a></li>
 </ul>
 
 
 <h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
+<li>get2x2From3x3()&#160;:&#160;<a class="el" href="class_matrix22.html#a847e41917439faa7d5707bbf1332b5a0">Matrix22</a></li>
+<li>get3x3From4x4()&#160;:&#160;<a class="el" href="class_matrix33.html#af5d566e26f06afb7937b70fc86d568dd">Matrix33</a></li>
 <li>getAzimut()&#160;:&#160;<a class="el" href="class_drone.html#a0535438871ce596434f05813be6fb2ce">Drone</a></li>
-<li>getName()&#160;:&#160;<a class="el" href="class_drone.html#a5ccec19f2f37c7d6eeb087e48df247aa">Drone</a></li>
-<li>getPosition()&#160;:&#160;<a class="el" href="class_drone.html#af9acfa889406ec85fe8a43b1941d1bf3">Drone</a></li>
+<li>getBox()&#160;:&#160;<a class="el" href="class_canvas.html#a36400779155b40787ab5f192d1168c54">Canvas</a></li>
+<li>getCanvasIntersectionLimit()&#160;:&#160;<a class="el" href="class_vector2_d.html#a7808cd7f0c715a3b7cefb5b8d2fa09fb">Vector2D</a></li>
+<li>getCircleCenter()&#160;:&#160;<a class="el" href="class_triangle.html#a1fa027b0ad66f77a65763a485d99ebd7">Triangle</a></li>
+<li>getCitiesInfos()&#160;:&#160;<a class="el" href="class_canvas.html#a95b3c6439fcf6efc455d9a88854d15c2">Canvas</a></li>
+<li>getCityByName()&#160;:&#160;<a class="el" href="class_cities.html#ae5b273bec3b38b1fe3564d52350e2c46">Cities</a></li>
+<li>getColor()&#160;:&#160;<a class="el" href="class_city.html#af29eea28eba981c1995ea79cd94f5ed1">City</a></li>
+<li>getCurrentCity()&#160;:&#160;<a class="el" href="class_drone.html#a6a7a5401d1db948fa10531e6a2f6b52f">Drone</a></li>
+<li>getDestCity()&#160;:&#160;<a class="el" href="class_drone.html#aab88053ca8c7062af17af5f9ff957be3">Drone</a></li>
+<li>getEdgeFrom()&#160;:&#160;<a class="el" href="class_triangle.html#a0d7c5009e1cff0e5fb86b1779f0c87fd">Triangle</a></li>
+<li>getEdgeTo()&#160;:&#160;<a class="el" href="class_triangle.html#a22c7ad03ea4e92bb859f3806675aca84">Triangle</a></li>
+<li>getMap()&#160;:&#160;<a class="el" href="class_canvas.html#a0e2a9e3404e5aba5b072d8f4fb9ab79d">Canvas</a>, <a class="el" href="class_city.html#a986acd8e0097e1cf5de1ac159b1605e3">City</a></li>
+<li>getName()&#160;:&#160;<a class="el" href="class_city.html#ad73598d937870a165cb530958106ff07">City</a>, <a class="el" href="class_drone.html#a5ccec19f2f37c7d6eeb087e48df247aa">Drone</a></li>
+<li>getNbCollisions()&#160;:&#160;<a class="el" href="class_drone.html#a14087b32f7ea35175a36186e1f5f566f">Drone</a></li>
+<li>getOpposite()&#160;:&#160;<a class="el" href="class_triangle.html#ac6a3d7227338d8abdacd9822ba5c3d49">Triangle</a></li>
+<li>getPointByIndex()&#160;:&#160;<a class="el" href="class_cities.html#ac5b25150e8030ebebb24db26271d1c2a">Cities</a></li>
+<li>getPosition()&#160;:&#160;<a class="el" href="class_city.html#a7f7a9743ff8a46dfd83e67ca45b7d57e">City</a>, <a class="el" href="class_drone.html#af9acfa889406ec85fe8a43b1941d1bf3">Drone</a></li>
 <li>getPower()&#160;:&#160;<a class="el" href="class_drone.html#ac36d9fdaf2a0d2e31bb2924f04a0298f">Drone</a></li>
+<li>getProcessPolyState()&#160;:&#160;<a class="el" href="class_canvas.html#a717e89de1ecd0e11a140ca5268ef7f7c">Canvas</a></li>
+<li>getSize()&#160;:&#160;<a class="el" href="class_cities.html#acbfaef7e0197f38e6a4a492d2660a420">Cities</a></li>
+<li>getSizeofT()&#160;:&#160;<a class="el" href="class_canvas.html#a5233eb6cb36a66bde65b0e4abf01e617">Canvas</a></li>
+<li>getSizeofV()&#160;:&#160;<a class="el" href="class_canvas.html#a99f4cab25a899653f9337ad36e4a3177">Canvas</a></li>
 <li>getStatus()&#160;:&#160;<a class="el" href="class_drone.html#afafc9ba6fcff0a9b028594b6433adffc">Drone</a></li>
+<li>getTabCities()&#160;:&#160;<a class="el" href="class_cities.html#afcebf01ed63f80864af34d67d6aa9057">Cities</a></li>
+<li>getTabVertices()&#160;:&#160;<a class="el" href="class_cities.html#a661ac7389993fc6a7b6ec64800fcb9ad">Cities</a></li>
+<li>getVertexPtr()&#160;:&#160;<a class="el" href="class_triangle.html#acb129650e51a79a3af1de56673304320">Triangle</a></li>
+<li>getVertices()&#160;:&#160;<a class="el" href="class_my_polygon.html#a3e1b746bb99b2185aa7a0be2ad51242a">MyPolygon</a></li>
 </ul>
 
 
 <h3><a id="index_h" name="index_h"></a>- h -</h3><ul>
 <li>hasCollision()&#160;:&#160;<a class="el" href="class_drone.html#a06d6c451149b1e9418eaefb3a9aeca90">Drone</a></li>
+<li>hasEdge()&#160;:&#160;<a class="el" href="class_triangle.html#a2ecf064f3402d0fe6ab5624fb0e6ccda">Triangle</a></li>
 </ul>
 
 
 <h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
+<li>inDestCity()&#160;:&#160;<a class="el" href="class_drone.html#a46d1a506d237feef77be41f9424ce406">Drone</a></li>
 <li>initCollision()&#160;:&#160;<a class="el" href="class_drone.html#afac93725223c6dfa88f55331edd85768">Drone</a></li>
+<li>initTriangulation()&#160;:&#160;<a class="el" href="class_cities.html#af024145923e1b53118200991d2d3a4bc">Cities</a></li>
+<li>isConvex()&#160;:&#160;<a class="el" href="class_my_polygon.html#a2ff01556f27920485cfdbe8235da7746">MyPolygon</a></li>
+<li>isFlippable()&#160;:&#160;<a class="el" href="class_triangle.html#afcaaedef11a6f06fb0eb778874f7a10b">Triangle</a></li>
+<li>isHighlighted()&#160;:&#160;<a class="el" href="class_triangle.html#a994f6a50a894f5a919ea4b5cda7c109f">Triangle</a></li>
+<li>isInside()&#160;:&#160;<a class="el" href="class_my_polygon.html#a33aa193d3ac09f08652b0d66fdb35cb9">MyPolygon</a>, <a class="el" href="class_triangle.html#a2c84480dd64dd9d9f78142cd0f4a311b">Triangle</a></li>
+<li>isInsideCanvas()&#160;:&#160;<a class="el" href="class_vector2_d.html#a9128e7f96f9fec286ce2e41692811b9b">Vector2D</a></li>
+<li>isInsideWithTriangulation()&#160;:&#160;<a class="el" href="class_my_polygon.html#a81e26e67babbb30ff3edd34c25d2f424">MyPolygon</a></li>
+<li>isOnTheLeft()&#160;:&#160;<a class="el" href="class_cities.html#a2e10d714e6f2981ff135ffe121a92c42">Cities</a>, <a class="el" href="class_my_polygon.html#aa53d5a16ad2fd9613e40e44a49fad436">MyPolygon</a>, <a class="el" href="class_triangle.html#a6350e7211a97e18880ab8f03a1798425">Triangle</a></li>
+<li>isOutsideCanvas()&#160;:&#160;<a class="el" href="class_canvas.html#a0c866cccd753e3a59ab4d152f2d81f66">Canvas</a></li>
+<li>isOutsideCities()&#160;:&#160;<a class="el" href="class_cities.html#a729bd2cda85707184fd3644d88c2b69b">Cities</a></li>
 </ul>
 
 
 <h3><a id="index_l" name="index_l"></a>- l -</h3><ul>
 <li>length()&#160;:&#160;<a class="el" href="class_vector2_d.html#ab08635b0482451cc43b5b399034eff2f">Vector2D</a></li>
+<li>loadMesh()&#160;:&#160;<a class="el" href="class_canvas.html#a02da07de074f8a6a92b346fd521ba018">Canvas</a></li>
 </ul>
 
 
 <h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
-<li>MainWindow()&#160;:&#160;<a class="el" href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d">MainWindow</a></li>
+<li>mouseMoveEvent()&#160;:&#160;<a class="el" href="class_canvas.html#ae9f5a1c5981b802814aa5b189faba710">Canvas</a></li>
 <li>mousePressEvent()&#160;:&#160;<a class="el" href="class_canvas.html#ac766a4e369f781943df021b80e5922c4">Canvas</a></li>
+<li>MyPolygon()&#160;:&#160;<a class="el" href="class_my_polygon.html#aafdb38fa69d419e22b24db985b73ca9c">MyPolygon</a></li>
 </ul>
 
 
 <h3><a id="index_n" name="index_n"></a>- n -</h3><ul>
+<li>nearestEdge()&#160;:&#160;<a class="el" href="class_my_polygon.html#a514bf3d3bfc1033779d8b85afeb5244a">MyPolygon</a></li>
+<li>nextDestCityId()&#160;:&#160;<a class="el" href="class_cities.html#a2a44243f980005d3ccb755cd68c044f5">Cities</a></li>
 <li>normalize()&#160;:&#160;<a class="el" href="class_vector2_d.html#a39a3335f33d7e9850b99e4498ba4d856">Vector2D</a></li>
 </ul>
 
 
 <h3><a id="index_o" name="index_o"></a>- o -</h3><ul>
-<li>on_actionQuit_triggered()&#160;:&#160;<a class="el" href="class_main_window.html#aa68eba140c2cf5c1cd2b4bd81337fa83">MainWindow</a></li>
-<li>operator+=()&#160;:&#160;<a class="el" href="class_vector2_d.html#acf56b22bca709c514070ad91720723ba">Vector2D</a></li>
+<li>operator*()&#160;:&#160;<a class="el" href="class_vector2_d.html#ade6501d6c7e51e0b0184ece75c101bc5">Vector2D</a></li>
 <li>operator[]()&#160;:&#160;<a class="el" href="class_vector2_d.html#a3bf550ff454982ff7c839c84f89ce88a">Vector2D</a></li>
+<li>orderPolygonPoint()&#160;:&#160;<a class="el" href="class_cities.html#a58419345531dd32657e6f2a3aa8cc5c5">Cities</a></li>
+<li>orientation()&#160;:&#160;<a class="el" href="class_cities.html#a3342885d83118267a8cc3ccfe465a573">Cities</a></li>
 <li>orthoNormed()&#160;:&#160;<a class="el" href="class_vector2_d.html#ade14049e72c6167b1547bdccb61ad477">Vector2D</a></li>
 </ul>
 
 
 <h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
-<li>paintEvent()&#160;:&#160;<a class="el" href="class_canvas.html#a743fefef4af18260e8d56d95f92618aa">Canvas</a>, <a class="el" href="class_drone.html#a6d7cda9ed3d1a173f107bfef3a635a90">Drone</a></li>
+<li>paintEvent()&#160;:&#160;<a class="el" href="class_canvas.html#a67dbba80855f3b4fb95c26d5012f7ccc">Canvas</a></li>
+<li>polarComparison()&#160;:&#160;<a class="el" href="class_vector2_d.html#a4231f74d46fcb33712df77afcb9066ae">Vector2D</a></li>
+<li>processPoly()&#160;:&#160;<a class="el" href="class_canvas.html#aebc60f04885f4d900a45044ca4a5c230">Canvas</a></li>
+<li>processVoronoi()&#160;:&#160;<a class="el" href="class_canvas.html#a9ef5ceffb7e43a85f446d47177565afb">Canvas</a></li>
+<li>projection()&#160;:&#160;<a class="el" href="class_vector2_d.html#a58d3663755d0d5022cc392620056f6b1">Vector2D</a></li>
+<li>pushCity()&#160;:&#160;<a class="el" href="class_cities.html#a0757a978984d8e828614b3f5e39f1eb2">Cities</a></li>
 </ul>
 
 
 <h3><a id="index_r" name="index_r"></a>- r -</h3><ul>
-<li>resizeEvent()&#160;:&#160;<a class="el" href="class_drone.html#a146d36465d4e260c199dc97c5f2ef105">Drone</a></li>
+<li>reScale()&#160;:&#160;<a class="el" href="class_canvas.html#a7c6aa7f3b2af6d97f2f9358d3e66951d">Canvas</a></li>
+<li>resizeEvent()&#160;:&#160;<a class="el" href="class_canvas.html#af6760030ef7aaf5cf73e89fbb55bee26">Canvas</a></li>
 </ul>
 
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
 <li>set()&#160;:&#160;<a class="el" href="class_vector2_d.html#a973094c245c43d462b2f018ab669baa8">Vector2D</a></li>
+<li>setColor()&#160;:&#160;<a class="el" href="class_my_polygon.html#a83263e44da15395bc5a5fa4d88e7ccd8">MyPolygon</a>, <a class="el" href="class_triangle.html#a9d9365aceb3f6e4f53867a0d37710cbb">Triangle</a></li>
+<li>setCurrentCity()&#160;:&#160;<a class="el" href="class_drone.html#ac886eaaa20cc145b5525602c003abe51">Drone</a></li>
+<li>setDelaunay()&#160;:&#160;<a class="el" href="class_triangle.html#a650fc423f2b682cc33b47c5313463406">Triangle</a></li>
+<li>setDestCity()&#160;:&#160;<a class="el" href="class_drone.html#a1c7c09da3a1d8d9e67fdd402b7a8a0b1">Drone</a></li>
 <li>setGoalPosition()&#160;:&#160;<a class="el" href="class_drone.html#a8bb0fc208bfbe8cbc427f4f236fe4e39">Drone</a></li>
+<li>setHighlighted()&#160;:&#160;<a class="el" href="class_triangle.html#a1eaa6931e3451fb195f24a2c1da5f2fc">Triangle</a></li>
 <li>setInitialPosition()&#160;:&#160;<a class="el" href="class_drone.html#a8f7aa3baf1bff990f15d1fe6d4be0a79">Drone</a></li>
-<li>setMap()&#160;:&#160;<a class="el" href="class_canvas.html#a1c7573f5031e9c97f04699e0ba308bb0">Canvas</a></li>
+<li>setLimit()&#160;:&#160;<a class="el" href="class_cities.html#aec5164e4c4c3678c1212b6dbc312ef2c">Cities</a></li>
+<li>setMap()&#160;:&#160;<a class="el" href="class_city.html#aedf709e8522c1f7bf79e54c802f455c1">City</a></li>
+<li>setOpposite()&#160;:&#160;<a class="el" href="class_triangle.html#a27f92765672968ee36819c38c377139b">Triangle</a></li>
 <li>setSpeed()&#160;:&#160;<a class="el" href="class_drone.html#ad6693e9a61008cf9c28efb235da85554">Drone</a></li>
+<li>sortingByPointsRelative()&#160;:&#160;<a class="el" href="class_cities.html#ae262c1a79a63adb3d3769a73a1d8899e">Cities</a></li>
 <li>start()&#160;:&#160;<a class="el" href="class_drone.html#a1a34de39d4f9a80f4272fea73337ca0f">Drone</a></li>
 <li>stop()&#160;:&#160;<a class="el" href="class_drone.html#abbb3667113cd142d7299866cf58265c8">Drone</a></li>
 </ul>
 
 
+<h3><a id="index_t" name="index_t"></a>- t -</h3><ul>
+<li>testPathFinding()&#160;:&#160;<a class="el" href="class_cities.html#a02fbef1c9c8108c6f95cc554cbca448d">Cities</a></li>
+<li>transparencyDraw()&#160;:&#160;<a class="el" href="class_triangle.html#a5d7fd5c3bbb9d818ceeb13f49204ccb3">Triangle</a></li>
+<li>Triangle()&#160;:&#160;<a class="el" href="class_triangle.html#a27ba65a1d5db4b36848e3d6899e7ed36">Triangle</a></li>
+</ul>
+
+
 <h3><a id="index_u" name="index_u"></a>- u -</h3><ul>
-<li>update()&#160;:&#160;<a class="el" href="class_drone.html#aa151b14b7b3660c8e7e910b74c8d4f08">Drone</a>, <a class="el" href="class_main_window.html#a128f71880d4b9683149023fc46fcc9f8">MainWindow</a></li>
+<li>updateSB()&#160;:&#160;<a class="el" href="class_canvas.html#af64171658065e802d3a2451bd03a965d">Canvas</a></li>
+<li>updateVertices()&#160;:&#160;<a class="el" href="class_triangle.html#a4294661184d49e6bd3e29f023f2d58e1">Triangle</a></li>
 </ul>
 
 
@@ -176,9 +277,17 @@ $(function(){ initResizable(false); });
 </ul>
 
 
+<h3><a id="index_w" name="index_w"></a>- w -</h3><ul>
+<li>whichSide()&#160;:&#160;<a class="el" href="class_vector2_d.html#afefd4ee5571fe6ce0fa3a2c448dfaae5">Vector2D</a></li>
+</ul>
+
+
 <h3><a id="index__7E" name="index__7E"></a>- ~ -</h3><ul>
+<li>~Canvas()&#160;:&#160;<a class="el" href="class_canvas.html#a237c4549ad2e27c729cd1f71e89f0fd9">Canvas</a></li>
+<li>~Cities()&#160;:&#160;<a class="el" href="class_cities.html#aaf1290a75de4cb1396ed82de2167c69f">Cities</a></li>
+<li>~City()&#160;:&#160;<a class="el" href="class_city.html#ae95feee8a1d4e1f14ea41ec89b47304f">City</a></li>
 <li>~Drone()&#160;:&#160;<a class="el" href="class_drone.html#a667075abb1eb5c54be6418884a387d14">Drone</a></li>
-<li>~MainWindow()&#160;:&#160;<a class="el" href="class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7">MainWindow</a></li>
+<li>~MyPolygon()&#160;:&#160;<a class="el" href="class_my_polygon.html#a94e1a0a9e8468dbf12073b5d12448106">MyPolygon</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

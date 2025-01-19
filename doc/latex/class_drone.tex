@@ -1,0 +1,788 @@
+\doxysection{Drone Class Reference}
+\hypertarget{class_drone}{}\label{class_drone}\index{Drone@{Drone}}
+
+
+Drone\+\_\+demo project.  
+
+
+
+
+{\ttfamily \#include $<$drone.\+h$>$}
+
+Inheritance diagram for Drone\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_drone}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries drone\+Status} \{ \newline
+{\bfseries landed}
+, {\bfseries takeoff}
+, {\bfseries landing}
+, {\bfseries hovering}
+, \newline
+{\bfseries turning}
+, {\bfseries flying}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_drone_a1701904e4a77b668620ffe92a0f15bf1}{Drone}} (const QString \&p\+\_\+name, QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_drone}{Drone} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_drone_a667075abb1eb5c54be6418884a387d14}{\texorpdfstring{$\sim$}{\string~}\+Drone}} ()
+\item 
+void \mbox{\hyperlink{class_drone_a1a34de39d4f9a80f4272fea73337ca0f}{start}} ()
+\begin{DoxyCompactList}\small\item\em Make the drone takeoff to move to a target position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_drone_abbb3667113cd142d7299866cf58265c8}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Ask for landing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_drone_ad6693e9a61008cf9c28efb235da85554}{set\+Speed}} (double s)
+\begin{DoxyCompactList}\small\item\em set the speed of fly of the drone \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_drone_a8f7aa3baf1bff990f15d1fe6d4be0a79}{set\+Initial\+Position}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&pos)
+\begin{DoxyCompactList}\small\item\em set\+Initial\+Position set the initial position of the drone (takeoff place) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_drone_a8bb0fc208bfbe8cbc427f4f236fe4e39}{set\+Goal\+Position}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&pos)
+\begin{DoxyCompactList}\small\item\em set\+Goal\+Position set the goal position of the drone (landing place) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} \mbox{\hyperlink{class_drone_af9acfa889406ec85fe8a43b1941d1bf3}{get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em get\+Position get the current position of the drone \end{DoxyCompactList}\item 
+drone\+Status \mbox{\hyperlink{class_drone_afafc9ba6fcff0a9b028594b6433adffc}{get\+Status}} ()
+\begin{DoxyCompactList}\small\item\em get\+Status get the current status of the drone \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_drone_a5ccec19f2f37c7d6eeb087e48df247aa}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em get\+Name get the name of the drone \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_drone_a0535438871ce596434f05813be6fb2ce}{get\+Azimut}} ()
+\begin{DoxyCompactList}\small\item\em get\+Azimut get the direction of motion of the drone (angle in degree relatively to the y direction) /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \texorpdfstring{$\ast$}{*} \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_drone_ac36d9fdaf2a0d2e31bb2924f04a0298f}{get\+Power}} ()
+\begin{DoxyCompactList}\small\item\em get the Power rank between 0 and 100 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_drone_a6d7cda9ed3d1a173f107bfef3a635a90}{paint\+Event}} (QPaint\+Event \texorpdfstring{$\ast$}{*}) override
+\item 
+void \mbox{\hyperlink{class_drone_a146d36465d4e260c199dc97c5f2ef105}{resize\+Event}} (QResize\+Event \texorpdfstring{$\ast$}{*}event) override
+\item 
+void \mbox{\hyperlink{class_drone_aa151b14b7b3660c8e7e910b74c8d4f08}{update}} (double dt)
+\item 
+void \mbox{\hyperlink{class_drone_afac93725223c6dfa88f55331edd85768}{init\+Collision}} ()
+\begin{DoxyCompactList}\small\item\em Prepare data for collision detections. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_drone_afddb2c5e752785dca168f58d7568206e}{add\+Collision}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&A, float threshold)
+\begin{DoxyCompactList}\small\item\em Add a collision force. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_drone_a14087b32f7ea35175a36186e1f5f566f}{get\+Nb\+Collisions}} ()
+\begin{DoxyCompactList}\small\item\em Get the number of collisions that have occurred since the drone began moving. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_drone_a06d6c451149b1e9418eaefb3a9aeca90}{has\+Collision}} ()
+\begin{DoxyCompactList}\small\item\em Get if a collision has occurred. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_drone_a1c7c09da3a1d8d9e67fdd402b7a8a0b1}{set\+Dest\+City}} (int \&c)
+\begin{DoxyCompactList}\small\item\em set\+Dest\+City set the final city destination \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_drone_aab88053ca8c7062af17af5f9ff957be3}{get\+Dest\+City}} ()
+\begin{DoxyCompactList}\small\item\em get\+Dest\+City get the final city destination \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_drone_ac886eaaa20cc145b5525602c003abe51}{set\+Current\+City}} (int \&c)
+\begin{DoxyCompactList}\small\item\em set\+Current\+City set the current city \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_drone_a6a7a5401d1db948fa10531e6a2f6b52f}{get\+Current\+City}} ()
+\begin{DoxyCompactList}\small\item\em get\+Current\+City get the current city \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_drone_a46d1a506d237feef77be41f9424ce406}{in\+Dest\+City}} ()
+\begin{DoxyCompactList}\small\item\em in\+Dest\+City check if the drone is in his dest city \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_drone_a6d336e477ca4ae7d28601e096f8d9063}\label{class_drone_a6d336e477ca4ae7d28601e096f8d9063} 
+const double {\bfseries max\+Speed} =50
+\begin{DoxyCompactList}\small\item\em max speed in pixels per second \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_a40543b6a36aabc1171d7ef4124850a52}\label{class_drone_a40543b6a36aabc1171d7ef4124850a52} 
+const double {\bfseries max\+Power} =200
+\begin{DoxyCompactList}\small\item\em max power of drone motors \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_aa702eec241419c8360b51b80d6f29286}\label{class_drone_aa702eec241419c8360b51b80d6f29286} 
+const double {\bfseries takeoff\+Speed} =2.\+5
+\begin{DoxyCompactList}\small\item\em unit/s \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_aa914c392ebe500aa63186a0b1b5e855c}\label{class_drone_aa914c392ebe500aa63186a0b1b5e855c} 
+const double {\bfseries hovering\+Height} =5
+\begin{DoxyCompactList}\small\item\em units \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_aad538d6b86956f7cb011941c06992e93}\label{class_drone_aad538d6b86956f7cb011941c06992e93} 
+const double {\bfseries coef\+Collision} =1000
+\begin{DoxyCompactList}\small\item\em coefficient for collision avoidment \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_ab6681e09ecbb19bfb49378bdd3d1b112}\label{class_drone_ab6681e09ecbb19bfb49378bdd3d1b112} 
+const double {\bfseries damping} =0.\+2
+\begin{DoxyCompactList}\small\item\em damping for motion simulation \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_a408b128f8cefa55dfbc53da173e52f19}\label{class_drone_a408b128f8cefa55dfbc53da173e52f19} 
+const double {\bfseries charging\+Speed} =10
+\begin{DoxyCompactList}\small\item\em speed of charging (power/s) \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_ac7d3282ce0c3400891283566e205dfa2}\label{class_drone_ac7d3282ce0c3400891283566e205dfa2} 
+const double {\bfseries power\+Consumption} =5
+\begin{DoxyCompactList}\small\item\em speed of consumption (power/s) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_drone_a75ab1c901cff1cd40117b211db733899}\label{class_drone_a75ab1c901cff1cd40117b211db733899} 
+int {\bfseries dest\+City\+Id} = -\/2
+\item 
+\Hypertarget{class_drone_ac78af1e669ba213ec613f636a71ff02c}\label{class_drone_ac78af1e669ba213ec613f636a71ff02c} 
+int {\bfseries current\+City\+Id} = -\/1
+\item 
+\Hypertarget{class_drone_ab80b4a7573dbf12f8c295b0f0952ec99}\label{class_drone_ab80b4a7573dbf12f8c295b0f0952ec99} 
+const int {\bfseries compas\+Size} = 48
+\begin{DoxyCompactList}\small\item\em size of the compas image (compas\+Size x compas\+Size) \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_aff9b28040fa3f797ce3c6329179bb4c9}\label{class_drone_aff9b28040fa3f797ce3c6329179bb4c9} 
+const int {\bfseries bar\+Space} = 150
+\begin{DoxyCompactList}\small\item\em minimum size of the Progress\+Bar \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_a36df26e775f422a6df74abdd185bc63c}\label{class_drone_a36df26e775f422a6df74abdd185bc63c} 
+drone\+Status {\bfseries status}
+\begin{DoxyCompactList}\small\item\em status of the drone \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_ad28a7b7fb356db4edcc79da0cca93ca9}\label{class_drone_ad28a7b7fb356db4edcc79da0cca93ca9} 
+double {\bfseries height}
+\begin{DoxyCompactList}\small\item\em current height of the drone \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_a72a835041f01fd55b8a315a6b811881b}\label{class_drone_a72a835041f01fd55b8a315a6b811881b} 
+QString {\bfseries name}
+\begin{DoxyCompactList}\small\item\em name of the drone \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_ac04fecb02613506f58074db57ee488c6}\label{class_drone_ac04fecb02613506f58074db57ee488c6} 
+QProgress\+Bar \texorpdfstring{$\ast$}{*} {\bfseries speed\+PB}
+\begin{DoxyCompactList}\small\item\em progress bar widget for the speed \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_a6786055bfa5b8345336b9518f8b24c07}\label{class_drone_a6786055bfa5b8345336b9518f8b24c07} 
+QProgress\+Bar \texorpdfstring{$\ast$}{*} {\bfseries power\+PB}
+\begin{DoxyCompactList}\small\item\em progress bar widget for the power \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_a1c4e77ec65b47ddaae2a0e2d29f5ea6a}\label{class_drone_a1c4e77ec65b47ddaae2a0e2d29f5ea6a} 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} {\bfseries position}
+\begin{DoxyCompactList}\small\item\em current position of the drone \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_a6c7fdb92102009fa20b5e21d7f0db884}\label{class_drone_a6c7fdb92102009fa20b5e21d7f0db884} 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} {\bfseries goal\+Position}
+\begin{DoxyCompactList}\small\item\em goal position for the drone \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_a38dc018619251cfc499cc0fb42844671}\label{class_drone_a38dc018619251cfc499cc0fb42844671} 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} {\bfseries direction}
+\begin{DoxyCompactList}\small\item\em current direction \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_a6a6223ce74d9de69d795a8584dc1367f}\label{class_drone_a6a6223ce74d9de69d795a8584dc1367f} 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} {\bfseries V}
+\begin{DoxyCompactList}\small\item\em current speed vector \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_aa90a26ccde03c43b58d57cbb9f4ef2e0}\label{class_drone_aa90a26ccde03c43b58d57cbb9f4ef2e0} 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} {\bfseries Force\+Collision}
+\begin{DoxyCompactList}\small\item\em force generated by the collision detection \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_a4cbe7d72da36c27cb58fa797240c9698}\label{class_drone_a4cbe7d72da36c27cb58fa797240c9698} 
+double {\bfseries speed}
+\begin{DoxyCompactList}\small\item\em current speed \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_a7ffe5cfbb988f0f9650c69fb229eb927}\label{class_drone_a7ffe5cfbb988f0f9650c69fb229eb927} 
+double {\bfseries speed\+Setpoint}
+\begin{DoxyCompactList}\small\item\em speed to reach if possible \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_a1eba81b4e971f830fc498a51345d1248}\label{class_drone_a1eba81b4e971f830fc498a51345d1248} 
+double {\bfseries power}
+\begin{DoxyCompactList}\small\item\em current power \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_a17af56928b969a9f2a99ea78bfafa72f}\label{class_drone_a17af56928b969a9f2a99ea78bfafa72f} 
+double {\bfseries azimut}
+\begin{DoxyCompactList}\small\item\em rotation angle of the drone \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_ad4619c071d489711ba7ee9d69a46a3c7}\label{class_drone_ad4619c071d489711ba7ee9d69a46a3c7} 
+QImage {\bfseries compas\+Img}
+\item 
+\Hypertarget{class_drone_ab9f5320910b5400ac4e9d0c8292edab2}\label{class_drone_ab9f5320910b5400ac4e9d0c8292edab2} 
+QImage {\bfseries stop\+Img}
+\item 
+\Hypertarget{class_drone_a19add27702d2136f4d8f135277e12905}\label{class_drone_a19add27702d2136f4d8f135277e12905} 
+QImage {\bfseries takeoff\+Img}
+\item 
+\Hypertarget{class_drone_a8d460a57cb77948877f545137b845a79}\label{class_drone_a8d460a57cb77948877f545137b845a79} 
+QImage {\bfseries landing\+Img}
+\item 
+\Hypertarget{class_drone_a7b9789266ddba9f9a18a4f66bd3ba49d}\label{class_drone_a7b9789266ddba9f9a18a4f66bd3ba49d} 
+bool {\bfseries show\+Collision}
+\begin{DoxyCompactList}\small\item\em true if a collision is detected \end{DoxyCompactList}\item 
+\Hypertarget{class_drone_a580642ee401a0f40d79e19da80d14e6d}\label{class_drone_a580642ee401a0f40d79e19da80d14e6d} 
+int {\bfseries nb\+Collisions} = 0
+\begin{DoxyCompactList}\small\item\em Number of collisions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Drone\+\_\+demo project. 
+
+\begin{DoxyAuthor}{Author}
+B.\+Piranda 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+dec. 2024 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_drone_aeab5eed0a5d06cc3968da277ad2671af}\index{Drone@{Drone}!droneStatus@{droneStatus}}
+\index{droneStatus@{droneStatus}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{droneStatus}{droneStatus}}
+{\footnotesize\ttfamily \label{class_drone_aeab5eed0a5d06cc3968da277ad2671af} 
+enum Drone\+::drone\+Status}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \{\ landed,takeoff,landing,hovering,turning,flying\};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_drone_a1701904e4a77b668620ffe92a0f15bf1}\index{Drone@{Drone}!Drone@{Drone}}
+\index{Drone@{Drone}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{Drone()}{Drone()}}
+{\footnotesize\ttfamily \label{class_drone_a1701904e4a77b668620ffe92a0f15bf1} 
+Drone\+::\+Drone (\begin{DoxyParamCaption}\item[{const QString \&}]{p\+\_\+name}{, }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxylink{class_drone}{Drone} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+name} & name of the drone \\
+\hline
+{\em parent} & parent widget \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007\ \ \ \ \ :\ QWidget\{parent\},\mbox{\hyperlink{class_drone_a72a835041f01fd55b8a315a6b811881b}{name}}(n)\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_drone_a36df26e775f422a6df74abdd185bc63c}{status}}=landed;}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_drone_a4cbe7d72da36c27cb58fa797240c9698}{speed}}=0;}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_drone_a1eba81b4e971f830fc498a51345d1248}{power}}=\mbox{\hyperlink{class_drone_a40543b6a36aabc1171d7ef4124850a52}{maxPower}}/2.0;}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_drone_a6a6223ce74d9de69d795a8584dc1367f}{V}}.\mbox{\hyperlink{class_vector2_d_a973094c245c43d462b2f018ab669baa8}{set}}(0,0);}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{class_drone_aa90a26ccde03c43b58d57cbb9f4ef2e0}{ForceCollision}}.\mbox{\hyperlink{class_vector2_d_a973094c245c43d462b2f018ab669baa8}{set}}(0,0);}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_drone_a1c4e77ec65b47ddaae2a0e2d29f5ea6a}{position}}=\mbox{\hyperlink{class_vector2_d}{Vector2D}}(50,50);}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_drone_a6c7fdb92102009fa20b5e21d7f0db884}{goalPosition}}=\mbox{\hyperlink{class_vector2_d}{Vector2D}}(550,600);}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_drone_a7b9789266ddba9f9a18a4f66bd3ba49d}{showCollision}}=\textcolor{keyword}{false};}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_drone_a17af56928b969a9f2a99ea78bfafa72f}{azimut}}=0;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_drone_ac04fecb02613506f58074db57ee488c6}{speedPB}}=\textcolor{keyword}{new}\ QProgressBar(\textcolor{keyword}{this});}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_drone_ac04fecb02613506f58074db57ee488c6}{speedPB}}-\/>setValue(\mbox{\hyperlink{class_drone_a4cbe7d72da36c27cb58fa797240c9698}{speed}});}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_drone_ac04fecb02613506f58074db57ee488c6}{speedPB}}-\/>setMaximum(\mbox{\hyperlink{class_drone_a6d336e477ca4ae7d28601e096f8d9063}{maxSpeed}});}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_drone_ac04fecb02613506f58074db57ee488c6}{speedPB}}-\/>setMinimum(0);}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_drone_ac04fecb02613506f58074db57ee488c6}{speedPB}}-\/>setFormat(\mbox{\hyperlink{class_drone_a72a835041f01fd55b8a315a6b811881b}{name}}+\textcolor{stringliteral}{"{}\ speed\ \%p\%"{}});}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_drone_ac04fecb02613506f58074db57ee488c6}{speedPB}}-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//speedPB-\/>setStyleSheet("{}QProgressBar::chunk\{background-\/color:red"{});}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_drone_a6786055bfa5b8345336b9518f8b24c07}{powerPB}}=\textcolor{keyword}{new}\ QProgressBar(\textcolor{keyword}{this});}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_drone_a6786055bfa5b8345336b9518f8b24c07}{powerPB}}-\/>setValue(\mbox{\hyperlink{class_drone_a1eba81b4e971f830fc498a51345d1248}{power}});}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_drone_a6786055bfa5b8345336b9518f8b24c07}{powerPB}}-\/>setMaximum(\mbox{\hyperlink{class_drone_a40543b6a36aabc1171d7ef4124850a52}{maxPower}});}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_drone_a6786055bfa5b8345336b9518f8b24c07}{powerPB}}-\/>setMinimum(0);}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_drone_a6786055bfa5b8345336b9518f8b24c07}{powerPB}}-\/>setFormat(\textcolor{stringliteral}{"{}power\ \%p\%"{}});}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_drone_a6786055bfa5b8345336b9518f8b24c07}{powerPB}}-\/>setAlignment(Qt::AlignCenter);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//powerPB-\/>setStyleSheet("{}QProgressBar::chunk\{background-\/color:yellow"{});}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ setBaseSize(\mbox{\hyperlink{class_drone_aff9b28040fa3f797ce3c6329179bb4c9}{barSpace}}+\mbox{\hyperlink{class_drone_ab80b4a7573dbf12f8c295b0f0952ec99}{compasSize}},2*\mbox{\hyperlink{class_drone_ab80b4a7573dbf12f8c295b0f0952ec99}{compasSize}});}
+\DoxyCodeLine{00036\ \ \ \ \ setMinimumHeight(2*\mbox{\hyperlink{class_drone_ab80b4a7573dbf12f8c295b0f0952ec99}{compasSize}});}
+\DoxyCodeLine{00037\ \ \ \ \ setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Fixed);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ compasImg.load(\textcolor{stringliteral}{"{}../../media/compas.png"{}});}
+\DoxyCodeLine{00040\ \ \ \ \ stopImg.load(\textcolor{stringliteral}{"{}../../media/stop.png"{}});}
+\DoxyCodeLine{00041\ \ \ \ \ takeoffImg.load(\textcolor{stringliteral}{"{}../../media/takeoff.png"{}});}
+\DoxyCodeLine{00042\ \ \ \ \ landingImg.load(\textcolor{stringliteral}{"{}../../media/landing.png"{}});}
+\DoxyCodeLine{00043\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_drone_a667075abb1eb5c54be6418884a387d14}\index{Drone@{Drone}!````~Drone@{\texorpdfstring{$\sim$}{\string~}Drone}}
+\index{````~Drone@{\texorpdfstring{$\sim$}{\string~}Drone}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Drone()}{\string~Drone()}}
+{\footnotesize\ttfamily \label{class_drone_a667075abb1eb5c54be6418884a387d14} 
+Drone\+::\texorpdfstring{$\sim$}{\string~}\+Drone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\doxylink{class_drone}{Drone} destructor 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_drone_ac04fecb02613506f58074db57ee488c6}{speedPB}};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_drone_a6786055bfa5b8345336b9518f8b24c07}{powerPB}};}
+\DoxyCodeLine{00048\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_drone_afddb2c5e752785dca168f58d7568206e}\index{Drone@{Drone}!addCollision@{addCollision}}
+\index{addCollision@{addCollision}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{addCollision()}{addCollision()}}
+{\footnotesize\ttfamily \label{class_drone_afddb2c5e752785dca168f58d7568206e} 
+void Drone\+::add\+Collision (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{A}{, }\item[{float}]{threshold}{}\end{DoxyParamCaption})}
+
+
+
+Add a collision force. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & position of the other drone to test \\
+\hline
+{\em threshold} & distance of collision detection \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ AB=B-\/\mbox{\hyperlink{class_drone_a1c4e77ec65b47ddaae2a0e2d29f5ea6a}{position}};}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{double}\ l=AB.\mbox{\hyperlink{class_vector2_d_ab08635b0482451cc43b5b399034eff2f}{length}}();}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordflow}{if}\ (l<threshold)\ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_aa90a26ccde03c43b58d57cbb9f4ef2e0}{ForceCollision}}+=(-\/\mbox{\hyperlink{class_drone_aad538d6b86956f7cb011941c06992e93}{coefCollision}}/threshold)*AB;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a7b9789266ddba9f9a18a4f66bd3ba49d}{showCollision}}=\textcolor{keyword}{true};}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a580642ee401a0f40d79e19da80d14e6d}{nbCollisions}}++;}
+\DoxyCodeLine{00186\ \ \ \ \ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_drone_a0535438871ce596434f05813be6fb2ce}\index{Drone@{Drone}!getAzimut@{getAzimut}}
+\index{getAzimut@{getAzimut}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{getAzimut()}{getAzimut()}}
+{\footnotesize\ttfamily \label{class_drone_a0535438871ce596434f05813be6fb2ce} 
+double Drone\+::get\+Azimut (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Azimut get the direction of motion of the drone (angle in degree relatively to the y direction) /\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \texorpdfstring{$\ast$}{*} 
+
+/\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \texorpdfstring{$\ast$}{*} \begin{DoxyReturn}{Returns}
+the angle in degree 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_drone_a17af56928b969a9f2a99ea78bfafa72f}{azimut}};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_drone_a6a7a5401d1db948fa10531e6a2f6b52f}\index{Drone@{Drone}!getCurrentCity@{getCurrentCity}}
+\index{getCurrentCity@{getCurrentCity}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{getCurrentCity()}{getCurrentCity()}}
+{\footnotesize\ttfamily \label{class_drone_a6a7a5401d1db948fa10531e6a2f6b52f} 
+int Drone\+::get\+Current\+City (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Current\+City get the current city 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00135\ \{\ \textcolor{keywordflow}{return}\ currentCityId;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_drone_aab88053ca8c7062af17af5f9ff957be3}\index{Drone@{Drone}!getDestCity@{getDestCity}}
+\index{getDestCity@{getDestCity}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{getDestCity()}{getDestCity()}}
+{\footnotesize\ttfamily \label{class_drone_aab88053ca8c7062af17af5f9ff957be3} 
+int Drone\+::get\+Dest\+City (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Dest\+City get the final city destination 
+
+\begin{DoxyReturn}{Returns}
+the city id 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00124\ \{\ \textcolor{keywordflow}{return}\ destCityId;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_drone_a5ccec19f2f37c7d6eeb087e48df247aa}\index{Drone@{Drone}!getName@{getName}}
+\index{getName@{getName}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{class_drone_a5ccec19f2f37c7d6eeb087e48df247aa} 
+QString Drone\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Name get the name of the drone 
+
+\begin{DoxyReturn}{Returns}
+the name 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_drone_a72a835041f01fd55b8a315a6b811881b}{name}};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_drone_a14087b32f7ea35175a36186e1f5f566f}\index{Drone@{Drone}!getNbCollisions@{getNbCollisions}}
+\index{getNbCollisions@{getNbCollisions}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{getNbCollisions()}{getNbCollisions()}}
+{\footnotesize\ttfamily \label{class_drone_a14087b32f7ea35175a36186e1f5f566f} 
+int Drone\+::get\+Nb\+Collisions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the number of collisions that have occurred since the drone began moving. 
+
+\begin{DoxyReturn}{Returns}
+the number of collisions 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00106\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_drone_a580642ee401a0f40d79e19da80d14e6d}{nbCollisions}};\};}
+
+\end{DoxyCode}
+\Hypertarget{class_drone_af9acfa889406ec85fe8a43b1941d1bf3}\index{Drone@{Drone}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily \label{class_drone_af9acfa889406ec85fe8a43b1941d1bf3} 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} Drone\+::get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Position get the current position of the drone 
+
+\begin{DoxyReturn}{Returns}
+the position 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_drone_a1c4e77ec65b47ddaae2a0e2d29f5ea6a}{position}};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_drone_ac36d9fdaf2a0d2e31bb2924f04a0298f}\index{Drone@{Drone}!getPower@{getPower}}
+\index{getPower@{getPower}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{getPower()}{getPower()}}
+{\footnotesize\ttfamily \label{class_drone_ac36d9fdaf2a0d2e31bb2924f04a0298f} 
+double Drone\+::get\+Power (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the Power rank between 0 and 100 
+
+\begin{DoxyReturn}{Returns}
+the rank 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086\ \{\ \textcolor{keywordflow}{return}\ 100.0*\mbox{\hyperlink{class_drone_a1eba81b4e971f830fc498a51345d1248}{power}}/\mbox{\hyperlink{class_drone_a40543b6a36aabc1171d7ef4124850a52}{maxPower}};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_drone_afafc9ba6fcff0a9b028594b6433adffc}\index{Drone@{Drone}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily \label{class_drone_afafc9ba6fcff0a9b028594b6433adffc} 
+drone\+Status Drone\+::get\+Status (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Status get the current status of the drone 
+
+\begin{DoxyReturn}{Returns}
+the status 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_drone_a36df26e775f422a6df74abdd185bc63c}{status}};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_drone_a06d6c451149b1e9418eaefb3a9aeca90}\index{Drone@{Drone}!hasCollision@{hasCollision}}
+\index{hasCollision@{hasCollision}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{hasCollision()}{hasCollision()}}
+{\footnotesize\ttfamily \label{class_drone_a06d6c451149b1e9418eaefb3a9aeca90} 
+bool Drone\+::has\+Collision (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get if a collision has occurred. 
+
+\begin{DoxyReturn}{Returns}
+true if collision 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00113\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_drone_a7b9789266ddba9f9a18a4f66bd3ba49d}{showCollision}};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_drone_a46d1a506d237feef77be41f9424ce406}\index{Drone@{Drone}!inDestCity@{inDestCity}}
+\index{inDestCity@{inDestCity}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{inDestCity()}{inDestCity()}}
+{\footnotesize\ttfamily \label{class_drone_a46d1a506d237feef77be41f9424ce406} 
+bool Drone\+::in\+Dest\+City (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+in\+Dest\+City check if the drone is in his dest city 
+
+\begin{DoxyReturn}{Returns}
+true if the drone is in his dest city 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00144\ \{\ \textcolor{keywordflow}{return}\ destCityId\ ==\ currentCityId;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_drone_afac93725223c6dfa88f55331edd85768}\index{Drone@{Drone}!initCollision@{initCollision}}
+\index{initCollision@{initCollision}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{initCollision()}{initCollision()}}
+{\footnotesize\ttfamily \label{class_drone_afac93725223c6dfa88f55331edd85768} 
+void Drone\+::init\+Collision (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Prepare data for collision detections. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \mbox{\hyperlink{class_drone_aa90a26ccde03c43b58d57cbb9f4ef2e0}{ForceCollision}}.\mbox{\hyperlink{class_vector2_d_a973094c245c43d462b2f018ab669baa8}{set}}(0,0);}
+\DoxyCodeLine{00175\ \ \ \ \ \mbox{\hyperlink{class_drone_a7b9789266ddba9f9a18a4f66bd3ba49d}{showCollision}}=\textcolor{keyword}{false};}
+\DoxyCodeLine{00176\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_drone_a6d7cda9ed3d1a173f107bfef3a635a90}\index{Drone@{Drone}!paintEvent@{paintEvent}}
+\index{paintEvent@{paintEvent}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
+{\footnotesize\ttfamily \label{class_drone_a6d7cda9ed3d1a173f107bfef3a635a90} 
+void Drone\+::paint\+Event (\begin{DoxyParamCaption}\item[{QPaint\+Event \texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ QPainter\ painter(\textcolor{keyword}{this});}
+\DoxyCodeLine{00052\ \ \ \ \ QBrush\ whiteBrush(Qt::SolidPattern);}
+\DoxyCodeLine{00053\ \ \ \ \ whiteBrush.setColor(Qt::white);}
+\DoxyCodeLine{00054\ \ \ \ \ QRect\ rect(0,0,\mbox{\hyperlink{class_drone_ab80b4a7573dbf12f8c295b0f0952ec99}{compasSize}},\mbox{\hyperlink{class_drone_ab80b4a7573dbf12f8c295b0f0952ec99}{compasSize}});}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{class_drone_a36df26e775f422a6df74abdd185bc63c}{status}})\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ landed:\ painter.drawImage(rect,stopImg);\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ takeoff:\ painter.drawImage(rect,takeoffImg);\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ landing:\ painter.drawImage(rect,landingImg);\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ default\ :\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ painter.drawImage(rect,\ compasImg);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Inverser\ l'axe\ Y}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ painter.save();}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ painter.translate(\mbox{\hyperlink{class_drone_ab80b4a7573dbf12f8c295b0f0952ec99}{compasSize}}\ /\ 2.0,\ \mbox{\hyperlink{class_drone_ab80b4a7573dbf12f8c295b0f0952ec99}{compasSize}}\ /\ 2.0);\ \textcolor{comment}{//\ Déplacer\ l'origine}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ painter.scale(1,\ -\/1);\ \ \textcolor{comment}{//\ Inverser\ Y}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Dessiner\ l'aiguille\ de\ la\ boussole}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ QPointF\ points[3]\ =\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QPointF(-\/\mbox{\hyperlink{class_drone_ab80b4a7573dbf12f8c295b0f0952ec99}{compasSize}}\ /\ 5.0,\ 0),}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QPointF(\mbox{\hyperlink{class_drone_ab80b4a7573dbf12f8c295b0f0952ec99}{compasSize}}\ /\ 5.0,\ 0),}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QPointF(0,\ \mbox{\hyperlink{class_drone_ab80b4a7573dbf12f8c295b0f0952ec99}{compasSize}}\ /\ 2.2)}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ painter.rotate(\mbox{\hyperlink{class_drone_a17af56928b969a9f2a99ea78bfafa72f}{azimut}});}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ painter.setBrush(Qt::white);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ painter.setPen(Qt::black);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ painter.drawPolygon(points,\ 3);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ painter.setBrush(Qt::red);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ painter.rotate(180);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ painter.drawPolygon(points,\ 3);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ painter.restore();}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_drone_a146d36465d4e260c199dc97c5f2ef105}\index{Drone@{Drone}!resizeEvent@{resizeEvent}}
+\index{resizeEvent@{resizeEvent}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{resizeEvent()}{resizeEvent()}}
+{\footnotesize\ttfamily \label{class_drone_a146d36465d4e260c199dc97c5f2ef105} 
+void Drone\+::resize\+Event (\begin{DoxyParamCaption}\item[{QResize\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ QRect\ rect(\mbox{\hyperlink{class_drone_ab80b4a7573dbf12f8c295b0f0952ec99}{compasSize}}+5,0,width()-\/\mbox{\hyperlink{class_drone_ab80b4a7573dbf12f8c295b0f0952ec99}{compasSize}}-\/5,\mbox{\hyperlink{class_drone_ab80b4a7573dbf12f8c295b0f0952ec99}{compasSize}}/2);}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{class_drone_ac04fecb02613506f58074db57ee488c6}{speedPB}}-\/>setGeometry(rect);}
+\DoxyCodeLine{00092\ \ \ \ \ rect.setRect(\mbox{\hyperlink{class_drone_ab80b4a7573dbf12f8c295b0f0952ec99}{compasSize}}+5,\mbox{\hyperlink{class_drone_ab80b4a7573dbf12f8c295b0f0952ec99}{compasSize}}/2,width()-\/\mbox{\hyperlink{class_drone_ab80b4a7573dbf12f8c295b0f0952ec99}{compasSize}}-\/5,\mbox{\hyperlink{class_drone_ab80b4a7573dbf12f8c295b0f0952ec99}{compasSize}}/2);}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{class_drone_a6786055bfa5b8345336b9518f8b24c07}{powerPB}}-\/>setGeometry(rect);}
+\DoxyCodeLine{00094\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_drone_ac886eaaa20cc145b5525602c003abe51}\index{Drone@{Drone}!setCurrentCity@{setCurrentCity}}
+\index{setCurrentCity@{setCurrentCity}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{setCurrentCity()}{setCurrentCity()}}
+{\footnotesize\ttfamily \label{class_drone_ac886eaaa20cc145b5525602c003abe51} 
+void Drone\+::set\+Current\+City (\begin{DoxyParamCaption}\item[{int \&}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set\+Current\+City set the current city 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00130\ \{\ currentCityId\ =\ c;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_drone_a1c7c09da3a1d8d9e67fdd402b7a8a0b1}\index{Drone@{Drone}!setDestCity@{setDestCity}}
+\index{setDestCity@{setDestCity}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{setDestCity()}{setDestCity()}}
+{\footnotesize\ttfamily \label{class_drone_a1c7c09da3a1d8d9e67fdd402b7a8a0b1} 
+void Drone\+::set\+Dest\+City (\begin{DoxyParamCaption}\item[{int \&}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set\+Dest\+City set the final city destination 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00118\ \{\ destCityId\ =\ c;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_drone_a8bb0fc208bfbe8cbc427f4f236fe4e39}\index{Drone@{Drone}!setGoalPosition@{setGoalPosition}}
+\index{setGoalPosition@{setGoalPosition}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{setGoalPosition()}{setGoalPosition()}}
+{\footnotesize\ttfamily \label{class_drone_a8bb0fc208bfbe8cbc427f4f236fe4e39} 
+void Drone\+::set\+Goal\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set\+Goal\+Position set the goal position of the drone (landing place) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & the position \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \{\ \mbox{\hyperlink{class_drone_a6c7fdb92102009fa20b5e21d7f0db884}{goalPosition}}=pos;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_drone_a8f7aa3baf1bff990f15d1fe6d4be0a79}\index{Drone@{Drone}!setInitialPosition@{setInitialPosition}}
+\index{setInitialPosition@{setInitialPosition}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{setInitialPosition()}{setInitialPosition()}}
+{\footnotesize\ttfamily \label{class_drone_a8f7aa3baf1bff990f15d1fe6d4be0a79} 
+void Drone\+::set\+Initial\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set\+Initial\+Position set the initial position of the drone (takeoff place) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & the position \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056\ \{\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_drone_a36df26e775f422a6df74abdd185bc63c}{status}}==landed)\ \mbox{\hyperlink{class_drone_a1c4e77ec65b47ddaae2a0e2d29f5ea6a}{position}}=pos;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_drone_ad6693e9a61008cf9c28efb235da85554}\index{Drone@{Drone}!setSpeed@{setSpeed}}
+\index{setSpeed@{setSpeed}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{setSpeed()}{setSpeed()}}
+{\footnotesize\ttfamily \label{class_drone_ad6693e9a61008cf9c28efb235da85554} 
+void Drone\+::set\+Speed (\begin{DoxyParamCaption}\item[{double}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set the speed of fly of the drone 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & speed \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \{\ \mbox{\hyperlink{class_drone_a7ffe5cfbb988f0f9650c69fb229eb927}{speedSetpoint}}=(s>\mbox{\hyperlink{class_drone_a6d336e477ca4ae7d28601e096f8d9063}{maxSpeed}}?\mbox{\hyperlink{class_drone_a6d336e477ca4ae7d28601e096f8d9063}{maxSpeed}}:s);\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_drone_a1a34de39d4f9a80f4272fea73337ca0f}\index{Drone@{Drone}!start@{start}}
+\index{start@{start}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{class_drone_a1a34de39d4f9a80f4272fea73337ca0f} 
+void Drone\+::start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Make the drone takeoff to move to a target position. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \{\ \mbox{\hyperlink{class_drone_a36df26e775f422a6df74abdd185bc63c}{status}}=takeoff;\ \mbox{\hyperlink{class_drone_ad28a7b7fb356db4edcc79da0cca93ca9}{height}}=0;\ \mbox{\hyperlink{class_drone_a580642ee401a0f40d79e19da80d14e6d}{nbCollisions}}=0;\ repaint();\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_drone_abbb3667113cd142d7299866cf58265c8}\index{Drone@{Drone}!stop@{stop}}
+\index{stop@{stop}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily \label{class_drone_abbb3667113cd142d7299866cf58265c8} 
+void Drone\+::stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Ask for landing. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \{\ \mbox{\hyperlink{class_drone_a36df26e775f422a6df74abdd185bc63c}{status}}=landing;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_drone_aa151b14b7b3660c8e7e910b74c8d4f08}\index{Drone@{Drone}!update@{update}}
+\index{update@{update}!Drone@{Drone}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_drone_aa151b14b7b3660c8e7e910b74c8d4f08} 
+void Drone\+::update (\begin{DoxyParamCaption}\item[{double}]{dt}{}\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_drone_a36df26e775f422a6df74abdd185bc63c}{status}}==landed)\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a1eba81b4e971f830fc498a51345d1248}{power}}+=dt*\mbox{\hyperlink{class_drone_a408b128f8cefa55dfbc53da173e52f19}{chargingSpeed}};}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_drone_a1eba81b4e971f830fc498a51345d1248}{power}}>\mbox{\hyperlink{class_drone_a40543b6a36aabc1171d7ef4124850a52}{maxPower}})\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a1eba81b4e971f830fc498a51345d1248}{power}}=\mbox{\hyperlink{class_drone_a40543b6a36aabc1171d7ef4124850a52}{maxPower}};}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a6786055bfa5b8345336b9518f8b24c07}{powerPB}}-\/>setValue(\mbox{\hyperlink{class_drone_a1eba81b4e971f830fc498a51345d1248}{power}});}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ repaint();}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_drone_a36df26e775f422a6df74abdd185bc63c}{status}}==takeoff)\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_ad28a7b7fb356db4edcc79da0cca93ca9}{height}}+=dt*\mbox{\hyperlink{class_drone_aa702eec241419c8360b51b80d6f29286}{takeoffSpeed}};}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_drone_ad28a7b7fb356db4edcc79da0cca93ca9}{height}}>=\mbox{\hyperlink{class_drone_aa914c392ebe500aa63186a0b1b5e855c}{hoveringHeight}})\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_ad28a7b7fb356db4edcc79da0cca93ca9}{height}}=\mbox{\hyperlink{class_drone_aa914c392ebe500aa63186a0b1b5e855c}{hoveringHeight}};}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a36df26e775f422a6df74abdd185bc63c}{status}}=hovering;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a1eba81b4e971f830fc498a51345d1248}{power}}-\/=dt*\mbox{\hyperlink{class_drone_ac7d3282ce0c3400891283566e205dfa2}{powerConsumption}};}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_drone_a1eba81b4e971f830fc498a51345d1248}{power}}<20+\mbox{\hyperlink{class_drone_ac7d3282ce0c3400891283566e205dfa2}{powerConsumption}}/\mbox{\hyperlink{class_drone_aa702eec241419c8360b51b80d6f29286}{takeoffSpeed}})\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a36df26e775f422a6df74abdd185bc63c}{status}}=landing;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a4cbe7d72da36c27cb58fa797240c9698}{speed}}=0;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a6786055bfa5b8345336b9518f8b24c07}{powerPB}}-\/>setValue(\mbox{\hyperlink{class_drone_a1eba81b4e971f830fc498a51345d1248}{power}});}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ repaint();}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00121\ \ \ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_drone_a36df26e775f422a6df74abdd185bc63c}{status}}==landing)\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_ad28a7b7fb356db4edcc79da0cca93ca9}{height}}-\/=dt*\mbox{\hyperlink{class_drone_aa702eec241419c8360b51b80d6f29286}{takeoffSpeed}};}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_drone_ad28a7b7fb356db4edcc79da0cca93ca9}{height}}<=0)\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_ad28a7b7fb356db4edcc79da0cca93ca9}{height}}=0;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a36df26e775f422a6df74abdd185bc63c}{status}}=landed;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a7b9789266ddba9f9a18a4f66bd3ba49d}{showCollision}}=\textcolor{keyword}{false};}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a1eba81b4e971f830fc498a51345d1248}{power}}-\/=dt*\mbox{\hyperlink{class_drone_ac7d3282ce0c3400891283566e205dfa2}{powerConsumption}};}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a6786055bfa5b8345336b9518f8b24c07}{powerPB}}-\/>setValue(\mbox{\hyperlink{class_drone_a1eba81b4e971f830fc498a51345d1248}{power}});}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ repaint();}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00134\ \ \ \ \ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_drone_a36df26e775f422a6df74abdd185bc63c}{status}}>=hovering)\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ toGoal=\mbox{\hyperlink{class_drone_a6c7fdb92102009fa20b5e21d7f0db884}{goalPosition}}-\/\mbox{\hyperlink{class_drone_a1c4e77ec65b47ddaae2a0e2d29f5ea6a}{position}};}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ distance\ =\ toGoal.\mbox{\hyperlink{class_vector2_d_ab08635b0482451cc43b5b399034eff2f}{length}}();}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ damp=\ 1-\/dt*(1-\/\mbox{\hyperlink{class_drone_ab6681e09ecbb19bfb49378bdd3d1b112}{damping}});}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a6a6223ce74d9de69d795a8584dc1367f}{V}}\ =\ damp*\mbox{\hyperlink{class_drone_a6a6223ce74d9de69d795a8584dc1367f}{V}}+((\mbox{\hyperlink{class_drone_a40543b6a36aabc1171d7ef4124850a52}{maxPower}}*dt/distance)*toGoal)+dt*\mbox{\hyperlink{class_drone_aa90a26ccde03c43b58d57cbb9f4ef2e0}{ForceCollision}};}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a1c4e77ec65b47ddaae2a0e2d29f5ea6a}{position}}\ +=\ dt*\mbox{\hyperlink{class_drone_a6a6223ce74d9de69d795a8584dc1367f}{V}};}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a4cbe7d72da36c27cb58fa797240c9698}{speed}}=\mbox{\hyperlink{class_drone_a6a6223ce74d9de69d795a8584dc1367f}{V}}.\mbox{\hyperlink{class_vector2_d_ab08635b0482451cc43b5b399034eff2f}{length}}();}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ Vn\ =\ (1.0/\mbox{\hyperlink{class_drone_a4cbe7d72da36c27cb58fa797240c9698}{speed}})*\mbox{\hyperlink{class_drone_a6a6223ce74d9de69d795a8584dc1367f}{V}};}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Vn.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}==0)\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (Vn.x>0)\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a17af56928b969a9f2a99ea78bfafa72f}{azimut}}\ =\ -\/90;}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a17af56928b969a9f2a99ea78bfafa72f}{azimut}}\ =\ 90.0;}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (Vn.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}>0)\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a17af56928b969a9f2a99ea78bfafa72f}{azimut}}\ =\ 180.0-\/180.0*atan(Vn.x/Vn.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}})/M\_PI;}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a17af56928b969a9f2a99ea78bfafa72f}{azimut}}\ =\ -\/180.0*atan(Vn.x/Vn.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}})/M\_PI;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (toGoal.\mbox{\hyperlink{class_vector2_d_ab08635b0482451cc43b5b399034eff2f}{length}}()<1.0\ \&\&\ \mbox{\hyperlink{class_drone_a4cbe7d72da36c27cb58fa797240c9698}{speed}}<10)\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a6a6223ce74d9de69d795a8584dc1367f}{V}}.\mbox{\hyperlink{class_vector2_d_a973094c245c43d462b2f018ab669baa8}{set}}(0,0);}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a4cbe7d72da36c27cb58fa797240c9698}{speed}}=0;}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a36df26e775f422a6df74abdd185bc63c}{status}}=landing;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_ac04fecb02613506f58074db57ee488c6}{speedPB}}-\/>setValue(\mbox{\hyperlink{class_drone_a4cbe7d72da36c27cb58fa797240c9698}{speed}});}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a1eba81b4e971f830fc498a51345d1248}{power}}-\/=dt*\mbox{\hyperlink{class_drone_ac7d3282ce0c3400891283566e205dfa2}{powerConsumption}};}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_drone_a1eba81b4e971f830fc498a51345d1248}{power}}<20+\mbox{\hyperlink{class_drone_ac7d3282ce0c3400891283566e205dfa2}{powerConsumption}}/\mbox{\hyperlink{class_drone_aa702eec241419c8360b51b80d6f29286}{takeoffSpeed}})\ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a4cbe7d72da36c27cb58fa797240c9698}{speed}}=0;}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a6a6223ce74d9de69d795a8584dc1367f}{V}}.\mbox{\hyperlink{class_vector2_d_a973094c245c43d462b2f018ab669baa8}{set}}(0,0);}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a36df26e775f422a6df74abdd185bc63c}{status}}=landing;}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone_a6786055bfa5b8345336b9518f8b24c07}{powerPB}}-\/>setValue(\mbox{\hyperlink{class_drone_a1eba81b4e971f830fc498a51345d1248}{power}});}
+\DoxyCodeLine{00169\ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \ \ repaint();}
+\DoxyCodeLine{00171\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+drone.\+h\item 
+drone.\+cpp\end{DoxyCompactItemize}

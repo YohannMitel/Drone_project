@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['set_0',['set',['../class_vector2_d.html#a973094c245c43d462b2f018ab669baa8',1,'Vector2D']]],
-  ['setgoalposition_1',['setGoalPosition',['../class_drone.html#a8bb0fc208bfbe8cbc427f4f236fe4e39',1,'Drone']]],
-  ['setinitialposition_2',['setInitialPosition',['../class_drone.html#a8f7aa3baf1bff990f15d1fe6d4be0a79',1,'Drone']]],
-  ['setmap_3',['setMap',['../class_canvas.html#a1c7573f5031e9c97f04699e0ba308bb0',1,'Canvas']]],
-  ['setspeed_4',['setSpeed',['../class_drone.html#ad6693e9a61008cf9c28efb235da85554',1,'Drone']]],
-  ['start_5',['start',['../class_drone.html#a1a34de39d4f9a80f4272fea73337ca0f',1,'Drone']]],
-  ['stop_6',['stop',['../class_drone.html#abbb3667113cd142d7299866cf58265c8',1,'Drone']]]
+  ['paintevent_0',['paintEvent',['../class_canvas.html#a67dbba80855f3b4fb95c26d5012f7ccc',1,'Canvas']]],
+  ['polarcomparison_1',['polarComparison',['../class_vector2_d.html#a4231f74d46fcb33712df77afcb9066ae',1,'Vector2D']]],
+  ['processpoly_2',['processPoly',['../class_canvas.html#aebc60f04885f4d900a45044ca4a5c230',1,'Canvas']]],
+  ['processvoronoi_3',['processVoronoi',['../class_canvas.html#a9ef5ceffb7e43a85f446d47177565afb',1,'Canvas']]],
+  ['projection_4',['projection',['../class_vector2_d.html#a58d3663755d0d5022cc392620056f6b1',1,'Vector2D']]],
+  ['pushcity_5',['pushCity',['../class_cities.html#a0757a978984d8e828614b3f5e39f1eb2',1,'Cities']]]
 ];

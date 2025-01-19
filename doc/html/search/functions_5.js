@@ -1,4 +1,32 @@
 var searchData=
 [
-  ['initcollision_0',['initCollision',['../class_drone.html#afac93725223c6dfa88f55331edd85768',1,'Drone']]]
+  ['get2x2from3x3_0',['get2x2From3x3',['../class_matrix22.html#a847e41917439faa7d5707bbf1332b5a0',1,'Matrix22']]],
+  ['get3x3from4x4_1',['get3x3From4x4',['../class_matrix33.html#af5d566e26f06afb7937b70fc86d568dd',1,'Matrix33']]],
+  ['getazimut_2',['getAzimut',['../class_drone.html#a0535438871ce596434f05813be6fb2ce',1,'Drone']]],
+  ['getbox_3',['getBox',['../class_canvas.html#a36400779155b40787ab5f192d1168c54',1,'Canvas']]],
+  ['getcanvasintersectionlimit_4',['getCanvasIntersectionLimit',['../class_vector2_d.html#a7808cd7f0c715a3b7cefb5b8d2fa09fb',1,'Vector2D']]],
+  ['getcirclecenter_5',['getCircleCenter',['../class_triangle.html#a1fa027b0ad66f77a65763a485d99ebd7',1,'Triangle']]],
+  ['getcitiesinfos_6',['getCitiesInfos',['../class_canvas.html#a95b3c6439fcf6efc455d9a88854d15c2',1,'Canvas']]],
+  ['getcitybyname_7',['getCityByName',['../class_cities.html#ae5b273bec3b38b1fe3564d52350e2c46',1,'Cities']]],
+  ['getcolor_8',['getColor',['../class_city.html#af29eea28eba981c1995ea79cd94f5ed1',1,'City']]],
+  ['getcurrentcity_9',['getCurrentCity',['../class_drone.html#a6a7a5401d1db948fa10531e6a2f6b52f',1,'Drone']]],
+  ['getdestcity_10',['getDestCity',['../class_drone.html#aab88053ca8c7062af17af5f9ff957be3',1,'Drone']]],
+  ['getedgefrom_11',['getEdgeFrom',['../class_triangle.html#a0d7c5009e1cff0e5fb86b1779f0c87fd',1,'Triangle']]],
+  ['getedgeto_12',['getEdgeTo',['../class_triangle.html#a22c7ad03ea4e92bb859f3806675aca84',1,'Triangle']]],
+  ['getmap_13',['getMap',['../class_canvas.html#a0e2a9e3404e5aba5b072d8f4fb9ab79d',1,'Canvas::getMap()'],['../class_city.html#a986acd8e0097e1cf5de1ac159b1605e3',1,'City::getMap()']]],
+  ['getname_14',['getName',['../class_city.html#ad73598d937870a165cb530958106ff07',1,'City::getName()'],['../class_drone.html#a5ccec19f2f37c7d6eeb087e48df247aa',1,'Drone::getName()']]],
+  ['getnbcollisions_15',['getNbCollisions',['../class_drone.html#a14087b32f7ea35175a36186e1f5f566f',1,'Drone']]],
+  ['getopposite_16',['getOpposite',['../class_triangle.html#ac6a3d7227338d8abdacd9822ba5c3d49',1,'Triangle']]],
+  ['getpointbyindex_17',['getPointByIndex',['../class_cities.html#ac5b25150e8030ebebb24db26271d1c2a',1,'Cities']]],
+  ['getposition_18',['getPosition',['../class_city.html#a7f7a9743ff8a46dfd83e67ca45b7d57e',1,'City::getPosition()'],['../class_drone.html#af9acfa889406ec85fe8a43b1941d1bf3',1,'Drone::getPosition()']]],
+  ['getpower_19',['getPower',['../class_drone.html#ac36d9fdaf2a0d2e31bb2924f04a0298f',1,'Drone']]],
+  ['getprocesspolystate_20',['getProcessPolyState',['../class_canvas.html#a717e89de1ecd0e11a140ca5268ef7f7c',1,'Canvas']]],
+  ['getsize_21',['getSize',['../class_cities.html#acbfaef7e0197f38e6a4a492d2660a420',1,'Cities']]],
+  ['getsizeoft_22',['getSizeofT',['../class_canvas.html#a5233eb6cb36a66bde65b0e4abf01e617',1,'Canvas']]],
+  ['getsizeofv_23',['getSizeofV',['../class_canvas.html#a99f4cab25a899653f9337ad36e4a3177',1,'Canvas']]],
+  ['getstatus_24',['getStatus',['../class_drone.html#afafc9ba6fcff0a9b028594b6433adffc',1,'Drone']]],
+  ['gettabcities_25',['getTabCities',['../class_cities.html#afcebf01ed63f80864af34d67d6aa9057',1,'Cities']]],
+  ['gettabvertices_26',['getTabVertices',['../class_cities.html#a661ac7389993fc6a7b6ec64800fcb9ad',1,'Cities']]],
+  ['getvertexptr_27',['getVertexPtr',['../class_triangle.html#acb129650e51a79a3af1de56673304320',1,'Triangle']]],
+  ['getvertices_28',['getVertices',['../class_my_polygon.html#a3e1b746bb99b2185aa7a0be2ad51242a',1,'MyPolygon']]]
 ];

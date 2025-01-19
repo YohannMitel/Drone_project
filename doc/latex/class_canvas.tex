@@ -1,0 +1,1540 @@
+\doxysection{Canvas Class Reference}
+\hypertarget{class_canvas}{}\label{class_canvas}\index{Canvas@{Canvas}}
+
+
+Drone\+\_\+demo project.  
+
+
+
+
+{\ttfamily \#include $<$canvas.\+h$>$}
+
+Inheritance diagram for Canvas\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_canvas}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_canvas_af64171658065e802d3a2451bd03a965d}{update\+SB}} (QString s)
+\begin{DoxyCompactList}\small\item\em Updates the status bar with a given message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_canvas_aeea65f2bfc2be61bdbcaaa3a67c33185}{Canvas}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_canvas}{Canvas} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_canvas_a237c4549ad2e27c729cd1f71e89f0fd9}{\texorpdfstring{$\sim$}{\string~}\+Canvas}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_canvas}{Canvas} class. \end{DoxyCompactList}\item 
+QVector$<$ \mbox{\hyperlink{class_drone}{Drone}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_canvas_a0e2a9e3404e5aba5b072d8f4fb9ab79d}{get\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Gets the list of drones. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_canvas_a717e89de1ecd0e11a140ca5268ef7f7c}{get\+Process\+Poly\+State}} ()
+\begin{DoxyCompactList}\small\item\em Gets the state of the polygon processing flag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_canvas_a67dbba80855f3b4fb95c26d5012f7ccc}{paint\+Event}} (QPaint\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Handles the paint event for the canvas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_canvas_ac766a4e369f781943df021b80e5922c4}{mouse\+Press\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Handles mouse press events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_canvas_a02da07de074f8a6a92b346fd521ba018}{load\+Mesh}} (const QString \&title)
+\begin{DoxyCompactList}\small\item\em Loads a mesh file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_canvas_af6760030ef7aaf5cf73e89fbb55bee26}{resize\+Event}} (QResize\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Handles resize events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_canvas_ae9f5a1c5981b802814aa5b189faba710}{mouse\+Move\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event) override
+\begin{DoxyCompactList}\small\item\em Handles mouse move events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_canvas_a17ae75cd1dc0380f00481efaca896cd5}{add\+Points}} (QString \&name, const QVector$<$ \mbox{\hyperlink{class_vector2_d}{Vector2D}} $>$ \&tab)
+\begin{DoxyCompactList}\small\item\em Adds a set of points to the canvas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_canvas_a9be51dab63db480d6c237d45cc4a178a}{add\+Triangle}} (int id0, int id1, int id2)
+\begin{DoxyCompactList}\small\item\em Adds a triangle defined by three vertex indices. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_canvas_af2cb96ecee7fad0337ddc3e373027769}{add\+Triangle}} (int id0, int id1, int id2, const QColor \&color)
+\begin{DoxyCompactList}\small\item\em Adds a triangle with a specified color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_canvas_ac4559a6535f497f17415032632aa9f6a}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears all elements from the canvas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_canvas_a7c6aa7f3b2af6d97f2f9358d3e66951d}{re\+Scale}} ()
+\begin{DoxyCompactList}\small\item\em Rescales the canvas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_canvas_a99f4cab25a899653f9337ad36e4a3177}{get\+SizeofV}} ()
+\begin{DoxyCompactList}\small\item\em Gets the size of the vertices list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_canvas_a5233eb6cb36a66bde65b0e4abf01e617}{get\+SizeofT}} ()
+\begin{DoxyCompactList}\small\item\em Gets the size of the triangles list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_canvas_a875b0b334afc2eb857604adddc118671}{check\+Delaunay}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the Delaunay condition is satisfied for all triangles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_canvas_a1f4f7e4221b1e378d99e498b0e9f3b89}{flipp\+All}} ()
+\begin{DoxyCompactList}\small\item\em Flips all non-\/\+Delaunay edges. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_canvas_a9ef5ceffb7e43a85f446d47177565afb}{process\+Voronoi}} (\mbox{\hyperlink{class_city}{City}} \&city)
+\begin{DoxyCompactList}\small\item\em Processes the Voronoi diagram for a given city. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_canvas_a0c866cccd753e3a59ab4d152f2d81f66}{is\+Outside\+Canvas}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&point) const
+\begin{DoxyCompactList}\small\item\em Checks if a point is outside the canvas boundaries. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_canvas_a63228e07e968ff5b5af221ba3534d48b}{finalize\+Polygon}} (\mbox{\hyperlink{class_city}{City}} \&city, const QVector$<$ \mbox{\hyperlink{class_vector2_d}{Vector2D}} $>$ \&Lordered, bool is\+Closed)
+\begin{DoxyCompactList}\small\item\em Finalizes a polygon for a given city. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_canvas_aebc60f04885f4d900a45044ca4a5c230}{process\+Poly}} ()
+\begin{DoxyCompactList}\small\item\em Processes a polygon for rendering or analysis. \end{DoxyCompactList}\item 
+QVector$<$ const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_canvas_a4be165c96a43cc3c780e211f5e7cc6c8}{find\+Opposite\+Point\+Of\+Triangles\+With\+Edge\+Common}} (const \mbox{\hyperlink{class_triangle}{Triangle}} \&tri)
+\begin{DoxyCompactList}\small\item\em Finds the opposite points of triangles sharing a common edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} \mbox{\hyperlink{class_canvas_a63db1f7f5f0983b3bf64c53e9bb803f3}{calculate\+Intersection}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&p1, const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&p2, float minX, float minY, float maxX, float maxY)
+\begin{DoxyCompactList}\small\item\em Calculates the intersection of a line with a bounding box. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_canvas_a8722fdb0a7e30a942bb84b5c4f048ac0}{drone\+Sequence}} (\mbox{\hyperlink{class_drone}{Drone}} \&d)
+\begin{DoxyCompactList}\small\item\em Executes a sequence of actions for a given drone. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_canvas_a95b3c6439fcf6efc455d9a88854d15c2}{get\+Cities\+Infos}} ()
+\begin{DoxyCompactList}\small\item\em Get the cities informations with number of drones in each cities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_canvas_a902077fa3f78b9de8c7de3fdb7f1d55a}\label{class_canvas_a902077fa3f78b9de8c7de3fdb7f1d55a} 
+const int {\bfseries drone\+Icon\+Size} = 64
+\begin{DoxyCompactList}\small\item\em Size of the drone icon in the canvas. \end{DoxyCompactList}\item 
+\Hypertarget{class_canvas_a5226f7b0b1190ff98adb88f2f79c9b5c}\label{class_canvas_a5226f7b0b1190ff98adb88f2f79c9b5c} 
+const double {\bfseries drone\+Collision\+Distance} = \mbox{\hyperlink{class_canvas_a902077fa3f78b9de8c7de3fdb7f1d55a}{drone\+Icon\+Size}} \texorpdfstring{$\ast$}{*} 1.\+5
+\begin{DoxyCompactList}\small\item\em Distance to detect collision with another drone. \end{DoxyCompactList}\item 
+\Hypertarget{class_canvas_a0363c9a3f54977367bfdb89421304e56}\label{class_canvas_a0363c9a3f54977367bfdb89421304e56} 
+bool {\bfseries flipped} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if the canvas is flipped. \end{DoxyCompactList}\item 
+\Hypertarget{class_canvas_adec15319e8610b6a4a016f70970ee82f}\label{class_canvas_adec15319e8610b6a4a016f70970ee82f} 
+bool {\bfseries show\+Triangles} = true
+\begin{DoxyCompactList}\small\item\em Flag to show or hide triangles. \end{DoxyCompactList}\item 
+\Hypertarget{class_canvas_ac1a1b0d3b6fa9d3c4aa30c014e15051c}\label{class_canvas_ac1a1b0d3b6fa9d3c4aa30c014e15051c} 
+bool {\bfseries show\+Centers} = false
+\begin{DoxyCompactList}\small\item\em Flag to show or hide triangle centers. \end{DoxyCompactList}\item 
+\Hypertarget{class_canvas_abb70425f30be2b4b97e56bb56486a525}\label{class_canvas_abb70425f30be2b4b97e56bb56486a525} 
+bool {\bfseries show\+Circles} = false
+\begin{DoxyCompactList}\small\item\em Flag to show or hide circles. \end{DoxyCompactList}\item 
+\Hypertarget{class_canvas_ac577f4cc29e3b1a9bcfc7080a5210a75}\label{class_canvas_ac577f4cc29e3b1a9bcfc7080a5210a75} 
+bool {\bfseries voronoi\+Transparency} = false
+\begin{DoxyCompactList}\small\item\em Flag to enable or disable Voronoi transparency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+QPair$<$ \mbox{\hyperlink{class_vector2_d}{Vector2D}}, \mbox{\hyperlink{class_vector2_d}{Vector2D}} $>$ \mbox{\hyperlink{class_canvas_a36400779155b40787ab5f192d1168c54}{get\+Box}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the bounding box. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_canvas_a3d8eeaed74c759f4b6d4e47531df2823}\label{class_canvas_a3d8eeaed74c759f4b6d4e47531df2823} 
+QVector$<$ \mbox{\hyperlink{class_drone}{Drone}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries map\+Drones}
+\begin{DoxyCompactList}\small\item\em Vector containing pointers to drones. \end{DoxyCompactList}\item 
+\Hypertarget{class_canvas_a44d7f1a477fa5d0f28f622f8e23166ec}\label{class_canvas_a44d7f1a477fa5d0f28f622f8e23166ec} 
+QImage {\bfseries drone\+Img}
+\begin{DoxyCompactList}\small\item\em Image representing a drone on the canvas. \end{DoxyCompactList}\item 
+\Hypertarget{class_canvas_aa3de99c5a524030b65b136f565879abd}\label{class_canvas_aa3de99c5a524030b65b136f565879abd} 
+QVector$<$ \mbox{\hyperlink{class_triangle}{Triangle}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries triangles}
+\begin{DoxyCompactList}\small\item\em Vector containing pointers to triangles. \end{DoxyCompactList}\item 
+\Hypertarget{class_canvas_a4ce6a9bde445736415e5bc834abea5f3}\label{class_canvas_a4ce6a9bde445736415e5bc834abea5f3} 
+bool {\bfseries process\+Poly\+State} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if polygon processing is enabled. \end{DoxyCompactList}\item 
+\Hypertarget{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}\label{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6} 
+\mbox{\hyperlink{class_cities}{Cities}} \texorpdfstring{$\ast$}{*} {\bfseries cities} = new \mbox{\hyperlink{class_cities}{Cities}}()
+\begin{DoxyCompactList}\small\item\em Pointer to the cities object. \end{DoxyCompactList}\item 
+\Hypertarget{class_canvas_a387509ed6ea92c766ec53cef653deab1}\label{class_canvas_a387509ed6ea92c766ec53cef653deab1} 
+float {\bfseries scale} = 0.\+5
+\begin{DoxyCompactList}\small\item\em Scaling factor for the canvas. \end{DoxyCompactList}\item 
+\Hypertarget{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}\label{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909} 
+QPoint {\bfseries origin} = QPoint(10, 10)
+\begin{DoxyCompactList}\small\item\em Origin point of the canvas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Drone\+\_\+demo project. 
+
+\begin{DoxyAuthor}{Author}
+B.\+Piranda 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Dec. 2024
+\end{DoxyDate}
+The \doxylink{class_canvas}{Canvas} class represents the drawing area for drones, cities, and other elements. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_canvas_aeea65f2bfc2be61bdbcaaa3a67c33185}\index{Canvas@{Canvas}!Canvas@{Canvas}}
+\index{Canvas@{Canvas}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{Canvas()}{Canvas()}}
+{\footnotesize\ttfamily \label{class_canvas_aeea65f2bfc2be61bdbcaaa3a67c33185} 
+Canvas\+::\+Canvas (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor for the \doxylink{class_canvas}{Canvas} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to the parent widget. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ :\ QWidget\{parent\}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_canvas_a44d7f1a477fa5d0f28f622f8e23166ec}{droneImg}}.load(\textcolor{stringliteral}{"{}../../media/drone.png"{}});}
+\DoxyCodeLine{00015\ \ \ \ \ setMouseTracking(\textcolor{keyword}{true});}
+\DoxyCodeLine{00016\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_a237c4549ad2e27c729cd1f71e89f0fd9}\index{Canvas@{Canvas}!````~Canvas@{\texorpdfstring{$\sim$}{\string~}Canvas}}
+\index{````~Canvas@{\texorpdfstring{$\sim$}{\string~}Canvas}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Canvas()}{\string~Canvas()}}
+{\footnotesize\ttfamily \label{class_canvas_a237c4549ad2e27c729cd1f71e89f0fd9} 
+Canvas\+::\texorpdfstring{$\sim$}{\string~}\+Canvas (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor for the \doxylink{class_canvas}{Canvas} class. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_canvas_ac4559a6535f497f17415032632aa9f6a}{clear}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_triangle}{Triangle}}*\ tri\ :\ \mbox{\hyperlink{class_canvas_aa3de99c5a524030b65b136f565879abd}{triangles}})\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ tri;\ \ \textcolor{comment}{//\ Libère\ la\ mémoire\ allouée\ pour\ chaque\ Triangle}}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}};}
+\DoxyCodeLine{00026\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_canvas_a17ae75cd1dc0380f00481efaca896cd5}\index{Canvas@{Canvas}!addPoints@{addPoints}}
+\index{addPoints@{addPoints}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{addPoints()}{addPoints()}}
+{\footnotesize\ttfamily \label{class_canvas_a17ae75cd1dc0380f00481efaca896cd5} 
+void Canvas\+::add\+Points (\begin{DoxyParamCaption}\item[{QString \&}]{name}{, }\item[{const QVector$<$ \mbox{\hyperlink{class_vector2_d}{Vector2D}} $>$ \&}]{tab}{}\end{DoxyParamCaption})}
+
+
+
+Adds a set of points to the canvas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name associated with the points. \\
+\hline
+{\em tab} & Vector containing the points. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&pt:tab)\ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ duplicate\ the\ point\ to\ get\ a\ local\ permanent\ version}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_a0757a978984d8e828614b3f5e39f1eb2}{pushCity}}(name\ ,\textcolor{keyword}{new}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}(pt),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00200\ \ \ \ \ \}}
+\DoxyCodeLine{00201\ \ \ \ \ \mbox{\hyperlink{class_canvas_a7c6aa7f3b2af6d97f2f9358d3e66951d}{reScale}}();}
+\DoxyCodeLine{00202\ \ \ \ \ update();}
+\DoxyCodeLine{00203\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_a9be51dab63db480d6c237d45cc4a178a}\index{Canvas@{Canvas}!addTriangle@{addTriangle}}
+\index{addTriangle@{addTriangle}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{addTriangle()}{addTriangle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_canvas_a9be51dab63db480d6c237d45cc4a178a} 
+void Canvas\+::add\+Triangle (\begin{DoxyParamCaption}\item[{int}]{id0}{, }\item[{int}]{id1}{, }\item[{int}]{id2}{}\end{DoxyParamCaption})}
+
+
+
+Adds a triangle defined by three vertex indices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id0} & Index of the first vertex. \\
+\hline
+{\em id1} & Index of the second vertex. \\
+\hline
+{\em id2} & Index of the third vertex. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \mbox{\hyperlink{class_canvas_aa3de99c5a524030b65b136f565879abd}{triangles}}.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_triangle}{Triangle}}(\mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_ac5b25150e8030ebebb24db26271d1c2a}{getPointByIndex}}(id0),\mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_ac5b25150e8030ebebb24db26271d1c2a}{getPointByIndex}}(id1),\mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_ac5b25150e8030ebebb24db26271d1c2a}{getPointByIndex}}(id2)));}
+\DoxyCodeLine{00208\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_af2cb96ecee7fad0337ddc3e373027769}\index{Canvas@{Canvas}!addTriangle@{addTriangle}}
+\index{addTriangle@{addTriangle}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{addTriangle()}{addTriangle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_canvas_af2cb96ecee7fad0337ddc3e373027769} 
+void Canvas\+::add\+Triangle (\begin{DoxyParamCaption}\item[{int}]{id0}{, }\item[{int}]{id1}{, }\item[{int}]{id2}{, }\item[{const QColor \&}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Adds a triangle with a specified color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id0} & Index of the first vertex. \\
+\hline
+{\em id1} & Index of the second vertex. \\
+\hline
+{\em id2} & Index of the third vertex. \\
+\hline
+{\em color} & Color of the triangle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \mbox{\hyperlink{class_canvas_aa3de99c5a524030b65b136f565879abd}{triangles}}.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_triangle}{Triangle}}(\mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_ac5b25150e8030ebebb24db26271d1c2a}{getPointByIndex}}(id0),\mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_ac5b25150e8030ebebb24db26271d1c2a}{getPointByIndex}}(id1),\mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_ac5b25150e8030ebebb24db26271d1c2a}{getPointByIndex}}(id2),color));}
+\DoxyCodeLine{00212\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_a63db1f7f5f0983b3bf64c53e9bb803f3}\index{Canvas@{Canvas}!calculateIntersection@{calculateIntersection}}
+\index{calculateIntersection@{calculateIntersection}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{calculateIntersection()}{calculateIntersection()}}
+{\footnotesize\ttfamily \label{class_canvas_a63db1f7f5f0983b3bf64c53e9bb803f3} 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} Canvas\+::calculate\+Intersection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{p1}{, }\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{p2}{, }\item[{float}]{minX}{, }\item[{float}]{minY}{, }\item[{float}]{maxX}{, }\item[{float}]{maxY}{}\end{DoxyParamCaption})}
+
+
+
+Calculates the intersection of a line with a bounding box. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & The starting point of the line. \\
+\hline
+{\em p2} & The ending point of the line. \\
+\hline
+{\em minX} & Minimum x-\/coordinate of the bounding box. \\
+\hline
+{\em minY} & Minimum y-\/coordinate of the bounding box. \\
+\hline
+{\em maxX} & Maximum x-\/coordinate of the bounding box. \\
+\hline
+{\em maxY} & Maximum y-\/coordinate of the bounding box. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The intersection point. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00461\ \ \ \ \ \textcolor{keywordtype}{float}\ dx\ =\ p2.x\ -\/\ p1.x;}
+\DoxyCodeLine{00462\ \ \ \ \ \textcolor{keywordtype}{float}\ dy\ =\ p2.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ -\/\ p1.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}};}
+\DoxyCodeLine{00463\ }
+\DoxyCodeLine{00464\ \ \ \ \ \textcolor{comment}{//\ Intersection\ points}}
+\DoxyCodeLine{00465\ \ \ \ \ QVector<Vector2D>\ intersections;}
+\DoxyCodeLine{00466\ }
+\DoxyCodeLine{00467\ \ \ \ \ \textcolor{comment}{//\ Check\ vertical\ boundaries\ (minX\ and\ maxX)}}
+\DoxyCodeLine{00468\ \ \ \ \ \textcolor{keywordflow}{if}\ (dx\ !=\ 0)\ \{}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ t1\ =\ (minX\ -\/\ p1.x)\ /\ dx;\ \textcolor{comment}{//\ Left\ boundary}}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t1\ >=\ 0\ \&\&\ t1\ <=\ 1)\ \{}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ intersections.append(\mbox{\hyperlink{class_vector2_d}{Vector2D}}(minX,\ p1.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ +\ t1\ *\ dy));}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ t2\ =\ (maxX\ -\/\ p1.x)\ /\ dx;\ \textcolor{comment}{//\ Right\ boundary}}
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t2\ >=\ 0\ \&\&\ t2\ <=\ 1)\ \{}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \ \ \ \ intersections.append(\mbox{\hyperlink{class_vector2_d}{Vector2D}}(maxX,\ p1.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ +\ t2\ *\ dy));}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00477\ \ \ \ \ \}}
+\DoxyCodeLine{00478\ }
+\DoxyCodeLine{00479\ \ \ \ \ \textcolor{comment}{//\ Check\ horizontal\ boundaries\ (minY\ and\ maxY)}}
+\DoxyCodeLine{00480\ \ \ \ \ \textcolor{keywordflow}{if}\ (dy\ !=\ 0)\ \{}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ t3\ =\ (minY\ -\/\ p1.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}})\ /\ dy;\ \textcolor{comment}{//\ Bottom\ boundary}}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t3\ >=\ 0\ \&\&\ t3\ <=\ 1)\ \{}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \ \ \ \ intersections.append(\mbox{\hyperlink{class_vector2_d}{Vector2D}}(p1.x\ +\ t3\ *\ dx,\ minY));}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ t4\ =\ (maxY\ -\/\ p1.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}})\ /\ dy;\ \textcolor{comment}{//\ Top\ boundary}}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t4\ >=\ 0\ \&\&\ t4\ <=\ 1)\ \{}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ intersections.append(\mbox{\hyperlink{class_vector2_d}{Vector2D}}(p1.x\ +\ t4\ *\ dx,\ maxY));}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00489\ \ \ \ \ \}}
+\DoxyCodeLine{00490\ }
+\DoxyCodeLine{00491\ \ \ \ \ \textcolor{comment}{//\ Choose\ the\ first\ valid\ intersection\ (there\ should\ only\ be\ one\ per\ edge)}}
+\DoxyCodeLine{00492\ \ \ \ \ \textcolor{keywordflow}{if}\ (!intersections.isEmpty())\ \{}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ intersections.first();}
+\DoxyCodeLine{00494\ \ \ \ \ \}}
+\DoxyCodeLine{00495\ }
+\DoxyCodeLine{00496\ \ \ \ \ \textcolor{comment}{//\ If\ no\ intersection\ found\ (should\ not\ happen),\ return\ the\ original\ point}}
+\DoxyCodeLine{00497\ \ \ \ \ \textcolor{keywordflow}{return}\ p1;}
+\DoxyCodeLine{00498\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_a875b0b334afc2eb857604adddc118671}\index{Canvas@{Canvas}!checkDelaunay@{checkDelaunay}}
+\index{checkDelaunay@{checkDelaunay}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{checkDelaunay()}{checkDelaunay()}}
+{\footnotesize\ttfamily \label{class_canvas_a875b0b334afc2eb857604adddc118671} 
+bool Canvas\+::check\+Delaunay (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Checks if the Delaunay condition is satisfied for all triangles. 
+
+\begin{DoxyReturn}{Returns}
+True if the condition is satisfied, otherwise false. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00385\ \ \ \ \ qDebug()<<\ \textcolor{stringliteral}{"{}Delaunay\ process"{}};}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00387\ \ \ \ \ \textcolor{keywordtype}{bool}\ areAllDelaunay\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00388\ \ \ \ \ \textcolor{keyword}{auto}\ vertices\ =\ \mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_a661ac7389993fc6a7b6ec64800fcb9ad}{getTabVertices}}();}
+\DoxyCodeLine{00389\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&tri:\mbox{\hyperlink{class_canvas_aa3de99c5a524030b65b136f565879abd}{triangles}})\{}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ res\ =\ tri-\/>checkDelaunay(vertices);}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \textcolor{comment}{//qDebug()\ <<\ res;}}
+\DoxyCodeLine{00392\ }
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ triangle\ is\ flippable}}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!res)\{}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ L=\mbox{\hyperlink{class_canvas_a4be165c96a43cc3c780e211f5e7cc6c8}{findOppositePointOfTrianglesWithEdgeCommon}}(*tri);}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//qDebug()\ <<\ "{}L.size:"{}\ <<\ L.size();}}
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it=L.begin();}
+\DoxyCodeLine{00399\ }
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (it\ !=\ L.end()\ \&\&\ tri-\/>circleContains(*it))\ \{}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ qDebug()\ <<\ "{}pt:"{}\ <<\ (*it)-\/>x\ <<\ "{},"{}\ <<\ (*it)-\/>y;}}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++it;\ \textcolor{comment}{//\ Avancer\ l'itérateur}}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00404\ }
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Vérifier\ si\ l'itérateur\ est\ valide\ et\ que\ l'élément\ courant\ ne\ satisfait\ pas\ circleContains}}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ L.end())\ \{}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tri-\/>setOpposite(\textcolor{keyword}{const\_cast<}\mbox{\hyperlink{class_vector2_d}{Vector2D}}*\textcolor{keyword}{>}(*it));}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00410\ }
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//qDebug()\ <<\ "{}L.size:"{}\ <<\ L.size()\ <<\ "{}\ condition\ :\ "{}\ <<\ (it!=L.end());}}
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ tri-\/>setDelaunay(\textcolor{keyword}{false},it!=L.end());}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ areAllDelaunay\ =\ areAllDelaunay\ \&\&\ res;}
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00419\ \ \ \ \ \}}
+\DoxyCodeLine{00420\ \ \ \ \ update();}
+\DoxyCodeLine{00421\ \ \ \ \ \textcolor{keywordflow}{return}\ areAllDelaunay;}
+\DoxyCodeLine{00422\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_ac4559a6535f497f17415032632aa9f6a}\index{Canvas@{Canvas}!clear@{clear}}
+\index{clear@{clear}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{class_canvas_ac4559a6535f497f17415032632aa9f6a} 
+void Canvas\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Clears all elements from the canvas. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{for}(\ \textcolor{keyword}{auto}\ d:\ \mbox{\hyperlink{class_canvas_a3d8eeaed74c759f4b6d4e47531df2823}{mapDrones}})\{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ d;}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_canvas_a3d8eeaed74c759f4b6d4e47531df2823}{mapDrones}}.clear();}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_canvas_aa3de99c5a524030b65b136f565879abd}{triangles}}.clear();}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_a5dc3d3ace199e440293ef8d68e6b75e4}{clear}}();}
+\DoxyCodeLine{00035\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_a8722fdb0a7e30a942bb84b5c4f048ac0}\index{Canvas@{Canvas}!droneSequence@{droneSequence}}
+\index{droneSequence@{droneSequence}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{droneSequence()}{droneSequence()}}
+{\footnotesize\ttfamily \label{class_canvas_a8722fdb0a7e30a942bb84b5c4f048ac0} 
+void Canvas\+::drone\+Sequence (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_drone}{Drone}} \&}]{d}{}\end{DoxyParamCaption})}
+
+
+
+Executes a sequence of actions for a given drone. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & The drone to process. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00805\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00806\ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{class_canvas_a4ce6a9bde445736415e5bc834abea5f3}{processPolyState}})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00807\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ nearestDistance\ =\ 10000;\ \textcolor{comment}{//\ Distance\ initiale\ très\ grande}}
+\DoxyCodeLine{00808\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ closestCity\ =\ -\/1;\ \textcolor{comment}{//\ Indice\ par\ défaut}}
+\DoxyCodeLine{00809\ }
+\DoxyCodeLine{00810\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ pt\ =\ d.\mbox{\hyperlink{class_drone_af9acfa889406ec85fe8a43b1941d1bf3}{getPosition}}();}
+\DoxyCodeLine{00811\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Stocker\ le\ tableau\ des\ villes\ dans\ une\ variable\ locale}}
+\DoxyCodeLine{00812\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&citiesList\ =\ \mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_afcebf01ed63f80864af34d67d6aa9057}{getTabCities}}();}
+\DoxyCodeLine{00813\ }
+\DoxyCodeLine{00814\ }
+\DoxyCodeLine{00815\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isOutside\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00816\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ destCity\ =\ d.\mbox{\hyperlink{class_drone_aab88053ca8c7062af17af5f9ff957be3}{getDestCity}}();}
+\DoxyCodeLine{00817\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ citiesList.begin();}
+\DoxyCodeLine{00818\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ end\ =\ citiesList.end();}
+\DoxyCodeLine{00819\ }
+\DoxyCodeLine{00820\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (it\ !=\ end)\ \{}
+\DoxyCodeLine{00821\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&c\ =\ *it;}
+\DoxyCodeLine{00822\ }
+\DoxyCodeLine{00823\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (c-\/>getMap())\ \{}
+\DoxyCodeLine{00824\ }
+\DoxyCodeLine{00825\ }
+\DoxyCodeLine{00826\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_a729bd2cda85707184fd3644d88c2b69b}{isOutsideCities}}(pt))\ \{}
+\DoxyCodeLine{00827\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isOutside\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00828\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculer\ la\ distance\ à\ l'arête\ la\ plus\ proche}}
+\DoxyCodeLine{00829\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_nearest_edge_result}{NearestEdgeResult}}\ res\ =\ c-\/>getMap()-\/>nearestEdge(pt);}
+\DoxyCodeLine{00830\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ distance\ =\ res.\mbox{\hyperlink{struct_nearest_edge_result_a13fcccf974183783541d91b95b833a68}{distance}};}
+\DoxyCodeLine{00831\ }
+\DoxyCodeLine{00832\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (distance\ <\ nearestDistance)\ \{}
+\DoxyCodeLine{00833\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nearestDistance\ =\ distance;}
+\DoxyCodeLine{00834\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Converti\ l'iterator\ en\ int}}
+\DoxyCodeLine{00835\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ closestCity\ =\ std::distance(citiesList.cbegin(),\ it);}
+\DoxyCodeLine{00836\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00837\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (c-\/>getMap()-\/>isInsideWithTriangulation(pt))\ \{}
+\DoxyCodeLine{00838\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Si\ le\ point\ est\ dans\ un\ polygone,\ on\ met\ à\ jour\ l'indice}}
+\DoxyCodeLine{00839\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ closestCity\ =\ \ std::distance(citiesList.cbegin(),\ it);}
+\DoxyCodeLine{00840\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Continuer\ à\ parcourir\ toutes\ les\ villes\ pour\ vérifier\ s'il\ y\ en\ a\ une\ plus\ proche}}
+\DoxyCodeLine{00841\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00842\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00843\ }
+\DoxyCodeLine{00844\ \ \ \ \ \ \ \ \ \ \ \ \ ++it;\ \textcolor{comment}{//\ Passer\ à\ la\ ville\ suivante}}
+\DoxyCodeLine{00845\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00846\ }
+\DoxyCodeLine{00847\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(closestCity\ ==\ -\/1)\{}
+\DoxyCodeLine{00848\ }
+\DoxyCodeLine{00849\ \ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Issues"{}};}
+\DoxyCodeLine{00850\ \ \ \ \ \ \ \ \ \ \ \ \ return\ ;}
+\DoxyCodeLine{00851\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00852\ }
+\DoxyCodeLine{00853\ \ \ \ \ \ \ \ \ d.\mbox{\hyperlink{class_drone_ac886eaaa20cc145b5525602c003abe51}{setCurrentCity}}(closestCity);}
+\DoxyCodeLine{00854\ }
+\DoxyCodeLine{00855\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(closestCity\ !=\ destCity\ )\{}
+\DoxyCodeLine{00856\ \ \ \ \ \ \ \ \ \ \ \ \ d.\mbox{\hyperlink{class_drone_a8bb0fc208bfbe8cbc427f4f236fe4e39}{setGoalPosition}}(\mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_a2a44243f980005d3ccb755cd68c044f5}{nextDestCityId}}(closestCity,destCity));}
+\DoxyCodeLine{00857\ \ \ \ \ \ \ \ \ \ \ \ \ d.\mbox{\hyperlink{class_drone_a1a34de39d4f9a80f4272fea73337ca0f}{start}}();}
+\DoxyCodeLine{00858\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(isOutside)\{}
+\DoxyCodeLine{00859\ \ \ \ \ \ \ \ \ \ \ \ \ d.\mbox{\hyperlink{class_drone_a8bb0fc208bfbe8cbc427f4f236fe4e39}{setGoalPosition}}(\mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_ac5b25150e8030ebebb24db26271d1c2a}{getPointByIndex}}(destCity));}
+\DoxyCodeLine{00860\ \ \ \ \ \ \ \ \ \ \ \ \ d.\mbox{\hyperlink{class_drone_a1a34de39d4f9a80f4272fea73337ca0f}{start}}();}
+\DoxyCodeLine{00861\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00862\ }
+\DoxyCodeLine{00863\ }
+\DoxyCodeLine{00864\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_a63228e07e968ff5b5af221ba3534d48b}\index{Canvas@{Canvas}!finalizePolygon@{finalizePolygon}}
+\index{finalizePolygon@{finalizePolygon}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{finalizePolygon()}{finalizePolygon()}}
+{\footnotesize\ttfamily \label{class_canvas_a63228e07e968ff5b5af221ba3534d48b} 
+void Canvas\+::finalize\+Polygon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_city}{City}} \&}]{city}{, }\item[{const QVector$<$ \mbox{\hyperlink{class_vector2_d}{Vector2D}} $>$ \&}]{Lordered}{, }\item[{bool}]{is\+Closed}{}\end{DoxyParamCaption})}
+
+
+
+Finalizes a polygon for a given city. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city} & The city associated with the polygon. \\
+\hline
+{\em Lordered} & The ordered list of points defining the polygon. \\
+\hline
+{\em is\+Closed} & Flag indicating if the polygon is closed. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00501\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00502\ \ \ \ \ QVector<Vector2D>\ clippedVertices;\ \textcolor{comment}{//\ Store\ the\ clipped\ vertices}}
+\DoxyCodeLine{00503\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ canvasMinX\ =\ 0;}
+\DoxyCodeLine{00504\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ canvasMinY\ =\ 0;}
+\DoxyCodeLine{00505\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ canvasMaxX\ =\ (width()\ -\/\ 10)\ /\ \mbox{\hyperlink{class_canvas_a387509ed6ea92c766ec53cef653deab1}{scale}}\ +\ \mbox{\hyperlink{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}{origin}}.x();}
+\DoxyCodeLine{00506\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ canvasMaxY\ =\ (height()\ +\ 10)\ /\ \mbox{\hyperlink{class_canvas_a387509ed6ea92c766ec53cef653deab1}{scale}}\ +\ \mbox{\hyperlink{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}{origin}}.y();}
+\DoxyCodeLine{00507\ }
+\DoxyCodeLine{00508\ \ \ \ \ \textcolor{keyword}{auto}\ clipEdge\ =\ [\&](\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ \&p1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ \&p2,\ QVector<Vector2D>\ \&output)\ \{}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ insideP1\ =\ !\mbox{\hyperlink{class_canvas_a0c866cccd753e3a59ab4d152f2d81f66}{isOutsideCanvas}}(p1);}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ insideP2\ =\ !\mbox{\hyperlink{class_canvas_a0c866cccd753e3a59ab4d152f2d81f66}{isOutsideCanvas}}(p2);}
+\DoxyCodeLine{00511\ }
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (insideP1\ \&\&\ insideP2)\ \{}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Both\ points\ inside:\ add\ p2\ if\ not\ already\ in\ the\ output}}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isDuplicate\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&v\ :\ output)\ \{}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::fabs(v.x\ -\/\ p2.x)\ <\ 0.001f\ \&\&\ std::fabs(v.y\ -\/\ p2.y)\ <\ 0.001f)\ \{}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isDuplicate\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!isDuplicate)\ \{}
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output.append(p2);}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (insideP1\ \&\&\ !insideP2)\ \{}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Going\ out\ of\ bounds:\ add\ intersection\ point\ if\ not\ already\ in\ the\ output}}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ intersection\ =\ \mbox{\hyperlink{class_canvas_a63db1f7f5f0983b3bf64c53e9bb803f3}{calculateIntersection}}(p1,\ p2,\ canvasMinX,\ canvasMinY,\ canvasMaxX,\ canvasMaxY);}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isDuplicate\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&v\ :\ output)\ \{}
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::fabs(v.x\ -\/\ intersection.x)\ <\ 0.001f\ \&\&\ std::fabs(v.y\ -\/\ intersection.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}})\ <\ 0.001f)\ \{}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isDuplicate\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!isDuplicate)\ \{}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output.append(intersection);}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (!insideP1\ \&\&\ insideP2)\ \{}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Coming\ back\ in\ bounds:\ add\ intersection\ and\ p2\ if\ not\ already\ in\ the\ output}}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ intersection\ =\ \mbox{\hyperlink{class_canvas_a63db1f7f5f0983b3bf64c53e9bb803f3}{calculateIntersection}}(p1,\ p2,\ canvasMinX,\ canvasMinY,\ canvasMaxX,\ canvasMaxY);}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isDuplicate\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&v\ :\ output)\ \{}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::fabs(v.x\ -\/\ intersection.x)\ <\ 0.001f\ \&\&\ std::fabs(v.y\ -\/\ intersection.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}})\ <\ 0.001f)\ \{}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isDuplicate\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!isDuplicate)\ \{}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output.append(intersection);}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00550\ }
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ \ \ \ \ isDuplicate\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&v\ :\ output)\ \{}
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::fabs(v.x\ -\/\ p2.x)\ <\ 0.001f\ \&\&\ std::fabs(v.y\ -\/\ p2.y)\ <\ 0.001f)\ \{}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isDuplicate\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!isDuplicate)\ \{}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ output.append(p2);}
+\DoxyCodeLine{00560\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ both\ points\ are\ outside,\ no\ points\ are\ added.}}
+\DoxyCodeLine{00563\ \ \ \ \ \};}
+\DoxyCodeLine{00564\ }
+\DoxyCodeLine{00565\ \ \ \ \ \textcolor{comment}{//\ Iterate\ over\ the\ polygon\ edges\ and\ clip\ each\ edge}}
+\DoxyCodeLine{00566\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ Lordered.size();\ ++i)\ \{}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ \&current\ =\ Lordered[i];}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ \&next\ =\ Lordered[(i\ +\ 1)\ \%\ Lordered.size()];\ \textcolor{comment}{//\ Next\ vertex\ (wrapping\ around\ for\ closed\ polygons)}}
+\DoxyCodeLine{00569\ \ \ \ \ \ \ \ \ clipEdge(current,\ next,\ clippedVertices);}
+\DoxyCodeLine{00570\ \ \ \ \ \}}
+\DoxyCodeLine{00571\ }
+\DoxyCodeLine{00572\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Clipped\ vertices\ before\ filtering:"{}};}
+\DoxyCodeLine{00573\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&vertex\ :\ clippedVertices)\ \{}
+\DoxyCodeLine{00574\ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Vertex:"{}}\ <<\ vertex.x\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ vertex.y;}
+\DoxyCodeLine{00575\ \ \ \ \ \}}
+\DoxyCodeLine{00576\ }
+\DoxyCodeLine{00577\ \ \ \ \ \mbox{\hyperlink{class_my_polygon}{MyPolygon}}\ *poly\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_my_polygon}{MyPolygon}}(clippedVertices.size());}
+\DoxyCodeLine{00578\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}clippedVertices.size\ "{}}\ <<\ clippedVertices.size();}
+\DoxyCodeLine{00579\ }
+\DoxyCodeLine{00580\ \ \ \ \ \textcolor{comment}{//\ Add\ the\ clipped\ vertices\ to\ the\ polygon}}
+\DoxyCodeLine{00581\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ \&vertex\ :\ clippedVertices)\ \{}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ poly-\/>\mbox{\hyperlink{class_my_polygon_ac00111379e93e80ae3bfc45d789ce198}{addVertex}}(vertex);}
+\DoxyCodeLine{00583\ \ \ \ \ \}}
+\DoxyCodeLine{00584\ }
+\DoxyCodeLine{00585\ \ \ \ \ \textcolor{comment}{//\ Set\ the\ final\ polygon\ to\ the\ city}}
+\DoxyCodeLine{00586\ \ \ \ \ city.\mbox{\hyperlink{class_city_aedf709e8522c1f7bf79e54c802f455c1}{setMap}}(poly);}
+\DoxyCodeLine{00587\ \ \ \ \ update();}
+\DoxyCodeLine{00588\ }
+\DoxyCodeLine{00589\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Nombre\ de\ points\ trouvés\ "{}}\ <<\ city.\mbox{\hyperlink{class_city_ad73598d937870a165cb530958106ff07}{getName}}()\ <<\ \textcolor{stringliteral}{"{}\ :\ "{}}\ <<\ clippedVertices.size();}
+\DoxyCodeLine{00590\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}La\ cellule\ de\ Voronoi\ est\ "{}}\ <<\ (isClosed\ ?\ \textcolor{stringliteral}{"{}FERMÉE"{}}\ :\ \textcolor{stringliteral}{"{}OUVERTE"{}});}
+\DoxyCodeLine{00591\ }
+\DoxyCodeLine{00592\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_a4be165c96a43cc3c780e211f5e7cc6c8}\index{Canvas@{Canvas}!findOppositePointOfTrianglesWithEdgeCommon@{findOppositePointOfTrianglesWithEdgeCommon}}
+\index{findOppositePointOfTrianglesWithEdgeCommon@{findOppositePointOfTrianglesWithEdgeCommon}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{findOppositePointOfTrianglesWithEdgeCommon()}{findOppositePointOfTrianglesWithEdgeCommon()}}
+{\footnotesize\ttfamily \label{class_canvas_a4be165c96a43cc3c780e211f5e7cc6c8} 
+QVector$<$ const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*} $>$ Canvas\+::find\+Opposite\+Point\+Of\+Triangles\+With\+Edge\+Common (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_triangle}{Triangle}} \&}]{tri}{}\end{DoxyParamCaption})}
+
+
+
+Finds the opposite points of triangles sharing a common edge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tri} & The reference triangle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of pointers to the opposite points. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00367\ \ \ \ \ QVector<const\ Vector2D*>\ res;}
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ t:\mbox{\hyperlink{class_canvas_aa3de99c5a524030b65b136f565879abd}{triangles}})\{}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ \ tri.\mbox{\hyperlink{class_triangle_a2ecf064f3402d0fe6ab5624fb0e6ccda}{hasEdge}}(t-\/>getVertexPtr(1),t-\/>getVertexPtr(0))\ )\{}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ res.push\_back(t-\/>getVertexPtr(2));}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(tri.\mbox{\hyperlink{class_triangle_a2ecf064f3402d0fe6ab5624fb0e6ccda}{hasEdge}}(t-\/>getVertexPtr(2),t-\/>getVertexPtr(1)))\{}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ res.push\_back(t-\/>getVertexPtr(0));}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(tri.\mbox{\hyperlink{class_triangle_a2ecf064f3402d0fe6ab5624fb0e6ccda}{hasEdge}}(t-\/>getVertexPtr(0),t-\/>getVertexPtr(2))\ )\{}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ res.push\_back(t-\/>getVertexPtr(1));}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00380\ \ \ \ \ \}}
+\DoxyCodeLine{00381\ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00382\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_a1f4f7e4221b1e378d99e498b0e9f3b89}\index{Canvas@{Canvas}!flippAll@{flippAll}}
+\index{flippAll@{flippAll}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{flippAll()}{flippAll()}}
+{\footnotesize\ttfamily \label{class_canvas_a1f4f7e4221b1e378d99e498b0e9f3b89} 
+void Canvas\+::flipp\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Flips all non-\/\+Delaunay edges. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00425\ \ \ \ \ \textcolor{keywordflow}{while}(!\mbox{\hyperlink{class_canvas_a875b0b334afc2eb857604adddc118671}{checkDelaunay}}())\{}
+\DoxyCodeLine{00426\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ \ =\ \mbox{\hyperlink{class_canvas_aa3de99c5a524030b65b136f565879abd}{triangles}}.begin();}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\ it\ !=\mbox{\hyperlink{class_canvas_aa3de99c5a524030b65b136f565879abd}{triangles}}.end()\ \&\&\ !(*it)-\/>isFlippable())\{}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ it++;}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(it!=\mbox{\hyperlink{class_canvas_aa3de99c5a524030b65b136f565879abd}{triangles}}.end())\{}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \ \ \ \ (*it)-\/>flippIt(\mbox{\hyperlink{class_canvas_aa3de99c5a524030b65b136f565879abd}{triangles}});}
+\DoxyCodeLine{00432\ }
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}issue"{}};}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00436\ \ \ \ \ \}}
+\DoxyCodeLine{00437\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_a36400779155b40787ab5f192d1168c54}\index{Canvas@{Canvas}!getBox@{getBox}}
+\index{getBox@{getBox}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{getBox()}{getBox()}}
+{\footnotesize\ttfamily \label{class_canvas_a36400779155b40787ab5f192d1168c54} 
+QPair$<$ \mbox{\hyperlink{class_vector2_d}{Vector2D}}, \mbox{\hyperlink{class_vector2_d}{Vector2D}} $>$ Canvas\+::get\+Box (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calculates the bounding box. 
+
+\begin{DoxyReturn}{Returns}
+A pair of points representing the bounding box. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keyword}{auto}\ vertices\ =\ \mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_afcebf01ed63f80864af34d67d6aa9057}{getTabCities}}();}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordflow}{if}\ (vertices.empty())\ \{\mbox{\hyperlink{class_vector2_d}{Vector2D}}\ infLeft,supRight;}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ QPair<Vector2D,Vector2D>(\mbox{\hyperlink{class_vector2_d}{Vector2D}}(0,0),\mbox{\hyperlink{class_vector2_d}{Vector2D}}(200,200));}
+\DoxyCodeLine{00219\ \ \ \ \ \}}
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keyword}{auto}\ index=\ vertices.begin();}
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keyword}{auto}\ pts\ =\ *(*index)-\/>getPosition();}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keyword}{auto}\ indexEnd=\ vertices.end();}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{comment}{//auto\ ptsEnd\ =\ (*indexEnd)-\/>getPosition();}}
+\DoxyCodeLine{00224\ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ infLeft(pts.x,pts.y),supRight(pts.x,pts.y);}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordflow}{while}\ (\ index\ !=\ indexEnd\ )\ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ pts\ =\ (*index)-\/>getPosition();}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{comment}{//qDebug()\ <<\ \ "{}PTS\ :\ "{}\ <<\ pts\ <<\ "{}\ \ inf\ :\ "{}\ <<\ infLeft;}}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pts.x<infLeft.x)\ infLeft.x=\ pts.x;}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pts.y<infLeft.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}})\ infLeft.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}=\ pts.y;}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pts.x>supRight.x)\ supRight.x=\ pts.x;}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pts.y>supRight.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}})\ supRight.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}=\ pts.y;}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ index++;}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \textcolor{comment}{//qDebug()\ <<\ "{}FF"{};}}
+\DoxyCodeLine{00234\ \ \ \ \ \}}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keywordflow}{return}\ QPair<Vector2D,Vector2D>(infLeft,supRight);}
+\DoxyCodeLine{00237\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_a95b3c6439fcf6efc455d9a88854d15c2}\index{Canvas@{Canvas}!getCitiesInfos@{getCitiesInfos}}
+\index{getCitiesInfos@{getCitiesInfos}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{getCitiesInfos()}{getCitiesInfos()}}
+{\footnotesize\ttfamily \label{class_canvas_a95b3c6439fcf6efc455d9a88854d15c2} 
+QString Canvas\+::get\+Cities\+Infos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the cities informations with number of drones in each cities. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00866\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00867\ \ \ \ \ \textcolor{comment}{//\ Initialize\ the\ result\ string}}
+\DoxyCodeLine{00868\ \ \ \ \ QString\ result\ =\ \textcolor{stringliteral}{"{}City\ -\/\ Drone\ Count:\(\backslash\)n"{}};}
+\DoxyCodeLine{00869\ }
+\DoxyCodeLine{00870\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ list\ of\ cities}}
+\DoxyCodeLine{00871\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&citiesList\ =\ \mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_afcebf01ed63f80864af34d67d6aa9057}{getTabCities}}();}
+\DoxyCodeLine{00872\ }
+\DoxyCodeLine{00873\ \ \ \ \ \textcolor{comment}{//\ Create\ a\ map\ to\ store\ the\ drone\ counts\ for\ each\ city}}
+\DoxyCodeLine{00874\ \ \ \ \ QMap<int,\ int>\ cityDroneCount;\ \textcolor{comment}{//\ Key:\ City\ Index,\ Value:\ Drone\ Count}}
+\DoxyCodeLine{00875\ }
+\DoxyCodeLine{00876\ \ \ \ \ \textcolor{comment}{//\ Iterate\ through\ each\ drone}}
+\DoxyCodeLine{00877\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&d\ :\ \mbox{\hyperlink{class_canvas_a3d8eeaed74c759f4b6d4e47531df2823}{mapDrones}})\ \{}
+\DoxyCodeLine{00878\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ nearestDistance\ =\ 10000;\ \textcolor{comment}{//\ Distance\ initiale\ très\ grande}}
+\DoxyCodeLine{00879\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ closestCity\ =\ -\/1;\ \textcolor{comment}{//\ Indice\ par\ défaut}}
+\DoxyCodeLine{00880\ }
+\DoxyCodeLine{00881\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ pt\ =\ d-\/>getPosition();}
+\DoxyCodeLine{00882\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ citiesList.begin();}
+\DoxyCodeLine{00883\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ end\ =\ citiesList.end();}
+\DoxyCodeLine{00884\ }
+\DoxyCodeLine{00885\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Iterate\ through\ cities\ to\ find\ the\ closest\ one}}
+\DoxyCodeLine{00886\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (it\ !=\ end)\ \{}
+\DoxyCodeLine{00887\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&c\ =\ *it;}
+\DoxyCodeLine{00888\ }
+\DoxyCodeLine{00889\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (c-\/>getMap())\ \{}
+\DoxyCodeLine{00890\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_a729bd2cda85707184fd3644d88c2b69b}{isOutsideCities}}(pt))\ \{}
+\DoxyCodeLine{00891\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ the\ distance\ to\ the\ nearest\ edge}}
+\DoxyCodeLine{00892\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_nearest_edge_result}{NearestEdgeResult}}\ res\ =\ c-\/>getMap()-\/>nearestEdge(pt);}
+\DoxyCodeLine{00893\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ distance\ =\ res.\mbox{\hyperlink{struct_nearest_edge_result_a13fcccf974183783541d91b95b833a68}{distance}};}
+\DoxyCodeLine{00894\ }
+\DoxyCodeLine{00895\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (distance\ <\ nearestDistance)\ \{}
+\DoxyCodeLine{00896\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nearestDistance\ =\ distance;}
+\DoxyCodeLine{00897\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ closestCity\ =\ std::distance(citiesList.cbegin(),\ it);}
+\DoxyCodeLine{00898\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00899\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (c-\/>getMap()-\/>isInsideWithTriangulation(pt))\ \{}
+\DoxyCodeLine{00900\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ the\ point\ is\ inside\ the\ city,\ update\ the\ closest\ city}}
+\DoxyCodeLine{00901\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ closestCity\ =\ std::distance(citiesList.cbegin(),\ it);}
+\DoxyCodeLine{00902\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00903\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00904\ \ \ \ \ \ \ \ \ \ \ \ \ ++it;\ \textcolor{comment}{//\ Move\ to\ the\ next\ city}}
+\DoxyCodeLine{00905\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00906\ }
+\DoxyCodeLine{00907\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ a\ closest\ city\ was\ found,\ increment\ the\ drone\ count\ for\ that\ city}}
+\DoxyCodeLine{00908\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (closestCity\ !=\ -\/1)\ \{}
+\DoxyCodeLine{00909\ \ \ \ \ \ \ \ \ \ \ \ \ cityDroneCount[closestCity]++;}
+\DoxyCodeLine{00910\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00911\ \ \ \ \ \}}
+\DoxyCodeLine{00912\ }
+\DoxyCodeLine{00913\ \ \ \ \ \textcolor{comment}{//\ Now\ build\ the\ result\ string\ with\ the\ city\ names\ and\ the\ drone\ count}}
+\DoxyCodeLine{00914\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ it\ =\ cityDroneCount.begin();\ it\ !=\ cityDroneCount.end();\ ++it)\ \{}
+\DoxyCodeLine{00915\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ cityIndex\ =\ it.key();}
+\DoxyCodeLine{00916\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ droneCount\ =\ it.value();}
+\DoxyCodeLine{00917\ }
+\DoxyCodeLine{00918\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Append\ the\ city\ name\ (replace\ this\ with\ actual\ city\ names)\ and\ the\ count\ of\ drones}}
+\DoxyCodeLine{00919\ \ \ \ \ \ \ \ \ result\ +=\ citiesList[cityIndex]-\/>getName()\ +\ \textcolor{stringliteral}{"{}\ -\/\ "{}}\ +\ QString::number(droneCount)\ +\ \textcolor{stringliteral}{"{}\ drones\(\backslash\)n"{}};}
+\DoxyCodeLine{00920\ \ \ \ \ \}}
+\DoxyCodeLine{00921\ }
+\DoxyCodeLine{00922\ \ \ \ \ \textcolor{comment}{//\ Return\ the\ final\ result\ string}}
+\DoxyCodeLine{00923\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00924\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_a0e2a9e3404e5aba5b072d8f4fb9ab79d}\index{Canvas@{Canvas}!getMap@{getMap}}
+\index{getMap@{getMap}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{getMap()}{getMap()}}
+{\footnotesize\ttfamily \label{class_canvas_a0e2a9e3404e5aba5b072d8f4fb9ab79d} 
+QVector$<$ \mbox{\hyperlink{class_drone}{Drone}} \texorpdfstring{$\ast$}{*} $>$ \& Canvas\+::get\+Map (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the list of drones. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the vector containing drone pointers. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_canvas_a3d8eeaed74c759f4b6d4e47531df2823}{mapDrones}};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_a717e89de1ecd0e11a140ca5268ef7f7c}\index{Canvas@{Canvas}!getProcessPolyState@{getProcessPolyState}}
+\index{getProcessPolyState@{getProcessPolyState}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{getProcessPolyState()}{getProcessPolyState()}}
+{\footnotesize\ttfamily \label{class_canvas_a717e89de1ecd0e11a140ca5268ef7f7c} 
+bool Canvas\+::get\+Process\+Poly\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the state of the polygon processing flag. 
+
+\begin{DoxyReturn}{Returns}
+True if polygon processing is enabled, otherwise false. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_canvas_a4ce6a9bde445736415e5bc834abea5f3}{processPolyState}};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_a5233eb6cb36a66bde65b0e4abf01e617}\index{Canvas@{Canvas}!getSizeofT@{getSizeofT}}
+\index{getSizeofT@{getSizeofT}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{getSizeofT()}{getSizeofT()}}
+{\footnotesize\ttfamily \label{class_canvas_a5233eb6cb36a66bde65b0e4abf01e617} 
+int Canvas\+::get\+SizeofT (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the size of the triangles list. 
+
+\begin{DoxyReturn}{Returns}
+The number of triangles. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00122\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_acbfaef7e0197f38e6a4a492d2660a420}{getSize}}();\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_a99f4cab25a899653f9337ad36e4a3177}\index{Canvas@{Canvas}!getSizeofV@{getSizeofV}}
+\index{getSizeofV@{getSizeofV}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{getSizeofV()}{getSizeofV()}}
+{\footnotesize\ttfamily \label{class_canvas_a99f4cab25a899653f9337ad36e4a3177} 
+int Canvas\+::get\+SizeofV (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the size of the vertices list. 
+
+\begin{DoxyReturn}{Returns}
+The number of vertices. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00116\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_acbfaef7e0197f38e6a4a492d2660a420}{getSize}}();\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_a0c866cccd753e3a59ab4d152f2d81f66}\index{Canvas@{Canvas}!isOutsideCanvas@{isOutsideCanvas}}
+\index{isOutsideCanvas@{isOutsideCanvas}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{isOutsideCanvas()}{isOutsideCanvas()}}
+{\footnotesize\ttfamily \label{class_canvas_a0c866cccd753e3a59ab4d152f2d81f66} 
+bool Canvas\+::is\+Outside\+Canvas (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{point}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if a point is outside the canvas boundaries. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & The point to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the point is outside, otherwise false. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00456\ \ \ \ \ \textcolor{keywordflow}{return}\ point.x\ \ <\ 0\ ||\ \ point.x\ >\ (width()-\/10)/\mbox{\hyperlink{class_canvas_a387509ed6ea92c766ec53cef653deab1}{scale}}+\mbox{\hyperlink{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}{origin}}.x()\ ||}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ point.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ <\ 0\ ||\ \ point.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ >\ (height()+10)/\mbox{\hyperlink{class_canvas_a387509ed6ea92c766ec53cef653deab1}{scale}}+\mbox{\hyperlink{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}{origin}}.y();}
+\DoxyCodeLine{00458\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_a02da07de074f8a6a92b346fd521ba018}\index{Canvas@{Canvas}!loadMesh@{loadMesh}}
+\index{loadMesh@{loadMesh}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{loadMesh()}{loadMesh()}}
+{\footnotesize\ttfamily \label{class_canvas_a02da07de074f8a6a92b346fd521ba018} 
+void Canvas\+::load\+Mesh (\begin{DoxyParamCaption}\item[{const QString \&}]{title}{}\end{DoxyParamCaption})}
+
+
+
+Loads a mesh file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & The title or filename of the mesh. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00285\ \ \ \ \ QFile\ file(title);}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordflow}{if}\ (file.open(QIODevice::ReadOnly|QIODevice::Text))\ \{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_canvas_a4ce6a9bde445736415e5bc834abea5f3}{processPolyState}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}ça\ sent\ l'roussi"{}};}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_canvas_ac4559a6535f497f17415032632aa9f6a}{clear}}();}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ QString\ JSON=file.readAll();}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ file.close();}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ QJsonDocument\ doc\ =\ QJsonDocument::fromJson(JSON.toUtf8());}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ QJsonArray\ JSONvertices\ =\ doc[\textcolor{stringliteral}{"{}servers"{}}].toArray();}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ QJsonArray\ JSONdrone\ =\ \ doc[\textcolor{stringliteral}{"{}drones"{}}].toArray();}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Vertices:"{}}\ <<\ JSONvertices.size();}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Drones:"{}}\ <<\ JSONdrone.size();}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\&v:JSONvertices)\ \{}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ QJsonObject\ vector=v.toObject();}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ vector[\textcolor{stringliteral}{"{}position"{}}].toString()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ vector[\textcolor{stringliteral}{"{}name"{}}].toString();}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ strPosition\ =\ vector[\textcolor{stringliteral}{"{}position"{}}].toString().split(\textcolor{charliteral}{','});}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ pt(strPosition[0].toFloat(),strPosition[1].toFloat());}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ servName\ =\ vector[\textcolor{stringliteral}{"{}name"{}}].toString();}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ color\ =\ vector[\textcolor{stringliteral}{"{}color"{}}].toString();}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if(servName\ ==\ "{}Freljord"{})\ \ origin\ =\ pt;}}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_a0757a978984d8e828614b3f5e39f1eb2}{pushCity}}(servName,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}(pt.x,\ pt.y),\ color);}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ QVector<Vector2D*>\ vertices\ =\ \mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_a661ac7389993fc6a7b6ec64800fcb9ad}{getTabVertices}}();}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vertices.isEmpty())\ \{}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Le\ QVector\ est\ vide,\ impossible\ de\ trouver\ un\ point."{}});}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ \ \ \mbox{\hyperlink{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}{origin}}\ =\ vertices[0];\ \textcolor{comment}{//\ Initialiser\ avec\ le\ premier\ point}}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&p\ :\ vertices)\ \{}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (p-\/>y\ <\ \mbox{\hyperlink{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}{origin}}.y)\ \{\ \textcolor{comment}{//\ Comparer\ les\ coordonnées\ y}}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}{origin}}\ =\ p;}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \textcolor{comment}{//qDebug()\ <<\ origin;}}
+\DoxyCodeLine{00330\ }
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_canvas_aa3de99c5a524030b65b136f565879abd}{triangles}}.clear();}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_a58419345531dd32657e6f2a3aa8cc5c5}{orderPolygonPoint}}(\mbox{\hyperlink{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}{origin}});}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_canvas_aa3de99c5a524030b65b136f565879abd}{triangles}}\ =\ \mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_af024145923e1b53118200991d2d3a4bc}{initTriangulation}}();}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ preset\ initial\ positions\ of\ the\ drones\ */}}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&\&v:JSONdrone)\ \{}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ QJsonObject\ vector=v.toObject();}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ QString\ name=\ vector[\textcolor{stringliteral}{"{}name"{}}].toString();}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ strPosition\ =\ vector[\textcolor{stringliteral}{"{}position"{}}].toString().split(\textcolor{charliteral}{','});}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ pt(strPosition[0].toFloat(),strPosition[1].toFloat());}
+\DoxyCodeLine{00346\ }
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \ \ \ \ QString\ destinationName\ =\ vector[\textcolor{stringliteral}{"{}server"{}}].toString();}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Final\ pos"{}}\ <<\ destinationName;}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_drone}{Drone}}\ *drone\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_drone}{Drone}}(name);}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ drone-\/>\mbox{\hyperlink{class_drone_a8f7aa3baf1bff990f15d1fe6d4be0a79}{setInitialPosition}}(pt);}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ cityId\ =\ \mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_ae5b273bec3b38b1fe3564d52350e2c46}{getCityByName}}(destinationName);}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ drone-\/>\mbox{\hyperlink{class_drone_a1c7c09da3a1d8d9e67fdd402b7a8a0b1}{setDestCity}}(cityId);}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00355\ }
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_canvas_a3d8eeaed74c759f4b6d4e47531df2823}{mapDrones}}.push\_back(drone);}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00361\ \ \ \ \ \}}
+\DoxyCodeLine{00362\ \ \ \ \ \mbox{\hyperlink{class_canvas_a7c6aa7f3b2af6d97f2f9358d3e66951d}{reScale}}();}
+\DoxyCodeLine{00363\ \ \ \ \ update();}
+\DoxyCodeLine{00364\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_ae9f5a1c5981b802814aa5b189faba710}\index{Canvas@{Canvas}!mouseMoveEvent@{mouseMoveEvent}}
+\index{mouseMoveEvent@{mouseMoveEvent}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{mouseMoveEvent()}{mouseMoveEvent()}}
+{\footnotesize\ttfamily \label{class_canvas_ae9f5a1c5981b802814aa5b189faba710} 
+void Canvas\+::mouse\+Move\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Handles mouse move events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Pointer to the mouse event. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordtype}{float}\ mouseX=float(event-\/>pos().x()-\/10)/\mbox{\hyperlink{class_canvas_a387509ed6ea92c766ec53cef653deab1}{scale}}+\mbox{\hyperlink{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}{origin}}.x();}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordtype}{float}\ mouseY=-\/float(event-\/>pos().y()-\/height()+10)/\mbox{\hyperlink{class_canvas_a387509ed6ea92c766ec53cef653deab1}{scale}}+\mbox{\hyperlink{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}{origin}}.y();}
+\DoxyCodeLine{00261\ \ \ \ \ emit\ \mbox{\hyperlink{class_canvas_af64171658065e802d3a2451bd03a965d}{updateSB}}(QString(\textcolor{stringliteral}{"{}Mouse\ position=\ ("{}})\ +\ QString::number(mouseX,\ \textcolor{charliteral}{'f'},\ 1)\ +\ \textcolor{stringliteral}{"{},"{}}\ +\ QString::number(mouseY,\ \textcolor{charliteral}{'f'},\ 1)\ +\ \textcolor{stringliteral}{"{})"{}});}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_canvas_ac577f4cc29e3b1a9bcfc7080a5210a75}{voronoiTransparency}}\ ||\ !\mbox{\hyperlink{class_canvas_a4ce6a9bde445736415e5bc834abea5f3}{processPolyState}})\{}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&tri:\mbox{\hyperlink{class_canvas_aa3de99c5a524030b65b136f565879abd}{triangles}})\ \{}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ tri-\/>setHighlighted(tri-\/>isInside(mouseX,mouseY));}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&c:\ \mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_afcebf01ed63f80864af34d67d6aa9057}{getTabCities}}())\ \{}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(c-\/>getMap())\{}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//qDebug()\ <<\ c-\/>getName();}}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ c-\/>getMap()-\/>isInsideWithTriangulation(\mbox{\hyperlink{class_vector2_d}{Vector2D}}(mouseX,mouseY));}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00277\ \ \ \ \ \}}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00280\ \ \ \ \ update();}
+\DoxyCodeLine{00281\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_ac766a4e369f781943df021b80e5922c4}\index{Canvas@{Canvas}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily \label{class_canvas_ac766a4e369f781943df021b80e5922c4} 
+void Canvas\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Handles mouse press events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Pointer to the mouse event. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{comment}{//\ search\ for\ a\ drone\ that\ is\ landed}}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{float}\ mouseX=float(event-\/>pos().x()-\/10)/\mbox{\hyperlink{class_canvas_a387509ed6ea92c766ec53cef653deab1}{scale}}+\mbox{\hyperlink{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}{origin}}.x();}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{float}\ mouseY=-\/float(event-\/>pos().y()-\/height()+10)/\mbox{\hyperlink{class_canvas_a387509ed6ea92c766ec53cef653deab1}{scale}}+\mbox{\hyperlink{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}{origin}}.y();}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&tri:\mbox{\hyperlink{class_canvas_aa3de99c5a524030b65b136f565879abd}{triangles}})\ \{}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tri-\/>isInside(mouseX,mouseY)\ \&\&\ tri-\/>isFlippable())\{}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ tri-\/>flippIt(\mbox{\hyperlink{class_canvas_aa3de99c5a524030b65b136f565879abd}{triangles}});}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_canvas_a875b0b334afc2eb857604adddc118671}{checkDelaunay}}();}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}FlippIt\ ended"{}};}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00186\ \ \ \ \ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ repaint();}
+\DoxyCodeLine{00190\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_a67dbba80855f3b4fb95c26d5012f7ccc}\index{Canvas@{Canvas}!paintEvent@{paintEvent}}
+\index{paintEvent@{paintEvent}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{paintEvent()}{paintEvent()}}
+{\footnotesize\ttfamily \label{class_canvas_a67dbba80855f3b4fb95c26d5012f7ccc} 
+void Canvas\+::paint\+Event (\begin{DoxyParamCaption}\item[{QPaint\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Handles the paint event for the canvas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Pointer to the paint event. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ QPainter\ painter(\textcolor{keyword}{this});}
+\DoxyCodeLine{00040\ \ \ \ \ QBrush\ whiteBrush(Qt::SolidPattern);}
+\DoxyCodeLine{00041\ \ \ \ \ QPen\ penCol(Qt::DashDotDotLine);}
+\DoxyCodeLine{00042\ \ \ \ \ penCol.setColor(Qt::lightGray);}
+\DoxyCodeLine{00043\ \ \ \ \ penCol.setWidth(3);}
+\DoxyCodeLine{00044\ \ \ \ \ whiteBrush.setColor(Qt::white);}
+\DoxyCodeLine{00045\ \ \ \ \ painter.fillRect(0,0,width(),height(),whiteBrush);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//painter.fillRect(0,0,width(),height(),whiteBrush);}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{comment}{//\ draw\ axes}}
+\DoxyCodeLine{00051\ \ \ \ \ QPointF\ points[7]=\{\{0,-\/2\},\{80,-\/2\},\{80,-\/10\},\{100,0\},\{80,10\},\{80,2\},\{0,2\}\};}
+\DoxyCodeLine{00052\ \ \ \ \ painter.save();}
+\DoxyCodeLine{00053\ \ \ \ \ painter.translate(20,height()-\/20);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//painter.translate(20,height()-\/20);}}
+\DoxyCodeLine{00055\ \ \ \ \ painter.setPen(Qt::NoPen);}
+\DoxyCodeLine{00056\ \ \ \ \ painter.setBrush(Qt::red);}
+\DoxyCodeLine{00057\ \ \ \ \ painter.drawPolygon(points,7);}
+\DoxyCodeLine{00058\ \ \ \ \ painter.save();}
+\DoxyCodeLine{00059\ \ \ \ \ painter.setBrush(Qt::green);}
+\DoxyCodeLine{00060\ \ \ \ \ painter.rotate(-\/90);}
+\DoxyCodeLine{00061\ \ \ \ \ painter.drawPolygon(points,7);}
+\DoxyCodeLine{00062\ \ \ \ \ painter.restore();}
+\DoxyCodeLine{00063\ \ \ \ \ painter.restore();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ painter.save();}
+\DoxyCodeLine{00066\ \ \ \ \ painter.translate(10,height()-\/10);}
+\DoxyCodeLine{00067\ \ \ \ \ painter.scale(\mbox{\hyperlink{class_canvas_a387509ed6ea92c766ec53cef653deab1}{scale}},-\/\mbox{\hyperlink{class_canvas_a387509ed6ea92c766ec53cef653deab1}{scale}});}
+\DoxyCodeLine{00068\ \ \ \ \ painter.translate(-\/\mbox{\hyperlink{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}{origin}}.x(),-\/\mbox{\hyperlink{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}{origin}}.y());}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//\ draw\ triangles}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_canvas_adec15319e8610b6a4a016f70970ee82f}{showTriangles}})\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{comment}{//qDebug()\ <<\ triangles;}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&tri:\mbox{\hyperlink{class_canvas_aa3de99c5a524030b65b136f565879abd}{triangles}})\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ tri-\/>draw(painter);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//\ draw\ circle}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_canvas_abb70425f30be2b4b97e56bb56486a525}{showCircles}})\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&tri:\mbox{\hyperlink{class_canvas_aa3de99c5a524030b65b136f565879abd}{triangles}})\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tri-\/>isHighlighted())\ tri-\/>drawCircle(painter);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{//\ draw\ points}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_canvas_ac1a1b0d3b6fa9d3c4aa30c014e15051c}{showCenters}})\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ painter.setPen(QPen(Qt::black,3));}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&tri:\mbox{\hyperlink{class_canvas_aa3de99c5a524030b65b136f565879abd}{triangles}})\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ pt\ =\ tri-\/>getCircleCenter();}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ painter.drawLine(pt.x-\/15,pt.y-\/15,pt.x+15,pt.y+15);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ painter.drawLine(pt.x-\/15,pt.y+15,pt.x+15,pt.y-\/15);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \}\ \ \ \ \textcolor{comment}{//\ Draw\ voronoi\ polygons}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_a81589add9a37634223b775911115d0c8}{draw}}(painter,\ \mbox{\hyperlink{class_canvas_ac577f4cc29e3b1a9bcfc7080a5210a75}{voronoiTransparency}});}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ painter.restore();}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{comment}{//\ draw\ the\ text\ in\ basic\ coordinate\ system}}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{int}\ s=width()/100;}
+\DoxyCodeLine{00101\ \ \ \ \ QFont\ font(\textcolor{stringliteral}{"{}Times"{}},s,QFont::Normal);}
+\DoxyCodeLine{00102\ \ \ \ \ painter.setFont(font);}
+\DoxyCodeLine{00103\ \ \ \ \ painter.setPen(QPen(Qt::black));}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{const}\ QRect\ rect(-\/8*s,-\/3.5*s,10*s,2.5*s);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&v:\mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_afcebf01ed63f80864af34d67d6aa9057}{getTabCities}}())\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ pts\ =\ v-\/>getPosition()\ ;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{comment}{//TELEPORT}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ painter.save();}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ (pts.x\ -\/\ \mbox{\hyperlink{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}{origin}}.x())*\mbox{\hyperlink{class_canvas_a387509ed6ea92c766ec53cef653deab1}{scale}}+10+1.5*s;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ y\ =\ -\/(pts.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ -\/\ \mbox{\hyperlink{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}{origin}}.y())*\mbox{\hyperlink{class_canvas_a387509ed6ea92c766ec53cef653deab1}{scale}}+height()-\/10+1.25*s;}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ painter.translate(x,y);}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ painter.fillRect(rect,QBrush(QColor(255,255,255,192)));}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ painter.drawText(rect,Qt::AlignCenter|Qt::AlignVCenter,v-\/>getName());}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ painter.restore();}
+\DoxyCodeLine{00120\ \ \ \ \ \}}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&drone\ :\ \mbox{\hyperlink{class_canvas_a3d8eeaed74c759f4b6d4e47531df2823}{mapDrones}})\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ painter.save();}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculer\ la\ position\ transformée\ du\ drone}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x\ =\ (drone-\/>getPosition().x\ -\/\ \mbox{\hyperlink{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}{origin}}.x())\ *\ \mbox{\hyperlink{class_canvas_a387509ed6ea92c766ec53cef653deab1}{scale}}\ +\ 10;}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ y\ =\ -\/(drone-\/>getPosition().y\ -\/\ \mbox{\hyperlink{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}{origin}}.y())\ *\ \mbox{\hyperlink{class_canvas_a387509ed6ea92c766ec53cef653deab1}{scale}}\ +\ height()\ -\/\ 10;}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Appliquer\ les\ transformations\ pour\ le\ drone}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ painter.translate(x,\ y);}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ painter.rotate(drone-\/>getAzimut());}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Redimensionner\ le\ rectangle\ pour\ adapter\ la\ taille\ de\ l'image\ au\ scale}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ scaledDroneSize\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{class_canvas_a902077fa3f78b9de8c7de3fdb7f1d55a}{droneIconSize}}\ *\ \mbox{\hyperlink{class_canvas_a387509ed6ea92c766ec53cef653deab1}{scale}});}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ QRect\ rect(-\/scaledDroneSize\ /\ 2,\ -\/scaledDroneSize\ /\ 2,\ scaledDroneSize,\ scaledDroneSize);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Dessiner\ l'image\ du\ drone}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ painter.drawImage(rect,\ \mbox{\hyperlink{class_canvas_a44d7f1a477fa5d0f28f622f8e23166ec}{droneImg}});}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Allumer\ les\ LEDs\ si\ le\ drone\ est\ en\ vol}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (drone-\/>getStatus()\ !=\ Drone::landed)\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ painter.setPen(Qt::NoPen);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ LEDs\ rouges}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ painter.setBrush(Qt::red);}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ painter.drawEllipse((-\/185.0\ /\ 511.0)\ *\ scaledDroneSize,\ (-\/185.0\ /\ 511.0)\ *\ scaledDroneSize,}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (65.0\ /\ 511.0)\ *\ scaledDroneSize,\ (65.0\ /\ 511.0)\ *\ scaledDroneSize);}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ painter.drawEllipse((115.0\ /\ 511.0)\ *\ scaledDroneSize,\ (-\/185.0\ /\ 511.0)\ *\ scaledDroneSize,}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (65.0\ /\ 511.0)\ *\ scaledDroneSize,\ (65.0\ /\ 511.0)\ *\ scaledDroneSize);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ LEDs\ vertes}}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ painter.setBrush(Qt::green);}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ painter.drawEllipse((-\/185.0\ /\ 511.0)\ *\ scaledDroneSize,\ (115.0\ /\ 511.0)\ *\ scaledDroneSize,}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (70.0\ /\ 511.0)\ *\ scaledDroneSize,\ (70.0\ /\ 511.0)\ *\ scaledDroneSize);}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ painter.drawEllipse((115.0\ /\ 511.0)\ *\ scaledDroneSize,\ (115.0\ /\ 511.0)\ *\ scaledDroneSize,}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (70.0\ /\ 511.0)\ *\ scaledDroneSize,\ (70.0\ /\ 511.0)\ *\ scaledDroneSize);}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Dessiner\ le\ détecteur\ de\ collision}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (drone-\/>hasCollision())\ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ QRect\ rectCol(-\/\mbox{\hyperlink{class_canvas_a5226f7b0b1190ff98adb88f2f79c9b5c}{droneCollisionDistance}}\ /\ 2\ *\ \mbox{\hyperlink{class_canvas_a387509ed6ea92c766ec53cef653deab1}{scale}},\ -\/\mbox{\hyperlink{class_canvas_a5226f7b0b1190ff98adb88f2f79c9b5c}{droneCollisionDistance}}\ /\ 2\ *\ \mbox{\hyperlink{class_canvas_a387509ed6ea92c766ec53cef653deab1}{scale}},}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_canvas_a5226f7b0b1190ff98adb88f2f79c9b5c}{droneCollisionDistance}}\ *\ \mbox{\hyperlink{class_canvas_a387509ed6ea92c766ec53cef653deab1}{scale}},\ \mbox{\hyperlink{class_canvas_a5226f7b0b1190ff98adb88f2f79c9b5c}{droneCollisionDistance}}\ *\ \mbox{\hyperlink{class_canvas_a387509ed6ea92c766ec53cef653deab1}{scale}});}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ painter.setPen(penCol);}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ painter.setBrush(Qt::NoBrush);}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ painter.drawEllipse(rectCol);}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ painter.restore();}
+\DoxyCodeLine{00168\ \ \ \ \ \}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_aebc60f04885f4d900a45044ca4a5c230}\index{Canvas@{Canvas}!processPoly@{processPoly}}
+\index{processPoly@{processPoly}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{processPoly()}{processPoly()}}
+{\footnotesize\ttfamily \label{class_canvas_aebc60f04885f4d900a45044ca4a5c230} 
+void Canvas\+::process\+Poly (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Processes a polygon for rendering or analysis. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00785\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00786\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_canvas_a4ce6a9bde445736415e5bc834abea5f3}{processPolyState}})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00787\ }
+\DoxyCodeLine{00788\ \ \ \ \ \mbox{\hyperlink{class_canvas_a4ce6a9bde445736415e5bc834abea5f3}{processPolyState}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00789\ \ \ \ \ \mbox{\hyperlink{class_canvas_a1f4f7e4221b1e378d99e498b0e9f3b89}{flippAll}}();}
+\DoxyCodeLine{00790\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&c:\ \mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_afcebf01ed63f80864af34d67d6aa9057}{getTabCities}}())\{}
+\DoxyCodeLine{00791\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_canvas_a9ef5ceffb7e43a85f446d47177565afb}{processVoronoi}}(*c);}
+\DoxyCodeLine{00792\ \ \ \ \ \}}
+\DoxyCodeLine{00793\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_afcebf01ed63f80864af34d67d6aa9057}{getTabCities}}().size()\ >\ 1\ )\ \mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_a07ecd6b3f074c44914a497dc68e2e3dc}{connectionMatrix}}(\mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_afcebf01ed63f80864af34d67d6aa9057}{getTabCities}}());}
+\DoxyCodeLine{00794\ \ \ \ \ \mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_a02fbef1c9c8108c6f95cc554cbca448d}{testPathFinding}}(5,1);}
+\DoxyCodeLine{00795\ \ \ \ \ \textcolor{keywordtype}{int}\ tmp\_width\ =\ width()\ ;}
+\DoxyCodeLine{00796\ \ \ \ \ \textcolor{keywordtype}{int}\ tmp\_height\ =\ height();}
+\DoxyCodeLine{00797\ }
+\DoxyCodeLine{00798\ \ \ \ \ \mbox{\hyperlink{class_canvas_a8e97e10b5b0c1fe6fda0a5b7fd7043a6}{cities}}-\/>\mbox{\hyperlink{class_cities_aec5164e4c4c3678c1212b6dbc312ef2c}{setLimit}}(tmp\_width,\ tmp\_height);}
+\DoxyCodeLine{00799\ }
+\DoxyCodeLine{00800\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00801\ \textcolor{comment}{\ \ \ \ \ \ \ qDebug()\ <<\ "{}VORONOI\ DE\ :\ "{}\ \ <<\ cities-\/>getTabCities()[1]-\/>getName(); }}
+\DoxyCodeLine{00802\ \textcolor{comment}{\ \ \ \ processVoronoi(*cities-\/>getTabCities()[1]);*/}}
+\DoxyCodeLine{00803\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_a9ef5ceffb7e43a85f446d47177565afb}\index{Canvas@{Canvas}!processVoronoi@{processVoronoi}}
+\index{processVoronoi@{processVoronoi}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{processVoronoi()}{processVoronoi()}}
+{\footnotesize\ttfamily \label{class_canvas_a9ef5ceffb7e43a85f446d47177565afb} 
+void Canvas\+::process\+Voronoi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_city}{City}} \&}]{city}{}\end{DoxyParamCaption})}
+
+
+
+Processes the Voronoi diagram for a given city. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city} & The city for which the Voronoi diagram is computed. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00596\ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ P\ =\ city.\mbox{\hyperlink{class_city_a7f7a9743ff8a46dfd83e67ca45b7d57e}{getPosition}}();}
+\DoxyCodeLine{00597\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Processing\ polygons\ :\ "{}}\ <<\ city.\mbox{\hyperlink{class_city_ad73598d937870a165cb530958106ff07}{getName}}();}
+\DoxyCodeLine{00598\ \ \ \ \ \textcolor{keywordtype}{bool}\ isClosed\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ Initialement,\ on\ suppose\ que\ la\ cellule\ est\ fermée}}
+\DoxyCodeLine{00599\ }
+\DoxyCodeLine{00600\ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ *edge\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00601\ \ \ \ \ QVector\ <Triangle\ *>\ L;}
+\DoxyCodeLine{00602\ }
+\DoxyCodeLine{00603\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ canvasWidth\ =\ (width()-\/10)/\mbox{\hyperlink{class_canvas_a387509ed6ea92c766ec53cef653deab1}{scale}}+\mbox{\hyperlink{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}{origin}}.x();}
+\DoxyCodeLine{00604\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ canvasHeight\ =\ (height()+10)/\mbox{\hyperlink{class_canvas_a387509ed6ea92c766ec53cef653deab1}{scale}}+\mbox{\hyperlink{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}{origin}}.y();}
+\DoxyCodeLine{00605\ }
+\DoxyCodeLine{00606\ \ \ \ \ \textcolor{keywordtype}{int}\ computedLimitPointNb\ =\ 0\ ;}
+\DoxyCodeLine{00607\ }
+\DoxyCodeLine{00608\ \ \ \ \ \textcolor{comment}{//\ Récupère\ tous\ les\ triangles\ autour\ du\ point}}
+\DoxyCodeLine{00609\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&tri:\mbox{\hyperlink{class_canvas_aa3de99c5a524030b65b136f565879abd}{triangles}})\{}
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(tri-\/>contains(P))\{}
+\DoxyCodeLine{00611\ }
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ \ \ \ \ L.push\_back(tri);}
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00614\ \ \ \ \ \}}
+\DoxyCodeLine{00615\ }
+\DoxyCodeLine{00616\ \ \ \ \ \textcolor{comment}{//\ Liste\ des\ circumcircle\ autour\ du\ triangle\ trié}}
+\DoxyCodeLine{00617\ \ \ \ \ QVector<Vector2D>\ Lordered;}
+\DoxyCodeLine{00618\ }
+\DoxyCodeLine{00619\ }
+\DoxyCodeLine{00620\ \ \ \ \ \textcolor{comment}{//\ Si\ aucun\ triangle\ trouvé,\ on\ arrête}}
+\DoxyCodeLine{00621\ \ \ \ \ assert(!L.isEmpty());}
+\DoxyCodeLine{00622\ }
+\DoxyCodeLine{00623\ \ \ \ \ \textcolor{comment}{//\ to\ do\ later\ :\ search\ the\ left\ Triangle}}
+\DoxyCodeLine{00624\ }
+\DoxyCodeLine{00625\ \ \ \ \ \textcolor{keyword}{auto}\ T\ =\ L.back();}
+\DoxyCodeLine{00626\ \ \ \ \ \textcolor{keywordflow}{while}(!L.isEmpty()\ )\{}
+\DoxyCodeLine{00627\ }
+\DoxyCodeLine{00628\ \ \ \ \ \ \ \ \ edge\ =\ isClosed\ ?\ T-\/>getEdgeFrom(P)\ :\ T-\/>getEdgeTo(P);}
+\DoxyCodeLine{00629\ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Coordonnée\ recherchée"{}}\ <<\ *edge;}
+\DoxyCodeLine{00630\ }
+\DoxyCodeLine{00631\ }
+\DoxyCodeLine{00632\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ search\ triangle\ Tright\ wich\ is\ on\ the\ right\ of\ P}}
+\DoxyCodeLine{00633\ }
+\DoxyCodeLine{00634\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it=L.begin();}
+\DoxyCodeLine{00635\ }
+\DoxyCodeLine{00636\ }
+\DoxyCodeLine{00637\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(isClosed)\{}
+\DoxyCodeLine{00638\ \ \ \ \ \ \ \ \ \ \ \ \ qDebug\ ()\ <<\ \textcolor{stringliteral}{"{}Recherche\ vers\ la\ droite"{}};}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(it!=L.end()\ \&\&\ !(*(*it)-\/>getEdgeTo(P)\ ==\ *edge))\{}
+\DoxyCodeLine{00640\ }
+\DoxyCodeLine{00641\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it++;}
+\DoxyCodeLine{00642\ }
+\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ \ \ \ \ qDebug\ ()\ <<\ \textcolor{stringliteral}{"{}Recherche\ vers\ la\ gauche"{}};}
+\DoxyCodeLine{00646\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(it!=L.end()\ \&\&\ !(*(*it)-\/>getEdgeFrom(P)\ ==\ *edge))\{}
+\DoxyCodeLine{00647\ }
+\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it++;}
+\DoxyCodeLine{00649\ }
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00651\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00652\ }
+\DoxyCodeLine{00653\ }
+\DoxyCodeLine{00654\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Un\ triangle\ voisin\ a\ été\ trouvé\ !}}
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(it!=L.end())\{}
+\DoxyCodeLine{00656\ \ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Voisin\ trouvé\ !!"{}};}
+\DoxyCodeLine{00657\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(isClosed)\{}
+\DoxyCodeLine{00658\ }
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Lordered.push\_back((*it)-\/>getCircleCenter());}
+\DoxyCodeLine{00660\ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00661\ }
+\DoxyCodeLine{00662\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{class_canvas_a0c866cccd753e3a59ab4d152f2d81f66}{isOutsideCanvas}}((*it)-\/>getCircleCenter())\ \&\&\ !\mbox{\hyperlink{class_canvas_a0c866cccd753e3a59ab4d152f2d81f66}{isOutsideCanvas}}(T-\/>getCircleCenter())\ )\ \{}
+\DoxyCodeLine{00663\ }
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ (*it)-\/>getCircleCenter();}
+\DoxyCodeLine{00665\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!Lordered.contains((*it)-\/>getCircleCenter()))\ Lordered.push\_front((*it)-\/>getCircleCenter());}
+\DoxyCodeLine{00666\ }
+\DoxyCodeLine{00667\ }
+\DoxyCodeLine{00668\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ inter\ =\ \mbox{\hyperlink{class_vector2_d_a7808cd7f0c715a3b7cefb5b8d2fa09fb}{Vector2D::getCanvasIntersectionLimit}}(P,\ *(*it)-\/>getEdgeTo(P),\ (*it)-\/>getCircleCenter(),\ canvasWidth,\ canvasHeight);}
+\DoxyCodeLine{00669\ }
+\DoxyCodeLine{00670\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(computedLimitPointNb\ <\ 2)\{}
+\DoxyCodeLine{00671\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}computedLimitPointNb"{}};}
+\DoxyCodeLine{00672\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Lordered.push\_front(inter);}
+\DoxyCodeLine{00673\ }
+\DoxyCodeLine{00674\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ computedLimitPointNb++;}
+\DoxyCodeLine{00675\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00676\ }
+\DoxyCodeLine{00677\ }
+\DoxyCodeLine{00678\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00679\ }
+\DoxyCodeLine{00680\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Lordered.push\_front((*it)-\/>getCircleCenter());}
+\DoxyCodeLine{00681\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00682\ }
+\DoxyCodeLine{00683\ }
+\DoxyCodeLine{00684\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00685\ }
+\DoxyCodeLine{00686\ \ \ \ \ \ \ \ \ \ \ \ \ T\ =\ *it;}
+\DoxyCodeLine{00687\ \ \ \ \ \ \ \ \ \ \ \ \ L.removeOne(T);}
+\DoxyCodeLine{00688\ }
+\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ La\ liste\ des\ triangles\ a\ parcourir\ est\ vide,\ le\ triangle\ est\ ouvert\ alors }}
+\DoxyCodeLine{00690\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ont\ cherche\ le\ point\ qui\ se\ trouve\ à\ la\ limite\ du\ canvas }}
+\DoxyCodeLine{00691\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00692\ }
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (L.isEmpty()\ \&\&\ !isClosed)\ \{}
+\DoxyCodeLine{00694\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ edge\ =\ T-\/>getEdgeTo(P);}
+\DoxyCodeLine{00695\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ circumCircle\ =\ T-\/>getCircleCenter();}
+\DoxyCodeLine{00696\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_canvas_a0c866cccd753e3a59ab4d152f2d81f66}{isOutsideCanvas}}(circumCircle))\ \{}
+\DoxyCodeLine{00697\ }
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ side1\ =\ \mbox{\hyperlink{class_vector2_d_afefd4ee5571fe6ce0fa3a2c448dfaae5}{Vector2D::whichSide}}(Lordered.back(),\ canvasWidth,\ canvasHeight);}
+\DoxyCodeLine{00699\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ side2\ =\ \mbox{\hyperlink{class_vector2_d_afefd4ee5571fe6ce0fa3a2c448dfaae5}{Vector2D::whichSide}}(circumCircle,\ canvasWidth,\ canvasHeight);}
+\DoxyCodeLine{00700\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (side1\ !=\ side2)\ \{}
+\DoxyCodeLine{00701\ }
+\DoxyCodeLine{00702\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Lordered.push\_back(getBorderPointSide(side1,\ side2,\ canvasWidth,\ canvasHeight));}
+\DoxyCodeLine{00703\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00704\ }
+\DoxyCodeLine{00705\ }
+\DoxyCodeLine{00706\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00707\ }
+\DoxyCodeLine{00708\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ inter1\ =\ \mbox{\hyperlink{class_vector2_d_aedcebd5eddd56b82253b96305825337c}{Vector2D::extendLineToCanvas}}(*(Lordered.end()\ -\/\ 2),\ Lordered.back(),\ canvasWidth,\ canvasHeight);}
+\DoxyCodeLine{00709\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ inter2\ =\ \mbox{\hyperlink{class_vector2_d_a7808cd7f0c715a3b7cefb5b8d2fa09fb}{Vector2D::getCanvasIntersectionLimit}}(edge,\ P,\ circumCircle,\ canvasWidth,\ canvasHeight);}
+\DoxyCodeLine{00710\ }
+\DoxyCodeLine{00711\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ side1\ =\ \mbox{\hyperlink{class_vector2_d_afefd4ee5571fe6ce0fa3a2c448dfaae5}{Vector2D::whichSide}}(inter1,\ canvasWidth,\ canvasHeight);}
+\DoxyCodeLine{00712\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ side2\ =\ \mbox{\hyperlink{class_vector2_d_afefd4ee5571fe6ce0fa3a2c448dfaae5}{Vector2D::whichSide}}(inter2,\ canvasWidth,\ canvasHeight);}
+\DoxyCodeLine{00713\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (side1\ !=\ side2)\ \{}
+\DoxyCodeLine{00714\ }
+\DoxyCodeLine{00715\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Lordered.push\_back(getBorderPointSide(side1,\ side2,\ canvasWidth,\ canvasHeight));}
+\DoxyCodeLine{00716\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ getBorderPointSide(side1,\ side2,\ canvasWidth,\ canvasHeight);}
+\DoxyCodeLine{00717\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00718\ }
+\DoxyCodeLine{00719\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(computedLimitPointNb\ <\ 2)\{}
+\DoxyCodeLine{00720\ }
+\DoxyCodeLine{00721\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Lordered.push\_back(inter2);}
+\DoxyCodeLine{00722\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ computedLimitPointNb++;}
+\DoxyCodeLine{00723\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00724\ }
+\DoxyCodeLine{00725\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00726\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00727\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Aucun\ voisin\ n'a\ été\ trouvé\ le\ triangles\ es\ tdonc\ ouvert\ \ */}}
+\DoxyCodeLine{00728\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00729\ \ \ \ \ \ \ \ \ \ \ \ \ isClosed\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00730\ }
+\DoxyCodeLine{00731\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ circumCircle\ =\ T-\/>getCircleCenter();}
+\DoxyCodeLine{00732\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_canvas_a0c866cccd753e3a59ab4d152f2d81f66}{isOutsideCanvas}}(circumCircle))\ \{}
+\DoxyCodeLine{00733\ }
+\DoxyCodeLine{00734\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!Lordered.contains(circumCircle))\ Lordered.push\_back(circumCircle);}
+\DoxyCodeLine{00735\ }
+\DoxyCodeLine{00736\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00737\ }
+\DoxyCodeLine{00738\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!Lordered.contains(circumCircle))\ \{}
+\DoxyCodeLine{00739\ }
+\DoxyCodeLine{00740\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Lordered.push\_front(circumCircle);}
+\DoxyCodeLine{00741\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00742\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(computedLimitPointNb\ <\ 2)\{}
+\DoxyCodeLine{00743\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ inter\ =\ \mbox{\hyperlink{class_vector2_d_a7808cd7f0c715a3b7cefb5b8d2fa09fb}{Vector2D::getCanvasIntersectionLimit}}(edge,\ P,\ circumCircle,\ canvasWidth,\ canvasHeight);}
+\DoxyCodeLine{00744\ }
+\DoxyCodeLine{00745\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}computedLimitPointNb"{}};}
+\DoxyCodeLine{00746\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Lordered.push\_back(inter);}
+\DoxyCodeLine{00747\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ computedLimitPointNb++;}
+\DoxyCodeLine{00748\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00749\ }
+\DoxyCodeLine{00750\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00751\ }
+\DoxyCodeLine{00752\ \ \ \ \ \ \ \ \ \ \ \ \ L.removeOne(T);}
+\DoxyCodeLine{00753\ }
+\DoxyCodeLine{00754\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(L.isEmpty()\ )\{}
+\DoxyCodeLine{00755\ }
+\DoxyCodeLine{00756\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ edge\ =\ T-\/>getEdgeTo(P);}
+\DoxyCodeLine{00757\ }
+\DoxyCodeLine{00758\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ circumCircle\ =\ (T)-\/>getCircleCenter();}
+\DoxyCodeLine{00759\ }
+\DoxyCodeLine{00760\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_canvas_a0c866cccd753e3a59ab4d152f2d81f66}{isOutsideCanvas}}(circumCircle))\{}
+\DoxyCodeLine{00761\ }
+\DoxyCodeLine{00762\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Lordered.push\_back(circumCircle);}
+\DoxyCodeLine{00763\ }
+\DoxyCodeLine{00764\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(computedLimitPointNb\ <\ 2)\{}
+\DoxyCodeLine{00765\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ inter\ =\ \mbox{\hyperlink{class_vector2_d_a7808cd7f0c715a3b7cefb5b8d2fa09fb}{Vector2D::getCanvasIntersectionLimit}}(edge,\ P,\ circumCircle,\ canvasWidth,\ canvasHeight);}
+\DoxyCodeLine{00766\ }
+\DoxyCodeLine{00767\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}computedLimitPointNb"{}};}
+\DoxyCodeLine{00768\ }
+\DoxyCodeLine{00769\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Lordered.push\_back(inter);}
+\DoxyCodeLine{00770\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ computedLimitPointNb++;}
+\DoxyCodeLine{00771\ }
+\DoxyCodeLine{00772\ }
+\DoxyCodeLine{00773\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00774\ }
+\DoxyCodeLine{00775\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00776\ }
+\DoxyCodeLine{00777\ }
+\DoxyCodeLine{00778\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00779\ \ \ \ \ \}}
+\DoxyCodeLine{00780\ }
+\DoxyCodeLine{00781\ \ \ \ \ \mbox{\hyperlink{class_canvas_a63228e07e968ff5b5af221ba3534d48b}{finalizePolygon}}(city,\ Lordered,\ isClosed);}
+\DoxyCodeLine{00782\ }
+\DoxyCodeLine{00783\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_a7c6aa7f3b2af6d97f2f9358d3e66951d}\index{Canvas@{Canvas}!reScale@{reScale}}
+\index{reScale@{reScale}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{reScale()}{reScale()}}
+{\footnotesize\ttfamily \label{class_canvas_a7c6aa7f3b2af6d97f2f9358d3e66951d} 
+void Canvas\+::re\+Scale (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Rescales the canvas. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{comment}{//qDebug()\ <<\ "{}RESCALE"{};}}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keywordtype}{int}\ newWidth\ =\ width()-\/20;}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{int}\ newHeight\ =\ height()-\/20;}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keyword}{auto}\ box=\mbox{\hyperlink{class_canvas_a36400779155b40787ab5f192d1168c54}{getBox}}();}
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{comment}{//\ qDebug()\ <<\ box;}}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordtype}{float}\ dataWidth=box.second.x-\/box.first.x;}
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keywordtype}{float}\ dataHeight=box.second.y-\/box.first.y;}
+\DoxyCodeLine{00253\ \ \ \ \ \mbox{\hyperlink{class_canvas_a387509ed6ea92c766ec53cef653deab1}{scale}}=qMin(\textcolor{keywordtype}{float}(newWidth)/\textcolor{keywordtype}{float}(dataWidth),\textcolor{keywordtype}{float}(newHeight)/\textcolor{keywordtype}{float}(dataHeight)\ \ );}
+\DoxyCodeLine{00254\ \ \ \ \ \mbox{\hyperlink{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}{origin}}.setX(box.first.x);}
+\DoxyCodeLine{00255\ \ \ \ \ \mbox{\hyperlink{class_canvas_a1cfc6518e39c51d16ff4f8c9ddfed909}{origin}}.setY(box.first.y);}
+\DoxyCodeLine{00256\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_af6760030ef7aaf5cf73e89fbb55bee26}\index{Canvas@{Canvas}!resizeEvent@{resizeEvent}}
+\index{resizeEvent@{resizeEvent}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{resizeEvent()}{resizeEvent()}}
+{\footnotesize\ttfamily \label{class_canvas_af6760030ef7aaf5cf73e89fbb55bee26} 
+void Canvas\+::resize\+Event (\begin{DoxyParamCaption}\item[{QResize\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Handles resize events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Pointer to the resize event. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \mbox{\hyperlink{class_canvas_a7c6aa7f3b2af6d97f2f9358d3e66951d}{reScale}}();}
+\DoxyCodeLine{00241\ \ \ \ \ update();}
+\DoxyCodeLine{00242\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_canvas_af64171658065e802d3a2451bd03a965d}\index{Canvas@{Canvas}!updateSB@{updateSB}}
+\index{updateSB@{updateSB}!Canvas@{Canvas}}
+\doxysubsubsection{\texorpdfstring{updateSB}{updateSB}}
+{\footnotesize\ttfamily \label{class_canvas_af64171658065e802d3a2451bd03a965d} 
+void Canvas\+::update\+SB (\begin{DoxyParamCaption}\item[{QString}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Updates the status bar with a given message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The message to display. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+canvas.\+h\item 
+canvas.\+cpp\end{DoxyCompactItemize}

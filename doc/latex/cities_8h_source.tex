@@ -1,0 +1,77 @@
+\doxysection{cities.\+h}
+\hypertarget{cities_8h_source}{}\label{cities_8h_source}\index{cities.h@{cities.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ CITIES\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ CITIES\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}city.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}mypolygon.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cities}{Cities}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ QVector<City*>\ \mbox{\hyperlink{class_cities_ad6db79898850d855053e9830e2678470}{tabCities}};\ }
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_my_polygon}{MyPolygon}}\ *\mbox{\hyperlink{class_cities_a6a9c99a72a208c7fa6991539ee8310ba}{convexHull}}\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00019\ \ \ \ \ QVector<QVector<int>>\ \mbox{\hyperlink{class_cities_a8a679ac6e932625fa884e1e629d7d91c}{adjacencyMatrix}};\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_cities_a59a41f7e1319d985a05c821c8d2d46e1}{heightLimit}};\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_cities_ae1c5b61db5c2363af2d26af2094551be}{widthLimit}};\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_cities_ae4660b0d896333bdf7fba3bb1465af32}{Cities}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_cities_aaf1290a75de4cb1396ed82de2167c69f}{\string~Cities}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ qsizetype\ \mbox{\hyperlink{class_cities_acbfaef7e0197f38e6a4a492d2660a420}{getSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cities_a5dc3d3ace199e440293ef8d68e6b75e4}{clear}}();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}*\ \mbox{\hyperlink{class_cities_ac5b25150e8030ebebb24db26271d1c2a}{getPointByIndex}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cities_a0757a978984d8e828614b3f5e39f1eb2}{pushCity}}(QString\ name,\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ *position,\ QString\ color);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \ \ \ \ QVector<QPair<QString,\ Vector2D>>\ \mbox{\hyperlink{class_cities_a8c519e6136bfe8624f1a5c5125a52a25}{ascendingPolarAngle}}(\mbox{\hyperlink{class_vector2_d}{Vector2D}}\ \&porigin);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cities_a2e10d714e6f2981ff135ffe121a92c42}{isOnTheLeft}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ \&P,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ \&top\_1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ \&top);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cities_a58419345531dd32657e6f2a3aa8cc5c5}{orderPolygonPoint}}(\mbox{\hyperlink{class_vector2_d}{Vector2D}}\ \&porigin);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cities_ae262c1a79a63adb3d3769a73a1d8899e}{sortingByPointsRelative}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_city}{City}}*\ city1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_city}{City}}*\ city2,}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QVector<QPair<QString,\ Vector2D>>\&\ pointsRelative);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00096\ \ \ \ \ QVector<City*>\ \mbox{\hyperlink{class_cities_afcebf01ed63f80864af34d67d6aa9057}{getTabCities}}();}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00102\ \ \ \ \ QVector<Vector2D*>\ \mbox{\hyperlink{class_cities_a661ac7389993fc6a7b6ec64800fcb9ad}{getTabVertices}}();}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00108\ \ \ \ \ QVector<Triangle*>\ \mbox{\hyperlink{class_cities_af024145923e1b53118200991d2d3a4bc}{initTriangulation}}();}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cities_a07ecd6b3f074c44914a497dc68e2e3dc}{connectionMatrix}}(\textcolor{keyword}{const}\ QVector<City*>\&\ cities);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cities_a48e2f82aa6b47951dd03e47b1d0cfcfe}{areNeighbors}}(\mbox{\hyperlink{class_vector2_d}{Vector2D}}*\ vertices1,\ \textcolor{keywordtype}{int}\ numVertices1,\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}*\ vertices2,\ \textcolor{keywordtype}{int}\ numVertices2);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cities_a0468ed2f2cb2c78bf53f936f0466457d}{doIntersect}}(\mbox{\hyperlink{class_vector2_d}{Vector2D}}\ p1,\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ p2,\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ q1,\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ q2);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_cities_a3342885d83118267a8cc3ccfe465a573}{orientation}}(\mbox{\hyperlink{class_vector2_d}{Vector2D}}\ p,\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ q,\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ r);}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_cities_ae5b273bec3b38b1fe3564d52350e2c46}{getCityByName}}(QString\ \&name);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cities_a81589add9a37634223b775911115d0c8}{draw}}(QPainter\ \&painter,\ \textcolor{keywordtype}{bool}\ transparency);}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cities_a02fbef1c9c8108c6f95cc554cbca448d}{testPathFinding}}(\textcolor{keywordtype}{int}\ start,\ \textcolor{keywordtype}{int}\ end);}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ \mbox{\hyperlink{class_cities_a2a44243f980005d3ccb755cd68c044f5}{nextDestCityId}}(\textcolor{keywordtype}{int}\ start,\ \textcolor{keywordtype}{int}\ end);}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cities_aec5164e4c4c3678c1212b6dbc312ef2c}{setLimit}}(\textcolor{keywordtype}{int}\ \&width,\ \textcolor{keywordtype}{int}\ \&height)\ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cities_ae1c5b61db5c2363af2d26af2094551be}{widthLimit}}\ =\ width;}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cities_a59a41f7e1319d985a05c821c8d2d46e1}{heightLimit}}\ =\ height;}
+\DoxyCodeLine{00182\ \ \ \ \ \}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_cities_a729bd2cda85707184fd3644d88c2b69b}{isOutsideCities}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ \&point)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ point.x\ <\ 0\ ||\ point.x\ >\ (\mbox{\hyperlink{class_cities_ae1c5b61db5c2363af2d26af2094551be}{widthLimit}}\ -\/\ 10)\ ||}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ point.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ <\ 0\ ||\ point.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ >\ (\mbox{\hyperlink{class_cities_a59a41f7e1319d985a05c821c8d2d46e1}{heightLimit}}\ +\ 10);}
+\DoxyCodeLine{00192\ \ \ \ \ \}}
+\DoxyCodeLine{00193\ \};}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CITIES\_H}}
+
+\end{DoxyCode}

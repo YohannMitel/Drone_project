@@ -1,0 +1,714 @@
+\doxysection{Vector2D Class Reference}
+\hypertarget{class_vector2_d}{}\label{class_vector2_d}\index{Vector2D@{Vector2D}}
+
+
+Drone\+\_\+demo project.  
+
+
+
+
+{\ttfamily \#include $<$vector2d.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_vector2_d_ac55d52c97b338457bc3afb5d2f5e3344}{Vector2D}} (float p\+\_\+x, float p\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Constructs a vector with specified x and y coordinates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector2_d_a98e9997ebb7a629f4db52397d4e0d653}{Vector2D}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor initializing the vector to (0, 0). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector2_d_a93a8c1453c5de442266172d112cda946}{Vector2D}} (\mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Copy constructor to initialize from another vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vector2_d_a973094c245c43d462b2f018ab669baa8}{set}} (float p\+\_\+x, float p\+\_\+y)
+\begin{DoxyCompactList}\small\item\em set new coordinates to the vector \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_vector2_d_ab08635b0482451cc43b5b399034eff2f}{length}} () const
+\begin{DoxyCompactList}\small\item\em Computes the length (or norm) of the vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vector2_d_a39a3335f33d7e9850b99e4498ba4d856}{normalize}} ()
+\begin{DoxyCompactList}\small\item\em Normalizes the vector to have a norm of 1 while maintaining its direction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} \mbox{\hyperlink{class_vector2_d_ade14049e72c6167b1547bdccb61ad477}{ortho\+Normed}} () const
+\begin{DoxyCompactList}\small\item\em Returns a new vector that is orthogonal to this vector and normalized. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_vector2_d_a3bf550ff454982ff7c839c84f89ce88a}{operator\mbox{[}$\,$\mbox{]}}} (const int i) const
+\begin{DoxyCompactList}\small\item\em Accesses the components of the vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vector2_d_acf56b22bca709c514070ad91720723ba}{operator+=}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&v)
+\item 
+bool \mbox{\hyperlink{class_vector2_d_a9128e7f96f9fec286ce2e41692811b9b}{is\+Inside\+Canvas}} (float width, float height) const
+\begin{DoxyCompactList}\small\item\em Checks if the vector is inside a specified rectangular canvas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} \mbox{\hyperlink{class_vector2_d_ade6501d6c7e51e0b0184ece75c101bc5}{operator\texorpdfstring{$\ast$}{*}}} (float scalar) const
+\begin{DoxyCompactList}\small\item\em Multiplies the vector by a scalar. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_vector2_d_a3b5fba27a5216141fba5bb3ac96702c4}{dot}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&op)
+\begin{DoxyCompactList}\small\item\em Computes the dot product of this vector with another vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_vector2_d}{Vector2D}} \mbox{\hyperlink{class_vector2_d_a58d3663755d0d5022cc392620056f6b1}{projection}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&A, const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&B, const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&M)
+\begin{DoxyCompactList}\small\item\em Computes the orthogonal projection of a point onto a line defined by two vectors. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_vector2_d}{Vector2D}} \mbox{\hyperlink{class_vector2_d_aedcebd5eddd56b82253b96305825337c}{extend\+Line\+To\+Canvas}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&M, const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&P, float canvas\+Width, float canvas\+Height)
+\begin{DoxyCompactList}\small\item\em Extends a line segment to the boundary of a canvas. \end{DoxyCompactList}\item 
+static QString \mbox{\hyperlink{class_vector2_d_afefd4ee5571fe6ce0fa3a2c448dfaae5}{which\+Side}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&P, float canvas\+Width, float canvas\+Height)
+\begin{DoxyCompactList}\small\item\em Determines which side of the canvas a point lies on. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_vector2_d_a4231f74d46fcb33712df77afcb9066ae}{polar\+Comparison}} (QPair$<$ QString, \mbox{\hyperlink{class_vector2_d}{Vector2D}} $>$ P1, QPair$<$ QString, \mbox{\hyperlink{class_vector2_d}{Vector2D}} $>$ P2)
+\begin{DoxyCompactList}\small\item\em Compares two points based on their polar angle relative to the origin. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_vector2_d}{Vector2D}} \mbox{\hyperlink{class_vector2_d_a7808cd7f0c715a3b7cefb5b8d2fa09fb}{get\+Canvas\+Intersection\+Limit}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&A, const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&B, const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&M, float canvas\+Width, float canvas\+Height)
+\begin{DoxyCompactList}\small\item\em Computes the intersection point on the canvas boundary after projecting a point onto a vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_vector2_d_aeb4253ba6555251d010ea4450619029e}\label{class_vector2_d_aeb4253ba6555251d010ea4450619029e} 
+float {\bfseries x}
+\item 
+\Hypertarget{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}\label{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d} 
+float {\bfseries y}
+\begin{DoxyCompactList}\small\item\em coordinates of the vector \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_vector2_d_adaff64f54444c876c588bb9de8cff3d5}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&u, const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&v)
+\item 
+const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \mbox{\hyperlink{class_vector2_d_a4dc5874e264037c69a6dd041436e0bcd}{operator\texorpdfstring{$\ast$}{*}}} (double a, const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&v)
+\item 
+const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \mbox{\hyperlink{class_vector2_d_a37c1e7b52b4d9a0b452d9dc1e5a3535c}{operator+}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&u, const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&v)
+\item 
+const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \mbox{\hyperlink{class_vector2_d_a73d3241ae1e865371f1713718af3004f}{operator-\/}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&u, const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&v)
+\item 
+const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \mbox{\hyperlink{class_vector2_d_a929d33d02e4b41eef1b71fde4f48b1b1}{operator-\/}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&v)
+\item 
+double \mbox{\hyperlink{class_vector2_d_a0c76d01601145a90c052ace1be5f2357}{operator\texorpdfstring{$^\wedge$}{\string^}}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&u, const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&v)
+\item 
+bool \mbox{\hyperlink{class_vector2_d_a5a1dc24d8a7344df74f7865d34c2f3b2}{operator==}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&u, const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&v)
+\item 
+\Hypertarget{class_vector2_d_ae0bc4e011d92acb25ce7b22537c3089d}\label{class_vector2_d_ae0bc4e011d92acb25ce7b22537c3089d} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&, const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&)
+\item 
+QDebug \mbox{\hyperlink{class_vector2_d_a3632a18a6e82fdaa6497d8011990cb8d}{operator$<$$<$}} (QDebug dbg, const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&v)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Drone\+\_\+demo project. 
+
+\begin{DoxyAuthor}{Author}
+B.\+Piranda 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+dec. 2024
+\end{DoxyDate}
+Represents a 2D vector with various mathematical and geometric utilities. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_vector2_d_ac55d52c97b338457bc3afb5d2f5e3344}\index{Vector2D@{Vector2D}!Vector2D@{Vector2D}}
+\index{Vector2D@{Vector2D}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{Vector2D()}{Vector2D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_vector2_d_ac55d52c97b338457bc3afb5d2f5e3344} 
+Vector2\+D\+::\+Vector2D (\begin{DoxyParamCaption}\item[{float}]{p\+\_\+x}{, }\item[{float}]{p\+\_\+y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a vector with specified x and y coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+x} & X component of the vector. \\
+\hline
+{\em p\+\_\+y} & Y component of the vector. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ :x(p\_x),\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}(p\_y)\ \{\};}
+
+\end{DoxyCode}
+\Hypertarget{class_vector2_d_a98e9997ebb7a629f4db52397d4e0d653}\index{Vector2D@{Vector2D}!Vector2D@{Vector2D}}
+\index{Vector2D@{Vector2D}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{Vector2D()}{Vector2D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_vector2_d_a98e9997ebb7a629f4db52397d4e0d653} 
+Vector2\+D\+::\+Vector2D (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor initializing the vector to (0, 0). 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \{\ x=\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}=0.0;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_vector2_d_a93a8c1453c5de442266172d112cda946}\index{Vector2D@{Vector2D}!Vector2D@{Vector2D}}
+\index{Vector2D@{Vector2D}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{Vector2D()}{Vector2D()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_vector2_d_a93a8c1453c5de442266172d112cda946} 
+Vector2\+D\+::\+Vector2D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor to initialize from another vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Pointer to the vector to copy. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ :x(p-\/>x),\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}(p-\/>\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}})\ \{\};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_vector2_d_a3b5fba27a5216141fba5bb3ac96702c4}\index{Vector2D@{Vector2D}!dot@{dot}}
+\index{dot@{dot}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily \label{class_vector2_d_a3b5fba27a5216141fba5bb3ac96702c4} 
+float Vector2\+D\+::dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{op}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Computes the dot product of this vector with another vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & The other vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dot product of the two vectors. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x\ *\ op.x\ +\ \mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ *\ op.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}};}
+\DoxyCodeLine{00127\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_vector2_d_aedcebd5eddd56b82253b96305825337c}\index{Vector2D@{Vector2D}!extendLineToCanvas@{extendLineToCanvas}}
+\index{extendLineToCanvas@{extendLineToCanvas}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{extendLineToCanvas()}{extendLineToCanvas()}}
+{\footnotesize\ttfamily \label{class_vector2_d_aedcebd5eddd56b82253b96305825337c} 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} Vector2\+D\+::extend\+Line\+To\+Canvas (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{M}{, }\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{P}{, }\item[{float}]{canvas\+Width}{, }\item[{float}]{canvas\+Height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Extends a line segment to the boundary of a canvas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em M} & Starting point of the line. \\
+\hline
+{\em P} & Direction point of the line. \\
+\hline
+{\em canvas\+Width} & Width of the canvas. \\
+\hline
+{\em canvas\+Height} & Height of the canvas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The intersection point on the canvas boundary. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Ajouter\ une\ marge\ de\ +30\ pixels\ à\ la\ hauteur\ et\ -\/30\ pixels\ à\ la\ largeur}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{float}\ marginHeight\ =\ canvasHeight\ +30;}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{float}\ marginWidth\ =\ canvasWidth\ ;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//\ Direction\ de\ la\ droite\ MP}}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ MP\ =\ P\ -\/\ M;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{comment}{//\ Si\ la\ direction\ est\ nulle\ (M\ et\ P\ sont\ identiques),\ retourner\ M}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (MP.x\ ==\ 0\ \&\&\ MP.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ ==\ 0)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ M;}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{comment}{//\ Calcul\ des\ distances\ entre\ M\ et\ les\ bords\ du\ canvas}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{float}\ distLeft\ =\ P.x;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Distance\ au\ bord\ gauche}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{float}\ distRight\ =\ marginWidth\ -\/\ P.x;\ \textcolor{comment}{//\ Distance\ au\ bord\ droit}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{float}\ distTop\ =\ marginHeight\ -\/\ P.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}};\ \ \textcolor{comment}{//\ Distance\ au\ bord\ supérieur}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{float}\ distBottom\ =\ P.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Distance\ au\ bord\ inférieur}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ Déterminer\ le\ côté\ du\ canvas\ le\ plus\ proche\ de\ M}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{float}\ minDist\ =\ std::min(\{distLeft,\ distRight,\ distTop,\ distBottom\});}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{int}\ side\ =\ 0;\ \textcolor{comment}{//\ 0\ =\ gauche,\ 1\ =\ droite,\ 2\ =\ haut,\ 3\ =\ bas}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{if}\ (minDist\ ==\ distLeft)\ side\ =\ 0;\ \textcolor{comment}{//\ Bord\ gauche}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (minDist\ ==\ distRight)\ side\ =\ 1;\ \textcolor{comment}{//\ Bord\ droit}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (minDist\ ==\ distTop)\ side\ =\ 2;\ \textcolor{comment}{//\ Bord\ supérieur}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (minDist\ ==\ distBottom)\ side\ =\ 3;\ \textcolor{comment}{//\ Bord\ inférieur}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ Calcul\ des\ intersections\ avec\ le\ côté\ sélectionné}}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ intersection;}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordflow}{if}\ (side\ ==\ 0)\ \{\ \textcolor{comment}{//\ Bord\ gauche\ (x\ =\ 0)}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ t\ =\ (0\ -\/\ M.x)\ /\ MP.x;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ intersection\ =\ M\ +\ MP\ *\ t;}
+\DoxyCodeLine{00071\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (side\ ==\ 1)\ \{\ \textcolor{comment}{//\ Bord\ droit\ (x\ =\ marginWidth)}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ t\ =\ (marginWidth\ -\/\ M.x)\ /\ MP.x;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ intersection\ =\ M\ +\ MP\ *\ t;}
+\DoxyCodeLine{00074\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (side\ ==\ 2)\ \{\ \textcolor{comment}{//\ Bord\ supérieur\ (y\ =\ marginHeight)}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ t\ =\ (marginHeight\ -\/\ M.y)\ /\ MP.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ intersection\ =\ M\ +\ MP\ *\ t;}
+\DoxyCodeLine{00077\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (side\ ==\ 3)\ \{\ \textcolor{comment}{//\ Bord\ inférieur\ (y\ =\ 0)}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ t\ =\ (0\ -\/\ M.y)\ /\ MP.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}};}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ intersection\ =\ M\ +\ MP\ *\ t;}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//\ Retourner\ le\ point\ d'intersection}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{return}\ intersection;}
+\DoxyCodeLine{00084\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_vector2_d_a7808cd7f0c715a3b7cefb5b8d2fa09fb}\index{Vector2D@{Vector2D}!getCanvasIntersectionLimit@{getCanvasIntersectionLimit}}
+\index{getCanvasIntersectionLimit@{getCanvasIntersectionLimit}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{getCanvasIntersectionLimit()}{getCanvasIntersectionLimit()}}
+{\footnotesize\ttfamily \label{class_vector2_d_a7808cd7f0c715a3b7cefb5b8d2fa09fb} 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} Vector2\+D\+::get\+Canvas\+Intersection\+Limit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{A}{, }\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{B}{, }\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{M}{, }\item[{float}]{canvas\+Width}{, }\item[{float}]{canvas\+Height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Computes the intersection point on the canvas boundary after projecting a point onto a vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & Starting point of the vector. \\
+\hline
+{\em B} & Ending point of the vector. \\
+\hline
+{\em M} & Point to project. \\
+\hline
+{\em canvas\+Width} & Width of the canvas. \\
+\hline
+{\em canvas\+Height} & Height of the canvas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The intersection point on the canvas boundary. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ proj\ =\ \mbox{\hyperlink{class_vector2_d_a58d3663755d0d5022cc392620056f6b1}{Vector2D::projection}}(A,\ B,\ M);}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ inter\ =\ \mbox{\hyperlink{class_vector2_d_aedcebd5eddd56b82253b96305825337c}{Vector2D::extendLineToCanvas}}(M,\ proj,\ canvasWidth,\ canvasHeight);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordflow}{return}\ inter;}
+\DoxyCodeLine{00091\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_vector2_d_a9128e7f96f9fec286ce2e41692811b9b}\index{Vector2D@{Vector2D}!isInsideCanvas@{isInsideCanvas}}
+\index{isInsideCanvas@{isInsideCanvas}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{isInsideCanvas()}{isInsideCanvas()}}
+{\footnotesize\ttfamily \label{class_vector2_d_a9128e7f96f9fec286ce2e41692811b9b} 
+bool Vector2\+D\+::is\+Inside\+Canvas (\begin{DoxyParamCaption}\item[{float}]{width}{, }\item[{float}]{height}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the vector is inside a specified rectangular canvas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of the canvas. \\
+\hline
+{\em height} & Height of the canvas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the vector is inside the canvas, false otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ x\ >=\ 0\ \&\&\ x\ <=\ width\ \&\&\ y\ >=\ 0\ \&\&\ \mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ <=\ height;}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_vector2_d_ab08635b0482451cc43b5b399034eff2f}\index{Vector2D@{Vector2D}!length@{length}}
+\index{length@{length}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily \label{class_vector2_d_ab08635b0482451cc43b5b399034eff2f} 
+double Vector2\+D\+::length (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Computes the length (or norm) of the vector. 
+
+\begin{DoxyReturn}{Returns}
+The length of the vector. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sqrt(x*x+\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}*\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}});}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_vector2_d_a39a3335f33d7e9850b99e4498ba4d856}\index{Vector2D@{Vector2D}!normalize@{normalize}}
+\index{normalize@{normalize}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily \label{class_vector2_d_a39a3335f33d7e9850b99e4498ba4d856} 
+void Vector2\+D\+::normalize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Normalizes the vector to have a norm of 1 while maintaining its direction. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ l=float(\mbox{\hyperlink{class_vector2_d_ab08635b0482451cc43b5b399034eff2f}{length}}());}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ x/=l;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}/=l;}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_vector2_d_ade6501d6c7e51e0b0184ece75c101bc5}\index{Vector2D@{Vector2D}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \label{class_vector2_d_ade6501d6c7e51e0b0184ece75c101bc5} 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} Vector2\+D\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{float}]{scalar}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiplies the vector by a scalar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & Scalar value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scaled vector. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_vector2_d_a98e9997ebb7a629f4db52397d4e0d653}{Vector2D}}(x\ *\ scalar,\ \mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ *\ scalar);}
+\DoxyCodeLine{00118\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_vector2_d_acf56b22bca709c514070ad91720723ba}\index{Vector2D@{Vector2D}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \label{class_vector2_d_acf56b22bca709c514070ad91720723ba} 
+void Vector2\+D\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ x+=v.x;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}+=v.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}};}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_vector2_d_a3bf550ff454982ff7c839c84f89ce88a}\index{Vector2D@{Vector2D}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \label{class_vector2_d_a3bf550ff454982ff7c839c84f89ce88a} 
+float Vector2\+D\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const int}]{i}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Accesses the components of the vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Index (0 for x, 1 for y). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The x or y component of the vector. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (i==0)?x:\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}};}
+\DoxyCodeLine{00079\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_vector2_d_ade14049e72c6167b1547bdccb61ad477}\index{Vector2D@{Vector2D}!orthoNormed@{orthoNormed}}
+\index{orthoNormed@{orthoNormed}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{orthoNormed()}{orthoNormed()}}
+{\footnotesize\ttfamily \label{class_vector2_d_ade14049e72c6167b1547bdccb61ad477} 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} Vector2\+D\+::ortho\+Normed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a new vector that is orthogonal to this vector and normalized. 
+
+\begin{DoxyReturn}{Returns}
+The orthonormal vector. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ l=float(\mbox{\hyperlink{class_vector2_d_ab08635b0482451cc43b5b399034eff2f}{length}}());}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_vector2_d_a98e9997ebb7a629f4db52397d4e0d653}{Vector2D}}(\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}/l,-\/x/l);}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_vector2_d_a4231f74d46fcb33712df77afcb9066ae}\index{Vector2D@{Vector2D}!polarComparison@{polarComparison}}
+\index{polarComparison@{polarComparison}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{polarComparison()}{polarComparison()}}
+{\footnotesize\ttfamily \label{class_vector2_d_a4231f74d46fcb33712df77afcb9066ae} 
+bool Vector2\+D\+::polar\+Comparison (\begin{DoxyParamCaption}\item[{QPair$<$ QString, \mbox{\hyperlink{class_vector2_d}{Vector2D}} $>$}]{P1}{, }\item[{QPair$<$ QString, \mbox{\hyperlink{class_vector2_d}{Vector2D}} $>$}]{P2}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compares two points based on their polar angle relative to the origin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em P1} & First point pair. \\
+\hline
+{\em P2} & Second point pair. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if P1 is less than P2 in polar angle, false otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{auto}\ pts1\ =\ P1.second;}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{auto}\ pts2\ =\ P2.second;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{comment}{//\ Priorité\ si\ x\ ==\ 0}}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordflow}{if}\ (pts1.x\ ==\ 0\ \&\&\ pts2.x\ !=\ 0)\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ P1\ est\ prioritaire}}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordflow}{if}\ (pts2.x\ ==\ 0\ \&\&\ pts1.x\ !=\ 0)\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ P2\ est\ prioritaire}}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{comment}{//\ Calcul\ des\ angles\ polaires}}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{double}\ a1\ =\ asin(pts1.y\ /\ sqrt(pts1.x\ *\ pts1.x\ +\ pts1.y\ *\ pts1.y));}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordflow}{if}\ (pts1.x\ <\ 0.0)\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ a1\ =\ M\_PI\ -\/\ a1;}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{double}\ a2\ =\ asin(pts2.y\ /\ sqrt(pts2.x\ *\ pts2.x\ +\ pts2.y\ *\ pts2.y));}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordflow}{if}\ (pts2.x\ <\ 0.0)\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ a2\ =\ M\_PI\ -\/\ a2;}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordflow}{return}\ a1<a2;}
+\DoxyCodeLine{00120\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_vector2_d_a58d3663755d0d5022cc392620056f6b1}\index{Vector2D@{Vector2D}!projection@{projection}}
+\index{projection@{projection}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{projection()}{projection()}}
+{\footnotesize\ttfamily \label{class_vector2_d_a58d3663755d0d5022cc392620056f6b1} 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} Vector2\+D\+::projection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{A}{, }\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{B}{, }\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{M}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Computes the orthogonal projection of a point onto a line defined by two vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & Starting point of the line. \\
+\hline
+{\em B} & Ending point of the line. \\
+\hline
+{\em M} & Point to project. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The projection point on the line. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00004\ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ AB\ =\ B\ -\/\ A;\ \ \ \textcolor{comment}{//\ Vector\ AB}}
+\DoxyCodeLine{00005\ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ AM\ =\ M\ -\/\ A;\ \ \ \textcolor{comment}{//\ Vector\ AM}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{comment}{//\ Projection\ factor\ t}}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{float}\ t\ =\ AM.\mbox{\hyperlink{class_vector2_d_a3b5fba27a5216141fba5bb3ac96702c4}{dot}}(AB)\ /\ (AB.\mbox{\hyperlink{class_vector2_d_ab08635b0482451cc43b5b399034eff2f}{length}}()\ *\ AB.\mbox{\hyperlink{class_vector2_d_ab08635b0482451cc43b5b399034eff2f}{length}}());}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{comment}{//\ Clamp\ t\ to\ the\ range\ [0,\ 1]}}
+\DoxyCodeLine{00011\ \ \ \ \ t\ =\ std::max(0.0f,\ std::min(1.0f,\ t));}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//\ Point\ M\ =\ A\ +\ t\ *\ AB}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordflow}{return}\ A\ +\ AB\ *\ t;}
+\DoxyCodeLine{00015\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_vector2_d_a973094c245c43d462b2f018ab669baa8}\index{Vector2D@{Vector2D}!set@{set}}
+\index{set@{set}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily \label{class_vector2_d_a973094c245c43d462b2f018ab669baa8} 
+void Vector2\+D\+::set (\begin{DoxyParamCaption}\item[{float}]{p\+\_\+x}{, }\item[{float}]{p\+\_\+y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set new coordinates to the vector 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+x} & x component \\
+\hline
+{\em p\+\_\+y} & y component \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \{\ x=p\_x;\ \mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}=p\_y;\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_vector2_d_afefd4ee5571fe6ce0fa3a2c448dfaae5}\index{Vector2D@{Vector2D}!whichSide@{whichSide}}
+\index{whichSide@{whichSide}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{whichSide()}{whichSide()}}
+{\footnotesize\ttfamily \label{class_vector2_d_afefd4ee5571fe6ce0fa3a2c448dfaae5} 
+QString Vector2\+D\+::which\+Side (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{P}{, }\item[{float}]{canvas\+Width}{, }\item[{float}]{canvas\+Height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Determines which side of the canvas a point lies on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em P} & Point to check. \\
+\hline
+{\em canvas\+Width} & Width of the canvas. \\
+\hline
+{\em canvas\+Height} & Height of the canvas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string indicating the side of the canvas ("{}top"{}, "{}bottom"{}, "{}left"{}, "{}right"{}). 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//qDebug()\ <<\ "{}P.x\ :\ "{}\ <<\ P.x\ <<\ "{}P.y\ :\ "{}\ <<\ P.y;}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (P.x\ <=\ 0)\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Point\ is\ to\ the\ left\ of\ the\ canvas."{}};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}left"{}};}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (P.x\ >\ canvasWidth-\/50)\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Point\ is\ to\ the\ right\ of\ the\ canvas."{}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}right"{}};}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (P.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ >\ canvasHeight\ )\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Point\ is\ above\ the\ canvas."{}};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}above"{}};}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Point\ is\ below\ the\ canvas."{}};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}bottom"{}};}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_vector2_d_adaff64f54444c876c588bb9de8cff3d5}\index{Vector2D@{Vector2D}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}}{operator*}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_vector2_d_adaff64f54444c876c588bb9de8cff3d5} 
+double operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{u}{, }\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordflow}{return}\ u.x*v.x+u.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}*v.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}};}
+\DoxyCodeLine{00129\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_vector2_d_a4dc5874e264037c69a6dd041436e0bcd}\index{Vector2D@{Vector2D}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}}{operator*}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_vector2_d_a4dc5874e264037c69a6dd041436e0bcd} 
+const \mbox{\hyperlink{class_vector2_d}{Vector2D}} operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{double}]{a}{, }\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_vector2_d_a98e9997ebb7a629f4db52397d4e0d653}{Vector2D}}(\textcolor{keywordtype}{float}(a*v.x),\textcolor{keywordtype}{float}(a*v.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}));}
+\DoxyCodeLine{00125\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_vector2_d_a37c1e7b52b4d9a0b452d9dc1e5a3535c}\index{Vector2D@{Vector2D}!operator+@{operator+}}
+\index{operator+@{operator+}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{operator+}{operator+}}
+{\footnotesize\ttfamily \label{class_vector2_d_a37c1e7b52b4d9a0b452d9dc1e5a3535c} 
+const \mbox{\hyperlink{class_vector2_d}{Vector2D}} operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{u}{, }\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_vector2_d_a98e9997ebb7a629f4db52397d4e0d653}{Vector2D}}(u.x+v.x,u.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}+v.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}});}
+\DoxyCodeLine{00133\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_vector2_d_a73d3241ae1e865371f1713718af3004f}\index{Vector2D@{Vector2D}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{operator-\/}{operator-}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_vector2_d_a73d3241ae1e865371f1713718af3004f} 
+const \mbox{\hyperlink{class_vector2_d}{Vector2D}} operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{u}{, }\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_vector2_d_a98e9997ebb7a629f4db52397d4e0d653}{Vector2D}}(u.x-\/v.x,u.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}-\/v.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}});}
+\DoxyCodeLine{00137\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_vector2_d_a929d33d02e4b41eef1b71fde4f48b1b1}\index{Vector2D@{Vector2D}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{operator-\/}{operator-}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_vector2_d_a929d33d02e4b41eef1b71fde4f48b1b1} 
+const \mbox{\hyperlink{class_vector2_d}{Vector2D}} operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_vector2_d_a98e9997ebb7a629f4db52397d4e0d653}{Vector2D}}(-\/v.x,-\/v.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}});}
+\DoxyCodeLine{00141\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_vector2_d_a3632a18a6e82fdaa6497d8011990cb8d}\index{Vector2D@{Vector2D}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{class_vector2_d_a3632a18a6e82fdaa6497d8011990cb8d} 
+QDebug operator$<$$<$ (\begin{DoxyParamCaption}\item[{QDebug}]{dbg}{, }\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ dbg.nospace()\ <<\ \textcolor{stringliteral}{"{}Vector2D("{}}\ <<\ v.x\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ v.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dbg.space();}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_vector2_d_a5a1dc24d8a7344df74f7865d34c2f3b2}\index{Vector2D@{Vector2D}!operator==@{operator==}}
+\index{operator==@{operator==}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily \label{class_vector2_d_a5a1dc24d8a7344df74f7865d34c2f3b2} 
+bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{u}{, }\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordflow}{return}\ (u.x==v.x\ \&\&\ u.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}==v.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}});}
+\DoxyCodeLine{00149\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_vector2_d_a0c76d01601145a90c052ace1be5f2357}\index{Vector2D@{Vector2D}!operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}}
+\index{operator\texorpdfstring{$^\wedge$}{\string^}@{operator\texorpdfstring{$^\wedge$}{\string^}}!Vector2D@{Vector2D}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$^\wedge$}{\string^}}{operator\string^}}
+{\footnotesize\ttfamily \label{class_vector2_d_a0c76d01601145a90c052ace1be5f2357} 
+double operator\texorpdfstring{$^\wedge$}{\string^} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{u}{, }\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordflow}{return}\ u.x*v.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}-\/u.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}*v.x;}
+\DoxyCodeLine{00145\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+vector2d.\+h\item 
+vector2d.\+cpp\end{DoxyCompactItemize}

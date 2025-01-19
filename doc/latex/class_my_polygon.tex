@@ -1,0 +1,624 @@
+\doxysection{My\+Polygon Class Reference}
+\hypertarget{class_my_polygon}{}\label{class_my_polygon}\index{MyPolygon@{MyPolygon}}
+
+
+he \doxylink{class_my_polygon}{My\+Polygon} class allows the creation, drawing, and manipulation of polygons. This class provides methods to check if a point is inside the polygon and compute its surface.  
+
+
+
+
+{\ttfamily \#include $<$mypolygon.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_my_polygon_aafdb38fa69d419e22b24db985b73ca9c}{My\+Polygon}} (int p\+\_\+\+Nmax)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_my_polygon}{My\+Polygon} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_my_polygon_a94e1a0a9e8468dbf12073b5d12448106}{\texorpdfstring{$\sim$}{\string~}\+My\+Polygon}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_my_polygon}{My\+Polygon} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_my_polygon_a3e1b746bb99b2185aa7a0be2ad51242a}{get\+Vertices}} (int \&n)
+\begin{DoxyCompactList}\small\item\em Gets the vertices of the polygon. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_my_polygon_ac00111379e93e80ae3bfc45d789ce198}{add\+Vertex}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&P)
+\begin{DoxyCompactList}\small\item\em Adds a vertex to the polygon. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_my_polygon_ab511b988a34d634437fbaf54b3143927}{draw}} (QPainter \&painter, bool transparency)
+\begin{DoxyCompactList}\small\item\em Draws the polygon on a QPainter canvas. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_my_polygon_a81e26e67babbb30ff3edd34c25d2f424}{is\+Inside\+With\+Triangulation}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&pt)
+\begin{DoxyCompactList}\small\item\em Checks if a point is inside the polygon using triangulation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_my_polygon_a83263e44da15395bc5a5fa4d88e7ccd8}{set\+Color}} (const QString c)
+\begin{DoxyCompactList}\small\item\em Sets the drawing color of the polygon. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_my_polygon_aa53d5a16ad2fd9613e40e44a49fad436}{is\+On\+The\+Left}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&P, int i)
+\begin{DoxyCompactList}\small\item\em Checks if a point is on the left side of a polygon edge. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_my_polygon_a2ff01556f27920485cfdbe8235da7746}{is\+Convex}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the polygon is convex. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_my_polygon_a33aa193d3ac09f08652b0d66fdb35cb9}{is\+Inside}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&P)
+\begin{DoxyCompactList}\small\item\em Checks if a point is inside the polygon. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_my_polygon_a381c4099e2e2968e480b5fb30a8e1fe4}{ear\+Clipping}} ()
+\begin{DoxyCompactList}\small\item\em Triangulates the polygon using the ear-\/clipping method. \end{DoxyCompactList}\item 
+QVector$<$ \mbox{\hyperlink{class_triangle}{Triangle}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_my_polygon_ae4eb642f773fc286efacc2130ca60371}{ear\+Clipping}} (QVector$<$ \mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*} $>$ \&vertices)
+\begin{DoxyCompactList}\small\item\em Triangulates the polygon using the ear-\/clipping method and returns the resulting triangles. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_my_polygon_a70380762b15e4ce81a03ff0906e253d7}{distance\+To\+Edge}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&M, int i)
+\begin{DoxyCompactList}\small\item\em Computes the distance from a point to a specific edge of the polygon. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_nearest_edge_result}{Nearest\+Edge\+Result}} \mbox{\hyperlink{class_my_polygon_a514bf3d3bfc1033779d8b85afeb5244a}{nearest\+Edge}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&M)
+\begin{DoxyCompactList}\small\item\em Finds the nearest edge of the polygon to a given point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} \mbox{\hyperlink{class_my_polygon_aa1adb2f322c9c52ffce77b69990c72a2}{closestH}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&M, int \&nearest)
+\begin{DoxyCompactList}\small\item\em Finds the closest vertex horizontally to a given point. \end{DoxyCompactList}\item 
+QVector$<$ \mbox{\hyperlink{class_triangle}{Triangle}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_my_polygon_a7468f6171fc327f4235e116b47027f2e}{ear\+Clipping\+Utils}} (\mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*}p1, \mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*}p2, \mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*}p3, QVector$<$ \mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*} $>$ \&vertices)
+\begin{DoxyCompactList}\small\item\em Helper function for ear-\/clipping triangulation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_my_polygon_af45e7882b36f0b9702d45b1757f920e0}\label{class_my_polygon_af45e7882b36f0b9702d45b1757f920e0} 
+int {\bfseries Nmax}
+\begin{DoxyCompactList}\small\item\em Maximum number of vertices for the current polygon. \end{DoxyCompactList}\item 
+\Hypertarget{class_my_polygon_a45661c328421c76477145ec42d46ca5d}\label{class_my_polygon_a45661c328421c76477145ec42d46ca5d} 
+int {\bfseries N}
+\begin{DoxyCompactList}\small\item\em Current number of vertices. \end{DoxyCompactList}\item 
+\Hypertarget{class_my_polygon_a2211051569fcfc71715284076980a832}\label{class_my_polygon_a2211051569fcfc71715284076980a832} 
+QVector$<$ \mbox{\hyperlink{class_triangle}{Triangle}} $>$ {\bfseries triangles}
+\begin{DoxyCompactList}\small\item\em Array of triangles representing the triangulation. \end{DoxyCompactList}\item 
+\Hypertarget{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}\label{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c} 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*} {\bfseries tab\+Pts}
+\begin{DoxyCompactList}\small\item\em Array of vertex positions. \end{DoxyCompactList}\item 
+\Hypertarget{class_my_polygon_adf882e0e158748eab44ea40ae1e75fe1}\label{class_my_polygon_adf882e0e158748eab44ea40ae1e75fe1} 
+QString {\bfseries current\+Color}
+\begin{DoxyCompactList}\small\item\em Current drawing color of the polygon. \end{DoxyCompactList}\item 
+\Hypertarget{class_my_polygon_a02c59d744c03ec94c882aa370c24e76f}\label{class_my_polygon_a02c59d744c03ec94c882aa370c24e76f} 
+bool {\bfseries hovered} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if the polygon is hovered. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+he \doxylink{class_my_polygon}{My\+Polygon} class allows the creation, drawing, and manipulation of polygons. This class provides methods to check if a point is inside the polygon and compute its surface. 
+
+\begin{DoxyAuthor}{Author}
+Yohann Mitel \& Pierre Meyer 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Janvier 2025 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_my_polygon_aafdb38fa69d419e22b24db985b73ca9c}\index{MyPolygon@{MyPolygon}!MyPolygon@{MyPolygon}}
+\index{MyPolygon@{MyPolygon}!MyPolygon@{MyPolygon}}
+\doxysubsubsection{\texorpdfstring{MyPolygon()}{MyPolygon()}}
+{\footnotesize\ttfamily \label{class_my_polygon_aafdb38fa69d419e22b24db985b73ca9c} 
+My\+Polygon\+::\+My\+Polygon (\begin{DoxyParamCaption}\item[{int}]{p\+\_\+\+Nmax}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \doxylink{class_my_polygon}{My\+Polygon} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+\+Nmax} & Maximum number of vertices for the polygon. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_my_polygon_af45e7882b36f0b9702d45b1757f920e0}{Nmax}}(p\_Nmax)\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_my_polygon_a45661c328421c76477145ec42d46ca5d}{N}}\ =\ 0;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}[\mbox{\hyperlink{class_my_polygon_af45e7882b36f0b9702d45b1757f920e0}{Nmax}}\ +\ 1];}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_my_polygon_adf882e0e158748eab44ea40ae1e75fe1}{currentColor}}\ =\ \textcolor{stringliteral}{"{}\#0000FF"{}};}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_my_polygon_a94e1a0a9e8468dbf12073b5d12448106}\index{MyPolygon@{MyPolygon}!````~MyPolygon@{\texorpdfstring{$\sim$}{\string~}MyPolygon}}
+\index{````~MyPolygon@{\texorpdfstring{$\sim$}{\string~}MyPolygon}!MyPolygon@{MyPolygon}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MyPolygon()}{\string~MyPolygon()}}
+{\footnotesize\ttfamily \label{class_my_polygon_a94e1a0a9e8468dbf12073b5d12448106} 
+My\+Polygon\+::\texorpdfstring{$\sim$}{\string~}\+My\+Polygon (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor for the \doxylink{class_my_polygon}{My\+Polygon} class. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ \mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}};}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_my_polygon_ac00111379e93e80ae3bfc45d789ce198}\index{MyPolygon@{MyPolygon}!addVertex@{addVertex}}
+\index{addVertex@{addVertex}!MyPolygon@{MyPolygon}}
+\doxysubsubsection{\texorpdfstring{addVertex()}{addVertex()}}
+{\footnotesize\ttfamily \label{class_my_polygon_ac00111379e93e80ae3bfc45d789ce198} 
+void My\+Polygon\+::add\+Vertex (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{P}{}\end{DoxyParamCaption})}
+
+
+
+Adds a vertex to the polygon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em P} & The vertex position to add. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00006\ \ \ \ \ assert(\mbox{\hyperlink{class_my_polygon_a45661c328421c76477145ec42d46ca5d}{N}}<\mbox{\hyperlink{class_my_polygon_af45e7882b36f0b9702d45b1757f920e0}{Nmax}});}
+\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}}[\mbox{\hyperlink{class_my_polygon_a45661c328421c76477145ec42d46ca5d}{N}}].x=P.x;}
+\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}}[\mbox{\hyperlink{class_my_polygon_a45661c328421c76477145ec42d46ca5d}{N}}].\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}=P.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}};}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_my_polygon_a45661c328421c76477145ec42d46ca5d}{N}}++;}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}}[\mbox{\hyperlink{class_my_polygon_a45661c328421c76477145ec42d46ca5d}{N}}].x=\mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}}[0].x;}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}}[\mbox{\hyperlink{class_my_polygon_a45661c328421c76477145ec42d46ca5d}{N}}].\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}=\mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}}[0].\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}};}
+\DoxyCodeLine{00012\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_my_polygon_aa1adb2f322c9c52ffce77b69990c72a2}\index{MyPolygon@{MyPolygon}!closestH@{closestH}}
+\index{closestH@{closestH}!MyPolygon@{MyPolygon}}
+\doxysubsubsection{\texorpdfstring{closestH()}{closestH()}}
+{\footnotesize\ttfamily \label{class_my_polygon_aa1adb2f322c9c52ffce77b69990c72a2} 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} My\+Polygon\+::closestH (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{M}{, }\item[{int \&}]{nearest}{}\end{DoxyParamCaption})}
+
+
+
+Finds the closest vertex horizontally to a given point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em M} & The point to check. \\
+\hline
+{\em nearest} & Reference to store the index of the nearest vertex. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The position of the closest vertex. 
+\end{DoxyReturn}
+\Hypertarget{class_my_polygon_a70380762b15e4ce81a03ff0906e253d7}\index{MyPolygon@{MyPolygon}!distanceToEdge@{distanceToEdge}}
+\index{distanceToEdge@{distanceToEdge}!MyPolygon@{MyPolygon}}
+\doxysubsubsection{\texorpdfstring{distanceToEdge()}{distanceToEdge()}}
+{\footnotesize\ttfamily \label{class_my_polygon_a70380762b15e4ce81a03ff0906e253d7} 
+double My\+Polygon\+::distance\+To\+Edge (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{M}{, }\item[{int}]{i}{}\end{DoxyParamCaption})}
+
+
+
+Computes the distance from a point to a specific edge of the polygon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em M} & The point to measure from. \\
+\hline
+{\em i} & The index of the edge. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance to the edge. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ AB\ =\ \mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}}[i+1]\ -\/\ \mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}}[i];\ \ \textcolor{comment}{//\ Vector\ AB\ representing\ the\ edge}}
+\DoxyCodeLine{00195\ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ AM\ =\ M\ -\/\ \mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}}[i];\ \ \textcolor{comment}{//\ Vector\ AM\ from\ the\ edge\ start\ to\ point\ M}}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{double}\ lAB\ =\ AB.\mbox{\hyperlink{class_vector2_d_ab08635b0482451cc43b5b399034eff2f}{length}}();\ \ \textcolor{comment}{//\ Length\ of\ edge\ AB}}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{double}\ AH\ =\ (AB.x\ *\ AM.x\ +\ AB.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ *\ AM.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}})\ /\ lAB;\ \ \textcolor{comment}{//\ Projection\ of\ AM\ onto\ AB}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordflow}{if}\ (AH\ <\ 0)\ \{\ \ \textcolor{comment}{//\ The\ perpendicular\ projection\ falls\ before\ the\ start\ of\ the\ edge}}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AM.\mbox{\hyperlink{class_vector2_d_ab08635b0482451cc43b5b399034eff2f}{length}}();}
+\DoxyCodeLine{00201\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (AH\ >\ lAB)\ \{\ \ \textcolor{comment}{//\ The\ perpendicular\ projection\ falls\ beyond\ the\ end\ of\ the\ edge}}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (M\ -\/\ \mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}}[i+1]).length();}
+\DoxyCodeLine{00203\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\ \ \textcolor{comment}{//\ The\ perpendicular\ projection\ falls\ within\ the\ edge}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ abs(AB.x\ *\ AM.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ -\/\ AB.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ *\ AM.x)\ /\ lAB;}
+\DoxyCodeLine{00205\ \ \ \ \ \}}
+\DoxyCodeLine{00206\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_my_polygon_ab511b988a34d634437fbaf54b3143927}\index{MyPolygon@{MyPolygon}!draw@{draw}}
+\index{draw@{draw}!MyPolygon@{MyPolygon}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_my_polygon_ab511b988a34d634437fbaf54b3143927} 
+void My\+Polygon\+::draw (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter}{, }\item[{bool}]{transparency}{}\end{DoxyParamCaption})}
+
+
+
+Draws the polygon on a QPainter canvas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em painter} & Reference to the QPainter object. \\
+\hline
+{\em transparency} & Flag to enable or disable transparency. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ QPen\ pen(Qt::black);}
+\DoxyCodeLine{00016\ \ \ \ \ pen.setWidth(3);}
+\DoxyCodeLine{00017\ \ \ \ \ QString\ color;}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_my_polygon_a02c59d744c03ec94c882aa370c24e76f}{hovered}}\ ==\ \textcolor{keyword}{true})\{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ color\ =\ \textcolor{stringliteral}{"{}\#FF0000"{}};}
+\DoxyCodeLine{00020\ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ color=\mbox{\hyperlink{class_my_polygon_adf882e0e158748eab44ea40ae1e75fe1}{currentColor}};}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ QPoint\ *points=\textcolor{keyword}{new}\ QPoint[\mbox{\hyperlink{class_my_polygon_a45661c328421c76477145ec42d46ca5d}{N}}];}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i=0;\ i<\mbox{\hyperlink{class_my_polygon_a45661c328421c76477145ec42d46ca5d}{N}};\ i++)\ \{}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ points[i].setX(\mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}}[i].x);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ points[i].setY(\mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}}[i].y);}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{if}(transparency)\{}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ QColor\ transparentColor(color);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ transparentColor.setAlpha(128);\ \textcolor{comment}{//\ Réduire\ l'opacité\ à\ 50\%\ (128/255)}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ painter.setBrush(transparentColor);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ painter.setBrush(QColor\ (color));}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ painter.setPen(pen);}
+\DoxyCodeLine{00043\ \ \ \ \ painter.drawPolygon(points,\mbox{\hyperlink{class_my_polygon_a45661c328421c76477145ec42d46ca5d}{N}},Qt::OddEvenFill);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&t:\ \mbox{\hyperlink{class_my_polygon_a2211051569fcfc71715284076980a832}{triangles}})\{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ t.transparencyDraw(painter);}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{delete}\ []\ points;}
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_my_polygon_a381c4099e2e2968e480b5fb30a8e1fe4}\index{MyPolygon@{MyPolygon}!earClipping@{earClipping}}
+\index{earClipping@{earClipping}!MyPolygon@{MyPolygon}}
+\doxysubsubsection{\texorpdfstring{earClipping()}{earClipping()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_my_polygon_a381c4099e2e2968e480b5fb30a8e1fe4} 
+void My\+Polygon\+::ear\+Clipping (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Triangulates the polygon using the ear-\/clipping method. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{class_my_polygon_a2211051569fcfc71715284076980a832}{triangles}}.clear();}
+\DoxyCodeLine{00166\ \ \ \ \ QVector<Vector2D*>\ tmp;}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i<\mbox{\hyperlink{class_my_polygon_a45661c328421c76477145ec42d46ca5d}{N}};\ i++)\{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ tmp.push\_back(\&\mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}}[i]);}
+\DoxyCodeLine{00169\ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \ \ tmp.push\_back(\&\mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}}[0]);}
+\DoxyCodeLine{00171\ \ \ \ \ tmp.push\_back(\&\mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}}[1]);}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{int}\ i=0;}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_triangle}{Triangle}}\ T(tmp[i+1],tmp[i],tmp[i+2]);}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ j\ =\ i+3;}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(j<tmp.size()-\/2\ \&\&\ !T.isInside(*tmp[j]))\{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ j++;}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(j==tmp.size()-\/2)\{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_my_polygon_a2211051569fcfc71715284076980a832}{triangles}}.push\_back(T);}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ tmp.removeAt(i+1);}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00187\ \ \ \ \ \}\textcolor{keywordflow}{while}\ (tmp.size()>=5);}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_my_polygon_ae4eb642f773fc286efacc2130ca60371}\index{MyPolygon@{MyPolygon}!earClipping@{earClipping}}
+\index{earClipping@{earClipping}!MyPolygon@{MyPolygon}}
+\doxysubsubsection{\texorpdfstring{earClipping()}{earClipping()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_my_polygon_ae4eb642f773fc286efacc2130ca60371} 
+QVector$<$ \mbox{\hyperlink{class_triangle}{Triangle}} \texorpdfstring{$\ast$}{*} $>$ My\+Polygon\+::ear\+Clipping (\begin{DoxyParamCaption}\item[{QVector$<$ \mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*} $>$ \&}]{vertices}{}\end{DoxyParamCaption})}
+
+
+
+Triangulates the polygon using the ear-\/clipping method and returns the resulting triangles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & The vertices of the polygon. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A QVector of pointers to the resulting triangles. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00149\ \ \ \ \ QVector<Triangle*>\ \mbox{\hyperlink{class_my_polygon_a2211051569fcfc71715284076980a832}{triangles}};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{comment}{//\ Génération\ des\ triangles\ (E0,\ Ei,\ Ei+1)\ pour\ i\ dans\ [1,\ m-\/2]}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ \mbox{\hyperlink{class_my_polygon_a45661c328421c76477145ec42d46ca5d}{N}}\ -\/\ 1;\ ++i)\ \{}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_my_polygon_a2211051569fcfc71715284076980a832}{triangles}}.append(this-\/>\mbox{\hyperlink{class_my_polygon_a7468f6171fc327f4235e116b47027f2e}{earClippingUtils}}\ (\&\mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}}[0],\&\mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}}[i],\&\mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}}[i+1],vertices));}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_my_polygon_a2211051569fcfc71715284076980a832}{triangles}};}
+\DoxyCodeLine{00161\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_my_polygon_a7468f6171fc327f4235e116b47027f2e}\index{MyPolygon@{MyPolygon}!earClippingUtils@{earClippingUtils}}
+\index{earClippingUtils@{earClippingUtils}!MyPolygon@{MyPolygon}}
+\doxysubsubsection{\texorpdfstring{earClippingUtils()}{earClippingUtils()}}
+{\footnotesize\ttfamily \label{class_my_polygon_a7468f6171fc327f4235e116b47027f2e} 
+QVector$<$ \mbox{\hyperlink{class_triangle}{Triangle}} \texorpdfstring{$\ast$}{*} $>$ My\+Polygon\+::ear\+Clipping\+Utils (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*}}]{p1}{, }\item[{\mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*}}]{p2}{, }\item[{\mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*}}]{p3}{, }\item[{QVector$<$ \mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*} $>$ \&}]{vertices}{}\end{DoxyParamCaption})}
+
+
+
+Helper function for ear-\/clipping triangulation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & Pointer to the first vertex. \\
+\hline
+{\em p2} & Pointer to the second vertex. \\
+\hline
+{\em p3} & Pointer to the third vertex. \\
+\hline
+{\em vertices} & The vertices of the polygon. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A QVector of pointers to the resulting triangles. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{comment}{//\ Liste\ des\ points\ exclus\ (les\ sommets\ du\ triangle\ courant)}}
+\DoxyCodeLine{00094\ \ \ \ \ QVector<Vector2D\ *>\ excluded\ =\ \{p1,\ p2,\ p3\};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{comment}{//\ Créer\ le\ triangle\ courant}}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{class_triangle}{Triangle}}\ *T\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_triangle}{Triangle}}(p1,\ p2,\ p3);}
+\DoxyCodeLine{00098\ \ \ \ \ QVector<Triangle\ *>\ \mbox{\hyperlink{class_my_polygon_a2211051569fcfc71715284076980a832}{triangles}};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{comment}{//\ Créer\ une\ liste\ des\ points\ restants\ après\ exclusion}}
+\DoxyCodeLine{00101\ \ \ \ \ QVector<Vector2D\ *>\ result;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&v\ :\ vertices)\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Vérification\ si\ v\ est\ dans\ excluded}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isExcluded\ =\ std::any\_of(excluded.begin(),\ excluded.end(),\ [\&](\mbox{\hyperlink{class_vector2_d}{Vector2D}}\ *e)\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ return\ *v\ ==\ *e;\ \textcolor{comment}{//\ Nécessite\ que\ Vector2D\ surcharge\ \`{}==`}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!isExcluded)\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ result.append(v);}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{comment}{//\ Vérifier\ si\ des\ points\ sont\ à\ l'intérieur\ du\ triangle\ courant}}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{bool}\ foundInteriorPoint\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&v\ :\ result)\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (T-\/>\mbox{\hyperlink{class_triangle_a2c84480dd64dd9d9f78142cd0f4a311b}{isInside}}(v))\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Points\ trouvés\ à\ l'intérieur\ du\ triangle,\ appeler\ récursivement}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_my_polygon_a2211051569fcfc71715284076980a832}{triangles}}\ +=\ this-\/>\mbox{\hyperlink{class_my_polygon_a7468f6171fc327f4235e116b47027f2e}{earClippingUtils}}(p1,\ p2,\ v,\ result);}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_my_polygon_a2211051569fcfc71715284076980a832}{triangles}}\ +=\ this-\/>\mbox{\hyperlink{class_my_polygon_a7468f6171fc327f4235e116b47027f2e}{earClippingUtils}}(p2,\ p3,\ v,\ result);}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_my_polygon_a2211051569fcfc71715284076980a832}{triangles}}\ +=\ this-\/>\mbox{\hyperlink{class_my_polygon_a7468f6171fc327f4235e116b47027f2e}{earClippingUtils}}(p3,\ p1,\ v,\ result);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Debugging\ (facultatif,\ pour\ voir\ le\ processus)}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*qDebug()\ <<\ "{}TRIANGLE"{}; }}
+\DoxyCodeLine{00126\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ *T-\/>getVertexPtr(0); }}
+\DoxyCodeLine{00127\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ *T-\/>getVertexPtr(1); }}
+\DoxyCodeLine{00128\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ *T-\/>getVertexPtr(2); }}
+\DoxyCodeLine{00129\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ "{}POINT\ À\ L'INTÉRIEUR\ :\ "{}\ <<\ *v;*/}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ foundInteriorPoint\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};\ \textcolor{comment}{//\ Si\ un\ point\ est\ trouvé\ à\ l'intérieur,\ on\ arrête\ la\ recherche}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \ \ \ \ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordflow}{if}\ (!foundInteriorPoint)\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Aucun\ point\ à\ l'intérieur,\ conserver\ ce\ triangle}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_my_polygon_a2211051569fcfc71715284076980a832}{triangles}}.push\_back(T);}
+\DoxyCodeLine{00139\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sinon,\ supprimer\ le\ triangle\ courant}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ T;}
+\DoxyCodeLine{00142\ \ \ \ \ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_my_polygon_a2211051569fcfc71715284076980a832}{triangles}};}
+\DoxyCodeLine{00145\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_my_polygon_a3e1b746bb99b2185aa7a0be2ad51242a}\index{MyPolygon@{MyPolygon}!getVertices@{getVertices}}
+\index{getVertices@{getVertices}!MyPolygon@{MyPolygon}}
+\doxysubsubsection{\texorpdfstring{getVertices()}{getVertices()}}
+{\footnotesize\ttfamily \label{class_my_polygon_a3e1b746bb99b2185aa7a0be2ad51242a} 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*} My\+Polygon\+::get\+Vertices (\begin{DoxyParamCaption}\item[{int \&}]{n}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the vertices of the polygon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Reference to an integer that will store the number of vertices. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the array of vertex positions. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \{\ n\ =\ \mbox{\hyperlink{class_my_polygon_a45661c328421c76477145ec42d46ca5d}{N}};\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}};\ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_my_polygon_a2ff01556f27920485cfdbe8235da7746}\index{MyPolygon@{MyPolygon}!isConvex@{isConvex}}
+\index{isConvex@{isConvex}!MyPolygon@{MyPolygon}}
+\doxysubsubsection{\texorpdfstring{isConvex()}{isConvex()}}
+{\footnotesize\ttfamily \label{class_my_polygon_a2ff01556f27920485cfdbe8235da7746} 
+bool My\+Polygon\+::is\+Convex (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Checks if the polygon is convex. 
+
+\begin{DoxyReturn}{Returns}
+True if the polygon is convex, false otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ i=0;}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{while}\ (i<\mbox{\hyperlink{class_my_polygon_a45661c328421c76477145ec42d46ca5d}{N}}\ \&\&\ \mbox{\hyperlink{class_my_polygon_aa53d5a16ad2fd9613e40e44a49fad436}{isOnTheLeft}}(\mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}}[(i+2)\%\mbox{\hyperlink{class_my_polygon_a45661c328421c76477145ec42d46ca5d}{N}}],i))\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{return}\ (i==\mbox{\hyperlink{class_my_polygon_a45661c328421c76477145ec42d46ca5d}{N}});}
+\DoxyCodeLine{00063\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_my_polygon_a33aa193d3ac09f08652b0d66fdb35cb9}\index{MyPolygon@{MyPolygon}!isInside@{isInside}}
+\index{isInside@{isInside}!MyPolygon@{MyPolygon}}
+\doxysubsubsection{\texorpdfstring{isInside()}{isInside()}}
+{\footnotesize\ttfamily \label{class_my_polygon_a33aa193d3ac09f08652b0d66fdb35cb9} 
+bool My\+Polygon\+::is\+Inside (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{P}{}\end{DoxyParamCaption})}
+
+
+
+Checks if a point is inside the polygon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em P} & The point to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the point is inside, false otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{int}\ i=0;}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{while}\ (i<\mbox{\hyperlink{class_my_polygon_a45661c328421c76477145ec42d46ca5d}{N}}\ \&\&\ \mbox{\hyperlink{class_my_polygon_aa53d5a16ad2fd9613e40e44a49fad436}{isOnTheLeft}}(P,i))\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{return}\ (i==\mbox{\hyperlink{class_my_polygon_a45661c328421c76477145ec42d46ca5d}{N}});}
+\DoxyCodeLine{00071\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_my_polygon_a81e26e67babbb30ff3edd34c25d2f424}\index{MyPolygon@{MyPolygon}!isInsideWithTriangulation@{isInsideWithTriangulation}}
+\index{isInsideWithTriangulation@{isInsideWithTriangulation}!MyPolygon@{MyPolygon}}
+\doxysubsubsection{\texorpdfstring{isInsideWithTriangulation()}{isInsideWithTriangulation()}}
+{\footnotesize\ttfamily \label{class_my_polygon_a81e26e67babbb30ff3edd34c25d2f424} 
+bool My\+Polygon\+::is\+Inside\+With\+Triangulation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{pt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if a point is inside the polygon using triangulation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & The point to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the point is inside, false otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{class_my_polygon_a2211051569fcfc71715284076980a832}{triangles}}.begin();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (it\ !=\ \mbox{\hyperlink{class_my_polygon_a2211051569fcfc71715284076980a832}{triangles}}.end()\ \&\&\ !(it-\/>isInside(pt)))\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ it++;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_my_polygon_a02c59d744c03ec94c882aa370c24e76f}{hovered}}\ =\ (it\ ==\ \mbox{\hyperlink{class_my_polygon_a2211051569fcfc71715284076980a832}{triangles}}.end()\ ?\ \textcolor{keyword}{false}\ :\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_my_polygon_a02c59d744c03ec94c882aa370c24e76f}{hovered}};}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_my_polygon_aa53d5a16ad2fd9613e40e44a49fad436}\index{MyPolygon@{MyPolygon}!isOnTheLeft@{isOnTheLeft}}
+\index{isOnTheLeft@{isOnTheLeft}!MyPolygon@{MyPolygon}}
+\doxysubsubsection{\texorpdfstring{isOnTheLeft()}{isOnTheLeft()}}
+{\footnotesize\ttfamily \label{class_my_polygon_aa53d5a16ad2fd9613e40e44a49fad436} 
+bool My\+Polygon\+::is\+On\+The\+Left (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{P}{, }\item[{int}]{i}{}\end{DoxyParamCaption})}
+
+
+
+Checks if a point is on the left side of a polygon edge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em P} & The point to check. \\
+\hline
+{\em i} & The index of the edge. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the point is on the left, false otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ AB\ =\ \mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}}[i+1]-\/\mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}}[i],}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ AP\ =\ P-\/\mbox{\hyperlink{class_my_polygon_a1a7d37fab752a1672ba3ae9b683c7f1c}{tabPts}}[i];}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{return}\ (AB.x*AP.y\ -\/\ AB.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}*AP.x)>=0;}
+\DoxyCodeLine{00055\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_my_polygon_a514bf3d3bfc1033779d8b85afeb5244a}\index{MyPolygon@{MyPolygon}!nearestEdge@{nearestEdge}}
+\index{nearestEdge@{nearestEdge}!MyPolygon@{MyPolygon}}
+\doxysubsubsection{\texorpdfstring{nearestEdge()}{nearestEdge()}}
+{\footnotesize\ttfamily \label{class_my_polygon_a514bf3d3bfc1033779d8b85afeb5244a} 
+\mbox{\hyperlink{struct_nearest_edge_result}{Nearest\+Edge\+Result}} My\+Polygon\+::nearest\+Edge (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{M}{}\end{DoxyParamCaption})}
+
+
+
+Finds the nearest edge of the polygon to a given point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em M} & The point to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{struct_nearest_edge_result}{Nearest\+Edge\+Result} object containing information about the nearest edge. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{double}\ distance\ =\ 1000;}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{int}\ nearest\ =\ -\/1;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0\ ;\ i\ <\ \mbox{\hyperlink{class_my_polygon_a45661c328421c76477145ec42d46ca5d}{N}}\ ;\ i++)\{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ d\ =\ \mbox{\hyperlink{class_my_polygon_a70380762b15e4ce81a03ff0906e253d7}{distanceToEdge}}(M,\ i\ );}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//qDebug()\ <<\ QString::number(N)\ <<\ distanceToEdge(M,\ i\ );}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (distance\ >\ d)\{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ distance\ =\ \ d;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ nearest\ =\ i;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_nearest_edge_result}{NearestEdgeResult}}\{distance,nearest\};}
+\DoxyCodeLine{00089\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_my_polygon_a83263e44da15395bc5a5fa4d88e7ccd8}\index{MyPolygon@{MyPolygon}!setColor@{setColor}}
+\index{setColor@{setColor}!MyPolygon@{MyPolygon}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily \label{class_my_polygon_a83263e44da15395bc5a5fa4d88e7ccd8} 
+void My\+Polygon\+::set\+Color (\begin{DoxyParamCaption}\item[{const QString}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the drawing color of the polygon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The new color in string format. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \{\ \mbox{\hyperlink{class_my_polygon_adf882e0e158748eab44ea40ae1e75fe1}{currentColor}}\ =\ c;\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+mypolygon.\+h\item 
+mypolygon.\+cpp\end{DoxyCompactItemize}

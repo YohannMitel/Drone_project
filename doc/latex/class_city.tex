@@ -1,0 +1,244 @@
+\doxysection{City Class Reference}
+\hypertarget{class_city}{}\label{class_city}\index{City@{City}}
+
+
+\doxylink{class_city}{City} management class for representing individual cities and their properties.  
+
+
+
+
+{\ttfamily \#include $<$city.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_city_a4deaec3976d3abb38345b8bcafa721bd}{City}} (QString \+\_\+name, \mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*}\+\_\+position, QString \+\_\+color)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_city}{City} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_city_ae95feee8a1d4e1f14ea41ec89b47304f}{\texorpdfstring{$\sim$}{\string~}\+City}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_city}{City} class. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_city_ad73598d937870a165cb530958106ff07}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Gets the name of the city. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_city_a7f7a9743ff8a46dfd83e67ca45b7d57e}{get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Gets the position of the city. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_city_af29eea28eba981c1995ea79cd94f5ed1}{get\+Color}} ()
+\begin{DoxyCompactList}\small\item\em Gets the color associated with the city. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_my_polygon}{My\+Polygon}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_city_a986acd8e0097e1cf5de1ac159b1605e3}{get\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Gets the map of the city. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_city_aedf709e8522c1f7bf79e54c802f455c1}{set\+Map}} (\mbox{\hyperlink{class_my_polygon}{My\+Polygon}} \texorpdfstring{$\ast$}{*}poly)
+\begin{DoxyCompactList}\small\item\em Sets the map of the city. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_city_a89a13998c148ba2816a74725314d9928}{draw\+Map}} (QPainter \&painter, bool transparency)
+\begin{DoxyCompactList}\small\item\em Draws the city\textquotesingle{}s map on the canvas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_city_a4a5b42d915083867ea9a57a8bd1fd472}\label{class_city_a4a5b42d915083867ea9a57a8bd1fd472} 
+QString {\bfseries name}
+\begin{DoxyCompactList}\small\item\em Name of the city. \end{DoxyCompactList}\item 
+\Hypertarget{class_city_a997dfb5b129087c9e9749701b3b539cb}\label{class_city_a997dfb5b129087c9e9749701b3b539cb} 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*} {\bfseries position} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the position of the city. \end{DoxyCompactList}\item 
+\Hypertarget{class_city_a530516ea4a574a60563c4962c54adacb}\label{class_city_a530516ea4a574a60563c4962c54adacb} 
+QString {\bfseries color}
+\begin{DoxyCompactList}\small\item\em Color associated with the city. \end{DoxyCompactList}\item 
+\Hypertarget{class_city_ab60e02ceceb1a973e8d7a2a66321ad95}\label{class_city_ab60e02ceceb1a973e8d7a2a66321ad95} 
+\mbox{\hyperlink{class_my_polygon}{My\+Polygon}} \texorpdfstring{$\ast$}{*} {\bfseries map} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the polygon representing the city\textquotesingle{}s map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_city}{City} management class for representing individual cities and their properties. 
+
+\begin{DoxyAuthor}{Author}
+Yohann Mitel \& Pierre Meyer 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Janvier 2025
+\end{DoxyDate}
+The \doxylink{class_city}{City} class represents a city with a name, position, color, and map data. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_city_a4deaec3976d3abb38345b8bcafa721bd}\index{City@{City}!City@{City}}
+\index{City@{City}!City@{City}}
+\doxysubsubsection{\texorpdfstring{City()}{City()}}
+{\footnotesize\ttfamily \label{class_city_a4deaec3976d3abb38345b8bcafa721bd} 
+City\+::\+City (\begin{DoxyParamCaption}\item[{QString}]{\+\_\+name}{, }\item[{\mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*}}]{\+\_\+position}{, }\item[{QString}]{\+\_\+color}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_city}{City} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+name} & Name of the city. \\
+\hline
+{\em \+\_\+position} & Pointer to the city\textquotesingle{}s position. \\
+\hline
+{\em \+\_\+color} & Color of the city. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00003\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00004\ \ \ \ \ \mbox{\hyperlink{class_city_a4a5b42d915083867ea9a57a8bd1fd472}{name}}\ =\ \_name;}
+\DoxyCodeLine{00005\ \ \ \ \ \mbox{\hyperlink{class_city_a997dfb5b129087c9e9749701b3b539cb}{position}}\ =\ \_position;}
+\DoxyCodeLine{00006\ \ \ \ \ \mbox{\hyperlink{class_city_a530516ea4a574a60563c4962c54adacb}{color}}\ =\ \_color;}
+\DoxyCodeLine{00007\ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_city_ae95feee8a1d4e1f14ea41ec89b47304f}\index{City@{City}!````~City@{\texorpdfstring{$\sim$}{\string~}City}}
+\index{````~City@{\texorpdfstring{$\sim$}{\string~}City}!City@{City}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}City()}{\string~City()}}
+{\footnotesize\ttfamily \label{class_city_ae95feee8a1d4e1f14ea41ec89b47304f} 
+City\+::\texorpdfstring{$\sim$}{\string~}\+City (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor for the \doxylink{class_city}{City} class. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_city_a997dfb5b129087c9e9749701b3b539cb}{position}};}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_city_ab60e02ceceb1a973e8d7a2a66321ad95}{map}};}
+\DoxyCodeLine{00012\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_city_a89a13998c148ba2816a74725314d9928}\index{City@{City}!drawMap@{drawMap}}
+\index{drawMap@{drawMap}!City@{City}}
+\doxysubsubsection{\texorpdfstring{drawMap()}{drawMap()}}
+{\footnotesize\ttfamily \label{class_city_a89a13998c148ba2816a74725314d9928} 
+void City\+::draw\+Map (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter}{, }\item[{bool}]{transparency}{}\end{DoxyParamCaption})}
+
+
+
+Draws the city\textquotesingle{}s map on the canvas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em painter} & Reference to the QPainter object. \\
+\hline
+{\em transparency} & Flag to enable or disable transparency. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_city_ab60e02ceceb1a973e8d7a2a66321ad95}{map}}\ ==\ \textcolor{keyword}{nullptr})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_city_ab60e02ceceb1a973e8d7a2a66321ad95}{map}}-\/>\mbox{\hyperlink{class_my_polygon_ab511b988a34d634437fbaf54b3143927}{draw}}(painter,\ transparency);}
+\DoxyCodeLine{00044\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_city_af29eea28eba981c1995ea79cd94f5ed1}\index{City@{City}!getColor@{getColor}}
+\index{getColor@{getColor}!City@{City}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily \label{class_city_af29eea28eba981c1995ea79cd94f5ed1} 
+QString City\+::get\+Color (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the color associated with the city. 
+
+\begin{DoxyReturn}{Returns}
+Color of the city. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_city_a530516ea4a574a60563c4962c54adacb}{color}};}
+\DoxyCodeLine{00026\ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_city_a986acd8e0097e1cf5de1ac159b1605e3}\index{City@{City}!getMap@{getMap}}
+\index{getMap@{getMap}!City@{City}}
+\doxysubsubsection{\texorpdfstring{getMap()}{getMap()}}
+{\footnotesize\ttfamily \label{class_city_a986acd8e0097e1cf5de1ac159b1605e3} 
+\mbox{\hyperlink{class_my_polygon}{My\+Polygon}} \texorpdfstring{$\ast$}{*} City\+::get\+Map (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the map of the city. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the polygon representing the city\textquotesingle{}s map. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_city_ab60e02ceceb1a973e8d7a2a66321ad95}{map}};}
+\DoxyCodeLine{00030\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_city_ad73598d937870a165cb530958106ff07}\index{City@{City}!getName@{getName}}
+\index{getName@{getName}!City@{City}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{class_city_ad73598d937870a165cb530958106ff07} 
+QString City\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the name of the city. 
+
+\begin{DoxyReturn}{Returns}
+Name of the city. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_city_a4a5b42d915083867ea9a57a8bd1fd472}{name}};}
+\DoxyCodeLine{00018\ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_city_a7f7a9743ff8a46dfd83e67ca45b7d57e}\index{City@{City}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!City@{City}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily \label{class_city_a7f7a9743ff8a46dfd83e67ca45b7d57e} 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*} City\+::get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the position of the city. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the city\textquotesingle{}s position. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_city_a997dfb5b129087c9e9749701b3b539cb}{position}};}
+\DoxyCodeLine{00022\ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_city_aedf709e8522c1f7bf79e54c802f455c1}\index{City@{City}!setMap@{setMap}}
+\index{setMap@{setMap}!City@{City}}
+\doxysubsubsection{\texorpdfstring{setMap()}{setMap()}}
+{\footnotesize\ttfamily \label{class_city_aedf709e8522c1f7bf79e54c802f455c1} 
+void City\+::set\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_my_polygon}{My\+Polygon}} \texorpdfstring{$\ast$}{*}}]{poly}{}\end{DoxyParamCaption})}
+
+
+
+Sets the map of the city. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em poly} & Pointer to the polygon representing the map. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_city_ab60e02ceceb1a973e8d7a2a66321ad95}{map}}\ =\ poly;}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{class_city_ab60e02ceceb1a973e8d7a2a66321ad95}{map}}-\/>\mbox{\hyperlink{class_my_polygon_a381c4099e2e2968e480b5fb30a8e1fe4}{earClipping}}();}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_city_ab60e02ceceb1a973e8d7a2a66321ad95}{map}}-\/>\mbox{\hyperlink{class_my_polygon_a83263e44da15395bc5a5fa4d88e7ccd8}{setColor}}(\mbox{\hyperlink{class_city_a530516ea4a574a60563c4962c54adacb}{color}});}
+\DoxyCodeLine{00038\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+city.\+h\item 
+city.\+cpp\end{DoxyCompactItemize}

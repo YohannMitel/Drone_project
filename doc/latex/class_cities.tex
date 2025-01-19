@@ -1,0 +1,870 @@
+\doxysection{Cities Class Reference}
+\hypertarget{class_cities}{}\label{class_cities}\index{Cities@{Cities}}
+
+
+\doxylink{class_cities}{Cities} management module for handling city data and geometric operations.  
+
+
+
+
+{\ttfamily \#include $<$cities.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cities_ae4660b0d896333bdf7fba3bb1465af32}{Cities}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_cities}{Cities} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_cities_aaf1290a75de4cb1396ed82de2167c69f}{\texorpdfstring{$\sim$}{\string~}\+Cities}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_cities}{Cities} class. \end{DoxyCompactList}\item 
+qsizetype \mbox{\hyperlink{class_cities_acbfaef7e0197f38e6a4a492d2660a420}{get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of cities. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cities_a5dc3d3ace199e440293ef8d68e6b75e4}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears all cities and related data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_cities_ac5b25150e8030ebebb24db26271d1c2a}{get\+Point\+By\+Index}} (int index)
+\begin{DoxyCompactList}\small\item\em Gets the position of a city by its index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cities_a0757a978984d8e828614b3f5e39f1eb2}{push\+City}} (QString name, \mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*}position, QString color)
+\begin{DoxyCompactList}\small\item\em Adds a new city to the collection. \end{DoxyCompactList}\item 
+QVector$<$ QPair$<$ QString, \mbox{\hyperlink{class_vector2_d}{Vector2D}} $>$ $>$ \mbox{\hyperlink{class_cities_a8c519e6136bfe8624f1a5c5125a52a25}{ascending\+Polar\+Angle}} (\mbox{\hyperlink{class_vector2_d}{Vector2D}} \&porigin)
+\begin{DoxyCompactList}\small\item\em Orders points by ascending polar angle relative to a given origin. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_cities_a2e10d714e6f2981ff135ffe121a92c42}{is\+On\+The\+Left}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&P, const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&top\+\_\+1, const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&top)
+\begin{DoxyCompactList}\small\item\em Checks if a point is on the left side of a line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cities_a58419345531dd32657e6f2a3aa8cc5c5}{order\+Polygon\+Point}} (\mbox{\hyperlink{class_vector2_d}{Vector2D}} \&porigin)
+\begin{DoxyCompactList}\small\item\em Orders polygon points relative to a given origin. \end{DoxyCompactList}\item 
+QVector$<$ \mbox{\hyperlink{class_city}{City}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_cities_afcebf01ed63f80864af34d67d6aa9057}{get\+Tab\+Cities}} ()
+\begin{DoxyCompactList}\small\item\em Gets the vector of city pointers. \end{DoxyCompactList}\item 
+QVector$<$ \mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_cities_a661ac7389993fc6a7b6ec64800fcb9ad}{get\+Tab\+Vertices}} ()
+\begin{DoxyCompactList}\small\item\em Gets the vector of vertex pointers. \end{DoxyCompactList}\item 
+QVector$<$ \mbox{\hyperlink{class_triangle}{Triangle}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_cities_af024145923e1b53118200991d2d3a4bc}{init\+Triangulation}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the triangulation of cities. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cities_a07ecd6b3f074c44914a497dc68e2e3dc}{connection\+Matrix}} (const QVector$<$ \mbox{\hyperlink{class_city}{City}} \texorpdfstring{$\ast$}{*} $>$ \&cities)
+\begin{DoxyCompactList}\small\item\em Builds the connection matrix for a set of cities. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_cities_a48e2f82aa6b47951dd03e47b1d0cfcfe}{are\+Neighbors}} (\mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*}vertices1, int num\+Vertices1, \mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*}vertices2, int num\+Vertices2)
+\begin{DoxyCompactList}\small\item\em Checks if two polygons are neighbors based on their vertices. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_cities_a0468ed2f2cb2c78bf53f936f0466457d}{do\+Intersect}} (\mbox{\hyperlink{class_vector2_d}{Vector2D}} p1, \mbox{\hyperlink{class_vector2_d}{Vector2D}} p2, \mbox{\hyperlink{class_vector2_d}{Vector2D}} q1, \mbox{\hyperlink{class_vector2_d}{Vector2D}} q2)
+\begin{DoxyCompactList}\small\item\em Checks if two line segments intersect. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_cities_a3342885d83118267a8cc3ccfe465a573}{orientation}} (\mbox{\hyperlink{class_vector2_d}{Vector2D}} p, \mbox{\hyperlink{class_vector2_d}{Vector2D}} q, \mbox{\hyperlink{class_vector2_d}{Vector2D}} r)
+\begin{DoxyCompactList}\small\item\em Determines the orientation of three points. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_cities_ae5b273bec3b38b1fe3564d52350e2c46}{get\+City\+By\+Name}} (QString \&name)
+\begin{DoxyCompactList}\small\item\em Finds the index of a city by its name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cities_a81589add9a37634223b775911115d0c8}{draw}} (QPainter \&painter, bool transparency)
+\begin{DoxyCompactList}\small\item\em Draws the cities and connections on the canvas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cities_a02fbef1c9c8108c6f95cc554cbca448d}{test\+Path\+Finding}} (int start, int end)
+\begin{DoxyCompactList}\small\item\em Tests pathfinding between two cities. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} \mbox{\hyperlink{class_cities_a2a44243f980005d3ccb755cd68c044f5}{next\+Dest\+City\+Id}} (int start, int end)
+\begin{DoxyCompactList}\small\item\em Finds the next city destination along the path between two cities. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cities_aec5164e4c4c3678c1212b6dbc312ef2c}{set\+Limit}} (int \&width, int \&height)
+\begin{DoxyCompactList}\small\item\em Sets the width and height limits for the map. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_cities_a729bd2cda85707184fd3644d88c2b69b}{is\+Outside\+Cities}} (const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&point) const
+\begin{DoxyCompactList}\small\item\em Checks if a point is outside the cities\textquotesingle{} boundaries. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_cities_ae262c1a79a63adb3d3769a73a1d8899e}{sorting\+By\+Points\+Relative}} (const \mbox{\hyperlink{class_city}{City}} \texorpdfstring{$\ast$}{*}city1, const \mbox{\hyperlink{class_city}{City}} \texorpdfstring{$\ast$}{*}city2, const QVector$<$ QPair$<$ QString, \mbox{\hyperlink{class_vector2_d}{Vector2D}} $>$ $>$ \&points\+Relative)
+\begin{DoxyCompactList}\small\item\em Sorts cities based on their relative positions to a set of points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_cities_ad6db79898850d855053e9830e2678470}\label{class_cities_ad6db79898850d855053e9830e2678470} 
+QVector$<$ \mbox{\hyperlink{class_city}{City}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries tab\+Cities}
+\begin{DoxyCompactList}\small\item\em Vector containing pointers to city objects. \end{DoxyCompactList}\item 
+\Hypertarget{class_cities_a6a9c99a72a208c7fa6991539ee8310ba}\label{class_cities_a6a9c99a72a208c7fa6991539ee8310ba} 
+\mbox{\hyperlink{class_my_polygon}{My\+Polygon}} \texorpdfstring{$\ast$}{*} {\bfseries convex\+Hull} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the convex hull of the cities. \end{DoxyCompactList}\item 
+\Hypertarget{class_cities_a8a679ac6e932625fa884e1e629d7d91c}\label{class_cities_a8a679ac6e932625fa884e1e629d7d91c} 
+QVector$<$ QVector$<$ int $>$ $>$ {\bfseries adjacency\+Matrix}
+\begin{DoxyCompactList}\small\item\em Adjacency matrix for city connections. \end{DoxyCompactList}\item 
+\Hypertarget{class_cities_a59a41f7e1319d985a05c821c8d2d46e1}\label{class_cities_a59a41f7e1319d985a05c821c8d2d46e1} 
+float {\bfseries height\+Limit}
+\begin{DoxyCompactList}\small\item\em Height limit for the map. \end{DoxyCompactList}\item 
+\Hypertarget{class_cities_ae1c5b61db5c2363af2d26af2094551be}\label{class_cities_ae1c5b61db5c2363af2d26af2094551be} 
+float {\bfseries width\+Limit}
+\begin{DoxyCompactList}\small\item\em Width limit for the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_cities}{Cities} management module for handling city data and geometric operations. 
+
+\begin{DoxyAuthor}{Author}
+Yohann Mitel \& Pierre Meyer 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Janvier 2025
+\end{DoxyDate}
+The \doxylink{class_cities}{Cities} class manages a collection of cities and associated geometric operations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_cities_ae4660b0d896333bdf7fba3bb1465af32}\index{Cities@{Cities}!Cities@{Cities}}
+\index{Cities@{Cities}!Cities@{Cities}}
+\doxysubsubsection{\texorpdfstring{Cities()}{Cities()}}
+{\footnotesize\ttfamily \label{class_cities_ae4660b0d896333bdf7fba3bb1465af32} 
+Cities\+::\+Cities (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_cities}{Cities} class. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_cities_aaf1290a75de4cb1396ed82de2167c69f}\index{Cities@{Cities}!````~Cities@{\texorpdfstring{$\sim$}{\string~}Cities}}
+\index{````~Cities@{\texorpdfstring{$\sim$}{\string~}Cities}!Cities@{Cities}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Cities()}{\string~Cities()}}
+{\footnotesize\ttfamily \label{class_cities_aaf1290a75de4cb1396ed82de2167c69f} 
+Cities\+::\texorpdfstring{$\sim$}{\string~}\+Cities (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor for the \doxylink{class_cities}{Cities} class. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{for}(\mbox{\hyperlink{class_city}{City}}*\ c:\ \mbox{\hyperlink{class_cities_ad6db79898850d855053e9830e2678470}{tabCities}})\{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ c;}
+\DoxyCodeLine{00013\ \ \ \ \ \}}
+\DoxyCodeLine{00014\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_cities_a48e2f82aa6b47951dd03e47b1d0cfcfe}\index{Cities@{Cities}!areNeighbors@{areNeighbors}}
+\index{areNeighbors@{areNeighbors}!Cities@{Cities}}
+\doxysubsubsection{\texorpdfstring{areNeighbors()}{areNeighbors()}}
+{\footnotesize\ttfamily \label{class_cities_a48e2f82aa6b47951dd03e47b1d0cfcfe} 
+bool Cities\+::are\+Neighbors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*}}]{vertices1}{, }\item[{int}]{num\+Vertices1}{, }\item[{\mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*}}]{vertices2}{, }\item[{int}]{num\+Vertices2}{}\end{DoxyParamCaption})}
+
+
+
+Checks if two polygons are neighbors based on their vertices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices1} & Pointer to the vertices of the first polygon. \\
+\hline
+{\em num\+Vertices1} & Number of vertices in the first polygon. \\
+\hline
+{\em vertices2} & Pointer to the vertices of the second polygon. \\
+\hline
+{\em num\+Vertices2} & Number of vertices in the second polygon. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the polygons are neighbors, otherwise false. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ two\ Voronoi\ polygons\ share\ an\ edge\ by\ checking\ for\ intersection\ between\ edges.}}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ numVertices1;\ ++i)\ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ p1\ =\ vertices1[i];}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ p2\ =\ vertices1[(i\ +\ 1)\ \%\ numVertices1];\ \ \textcolor{comment}{//\ Next\ vertex\ (with\ wrap\ around)}}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ numVertices2;\ ++j)\ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ q1\ =\ vertices2[j];}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ q2\ =\ vertices2[(j\ +\ 1)\ \%\ numVertices2];\ \ \textcolor{comment}{//\ Next\ vertex\ (with\ wrap\ around)}}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ edge\ p1p2\ intersects\ with\ q1q2}}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cities_a0468ed2f2cb2c78bf53f936f0466457d}{doIntersect}}(p1,\ p2,\ q1,\ q2))\ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \ \textcolor{comment}{//\ Return\ true\ if\ we\ find\ an\ intersection}}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00250\ \ \ \ \ \}}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \ \textcolor{comment}{//\ No\ intersection\ found}}
+\DoxyCodeLine{00252\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_cities_a8c519e6136bfe8624f1a5c5125a52a25}\index{Cities@{Cities}!ascendingPolarAngle@{ascendingPolarAngle}}
+\index{ascendingPolarAngle@{ascendingPolarAngle}!Cities@{Cities}}
+\doxysubsubsection{\texorpdfstring{ascendingPolarAngle()}{ascendingPolarAngle()}}
+{\footnotesize\ttfamily \label{class_cities_a8c519e6136bfe8624f1a5c5125a52a25} 
+QVector$<$ QPair$<$ QString, \mbox{\hyperlink{class_vector2_d}{Vector2D}} $>$ $>$ Cities\+::ascending\+Polar\+Angle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{porigin}{}\end{DoxyParamCaption})}
+
+
+
+Orders points by ascending polar angle relative to a given origin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em porigin} & Reference to the origin point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of name and position pairs, sorted by polar angle. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ qDebug()\ <<\ porigin;}}
+\DoxyCodeLine{00085\ \ \ \ \ QVector<QPair<QString,Vector2D>>\ pointsRelative;}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&v:\mbox{\hyperlink{class_cities_ad6db79898850d855053e9830e2678470}{tabCities}})\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ pOrig\ =\ *(v-\/>getPosition());}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ pointsRelative.append(qMakePair(v-\/>getName(),\mbox{\hyperlink{class_vector2_d}{Vector2D}}(pOrig.x\ -\/\ porigin.x,\ pOrig.y\ -\/\ porigin.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}})\ ));}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{comment}{//\ sorting\ point\ with\ angular\ criteria}}
+\DoxyCodeLine{00092\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}AVANT\ TRIAGE\ :\ "{}}\ ;}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&t:\ pointsRelative)\{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ qDebug()\ <<\ t;}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}APRES\ TRIAGE\ :\ "{}}\ ;}
+\DoxyCodeLine{00098\ \ \ \ \ std::sort(pointsRelative.begin(),\ pointsRelative.end(),\mbox{\hyperlink{class_vector2_d_a4231f74d46fcb33712df77afcb9066ae}{Vector2D::polarComparison}});}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&t:\ pointsRelative)\{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ qDebug()\ <<\ t;}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordflow}{return}\ pointsRelative;}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_cities_a5dc3d3ace199e440293ef8d68e6b75e4}\index{Cities@{Cities}!clear@{clear}}
+\index{clear@{clear}!Cities@{Cities}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{class_cities_a5dc3d3ace199e440293ef8d68e6b75e4} 
+void Cities\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Clears all cities and related data. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_cities_ad6db79898850d855053e9830e2678470}{tabCities}}.clear();}
+\DoxyCodeLine{00023\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_cities_a07ecd6b3f074c44914a497dc68e2e3dc}\index{Cities@{Cities}!connectionMatrix@{connectionMatrix}}
+\index{connectionMatrix@{connectionMatrix}!Cities@{Cities}}
+\doxysubsubsection{\texorpdfstring{connectionMatrix()}{connectionMatrix()}}
+{\footnotesize\ttfamily \label{class_cities_a07ecd6b3f074c44914a497dc68e2e3dc} 
+void Cities\+::connection\+Matrix (\begin{DoxyParamCaption}\item[{const QVector$<$ \mbox{\hyperlink{class_city}{City}} \texorpdfstring{$\ast$}{*} $>$ \&}]{cities}{}\end{DoxyParamCaption})}
+
+
+
+Builds the connection matrix for a set of cities. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cities} & Vector of city pointers. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{int}\ numCities\ =\ cities.size();}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{comment}{//\ Create\ a\ matrix\ of\ size\ numCities\ x\ numCities\ and\ initialize\ to\ 0}}
+\DoxyCodeLine{00201\ \ \ \ \ \mbox{\hyperlink{class_cities_a8a679ac6e932625fa884e1e629d7d91c}{adjacencyMatrix}}\ =\ QVector<QVector<int>>(numCities,\ QVector<int>(numCities,\ 0));}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{comment}{//\ Loop\ over\ each\ city\ to\ check\ for\ neighbors}}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ numCities;\ ++i)\ \{}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_city}{City}}*\ city1\ =\ cities[i];}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ the\ vertices\ of\ city1's\ Voronoi\ polygon}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ numVertices1\ =\ 0;}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}*\ vertices1\ =\ city1-\/>\mbox{\hyperlink{class_city_a986acd8e0097e1cf5de1ac159b1605e3}{getMap}}()-\/>\mbox{\hyperlink{class_my_polygon_a3e1b746bb99b2185aa7a0be2ad51242a}{getVertices}}(numVertices1);}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ i\ +\ 1;\ j\ <\ numCities;\ ++j)\ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_city}{City}}*\ city2\ =\ cities[j];}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Get\ the\ vertices\ of\ city2's\ Voronoi\ polygon}}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ numVertices2\ =\ 0;}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}*\ vertices2\ =\ city2-\/>\mbox{\hyperlink{class_city_a986acd8e0097e1cf5de1ac159b1605e3}{getMap}}()-\/>\mbox{\hyperlink{class_my_polygon_a3e1b746bb99b2185aa7a0be2ad51242a}{getVertices}}(numVertices2);}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ Voronoi\ polygons\ of\ city1\ and\ city2\ share\ an\ edge}}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_cities_a48e2f82aa6b47951dd03e47b1d0cfcfe}{areNeighbors}}(vertices1,\ numVertices1,\ vertices2,\ numVertices2))\ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ the\ matrix\ entries\ to\ 1\ to\ indicate\ that\ these\ cities\ are\ neighbors}}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cities_a8a679ac6e932625fa884e1e629d7d91c}{adjacencyMatrix}}\ [i][j]\ =\ 1;}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cities_a8a679ac6e932625fa884e1e629d7d91c}{adjacencyMatrix}}\ [j][i]\ =\ 1;\ \ \textcolor{comment}{//\ The\ matrix\ is\ symmetric,\ so\ we\ set\ both\ [i][j]\ and\ [j][i]}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00223\ \ \ \ \ \}}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{comment}{//\ Optionally,\ print\ the\ matrix\ for\ debugging\ purposes}}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ numCities;\ ++i)\ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}City:\ "{}}\ <<\ cities[i]-\/>getName();\ \ \textcolor{comment}{//\ Print\ city\ name\ before\ the\ row}}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ numCities;\ ++j)\ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ \mbox{\hyperlink{class_cities_a8a679ac6e932625fa884e1e629d7d91c}{adjacencyMatrix}}\ [i][j]\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ cities[j]-\/>getName();}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};\ \ \textcolor{comment}{//\ Print\ a\ new\ line\ after\ each\ row}}
+\DoxyCodeLine{00232\ \ \ \ \ \}}
+\DoxyCodeLine{00233\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_cities_a0468ed2f2cb2c78bf53f936f0466457d}\index{Cities@{Cities}!doIntersect@{doIntersect}}
+\index{doIntersect@{doIntersect}!Cities@{Cities}}
+\doxysubsubsection{\texorpdfstring{doIntersect()}{doIntersect()}}
+{\footnotesize\ttfamily \label{class_cities_a0468ed2f2cb2c78bf53f936f0466457d} 
+bool Cities\+::do\+Intersect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector2_d}{Vector2D}}}]{p1}{, }\item[{\mbox{\hyperlink{class_vector2_d}{Vector2D}}}]{p2}{, }\item[{\mbox{\hyperlink{class_vector2_d}{Vector2D}}}]{q1}{, }\item[{\mbox{\hyperlink{class_vector2_d}{Vector2D}}}]{q2}{}\end{DoxyParamCaption})}
+
+
+
+Checks if two line segments intersect. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & Start point of the first segment. \\
+\hline
+{\em p2} & End point of the first segment. \\
+\hline
+{\em q1} & Start point of the second segment. \\
+\hline
+{\em q2} & End point of the second segment. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the segments intersect, otherwise false. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordtype}{int}\ o1\ =\ \mbox{\hyperlink{class_cities_a3342885d83118267a8cc3ccfe465a573}{orientation}}(p1,\ p2,\ q1);}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordtype}{int}\ o2\ =\ \mbox{\hyperlink{class_cities_a3342885d83118267a8cc3ccfe465a573}{orientation}}(p1,\ p2,\ q2);}
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordtype}{int}\ o3\ =\ \mbox{\hyperlink{class_cities_a3342885d83118267a8cc3ccfe465a573}{orientation}}(q1,\ q2,\ p1);}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordtype}{int}\ o4\ =\ \mbox{\hyperlink{class_cities_a3342885d83118267a8cc3ccfe465a573}{orientation}}(q1,\ q2,\ p2);}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{comment}{//\ General\ case}}
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordflow}{if}\ (o1\ !=\ o2\ \&\&\ o3\ !=\ o4)\ \{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00264\ \ \ \ \ \}}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{comment}{//\ Special\ cases:\ Check\ if\ the\ points\ are\ collinear\ and\ on\ the\ segment}}
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordflow}{if}\ (o1\ ==\ 0\ \&\&\ onSegment(p1,\ p2,\ q1))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordflow}{if}\ (o2\ ==\ 0\ \&\&\ onSegment(p1,\ p2,\ q2))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordflow}{if}\ (o3\ ==\ 0\ \&\&\ onSegment(q1,\ q2,\ p1))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordflow}{if}\ (o4\ ==\ 0\ \&\&\ onSegment(q1,\ q2,\ p2))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \ \textcolor{comment}{//\ No\ intersection}}
+\DoxyCodeLine{00273\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_cities_a81589add9a37634223b775911115d0c8}\index{Cities@{Cities}!draw@{draw}}
+\index{draw@{draw}!Cities@{Cities}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_cities_a81589add9a37634223b775911115d0c8} 
+void Cities\+::draw (\begin{DoxyParamCaption}\item[{QPainter \&}]{painter}{, }\item[{bool}]{transparency}{}\end{DoxyParamCaption})}
+
+
+
+Draws the cities and connections on the canvas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em painter} & Reference to the QPainter object. \\
+\hline
+{\em transparency} & Flag to enable or disable transparency. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&c:\ \mbox{\hyperlink{class_cities_ad6db79898850d855053e9830e2678470}{tabCities}})\{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ c-\/>drawMap(\ painter,\ \ transparency);}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_cities_ae5b273bec3b38b1fe3564d52350e2c46}\index{Cities@{Cities}!getCityByName@{getCityByName}}
+\index{getCityByName@{getCityByName}!Cities@{Cities}}
+\doxysubsubsection{\texorpdfstring{getCityByName()}{getCityByName()}}
+{\footnotesize\ttfamily \label{class_cities_ae5b273bec3b38b1fe3564d52350e2c46} 
+int Cities\+::get\+City\+By\+Name (\begin{DoxyParamCaption}\item[{QString \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Finds the index of a city by its name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the city. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index of the city, or -\/1 if not found. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{class_cities_ad6db79898850d855053e9830e2678470}{tabCities}}.size();\ ++i)\ \{}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{class_cities_ad6db79898850d855053e9830e2678470}{tabCities}}[i]-\/>getName()\ ==\ name)\{}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i;}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00345\ \ \ \ \ \}}
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00347\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_cities_ac5b25150e8030ebebb24db26271d1c2a}\index{Cities@{Cities}!getPointByIndex@{getPointByIndex}}
+\index{getPointByIndex@{getPointByIndex}!Cities@{Cities}}
+\doxysubsubsection{\texorpdfstring{getPointByIndex()}{getPointByIndex()}}
+{\footnotesize\ttfamily \label{class_cities_ac5b25150e8030ebebb24db26271d1c2a} 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*} Cities\+::get\+Point\+By\+Index (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Gets the position of a city by its index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the city. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the city\textquotesingle{}s position. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_cities_ad6db79898850d855053e9830e2678470}{tabCities}}[index]-\/>getPosition();}
+\DoxyCodeLine{00031\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_cities_acbfaef7e0197f38e6a4a492d2660a420}\index{Cities@{Cities}!getSize@{getSize}}
+\index{getSize@{getSize}!Cities@{Cities}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily \label{class_cities_acbfaef7e0197f38e6a4a492d2660a420} 
+qsizetype Cities\+::get\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the number of cities. 
+
+\begin{DoxyReturn}{Returns}
+The size of the city vector. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_cities_ad6db79898850d855053e9830e2678470}{tabCities}}.size();}
+\DoxyCodeLine{00019\ \};}
+
+\end{DoxyCode}
+\Hypertarget{class_cities_afcebf01ed63f80864af34d67d6aa9057}\index{Cities@{Cities}!getTabCities@{getTabCities}}
+\index{getTabCities@{getTabCities}!Cities@{Cities}}
+\doxysubsubsection{\texorpdfstring{getTabCities()}{getTabCities()}}
+{\footnotesize\ttfamily \label{class_cities_afcebf01ed63f80864af34d67d6aa9057} 
+QVector$<$ \mbox{\hyperlink{class_city}{City}} \texorpdfstring{$\ast$}{*} $>$ Cities\+::get\+Tab\+Cities (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the vector of city pointers. 
+
+\begin{DoxyReturn}{Returns}
+Vector containing city pointers. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_cities_ad6db79898850d855053e9830e2678470}{tabCities}};}
+\DoxyCodeLine{00041\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_cities_a661ac7389993fc6a7b6ec64800fcb9ad}\index{Cities@{Cities}!getTabVertices@{getTabVertices}}
+\index{getTabVertices@{getTabVertices}!Cities@{Cities}}
+\doxysubsubsection{\texorpdfstring{getTabVertices()}{getTabVertices()}}
+{\footnotesize\ttfamily \label{class_cities_a661ac7389993fc6a7b6ec64800fcb9ad} 
+QVector$<$ \mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*} $>$ Cities\+::get\+Tab\+Vertices (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the vector of vertex pointers. 
+
+\begin{DoxyReturn}{Returns}
+Vector containing vertex pointers. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ QVector<Vector2D\ *>\ tabVertices;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ \&v:\ \mbox{\hyperlink{class_cities_ad6db79898850d855053e9830e2678470}{tabCities}})\{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ tabVertices.push\_back(v-\/>getPosition());}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{return}\ tabVertices;}
+\DoxyCodeLine{00050\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_cities_af024145923e1b53118200991d2d3a4bc}\index{Cities@{Cities}!initTriangulation@{initTriangulation}}
+\index{initTriangulation@{initTriangulation}!Cities@{Cities}}
+\doxysubsubsection{\texorpdfstring{initTriangulation()}{initTriangulation()}}
+{\footnotesize\ttfamily \label{class_cities_af024145923e1b53118200991d2d3a4bc} 
+QVector$<$ \mbox{\hyperlink{class_triangle}{Triangle}} \texorpdfstring{$\ast$}{*} $>$ Cities\+::init\+Triangulation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the triangulation of cities. 
+
+\begin{DoxyReturn}{Returns}
+Vector containing pointers to triangles. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ QVector<Vector2D\ *>\ tabVert\ =\ \mbox{\hyperlink{class_cities_a661ac7389993fc6a7b6ec64800fcb9ad}{getTabVertices}}()\ ;}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordflow}{return}\ \ \mbox{\hyperlink{class_cities_a6a9c99a72a208c7fa6991539ee8310ba}{convexHull}}-\/>\mbox{\hyperlink{class_my_polygon_a381c4099e2e2968e480b5fb30a8e1fe4}{earClipping}}(tabVert\ );;}
+\DoxyCodeLine{00189\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_cities_a2e10d714e6f2981ff135ffe121a92c42}\index{Cities@{Cities}!isOnTheLeft@{isOnTheLeft}}
+\index{isOnTheLeft@{isOnTheLeft}!Cities@{Cities}}
+\doxysubsubsection{\texorpdfstring{isOnTheLeft()}{isOnTheLeft()}}
+{\footnotesize\ttfamily \label{class_cities_a2e10d714e6f2981ff135ffe121a92c42} 
+bool Cities\+::is\+On\+The\+Left (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{P}{, }\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{top\+\_\+1}{, }\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{top}{}\end{DoxyParamCaption})}
+
+
+
+Checks if a point is on the left side of a line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em P} & The point to check. \\
+\hline
+{\em top\+\_\+1} & First point of the line. \\
+\hline
+{\em top} & Second point of the line. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the point is on the left, otherwise false. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ AB\ =\ \ top\_1\ -\/\ top\ ,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ AP\ =\ top\ -\/\ P\ ;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{/*qDebug()\ <<\ "{}AB"{}\ <<\ AB; }}
+\DoxyCodeLine{00060\ \textcolor{comment}{\ \ \ \ qDebug()\ <<\ "{}AP"{}\ <<\ AP;*/}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordflow}{return}\ (AB.x*AP.y-\/AB.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}*AP.x)>=0;}
+\DoxyCodeLine{00062\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_cities_a729bd2cda85707184fd3644d88c2b69b}\index{Cities@{Cities}!isOutsideCities@{isOutsideCities}}
+\index{isOutsideCities@{isOutsideCities}!Cities@{Cities}}
+\doxysubsubsection{\texorpdfstring{isOutsideCities()}{isOutsideCities()}}
+{\footnotesize\ttfamily \label{class_cities_a729bd2cda85707184fd3644d88c2b69b} 
+bool Cities\+::is\+Outside\+Cities (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{point}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if a point is outside the cities\textquotesingle{} boundaries. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & The point to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the point is outside, otherwise false. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ point.x\ <\ 0\ ||\ point.x\ >\ (\mbox{\hyperlink{class_cities_ae1c5b61db5c2363af2d26af2094551be}{widthLimit}}\ -\/\ 10)\ ||}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ point.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ <\ 0\ ||\ point.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ >\ (\mbox{\hyperlink{class_cities_a59a41f7e1319d985a05c821c8d2d46e1}{heightLimit}}\ +\ 10);}
+\DoxyCodeLine{00192\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_cities_a2a44243f980005d3ccb755cd68c044f5}\index{Cities@{Cities}!nextDestCityId@{nextDestCityId}}
+\index{nextDestCityId@{nextDestCityId}!Cities@{Cities}}
+\doxysubsubsection{\texorpdfstring{nextDestCityId()}{nextDestCityId()}}
+{\footnotesize\ttfamily \label{class_cities_a2a44243f980005d3ccb755cd68c044f5} 
+\mbox{\hyperlink{class_vector2_d}{Vector2D}} Cities\+::next\+Dest\+City\+Id (\begin{DoxyParamCaption}\item[{int}]{start}{, }\item[{int}]{end}{}\end{DoxyParamCaption})}
+
+
+
+Finds the next city destination along the path between two cities. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Index of the start city. \\
+\hline
+{\em end} & Index of the end city. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Position of the next destination city. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00351\ \ \ \ \ QVector<int>\ path\ =\ findPath(\mbox{\hyperlink{class_cities_a8a679ac6e932625fa884e1e629d7d91c}{adjacencyMatrix}},\ start,\ end);}
+\DoxyCodeLine{00352\ \ \ \ \ qDebug()\ <<\ path[1];}
+\DoxyCodeLine{00353\ \ \ \ \ qDebug()\ <<\ \ *\mbox{\hyperlink{class_cities_ad6db79898850d855053e9830e2678470}{tabCities}}[path[1]]-\/>getPosition();}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00355\ \ \ \ \ \textcolor{keywordflow}{return}\ *\mbox{\hyperlink{class_cities_ad6db79898850d855053e9830e2678470}{tabCities}}[path[1]]-\/>getPosition();}
+\DoxyCodeLine{00356\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_cities_a58419345531dd32657e6f2a3aa8cc5c5}\index{Cities@{Cities}!orderPolygonPoint@{orderPolygonPoint}}
+\index{orderPolygonPoint@{orderPolygonPoint}!Cities@{Cities}}
+\doxysubsubsection{\texorpdfstring{orderPolygonPoint()}{orderPolygonPoint()}}
+{\footnotesize\ttfamily \label{class_cities_a58419345531dd32657e6f2a3aa8cc5c5} 
+void Cities\+::order\+Polygon\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector2_d}{Vector2D}} \&}]{porigin}{}\end{DoxyParamCaption})}
+
+
+
+Orders polygon points relative to a given origin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em porigin} & Reference to the origin point. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{auto}\ pointsRelativeList\ =\ \mbox{\hyperlink{class_cities_a8c519e6136bfe8624f1a5c5125a52a25}{ascendingPolarAngle}}(porigin);}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{int}\ N,Nmax;}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_cities_a6a9c99a72a208c7fa6991539ee8310ba}{convexHull}};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ std::sort(\mbox{\hyperlink{class_cities_ad6db79898850d855053e9830e2678470}{tabCities}}.begin(),\ \mbox{\hyperlink{class_cities_ad6db79898850d855053e9830e2678470}{tabCities}}.end(),}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\&pointsRelativeList](\mbox{\hyperlink{class_city}{City}}*\ city1,\ \mbox{\hyperlink{class_city}{City}}*\ city2)\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ sortingByPointsRelative(city1,\ city2,\ pointsRelativeList);}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{/*for(auto\ \&t:\ tabCities)\{ }}
+\DoxyCodeLine{00123\ \textcolor{comment}{\ \ \ \ \ \ \ \ qDebug()\ <<\ t-\/>getName(); }}
+\DoxyCodeLine{00124\ \textcolor{comment}{\ \ \ \ \}*/}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ QVector<Vector2D*>\ tabVertices\ =\ this-\/>\mbox{\hyperlink{class_cities_a661ac7389993fc6a7b6ec64800fcb9ad}{getTabVertices}}();}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ QVector<Vector2D>\ CHstack;}
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ top,\ top\_1;}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ CHstack.append(tabVertices[0]);}
+\DoxyCodeLine{00134\ \ \ \ \ CHstack.append(tabVertices[1]);}
+\DoxyCodeLine{00135\ \ \ \ \ CHstack.append(tabVertices[2]);}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{auto}\ it=tabVertices.begin()+3;}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordflow}{while}\ (it!=tabVertices.end())\ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ top\ =\ CHstack.last();\ \textcolor{comment}{//\ extract\ top\ and\ top\_1}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ CHstack.pop\_back();}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ from\ the\ stack}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ top\_1\ =\ CHstack.last();}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ CHstack.push\_back(top);}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!\mbox{\hyperlink{class_cities_a2e10d714e6f2981ff135ffe121a92c42}{isOnTheLeft}}((*it),top\_1,top))\ \{}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ CHstack.pop\_back();\ \textcolor{comment}{//\ update\ top\ and\ top\_1}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ top\ =\ CHstack.last();}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ CHstack.pop\_back();}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ top\_1\ =\ CHstack.last();}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ CHstack.push\_back(top);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ CHstack.push\_back((*it));}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ it++;}
+\DoxyCodeLine{00159\ \ \ \ \ \}}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{comment}{//\ get\ stack\ points\ to\ create\ current\ polygon}}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{comment}{//qDebug()\ <<"{}CHstack"{}\ <<\ CHstack;}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ N=CHstack.size();}
+\DoxyCodeLine{00165\ \ \ \ \ Nmax\ =\ N;}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \mbox{\hyperlink{class_cities_a6a9c99a72a208c7fa6991539ee8310ba}{convexHull}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_my_polygon}{MyPolygon}}(Nmax);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordflow}{while}\ (!CHstack.empty())\ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_vector2_d}{Vector2D}}\ v\ =\ CHstack.first();}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ qDebug()\ <<\ v;}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cities_a6a9c99a72a208c7fa6991539ee8310ba}{convexHull}}-\/>\mbox{\hyperlink{class_my_polygon_ac00111379e93e80ae3bfc45d789ce198}{addVertex}}(v);}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ CHstack.pop\_front();}
+\DoxyCodeLine{00174\ \ \ \ \ \}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{comment}{/*std::sort(tabCities.begin(),\ tabCities.end(), }}
+\DoxyCodeLine{00177\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ [\&pointsRelativeList](City*\ city1,\ City*\ city2)\ \{ }}
+\DoxyCodeLine{00178\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ sortingByPointsRelative(city1,\ city2,\ pointsRelativeList); }}
+\DoxyCodeLine{00179\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \} }}
+\DoxyCodeLine{00180\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ );*/}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_cities_a3342885d83118267a8cc3ccfe465a573}\index{Cities@{Cities}!orientation@{orientation}}
+\index{orientation@{orientation}!Cities@{Cities}}
+\doxysubsubsection{\texorpdfstring{orientation()}{orientation()}}
+{\footnotesize\ttfamily \label{class_cities_a3342885d83118267a8cc3ccfe465a573} 
+int Cities\+::orientation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vector2_d}{Vector2D}}}]{p}{, }\item[{\mbox{\hyperlink{class_vector2_d}{Vector2D}}}]{q}{, }\item[{\mbox{\hyperlink{class_vector2_d}{Vector2D}}}]{r}{}\end{DoxyParamCaption})}
+
+
+
+Determines the orientation of three points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & First point. \\
+\hline
+{\em q} & Second point. \\
+\hline
+{\em r} & Third point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if collinear, 1 if clockwise, 2 if counterclockwise. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{comment}{//\ Cross\ product\ of\ vector\ pq\ and\ qr}}
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{keywordtype}{float}\ val\ =\ (q.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ -\/\ p.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}})\ *\ (r.x\ -\/\ q.x)\ -\/\ (q.x\ -\/\ p.x)\ *\ (r.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}}\ -\/\ q.\mbox{\hyperlink{class_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}});}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keywordflow}{if}\ (val\ ==\ 0)\ \textcolor{keywordflow}{return}\ 0;\ \ \textcolor{comment}{//\ collinear}}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keywordflow}{return}\ (val\ >\ 0)\ ?\ 1\ :\ 2;\ \ \textcolor{comment}{//\ 1\ -\/>\ clockwise,\ 2\ -\/>\ counterclockwise}}
+\DoxyCodeLine{00282\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_cities_a0757a978984d8e828614b3f5e39f1eb2}\index{Cities@{Cities}!pushCity@{pushCity}}
+\index{pushCity@{pushCity}!Cities@{Cities}}
+\doxysubsubsection{\texorpdfstring{pushCity()}{pushCity()}}
+{\footnotesize\ttfamily \label{class_cities_a0757a978984d8e828614b3f5e39f1eb2} 
+void Cities\+::push\+City (\begin{DoxyParamCaption}\item[{QString}]{name}{, }\item[{\mbox{\hyperlink{class_vector2_d}{Vector2D}} \texorpdfstring{$\ast$}{*}}]{position}{, }\item[{QString}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Adds a new city to the collection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the city. \\
+\hline
+{\em position} & Pointer to the city\textquotesingle{}s position. \\
+\hline
+{\em color} & Color associated with the city. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_cities_ad6db79898850d855053e9830e2678470}{tabCities}}.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_city}{City}}(name,position,color));}
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_cities_aec5164e4c4c3678c1212b6dbc312ef2c}\index{Cities@{Cities}!setLimit@{setLimit}}
+\index{setLimit@{setLimit}!Cities@{Cities}}
+\doxysubsubsection{\texorpdfstring{setLimit()}{setLimit()}}
+{\footnotesize\ttfamily \label{class_cities_aec5164e4c4c3678c1212b6dbc312ef2c} 
+void Cities\+::set\+Limit (\begin{DoxyParamCaption}\item[{int \&}]{width}{, }\item[{int \&}]{height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the width and height limits for the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Reference to the width limit. \\
+\hline
+{\em height} & Reference to the height limit. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cities_ae1c5b61db5c2363af2d26af2094551be}{widthLimit}}\ =\ width;}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_cities_a59a41f7e1319d985a05c821c8d2d46e1}{heightLimit}}\ =\ height;}
+\DoxyCodeLine{00182\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_cities_ae262c1a79a63adb3d3769a73a1d8899e}\index{Cities@{Cities}!sortingByPointsRelative@{sortingByPointsRelative}}
+\index{sortingByPointsRelative@{sortingByPointsRelative}!Cities@{Cities}}
+\doxysubsubsection{\texorpdfstring{sortingByPointsRelative()}{sortingByPointsRelative()}}
+{\footnotesize\ttfamily \label{class_cities_ae262c1a79a63adb3d3769a73a1d8899e} 
+bool Cities\+::sorting\+By\+Points\+Relative (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_city}{City}} \texorpdfstring{$\ast$}{*}}]{city1}{, }\item[{const \mbox{\hyperlink{class_city}{City}} \texorpdfstring{$\ast$}{*}}]{city2}{, }\item[{const QVector$<$ QPair$<$ QString, \mbox{\hyperlink{class_vector2_d}{Vector2D}} $>$ $>$ \&}]{points\+Relative}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sorts cities based on their relative positions to a set of points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city1} & Pointer to the first city. \\
+\hline
+{\em city2} & Pointer to the second city. \\
+\hline
+{\em points\+Relative} & Vector of name and position pairs. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if city1 is less than city2, otherwise false. 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//\ Trouver\ les\ indices\ des\ villes\ dans\ pointsRelative}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{int}\ index1\ =\ -\/1,\ index2\ =\ -\/1;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//\ Chercher\ l'indice\ de\ city1\ et\ city2\ dans\ pointsRelative\ en\ comparant\ les\ noms\ des\ villes}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ pointsRelative.size();\ ++i)\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pointsRelative[i].first\ ==\ city1-\/>\mbox{\hyperlink{class_city_ad73598d937870a165cb530958106ff07}{getName}}()\ )\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ index1\ =\ i;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pointsRelative[i].first\ ==\ city2-\/>\mbox{\hyperlink{class_city_ad73598d937870a165cb530958106ff07}{getName}}())\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ index2\ =\ i;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{comment}{//\ Comparer\ les\ indices\ pour\ définir\ l'ordre}}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{return}\ index1\ <\ index2;}
+\DoxyCodeLine{00080\ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_cities_a02fbef1c9c8108c6f95cc554cbca448d}\index{Cities@{Cities}!testPathFinding@{testPathFinding}}
+\index{testPathFinding@{testPathFinding}!Cities@{Cities}}
+\doxysubsubsection{\texorpdfstring{testPathFinding()}{testPathFinding()}}
+{\footnotesize\ttfamily \label{class_cities_a02fbef1c9c8108c6f95cc554cbca448d} 
+void Cities\+::test\+Path\+Finding (\begin{DoxyParamCaption}\item[{int}]{start}{, }\item[{int}]{end}{}\end{DoxyParamCaption})}
+
+
+
+Tests pathfinding between two cities. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Index of the start city. \\
+\hline
+{\em end} & Index of the end city. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00323\ \ \ \ \ QVector<int>\ path\ =\ findPath(\mbox{\hyperlink{class_cities_a8a679ac6e932625fa884e1e629d7d91c}{adjacencyMatrix}},\ start,\ end);}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keywordflow}{if}\ (path.empty())\ \{}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}No\ path\ found\ between\ city"{}}\ <<\ start\ <<\ \textcolor{stringliteral}{"{}and\ city"{}}\ <<\ end;}
+\DoxyCodeLine{00327\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Path\ from\ city"{}}\ <<\ start\ <<\ \textcolor{stringliteral}{"{}to\ city"{}}\ <<\ end\ <<\ \textcolor{stringliteral}{"{}:"{}};}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ city\ :\ path)\ \{}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ city;\ \ \textcolor{comment}{//\ Or\ use\ city\ names\ if\ needed}}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00332\ \ \ \ \ \}}
+\DoxyCodeLine{00333\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cities.\+h\item 
+cities.\+cpp\end{DoxyCompactItemize}

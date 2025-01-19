@@ -1,0 +1,66 @@
+\chapter{README}
+\hypertarget{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e}{}\label{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e}\index{README@{README}}
+Yohann MITEL \& Pierre MEYER\hypertarget{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md0}{}\doxysection{\texorpdfstring{Voronoi-\/\+Based Drone Routing Project}{Voronoi-\/\+Based Drone Routing Project}}\label{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md0}
+\hypertarget{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md1}{}\doxysubsection{\texorpdfstring{Project Overview}{Project Overview}}\label{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md1}
+This project involves the creation of a drone routing system using Voronoi diagrams to map and manage drone navigation between server areas. The system adheres to the specifications outlined in the project requirements and includes\+:
+
+
+\begin{DoxyItemize}
+\item A Git\+Hub repository with the full implementation.
+\item Documentation and algorithm explanations.
+\item A dedicated branch for the Voronoi diagram implementation.
+\end{DoxyItemize}\hypertarget{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md2}{}\doxysubsection{\texorpdfstring{Initial Problem Statement}{Initial Problem Statement}}\label{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md2}
+The initial data for the project was provided in {\ttfamily config1.\+json} and {\ttfamily config2.\+json}. Key features of the problem include\+:\hypertarget{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md3}{}\doxysubsubsection{\texorpdfstring{Servers and Voronoi Areas\+:}{Servers and Voronoi Areas\+:}}\label{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md3}
+
+\begin{DoxyItemize}
+\item Servers are identified by unique names.
+\item Each server is associated with a colored area defined by a Voronoi diagram.
+\item Servers are connected through a wired network, with connections existing when server polygons share a common edge.
+\end{DoxyItemize}\hypertarget{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md4}{}\doxysubsubsection{\texorpdfstring{Drones\+:}{Drones\+:}}\label{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md4}
+
+\begin{DoxyItemize}
+\item Drones are uniquely identified and have an initial position and a target server area.
+\item Drones communicate only with the server associated with the zone they are flying over.
+\item Servers guide the drones to their target areas.
+\end{DoxyItemize}\hypertarget{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md5}{}\doxysubsection{\texorpdfstring{Project Deliverables}{Project Deliverables}}\label{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md5}
+The Git\+Hub repository contains\+:
+
+
+\begin{DoxyItemize}
+\item The source code, organized and thoroughly commented.
+\item A dedicated branch for the Voronoi diagram implementation ({\ttfamily voronoi} branch).
+\item HTML documentation generated using Doxygen.
+\end{DoxyItemize}\hypertarget{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md6}{}\doxysubsection{\texorpdfstring{Implementation Details}{Implementation Details}}\label{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md6}
+\hypertarget{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md7}{}\doxysubsubsection{\texorpdfstring{Voronoi Diagram Construction}{Voronoi Diagram Construction}}\label{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md7}
+The Voronoi diagram forms the backbone of the mapping system, dividing the area into zones associated with each server. This process involves\+:\hypertarget{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md8}{}\doxysubsubsubsection{\texorpdfstring{Input Processing\+:}{Input Processing\+:}}\label{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md8}
+
+\begin{DoxyItemize}
+\item Input consisted of points rather than triangles.
+\item Points were sorted using a polar angle in ascending order to prepare for convex hull construction.
+\end{DoxyItemize}\hypertarget{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md9}{}\doxysubsubsubsection{\texorpdfstring{Convex Hull Construction\+:}{Convex Hull Construction\+:}}\label{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md9}
+
+\begin{DoxyItemize}
+\item The convex hull was constructed to define the boundary of the area.
+\end{DoxyItemize}\hypertarget{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md10}{}\doxysubsubsubsection{\texorpdfstring{Triangulation\+:}{Triangulation\+:}}\label{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md10}
+
+\begin{DoxyItemize}
+\item An ear-\/clipping algorithm was applied to subdivide the convex hull into triangles.
+\end{DoxyItemize}\hypertarget{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md11}{}\doxysubsubsubsection{\texorpdfstring{Delaunay Triangulation and Flipping\+:}{Delaunay Triangulation and Flipping\+:}}\label{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md11}
+
+\begin{DoxyItemize}
+\item Delaunay triangulation was performed using edge-\/flipping techniques to ensure the properties of the Voronoi diagram were satisfied.
+\end{DoxyItemize}\hypertarget{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md12}{}\doxysubsubsection{\texorpdfstring{Drone Routing System}{Drone Routing System}}\label{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md12}
+Once the Voronoi diagrams were generated and zones mapped\+:\hypertarget{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md13}{}\doxysubsubsubsection{\texorpdfstring{Integration of Drone Data\+:}{Integration of Drone Data\+:}}\label{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md13}
+
+\begin{DoxyItemize}
+\item Data about drones, including their initial positions and target areas, was added to the system.
+\end{DoxyItemize}\hypertarget{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md14}{}\doxysubsubsubsection{\texorpdfstring{Routing Algorithm\+:}{Routing Algorithm\+:}}\label{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md14}
+
+\begin{DoxyItemize}
+\item Drones were routed through the network of server areas.
+\item Each server guided the drones within its zone to reach their target areas efficiently.
+\end{DoxyItemize}\hypertarget{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md15}{}\doxysubsection{\texorpdfstring{Branch Organization}{Branch Organization}}\label{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md15}
+The {\ttfamily voronoi} branch is the exercise of constructing voronoi polygons from triangles. The {\ttfamily triangulation-\/convex\+Hull-\/voronoi} branch is the part where we construct the voronoi polygons from a point cloud.\hypertarget{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md16}{}\doxysubsection{\texorpdfstring{Code Quality and Documentation}{Code Quality and Documentation}}\label{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md16}
+\hypertarget{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md17}{}\doxysubsubsection{\texorpdfstring{Code Comments}{Code Comments}}\label{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md17}
+The source code is thoroughly commented to explain the purpose and functionality of each component, making it easier to understand and maintain.\hypertarget{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md18}{}\doxysubsubsection{\texorpdfstring{Doxygen Documentation}{Doxygen Documentation}}\label{md__c_1_2_users_2_m_i_t_e_l_01_yohann_2_desktop_2nsm_q_t_2_drone__project_2_r_e_a_d_m_e_autotoc_md18}
+HTML documentation has been generated using Doxygen and is available in the repository. This documentation provides an overview of the project structure, functions, and classes used in the implementation. 
