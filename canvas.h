@@ -30,6 +30,7 @@ public:
 
     ~Canvas();
     inline QVector<Drone*>& getMap() { return mapDrones; }
+    inline bool getProcessPolyState() { return processPolyState; }
     /**
      * @brief paintEvent
      */
@@ -66,6 +67,7 @@ public:
 
     Vector2D calculateIntersection(const Vector2D &p1, const Vector2D &p2, float minX, float minY, float maxX, float maxY);
 
+    void droneSequence();
 signals:
 
     /*
@@ -78,12 +80,14 @@ private:
     QPair<Vector2D,Vector2D> getBox();
 
     QVector<Triangle*> triangles;
-
+    bool processPolyState = false ;
     Cities *cities = new Cities();
+
 
     float scale=0.5;
     QPoint origin=QPoint(10,10);
 public:
+
     bool flipped = false ;
     bool showTriangles=true,showCenters=false,showCircles=false, voronoiTransparency = false;
 

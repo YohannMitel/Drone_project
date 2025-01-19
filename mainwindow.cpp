@@ -56,8 +56,11 @@ void MainWindow::update() {
     static int steps=5;
     int current=elapsedTimer.elapsed();
     double dt=(current-last)/(1000.0*steps);
+
     for (int step=0; step<steps; step++) {
         // update positions of drones
+        bool tmp_landedbool = true;
+        bool tmp_powerMaxBool = true;
         for (auto &drone:*mapDrones) {
             // detect collisions between drone and other flying drones
             if (drone->getStatus()!=Drone::landed) {
@@ -68,8 +71,18 @@ void MainWindow::update() {
                         drone->addCollision(B,ui->widget->droneCollisionDistance);
                     }
                 }
+
+                tmp_landedbool =false;
+
+            }
+
+            if(drone->getPower() != 100){
+                tmp_powerMaxBool = false;
             }
             drone->update(dt);
+        }
+        if(tmp_landedbool &&ui->widget->getProcessPolyState()  && tmp_powerMaxBool){
+            ui->widget->droneSequence();
         }
     }
     int d = elapsedTimer.elapsed()-current;

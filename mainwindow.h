@@ -50,6 +50,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QVector<Drone*> *mapDrones=nullptr;
+
     QTimer *timer;
     QElapsedTimer elapsedTimer;
 
