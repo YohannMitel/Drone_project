@@ -182,5 +182,7 @@ void Drone::addCollision(const Vector2D& B,float threshold) {
     if (l<threshold) {
         ForceCollision+=(-coefCollision/threshold)*AB;
         showCollision=true;
+        nbCollisions++;
     }
+
 }

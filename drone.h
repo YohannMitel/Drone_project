@@ -39,7 +39,7 @@ public:
     /**
      * @brief Make the drone takeoff to move to a target position
      */
-    inline void start() { status=takeoff; height=0; repaint(); }
+    inline void start() { status=takeoff; height=0; nbCollisions=0; repaint(); }
     /**
      * @brief Ask for landing
      */
@@ -98,6 +98,14 @@ public:
      * @param threshold: distance of collision detection
      */
     void addCollision(const Vector2D& A,float threshold);
+
+    /**
+     * @brief Get the number of collisions that have occurred since the drone began moving
+     * @return the number of collisions
+     */
+    int getNbCollisions(){return nbCollisions;};
+
+
     /**
      * @brief Get if a collision has occurred
      * @return true if collision
@@ -153,6 +161,7 @@ private:
     double azimut;            ///< rotation angle of the drone
     QImage compasImg,stopImg,takeoffImg,landingImg;
     bool showCollision;       ///< true if a collision is detected
+    int nbCollisions = 0 ;  ///< Number of collisions
 };
 
 #endif // DRONE_H

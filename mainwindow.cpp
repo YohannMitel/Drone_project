@@ -70,6 +70,9 @@ void MainWindow::update() {
                     if (obs->getStatus()!=Drone::landed && obs->getName()!=drone->getName()) {
                         Vector2D B=obs->getPosition();
                         drone->addCollision(B,ui->widget->droneCollisionDistance);
+                        //qDebug() << drone->getNbCollisions();
+                        // To much collisons == stop
+                        if(drone->getNbCollisions() > 400 ) drone->stop();
                     }
                 }
 
