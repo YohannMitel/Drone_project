@@ -805,29 +805,11 @@ void Canvas::processPoly(){
     }
     if(cities->getTabCities().size() > 1 ) cities->connectionMatrix(cities->getTabCities());
     cities->testPathFinding(5,1);
+    int tmp_width = width() ;
+    int tmp_height = height();
 
+    cities->setLimit(tmp_width, tmp_height);
 
-
-
-        /*
-        if(isClosed){
-            qDebug () << "Recherche vers la droite";
-            while(it!=L.end() && !(*(*it)->getEdgeTo(P) == *edge)){
-
-                it++;
-
-            }
-        }else{
-            qDebug () << "Recherche vers la gauche";
-            while(it!=L.end() && !(*(*it)->getEdgeFrom(P) == *edge)){
-
-                it++;
-
-            }
-        }
-
-
-        */
 /*
        qDebug() << "VORONOI DE : "  << cities->getTabCities()[1]->getName();
     processVoronoi(*cities->getTabCities()[1]);*/
@@ -847,12 +829,13 @@ void Canvas::droneSequence(Drone &d){
         auto it = citiesList.begin();
         auto end = citiesList.end();
 
-
         while (it != end) {
             auto &c = *it;
 
             if (c->getMap()) {
-                if (isOutsideCanvas(pt)) {
+
+
+                if (cities->isOutsideCities(pt)) {
                     // Calculer la distance à l'arête la plus proche
                     NearestEdgeResult res = c->getMap()->nearestEdge(pt);
                     double distance = res.distance;
@@ -876,7 +859,12 @@ void Canvas::droneSequence(Drone &d){
         qDebug() << "Nearest city for drone: " << d.getName() << " is " << closestCity;
         qDebug() << "Dest city id " << d.getDestCity();
         qDebug() << (closestCity != d.getDestCity());*/
-        if(closestCity == -1) qDebug() << "CEEEEEST LA MEEEEEEEEERDE";
+        if(closestCity == -1){
+
+            qDebug() << "Issues";
+            return ;
+        }
+
         d.setCurrentCity(closestCity);
 
         if(closestCity != d.getDestCity() ){

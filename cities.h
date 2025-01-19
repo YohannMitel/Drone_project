@@ -9,6 +9,8 @@ private:
     QVector<City*> tabCities;
     MyPolygon *convexHull = nullptr;
     QVector<QVector<int>> adjacencyMatrix;
+    float heightLimit;
+    float widthLimit;
 public:
     Cities();
     ~Cities();
@@ -43,6 +45,16 @@ public:
     void testPathFinding(int start, int end);
 
     Vector2D nextDestCityId(int start, int end);
+
+    void setLimit(int &width, int &height){
+        widthLimit = width;
+        heightLimit = height;
+    }
+
+    bool isOutsideCities(const Vector2D &point) const{
+        return point.x  < 0 ||  point.x > (widthLimit-10) ||
+               point.y < 0 ||  point.y > (heightLimit+10);
+    }
 
 };
 
