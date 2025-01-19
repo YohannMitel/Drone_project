@@ -324,7 +324,6 @@ public:
         if(ptr[0] == P) return ptr[1];
         if(ptr[1] == P) return ptr[2];
         if(ptr[2] == P) return ptr[0];
-        qDebug() << "PROBLEM";
         return nullptr;
     }
 
@@ -341,7 +340,6 @@ public:
         if(ptr[0] == P) return ptr[2];
         if(ptr[1] == P) return ptr[0];
         if(ptr[2] == P) return ptr[1];
-        qDebug() << "PROBLEM";
         return nullptr;
     }
 

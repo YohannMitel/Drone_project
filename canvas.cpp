@@ -184,19 +184,6 @@ void Canvas::mousePressEvent(QMouseEvent *event) {
             break;
         }
     }
-    qDebug() << mapDrones[1]->inDestCity();
-/*
-    auto it = mapDrones.begin();
-    while (it!=mapDrones.end() && (*it)->getStatus()!=Drone::landed) {
-        it++;
-    }
-    // if found, ask for a motion to the mouse position
-    if (it!=mapDrones.end()) {
-        qDebug() << mouseX <<"  " << mouseY ;
-        (*it)->setGoalPosition(Vector2D(mouseX,mouseY));
-        (*it)->start();
-    }*/
-
 
 
     repaint();
@@ -273,19 +260,23 @@ void Canvas::mouseMoveEvent(QMouseEvent *event) {
     float mouseY=-float(event->pos().y()-height()+10)/scale+origin.y();
     emit updateSB(QString("Mouse position= (") + QString::number(mouseX, 'f', 1) + "," + QString::number(mouseY, 'f', 1) + ")");
 
-
-    for (auto &tri:triangles) {
-        tri->setHighlighted(tri->isInside(mouseX,mouseY));
-    }
-
-    for (auto &c: cities->getTabCities()) {
-
-        if(c->getMap()){
-            //qDebug() << c->getName();
-            c->getMap()->isInsideWithTriangulation(Vector2D(mouseX,mouseY));
+    if(voronoiTransparency){
+        for (auto &tri:triangles) {
+            tri->setHighlighted(tri->isInside(mouseX,mouseY));
         }
 
+    }else{
+        for (auto &c: cities->getTabCities()) {
+
+            if(c->getMap()){
+                //qDebug() << c->getName();
+                c->getMap()->isInsideWithTriangulation(Vector2D(mouseX,mouseY));
+            }
+
+        }
     }
+
+
     update();
 }
 
@@ -664,19 +655,18 @@ void Canvas::processVoronoi(City &city){
         if(it!=L.end()){
             qDebug() << "Voisin trouvé !!";
             if(isClosed){
-                qDebug() << "ICI 1";
+
                 Lordered.push_back((*it)->getCircleCenter());
             }else{
 
                 if(!isOutsideCanvas((*it)->getCircleCenter()) && !isOutsideCanvas(T->getCircleCenter()) ) {
-                    qDebug() << "ICI 2";
 
                     qDebug() << (*it)->getCircleCenter();
                     if(!Lordered.contains((*it)->getCircleCenter())) Lordered.push_front((*it)->getCircleCenter());
 
 
                     const Vector2D inter = Vector2D::getCanvasIntersectionLimit(P, *(*it)->getEdgeTo(P), (*it)->getCircleCenter(), canvasWidth, canvasHeight);
-                    qDebug() << "ICI 3";
+
                     if(computedLimitPointNb < 2){
                         qDebug() << "computedLimitPointNb";
                         Lordered.push_front(inter);
@@ -686,7 +676,7 @@ void Canvas::processVoronoi(City &city){
 
 
                 }else{
-                    qDebug() << "ICI 4";
+
                     Lordered.push_front((*it)->getCircleCenter());
                 }
 
@@ -708,12 +698,11 @@ void Canvas::processVoronoi(City &city){
                     const QString side1 = Vector2D::whichSide(Lordered.back(), canvasWidth, canvasHeight);
                     const QString side2 = Vector2D::whichSide(circumCircle, canvasWidth, canvasHeight);
                     if (side1 != side2) {
-                        qDebug() << "ICI 5";
+
                         Lordered.push_back(getBorderPointSide(side1, side2, canvasWidth, canvasHeight));
                     }
-                    qDebug() << "ICI 6";
-                    qDebug() << "Val " << circumCircle;
-                    //Lordered.push_back(circumCircle);
+
+
                 } else {
 
                     const Vector2D inter1 = Vector2D::extendLineToCanvas(*(Lordered.end() - 2), Lordered.back(), canvasWidth, canvasHeight);
@@ -722,14 +711,13 @@ void Canvas::processVoronoi(City &city){
                     const QString side1 = Vector2D::whichSide(inter1, canvasWidth, canvasHeight);
                     const QString side2 = Vector2D::whichSide(inter2, canvasWidth, canvasHeight);
                     if (side1 != side2) {
-                        qDebug() << "ICI 7";
+
                         Lordered.push_back(getBorderPointSide(side1, side2, canvasWidth, canvasHeight));
                         qDebug() << getBorderPointSide(side1, side2, canvasWidth, canvasHeight);
                     }
 
                     if(computedLimitPointNb < 2){
-                        qDebug() << "ICI 8";
-                        qDebug() << "computedLimitPointNb";
+
                         Lordered.push_back(inter2);
                         computedLimitPointNb++;
                     }
@@ -742,19 +730,18 @@ void Canvas::processVoronoi(City &city){
 
             const Vector2D circumCircle = T->getCircleCenter();
             if (isOutsideCanvas(circumCircle)) {
-                qDebug() << "ICI 9";
+
                 if(!Lordered.contains(circumCircle)) Lordered.push_back(circumCircle);
 
             } else {
 
                 if(!Lordered.contains(circumCircle)) {
-                    qDebug() << "ICI 10";
+
                     Lordered.push_front(circumCircle);
                 }
                 if(computedLimitPointNb < 2){
                     const Vector2D inter = Vector2D::getCanvasIntersectionLimit(edge, P, circumCircle, canvasWidth, canvasHeight);
-                    qDebug() << "ICI 11";
-                    qDebug() << "Val " << inter;
+
                     qDebug() << "computedLimitPointNb";
                     Lordered.push_back(inter);
                     computedLimitPointNb++;
@@ -771,12 +758,12 @@ void Canvas::processVoronoi(City &city){
                 const Vector2D circumCircle = (T)->getCircleCenter();
 
                 if(isOutsideCanvas(circumCircle)){
-                    qDebug() << "ICI 12";
+
                     Lordered.push_back(circumCircle);
 
                 }else if(computedLimitPointNb < 2){
                     const Vector2D inter = Vector2D::getCanvasIntersectionLimit(edge, P, circumCircle, canvasWidth, canvasHeight);
-                    qDebug() << "ICI 13";
+
                     qDebug() << "computedLimitPointNb";
 
                     Lordered.push_back(inter);
@@ -856,11 +843,7 @@ void Canvas::droneSequence(Drone &d){
 
             ++it; // Passer à la ville suivante
         }
-/*
- *
-        qDebug() << "Nearest city for drone: " << d.getName() << " is " << closestCity;
-        qDebug() << "Dest city id " << d.getDestCity();
-        qDebug() << (closestCity != d.getDestCity());*/
+
         if(closestCity == -1){
 
             qDebug() << "Issues";
@@ -878,6 +861,66 @@ void Canvas::droneSequence(Drone &d){
         }
 
 
+}
+
+QString Canvas::getCitiesInfos() {
+    // Initialize the result string
+    QString result = "City - Drone Count:\n";
+
+    // Get the list of cities
+    const auto &citiesList = cities->getTabCities();
+
+    // Create a map to store the drone counts for each city
+    QMap<int, int> cityDroneCount; // Key: City Index, Value: Drone Count
+
+    // Iterate through each drone
+    for (auto &d : mapDrones) {
+        double nearestDistance = 10000; // Distance initiale très grande
+        int closestCity = -1; // Indice par défaut
+
+        Vector2D pt = d->getPosition();
+        auto it = citiesList.begin();
+        auto end = citiesList.end();
+
+        // Iterate through cities to find the closest one
+        while (it != end) {
+            auto &c = *it;
+
+            if (c->getMap()) {
+                if (cities->isOutsideCities(pt)) {
+                    // Calculate the distance to the nearest edge
+                    NearestEdgeResult res = c->getMap()->nearestEdge(pt);
+                    double distance = res.distance;
+
+                    if (distance < nearestDistance) {
+                        nearestDistance = distance;
+                        closestCity = std::distance(citiesList.cbegin(), it);
+                    }
+                } else if (c->getMap()->isInsideWithTriangulation(pt)) {
+                    // If the point is inside the city, update the closest city
+                    closestCity = std::distance(citiesList.cbegin(), it);
+                }
+            }
+            ++it; // Move to the next city
+        }
+
+        // If a closest city was found, increment the drone count for that city
+        if (closestCity != -1) {
+            cityDroneCount[closestCity]++;
+        }
+    }
+
+    // Now build the result string with the city names and the drone count
+    for (auto it = cityDroneCount.begin(); it != cityDroneCount.end(); ++it) {
+        int cityIndex = it.key();
+        int droneCount = it.value();
+
+        // Append the city name (replace this with actual city names) and the count of drones
+        result += citiesList[cityIndex]->getName() + " - " + QString::number(droneCount) + " drones\n";
+    }
+
+    // Return the final result string
+    return result;
 }
 
 

@@ -183,6 +183,11 @@ public:
      */
     void droneSequence(Drone &d);
 
+    /**
+     * @brief Get the cities informations with number of drones in each cities
+     */
+    QString getCitiesInfos();
+
 signals:
 
     /**

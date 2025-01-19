@@ -47,10 +47,14 @@ private slots:
 
     void on_actionLoad_triggered();
 
+    void on_actionAbout_triggered();
+
+    void on_actionCities_triggered();
+
 private:
     Ui::MainWindow *ui;
     QVector<Drone*> *mapDrones=nullptr;
-
+    bool droneProcess = false;
     QTimer *timer;
     QElapsedTimer elapsedTimer;
 

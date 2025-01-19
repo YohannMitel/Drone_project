@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QListWidgetItem>
 #include <QFileDialog>
-
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -59,10 +59,12 @@ void MainWindow::update() {
 
     for (int step=0; step<steps; step++) {
         // update positions of drones
+        bool tmp_droneProcess = true;
 
         for (auto &drone:*mapDrones) {
             bool tmp_landedbool = true;
             bool tmp_powerMaxBool = true;
+
             // detect collisions between drone and other flying drones
             if (drone->getStatus()!=Drone::landed) {
                 drone->initCollision();
@@ -72,6 +74,7 @@ void MainWindow::update() {
                         drone->addCollision(B,ui->widget->droneCollisionDistance);
                         //qDebug() << drone->getNbCollisions();
                         // To much collisons == stop
+                        tmp_droneProcess = false;
                         if(drone->getNbCollisions() > 400 ) drone->stop();
                     }
                 }
@@ -86,12 +89,16 @@ void MainWindow::update() {
             drone->update(dt);
 
             if(tmp_landedbool && ui->widget->getProcessPolyState()  && tmp_powerMaxBool && !drone->inDestCity()){
-                qDebug() << "ICI pour le drone : " << drone->getName();
                 ui->widget->droneSequence(*drone);
+                tmp_droneProcess = false;
             }
+            droneProcess = tmp_droneProcess;
         }
 
+
+
     }
+
     int d = elapsedTimer.elapsed()-current;
     ui->statusbar->showMessage("duree:"+QString::number(d)+" steps="+QString::number(steps));
     if (d>90) {
@@ -188,5 +195,17 @@ void MainWindow::on_actionLoad_triggered()
 
 
 
+}
+
+
+void MainWindow::on_actionAbout_triggered()
+{
+    QMessageBox::information(this,"About Drone Project","This project involves constructing a map from a point cloud, where drones navigate to reach their destination cities.");
+}
+
+
+void MainWindow::on_actionCities_triggered()
+{
+    QMessageBox::information(this,"Cities infos",droneProcess == false ? "Not all drones have reached their final destinations, please wait..." :  ui->widget->getCitiesInfos() );
 }
 

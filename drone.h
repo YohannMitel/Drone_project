@@ -130,6 +130,13 @@ public:
     inline void setCurrentCity( int &c) { currentCityId = c; }
 
     /**
+     * @brief  getCurrentCity get the current city
+     */
+    inline int getCurrentCity() { return currentCityId; }
+
+
+
+    /**
      * @brief  inDestCity check if the drone is in his dest city
      * @return true if the drone is in his dest city
      */

@@ -78,10 +78,7 @@ public:
         return (i==0)?x:y;
     };
 
-    /**
-     * @brief Adds another vector to this vector.
-     * @param v The vector to add.
-     */
+
     void operator+=(const Vector2D& v) {
         x+=v.x;
         y+=v.y;
@@ -193,15 +190,6 @@ const Vector2D operator -(const Vector2D&);
 double operator ^(const Vector2D&,const Vector2D&);
 bool operator==(const Vector2D&,const Vector2D&);
 bool operator !=(const Vector2D&,const Vector2D&);
-/**
-     * @brief Checks if the edges defined by two pairs of points match.
-     * @param p1 First point of the first edge.
-     * @param p2 Second point of the first edge.
-     * @param p3 First point of the second edge.
-     * @param p4 Second point of the second edge.
-     * @return True if the edges match, false otherwise.
-     */
-static bool edgesMatch(const Vector2D* p1, const Vector2D* p2, const Vector2D* p3, const Vector2D* p4);
 
 
 #endif // VECTOR2D_H
