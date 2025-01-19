@@ -42,7 +42,7 @@ public:
     void draw(QPainter &painter, bool transparency);
     void testPathFinding(int start, int end);
 
-    int nextDestCityId(int start, int end)
+    Vector2D nextDestCityId(int start, int end);
 
 };
 

@@ -109,6 +109,12 @@ public:
      */
     inline void setDestCity( int &c) { destCityId = c; }
 
+    /**
+     * @brief  getDestCity get the final city destination
+     * @return the city id
+     */
+    inline int getDestCity() { return destCityId; }
+
 signals:
 
 private:

@@ -357,7 +357,8 @@ void Canvas::loadMesh(const QString &title) {
             qDebug() << "Final pos" << destinationName;
             Drone *drone = new Drone(name);
             drone->setInitialPosition(pt);
-            drone->setDestCity(cities->getCityByName(destinationName));
+            int cityId = cities->getCityByName(destinationName);
+            drone->setDestCity(cityId);
 
 
             mapDrones.push_back(drone);
@@ -824,7 +825,7 @@ void Canvas::processPoly(){
 
         */for (auto &d : mapDrones) {
             double nearestDistance = 10000; // Distance initiale très grande
-            QString closestPolygonIndex = "-1"; // Indice par défaut
+            int closestCity = -1; // Indice par défaut
 
             Vector2D pt = d->getPosition();
             // Stocker le tableau des villes dans une variable locale
@@ -847,11 +848,12 @@ void Canvas::processPoly(){
 
                         if (distance < nearestDistance) {
                             nearestDistance = distance;
-                            closestPolygonIndex = c->getName();
+                            // Converti l'iterator en int
+                            closestCity = std::distance(citiesList.cbegin(), it);
                         }
                     } else if (c->getMap()->isInsideWithTriangulation(pt)) {
                         // Si le point est dans un polygone, on met à jour l'indice
-                        closestPolygonIndex = c->getName();
+                        closestCity =  std::distance(citiesList.cbegin(), it);
                         // Continuer à parcourir toutes les villes pour vérifier s'il y en a une plus proche
                     }
                 }
@@ -859,9 +861,15 @@ void Canvas::processPoly(){
                 ++it; // Passer à la ville suivante
             }
 
-            qDebug() << "Nearest city for drone: " << d->getName() << " is " << closestPolygonIndex;
+            qDebug() << "Nearest city for drone: " << d->getName() << " is " << closestCity;
+            qDebug() << "Dest city id " << d->getDestCity();
+            qDebug() << (closestCity != d->getDestCity());
 
-            d->start();
+            if(closestCity != d->getDestCity() ){
+                d->setGoalPosition(cities->nextDestCityId(closestCity, d->getDestCity()));
+                d->start();
+            }
+
         }
 /*
        qDebug() << "VORONOI DE : "  << cities->getTabCities()[1]->getName();

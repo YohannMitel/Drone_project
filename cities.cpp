@@ -347,16 +347,11 @@ int Cities::getCityByName(QString &name){
 }
 
 
-int Cities::nextDestCityId(int start, int end) {
+Vector2D Cities::nextDestCityId(int start, int end) {
     QVector<int> path = findPath(adjacencyMatrix, start, end);
+    qDebug() << path[1];
+    qDebug() <<  *tabCities[path[1]]->getPosition();
 
-    if (path.empty()) {
-        qDebug() << "No path found between city" << start << "and city" << end;
-    } else {
-        qDebug() << "Path from city" << start << "to city" << end << ":";
-        for (int city : path) {
-            qDebug() << city;  // Or use city names if needed
-        }
-    }
+    return *tabCities[path[1]]->getPosition();
 }
 
