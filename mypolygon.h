@@ -33,13 +33,15 @@ public:
     Vector2D *getVertices(int &n) { n=N; return tabPts; };
     void addVertex(const Vector2D &P);
     void draw(QPainter &painter, bool transparency);
-    void changeColor(const Vector2D &pt) {
+    bool isInsideWithTriangulation(const Vector2D &pt) {
         //isInside(pt) ? setColor(Qt::red) : setColor(currentColor) ;
         auto it=triangles.begin();
         while (it!=triangles.end() && !(it->isInside(pt))) {
             it++;
         }
         hovered= (it==triangles.end()?false:true);
+
+        return hovered;
 /*
             qDebug() << *triangles[0].getVertexPtr(0);
                         qDebug() << *triangles[1].getVertexPtr(1);

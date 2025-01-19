@@ -282,7 +282,7 @@ void Canvas::mouseMoveEvent(QMouseEvent *event) {
 
         if(c->getMap()){
             //qDebug() << c->getName();
-            c->getMap()->changeColor(Vector2D(mouseX,mouseY));
+            c->getMap()->isInsideWithTriangulation(Vector2D(mouseX,mouseY));
         }
 
     }
@@ -353,6 +353,7 @@ void Canvas::loadMesh(const QString &title) {
             Vector2D pt(strPosition[0].toFloat(),strPosition[1].toFloat());
             Drone *drone = new Drone(name);
             drone->setInitialPosition(pt);
+
             mapDrones.push_back(drone);
 
         }
@@ -793,6 +794,75 @@ void Canvas::processPoly(){
     }
     if(cities->getTabCities().size() > 1 ) cities->connectionMatrix(cities->getTabCities());
     cities->testPathFinding(5,1);
+
+
+
+
+    for(auto &d: mapDrones){
+
+        double nearestDistance = 10000;
+        QString closestPolygonIndex = "-1" ;
+
+        Vector2D pt = d->getPosition();
+
+        /*
+        if(isClosed){
+            qDebug () << "Recherche vers la droite";
+            while(it!=L.end() && !(*(*it)->getEdgeTo(P) == *edge)){
+
+                it++;
+
+            }
+        }else{
+            qDebug () << "Recherche vers la gauche";
+            while(it!=L.end() && !(*(*it)->getEdgeFrom(P) == *edge)){
+
+                it++;
+
+            }
+        }
+
+
+        */for (auto &d : mapDrones) {
+            double nearestDistance = 10000; // Distance initiale très grande
+            QString closestPolygonIndex = "-1"; // Indice par défaut
+
+            Vector2D pt = d->getPosition();
+            // Stocker le tableau des villes dans une variable locale
+            const auto &citiesList = cities->getTabCities();
+
+
+
+            auto it = citiesList.begin();
+            auto end = citiesList.end();
+
+
+            while (it != end) {
+                auto &c = *it;
+
+                if (c->getMap()) {
+                    if (isOutsideCanvas(pt)) {
+                        // Calculer la distance à l'arête la plus proche
+                        NearestEdgeResult res = c->getMap()->nearestEdge(pt);
+                        double distance = res.distance;
+
+                        if (distance < nearestDistance) {
+                            nearestDistance = distance;
+                            closestPolygonIndex = c->getName();
+                        }
+                    } else if (c->getMap()->isInsideWithTriangulation(pt)) {
+                        // Si le point est dans un polygone, on met à jour l'indice
+                        closestPolygonIndex = c->getName();
+                        // Continuer à parcourir toutes les villes pour vérifier s'il y en a une plus proche
+                    }
+                }
+
+                ++it; // Passer à la ville suivante
+            }
+
+            qDebug() << "Nearest city for drone: " << d->getName() << " is " << closestPolygonIndex;
+        }
+    }
 /*
        qDebug() << "VORONOI DE : "  << cities->getTabCities()[1]->getName();
     processVoronoi(*cities->getTabCities()[1]);*/
