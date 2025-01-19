@@ -115,10 +115,26 @@ public:
      */
     inline int getDestCity() { return destCityId; }
 
+
+    /**
+     * @brief  setCurrentCity set the current city
+     */
+    inline void setCurrentCity( int &c) { currentCityId = c; }
+
+    /**
+     * @brief  inDestCity check if the drone is in his dest city
+     * @return true if the drone is in his dest city
+     */
+
+    inline bool inDestCity() { return destCityId == currentCityId; }
+
+
+
 signals:
 
 private:
     int destCityId;
+    int currentCityId;
     const int compasSize = 48; ///< size of the compas image (compasSize x compasSize)
     const int barSpace = 150; ///< minimum size of the ProgressBar
     droneStatus status;       ///< status of the drone

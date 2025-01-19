@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->actionCircles->setChecked(ui->widget->showCircles);
     ui->actionTriangles->setChecked(ui->widget->showTriangles);
     ui->actionCenters->setChecked(ui->widget->showCenters);
-    ui->widget->loadMesh("../../models/config2.json");
+    ui->widget->loadMesh("../../models/config1.json");
     QObject::connect(ui->widget, SIGNAL(updateSB(QString)), ui->statusbar, SLOT(showMessage(QString)));
 
 
@@ -59,9 +59,10 @@ void MainWindow::update() {
 
     for (int step=0; step<steps; step++) {
         // update positions of drones
-        bool tmp_landedbool = true;
-        bool tmp_powerMaxBool = true;
+
         for (auto &drone:*mapDrones) {
+            bool tmp_landedbool = true;
+            bool tmp_powerMaxBool = true;
             // detect collisions between drone and other flying drones
             if (drone->getStatus()!=Drone::landed) {
                 drone->initCollision();
@@ -80,10 +81,13 @@ void MainWindow::update() {
                 tmp_powerMaxBool = false;
             }
             drone->update(dt);
+
+            if(tmp_landedbool && ui->widget->getProcessPolyState()  && tmp_powerMaxBool && !drone->inDestCity()){
+                qDebug() << "ICI pour le drone : " << drone->getName();
+                ui->widget->droneSequence(*drone);
+            }
         }
-        if(tmp_landedbool &&ui->widget->getProcessPolyState()  && tmp_powerMaxBool){
-            ui->widget->droneSequence();
-        }
+
     }
     int d = elapsedTimer.elapsed()-current;
     ui->statusbar->showMessage("duree:"+QString::number(d)+" steps="+QString::number(steps));

@@ -833,13 +833,12 @@ void Canvas::processPoly(){
     processVoronoi(*cities->getTabCities()[1]);*/
 }
 
-void Canvas::droneSequence(){
-    if(processPolyState) return;
-    for (auto &d : mapDrones) {
+void Canvas::droneSequence(Drone &d){
+    if(!processPolyState) return;
         double nearestDistance = 10000; // Distance initiale très grande
         int closestCity = -1; // Indice par défaut
 
-        Vector2D pt = d->getPosition();
+        Vector2D pt = d.getPosition();
         // Stocker le tableau des villes dans une variable locale
         const auto &citiesList = cities->getTabCities();
 
@@ -872,17 +871,20 @@ void Canvas::droneSequence(){
 
             ++it; // Passer à la ville suivante
         }
+/*
+ *
+        qDebug() << "Nearest city for drone: " << d.getName() << " is " << closestCity;
+        qDebug() << "Dest city id " << d.getDestCity();
+        qDebug() << (closestCity != d.getDestCity());*/
+        if(closestCity == -1) qDebug() << "CEEEEEST LA MEEEEEEEEERDE";
+        d.setCurrentCity(closestCity);
 
-        qDebug() << "Nearest city for drone: " << d->getName() << " is " << closestCity;
-        qDebug() << "Dest city id " << d->getDestCity();
-        qDebug() << (closestCity != d->getDestCity());
-
-        if(closestCity != d->getDestCity() ){
-            d->setGoalPosition(cities->nextDestCityId(closestCity, d->getDestCity()));
-            d->start();
+        if(closestCity != d.getDestCity() ){
+            d.setGoalPosition(cities->nextDestCityId(closestCity, d.getDestCity()));
+            d.start();
         }
 
-    }
+
 }
 
 

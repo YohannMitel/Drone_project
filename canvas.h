@@ -67,7 +67,7 @@ public:
 
     Vector2D calculateIntersection(const Vector2D &p1, const Vector2D &p2, float minX, float minY, float maxX, float maxY);
 
-    void droneSequence();
+    void droneSequence(Drone &d);
 signals:
 
     /*
