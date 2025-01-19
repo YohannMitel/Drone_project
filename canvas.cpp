@@ -185,7 +185,7 @@ void Canvas::mousePressEvent(QMouseEvent *event) {
         }
     }
 
-
+/*
     auto it = mapDrones.begin();
     while (it!=mapDrones.end() && (*it)->getStatus()!=Drone::landed) {
         it++;
@@ -195,7 +195,7 @@ void Canvas::mousePressEvent(QMouseEvent *event) {
         qDebug() << mouseX <<"  " << mouseY ;
         (*it)->setGoalPosition(Vector2D(mouseX,mouseY));
         (*it)->start();
-    }
+    }*/
 
 
 
@@ -351,8 +351,14 @@ void Canvas::loadMesh(const QString &title) {
             QString name= vector["name"].toString();
             auto strPosition = vector["position"].toString().split(',');
             Vector2D pt(strPosition[0].toFloat(),strPosition[1].toFloat());
+
+            QString destinationName = vector["server"].toString();
+
+            qDebug() << "Final pos" << destinationName;
             Drone *drone = new Drone(name);
             drone->setInitialPosition(pt);
+            drone->setDestCity(cities->getCityByName(destinationName));
+
 
             mapDrones.push_back(drone);
 
@@ -798,13 +804,6 @@ void Canvas::processPoly(){
 
 
 
-    for(auto &d: mapDrones){
-
-        double nearestDistance = 10000;
-        QString closestPolygonIndex = "-1" ;
-
-        Vector2D pt = d->getPosition();
-
         /*
         if(isClosed){
             qDebug () << "Recherche vers la droite";
@@ -861,8 +860,9 @@ void Canvas::processPoly(){
             }
 
             qDebug() << "Nearest city for drone: " << d->getName() << " is " << closestPolygonIndex;
+
+            d->start();
         }
-    }
 /*
        qDebug() << "VORONOI DE : "  << cities->getTabCities()[1]->getName();
     processVoronoi(*cities->getTabCities()[1]);*/

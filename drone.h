@@ -10,6 +10,7 @@
 #include <QProgressBar>
 #include <vector2d.h>
 #include <QImage>
+#include "city.h"
 
 class Drone : public QWidget {
 
@@ -23,6 +24,7 @@ public:
     const double damping=0.2;        ///< damping for motion simulation
     const double chargingSpeed=10;   ///< speed of charging (power/s)
     const double powerConsumption=5; ///< speed of consumption (power/s)
+
     enum droneStatus { landed,takeoff,landing,hovering,turning,flying};
     /**
      * @brief Drone constructor
@@ -101,9 +103,16 @@ public:
      * @return true if collision
      */
     bool hasCollision() { return showCollision; }
+
+    /**
+     * @brief  setDestCity set the final city destination
+     */
+    inline void setDestCity( int &c) { destCityId = c; }
+
 signals:
 
 private:
+    int destCityId;
     const int compasSize = 48; ///< size of the compas image (compasSize x compasSize)
     const int barSpace = 150; ///< minimum size of the ProgressBar
     droneStatus status;       ///< status of the drone

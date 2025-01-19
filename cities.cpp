@@ -331,3 +331,32 @@ void Cities::testPathFinding(int start, int end) {
         }
     }
 }
+
+
+int Cities::getCityByName(QString &name){
+
+
+
+    for (int i = 0; i < tabCities.size(); ++i) {
+
+        if(tabCities[i]->getName() == name){
+            return i;
+        }
+    }
+    return -1;
+}
+
+
+int Cities::nextDestCityId(int start, int end) {
+    QVector<int> path = findPath(adjacencyMatrix, start, end);
+
+    if (path.empty()) {
+        qDebug() << "No path found between city" << start << "and city" << end;
+    } else {
+        qDebug() << "Path from city" << start << "to city" << end << ":";
+        for (int city : path) {
+            qDebug() << city;  // Or use city names if needed
+        }
+    }
+}
+

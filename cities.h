@@ -37,9 +37,12 @@ public:
     bool areNeighbors(Vector2D* vertices1, int numVertices1, Vector2D* vertices2, int numVertices2);
     bool doIntersect(Vector2D p1, Vector2D p2, Vector2D q1, Vector2D q2);
     int orientation(Vector2D p, Vector2D q, Vector2D r);
+    int getCityByName(QString &name);
 
     void draw(QPainter &painter, bool transparency);
     void testPathFinding(int start, int end);
+
+    int nextDestCityId(int start, int end)
 
 };
 
