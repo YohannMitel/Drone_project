@@ -133,8 +133,8 @@ public:
 signals:
 
 private:
-    int destCityId;
-    int currentCityId;
+    int destCityId = -2;
+    int currentCityId = -1;
     const int compasSize = 48; ///< size of the compas image (compasSize x compasSize)
     const int barSpace = 150; ///< minimum size of the ProgressBar
     droneStatus status;       ///< status of the drone

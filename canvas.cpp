@@ -184,7 +184,7 @@ void Canvas::mousePressEvent(QMouseEvent *event) {
             break;
         }
     }
-
+    qDebug() << mapDrones[1]->inDestCity();
 /*
     auto it = mapDrones.begin();
     while (it!=mapDrones.end() && (*it)->getStatus()!=Drone::landed) {
